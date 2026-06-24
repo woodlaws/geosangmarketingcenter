@@ -13,17 +13,37 @@
 
 ```
 .
-├── index.html        # 페이지 본문 (최상위)
+├── index.html        # 페이지 본문 (최상위) · 구조화 데이터(JSON-LD) 포함
 ├── style.css         # 전체 스타일
 ├── script.js         # FAQ 아코디언 · 상담 폼 · 모바일 메뉴 · 통계 카운트업
 ├── assets/           # 이미지 · 아이콘
 │   └── logo-mark.png # 로고 (방패 G 마크 · 헤더/푸터/파비콘 공용)
+├── robots.txt        # 검색·AI 크롤러 수집 규칙 (AEO/GEO)
+├── sitemap.xml       # 사이트맵
 ├── vercel.json       # Vercel 정적 배포 설정
 ├── README.md         # 프로젝트 설명 (이 파일)
 └── .gitignore
 ```
 
 `index.html` 은 반드시 **최상위 폴더**에 있어야 하며, 이미지·아이콘은 모두 `assets/` 폴더에 둡니다.
+
+---
+
+## 🔎 AEO / GEO 최적화 (구조화 데이터)
+
+네이버·구글 **AI 브리핑**, **ChatGPT**, **Gemini** 등이 우리 정보를 "사실"로
+인식하고 인용할 수 있도록 기계가 읽는 데이터를 심어두었습니다.
+
+- `index.html` `<head>` 안 **JSON-LD**: 업체 정보(ProfessionalService) · 서비스 · **FAQPage**
+- `robots.txt`: GPTBot · PerplexityBot · Google-Extended 등 AI 크롤러 수집 허용
+- `sitemap.xml`: 페이지 수집 안내
+- canonical · Open Graph · Twitter 카드 메타태그
+
+**배포 후 검증:** 구글 [리치 결과 테스트](https://search.google.com/test/rich-results)에
+배포 주소를 넣으면 FAQ·업체 정보가 인식되는지 확인할 수 있습니다.
+
+> ⚠️ JSON-LD·robots.txt·sitemap.xml·메타태그 안의 `https://geosang-marketing.com`
+> 을 **실제 도메인 주소**로 모두 교체하세요. (전화번호·주소도 실제 정보로)
 
 ---
 
