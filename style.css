@@ -574,229 +574,221 @@ a { color: inherit; }
 .coming-soon-btns { display: flex; gap: 11px; justify-content: center; flex-wrap: wrap; }
 
 /* ================================================================
-   TYPOGRAPHY UPGRADE — ~1.27× PC scale
-   !important ensures override of page-specific <style> blocks
+   TYPOGRAPHY SYSTEM — fluid clamp scale, refined
    ================================================================ */
+:root {
+  --t-2xs:   clamp(13px, 0.78vw, 15px);
+  --t-xs:    clamp(14px, 0.88vw, 16px);
+  --t-sm:    clamp(15px, 1.0vw,  18px);
+  --t-base:  clamp(17px, 1.15vw, 19px);
+  --t-md:    clamp(19px, 1.4vw,  23px);
+  --t-lg:    clamp(22px, 1.7vw,  27px);
+  --t-xl:    clamp(30px, 2.6vw,  40px);
+  --t-hero:  clamp(40px, 4.0vw,  60px);
+}
 
 /* Navigation */
-.brand-name { font-size: 26px !important; }
-.brand-sub  { font-size: 15px !important; }
-.nav > a    { font-size: 18px !important; }
-.nav-ddtrigger { font-size: 18px !important; }
+.brand-name { font-size: 24px !important; }
+.brand-sub  { font-size: 14px !important; }
+.nav > a    { font-size: 17px !important; }
+.nav-ddtrigger { font-size: 17px !important; }
 .nav-dd-menu a { font-size: 16px !important; }
-.btn-nav       { font-size: 17px !important; padding: 12px 22px !important; }
-.nav-mobile > a { font-size: 20px !important; }
-.nav-mob-trigger { font-size: 20px !important; }
-.nav-mob-sub a   { font-size: 18px !important; }
+.btn-nav       { font-size: 16px !important; padding: 11px 20px !important; }
+.nav-mobile > a { font-size: 19px !important; }
+.nav-mob-trigger { font-size: 19px !important; }
+.nav-mob-sub a   { font-size: 17px !important; }
 
 /* Eyebrow + labels */
-.eyebrow       { font-size: 14px !important; letter-spacing: .14em !important; }
-.page-hero-tag { font-size: 14px !important; }
-.breadcrumb    { font-size: 15px !important; }
+.eyebrow       { font-size: var(--t-2xs) !important; letter-spacing: .14em !important; }
+.page-hero-tag { font-size: var(--t-2xs) !important; }
+.breadcrumb    { font-size: var(--t-xs) !important; }
 
 /* Section titles */
-.section-title { font-size: 46px !important; }
-.section-sub   { font-size: 21px !important; }
+.section-title { font-size: var(--t-xl) !important; }
+.section-sub   { font-size: var(--t-base) !important; }
 
 /* Hero (home) */
-.hero-title  { font-size: 66px !important; }
-.hero-desc   { font-size: 22px !important; }
-.badge       { font-size: 16px !important; }
-.hero-trust  { font-size: 16px !important; }
-.float-stat-value { font-size: 30px !important; }
-.float-stat-label { font-size: 14px !important; }
+.hero-title  { font-size: var(--t-hero) !important; }
+.hero-desc   { font-size: var(--t-md) !important; }
+.badge       { font-size: var(--t-xs) !important; }
+.hero-trust  { font-size: var(--t-xs) !important; }
+.float-stat-value { font-size: 28px !important; }
+.float-stat-label { font-size: var(--t-2xs) !important; }
 
 /* Stats bar */
-.stat-value  { font-size: 50px !important; }
-.stat-label  { font-size: 18px !important; }
+.stat-value  { font-size: clamp(36px,3.2vw,48px) !important; }
+.stat-label  { font-size: var(--t-sm) !important; }
 
 /* Service cards */
-.svc-tag       { font-size: 14px !important; }
-.svc-title     { font-size: 24px !important; }
-.svc-desc      { font-size: 18px !important; line-height: 1.72 !important; }
-.svc-points li { font-size: 17px !important; }
-.svc-link      { font-size: 16px !important; }
-.svc-more-row a { font-size: 18px !important; }
-.aux-title     { font-size: 16px !important; }
-.aux-desc      { font-size: 15px !important; }
+.svc-tag       { font-size: var(--t-2xs) !important; }
+.svc-title     { font-size: var(--t-lg) !important; }
+.svc-desc      { font-size: var(--t-sm) !important; line-height: 1.72 !important; }
+.svc-points li { font-size: var(--t-sm) !important; }
+.svc-link      { font-size: var(--t-xs) !important; }
+.svc-more-row a { font-size: var(--t-sm) !important; }
+.aux-title     { font-size: var(--t-xs) !important; }
+.aux-desc      { font-size: var(--t-2xs) !important; }
 
 /* Hub cards */
-.hub-card-tag   { font-size: 13px !important; }
-.hub-card-title { font-size: 22px !important; }
-.hub-card-msg   { font-size: 16px !important; }
-.hub-card-desc  { font-size: 17px !important; }
-.hub-card-btn   { font-size: 16px !important; }
+.hub-card-tag   { font-size: var(--t-2xs) !important; }
+.hub-card-title { font-size: var(--t-md) !important; }
+.hub-card-msg   { font-size: var(--t-xs) !important; }
+.hub-card-desc  { font-size: var(--t-sm) !important; }
+.hub-card-btn   { font-size: var(--t-xs) !important; }
 
 /* AEO section */
-.aeo-lead        { font-size: 19px !important; line-height: 1.72 !important; }
-.aeo-def b       { font-size: 17px !important; }
-.aeo-def p       { font-size: 16px !important; }
-.ai-demo-head    { font-size: 17px !important; }
-.ai-question     { font-size: 17px !important; }
-.ai-answer-label { font-size: 15px !important; }
-.ai-answer-text  { font-size: 17px !important; line-height: 1.72 !important; }
-.ai-foot         { font-size: 15px !important; }
-.aeo-abbr        { font-size: 14px !important; }
+.aeo-lead        { font-size: var(--t-base) !important; line-height: 1.72 !important; }
+.aeo-def b       { font-size: var(--t-sm) !important; }
+.aeo-def p       { font-size: var(--t-xs) !important; }
+.ai-demo-head    { font-size: var(--t-sm) !important; }
+.ai-question     { font-size: var(--t-sm) !important; }
+.ai-answer-label { font-size: var(--t-2xs) !important; }
+.ai-answer-text  { font-size: var(--t-sm) !important; line-height: 1.72 !important; }
+.ai-foot         { font-size: var(--t-2xs) !important; }
+.aeo-abbr        { font-size: 13px !important; }
 
 /* Process steps */
-.step-no { font-size: 14px !important; }
-.step h3  { font-size: 21px !important; }
-.step p   { font-size: 17px !important; }
+.step-no { font-size: var(--t-2xs) !important; }
+.step h3  { font-size: var(--t-md) !important; }
+.step p   { font-size: var(--t-sm) !important; }
 
 /* Case cards */
-.case-name   { font-size: 19px !important; }
-.case-region { font-size: 15px !important; }
-.cc-label    { font-size: 14px !important; }
-.cc-before   { font-size: 20px !important; }
-.cc-after    { font-size: 28px !important; }
-.case-note   { font-size: 17px !important; }
-.review-card p { font-size: 17px !important; line-height: 1.72 !important; }
-.r-name { font-size: 16px !important; }
-.r-biz  { font-size: 15px !important; }
-.stars  { font-size: 17px !important; }
+.case-name   { font-size: var(--t-base) !important; }
+.case-region { font-size: var(--t-2xs) !important; }
+.cc-label    { font-size: 13px !important; }
+.cc-before   { font-size: var(--t-base) !important; }
+.cc-after    { font-size: var(--t-lg) !important; }
+.case-note   { font-size: var(--t-sm) !important; }
+.review-card p { font-size: var(--t-sm) !important; line-height: 1.72 !important; }
+.r-name { font-size: var(--t-xs) !important; }
+.r-biz  { font-size: var(--t-2xs) !important; }
+.stars  { font-size: var(--t-sm) !important; }
 
 /* Pricing */
-.plan-name    { font-size: 22px !important; }
-.plan-tagline { font-size: 17px !important; }
-.plan-price .amount { font-size: 42px !important; }
-.plan-price .unit   { font-size: 17px !important; }
-.plan-features li   { font-size: 17px !important; }
-.plan-btn   { font-size: 18px !important; }
-.price-note { font-size: 15px !important; }
-.plan-badge { font-size: 15px !important; }
+.plan-name    { font-size: var(--t-md) !important; }
+.plan-tagline { font-size: var(--t-sm) !important; }
+.plan-price .amount { font-size: clamp(30px,2.8vw,40px) !important; }
+.plan-price .unit   { font-size: var(--t-sm) !important; }
+.plan-features li   { font-size: var(--t-sm) !important; }
+.plan-btn   { font-size: var(--t-sm) !important; }
+.price-note { font-size: var(--t-2xs) !important; }
+.plan-badge { font-size: var(--t-2xs) !important; }
 
 /* FAQ */
-.faq-q    { font-size: 20px !important; }
-.faq-plus { font-size: 24px !important; }
-.faq-a p  { font-size: 18px !important; line-height: 1.75 !important; }
+.faq-q    { font-size: var(--t-lg) !important; }
+.faq-plus { font-size: var(--t-md) !important; }
+.faq-a p  { font-size: var(--t-base) !important; line-height: 1.75 !important; }
 
 /* Contact (home CTA) */
-.contact-lead { font-size: 18px !important; line-height: 1.72 !important; }
-.ci-row       { font-size: 17px !important; }
-.ci-muted     { font-size: 15px !important; }
-.form-head    { font-size: 22px !important; }
-.form-sub     { font-size: 16px !important; }
-.form-card label { font-size: 15px !important; }
-.form-card input { font-size: 17px !important; }
-.form-submit     { font-size: 19px !important; }
-.form-note       { font-size: 14px !important; }
-.success-title   { font-size: 24px !important; }
-.success-desc    { font-size: 17px !important; }
+.contact-lead { font-size: var(--t-sm) !important; line-height: 1.72 !important; }
+.ci-row       { font-size: var(--t-sm) !important; }
+.ci-muted     { font-size: var(--t-2xs) !important; }
+.form-head    { font-size: var(--t-md) !important; }
+.form-sub     { font-size: var(--t-xs) !important; }
+.form-card label { font-size: var(--t-xs) !important; }
+.form-card input { font-size: var(--t-sm) !important; }
+.form-submit     { font-size: var(--t-base) !important; }
+.form-note       { font-size: var(--t-2xs) !important; }
+.success-title   { font-size: var(--t-md) !important; }
+.success-desc    { font-size: var(--t-sm) !important; }
 
 /* Page hero (inner pages) */
-.page-hero h1   { font-size: 48px !important; }
-.page-hero-desc { font-size: 21px !important; }
+.page-hero h1   { font-size: clamp(26px,3.2vw,46px) !important; }
+.page-hero-desc { font-size: var(--t-md) !important; }
 
 /* Detail page */
-.feature-item-title { font-size: 19px !important; }
-.feature-item-desc  { font-size: 17px !important; line-height: 1.65 !important; }
-.cta-box-title { font-size: 28px !important; }
-.cta-box-desc  { font-size: 18px !important; line-height: 1.72 !important; }
-.result-stat-val   { font-size: 42px !important; }
-.result-stat-label { font-size: 15px !important; }
-.ps-step  { font-size: 13px !important; }
-.ps-title { font-size: 19px !important; }
-.ps-desc  { font-size: 17px !important; }
-.highlight-box p { font-size: 17px !important; }
+.feature-item-title { font-size: var(--t-base) !important; }
+.feature-item-desc  { font-size: var(--t-sm) !important; line-height: 1.65 !important; }
+.cta-box-title { font-size: var(--t-lg) !important; }
+.cta-box-desc  { font-size: var(--t-sm) !important; line-height: 1.72 !important; }
+.result-stat-val   { font-size: clamp(28px,2.8vw,38px) !important; }
+.result-stat-label { font-size: var(--t-2xs) !important; }
+.ps-step  { font-size: var(--t-2xs) !important; }
+.ps-title { font-size: var(--t-base) !important; }
+.ps-desc  { font-size: var(--t-sm) !important; }
+.highlight-box p { font-size: var(--t-sm) !important; }
 
 /* Contact page form */
-.contact-form-card .form-head { font-size: 26px !important; }
-.contact-form-card .form-sub  { font-size: 17px !important; }
-.form-group label    { font-size: 15px !important; }
+.contact-form-card .form-head { font-size: var(--t-lg) !important; }
+.contact-form-card .form-sub  { font-size: var(--t-sm) !important; }
+.form-group label    { font-size: var(--t-xs) !important; }
 .form-group input,
 .form-group select,
-.form-group textarea { font-size: 17px !important; }
-.contact-submit      { font-size: 19px !important; }
-.info-card-title     { font-size: 17px !important; }
-.info-card-val       { font-size: 16px !important; }
+.form-group textarea { font-size: var(--t-sm) !important; }
+.contact-submit      { font-size: var(--t-base) !important; }
+.info-card-title     { font-size: var(--t-sm) !important; }
+.info-card-val       { font-size: var(--t-xs) !important; }
 
 /* Coming soon */
-.coming-soon-title { font-size: 34px !important; }
-.coming-soon-desc  { font-size: 19px !important; }
+.coming-soon-title { font-size: var(--t-xl) !important; }
+.coming-soon-desc  { font-size: var(--t-base) !important; }
 
 /* Footer */
-.footer-logo                     { font-size: 20px !important; }
-.footer-meta                     { font-size: 15px !important; line-height: 1.9 !important; }
-.footer-col a, .footer-col span  { font-size: 16px !important; }
-.footer-copy                     { font-size: 15px !important; }
-.fc-title                        { font-size: 13px !important; }
+.footer-logo                    { font-size: 19px !important; }
+.footer-meta                    { font-size: var(--t-xs) !important; line-height: 1.9 !important; }
+.footer-col a, .footer-col span { font-size: var(--t-xs) !important; }
+.footer-copy                    { font-size: var(--t-xs) !important; }
+.fc-title                       { font-size: 12px !important; }
 
 /* Buttons */
-.btn         { font-size: 19px !important; padding: 16px 30px !important; }
-.btn-primary { font-size: 18px !important; padding: 16px 30px !important; }
-.btn-outline { font-size: 18px !important; padding: 15px 28px !important; }
-.btn-teal    { font-size: 17px !important; padding: 14px 26px !important; }
-.btn-white-outline { font-size: 17px !important; padding: 13px 24px !important; }
-.plan-btn-soft, .plan-btn-primary, .plan-btn-dark { font-size: 17px !important; }
+.btn         { font-size: var(--t-base) !important; padding: 16px 28px !important; }
+.btn-primary { font-size: var(--t-sm) !important; padding: 15px 28px !important; }
+.btn-outline { font-size: var(--t-sm) !important; padding: 14px 26px !important; }
+.btn-teal    { font-size: var(--t-sm) !important; padding: 13px 24px !important; }
+.btn-white-outline { font-size: var(--t-sm) !important; padding: 12px 22px !important; }
+.plan-btn-soft, .plan-btn-primary, .plan-btn-dark { font-size: var(--t-sm) !important; }
 
-/* Card padding boost */
-.svc-card  { padding: 36px 30px !important; }
-.hub-card  { padding: 32px 28px !important; }
-.step      { padding: 30px 26px !important; }
-.cta-box   { padding: 46px 40px !important; }
-.form-card { padding: 34px !important; }
-.case-card { padding: 28px !important; }
-.review-card { padding: 28px !important; }
-.plan       { padding: 34px 30px !important; }
-
-/* Section padding boost */
-.section          { padding: 100px 0 !important; }
-.section-tint     { padding: 100px 0 !important; }
-.section-dark     { padding: 100px 0 !important; }
-.section-contact  { padding: 100px 0 !important; }
-.section-govt     { padding: 100px 0 !important; }
-.section-ads      { padding: 88px 0 !important; }
+/* Card + section padding */
+.svc-card  { padding: 34px 28px !important; }
+.hub-card  { padding: 30px 26px !important; }
+.step      { padding: 28px 24px !important; }
+.cta-box   { padding: 42px 36px !important; }
+.form-card { padding: 32px !important; }
+.case-card { padding: 26px !important; }
+.review-card { padding: 26px !important; }
+.plan      { padding: 32px 28px !important; }
+.section          { padding: 96px 0 !important; }
+.section-tint     { padding: 96px 0 !important; }
+.section-dark     { padding: 96px 0 !important; }
+.section-contact  { padding: 96px 0 !important; }
+.section-govt     { padding: 96px 0 !important; }
+.section-ads      { padding: 80px 0 !important; }
 
 /* ================================================================
    TYPOGRAPHY MOBILE OVERRIDES
    ================================================================ */
 @media (max-width: 1100px) {
-  .nav > a, .nav-ddtrigger { font-size: 16px !important; }
-  .btn-nav { font-size: 15px !important; }
+  .nav > a, .nav-ddtrigger { font-size: 15px !important; }
+  .btn-nav { font-size: 14px !important; }
 }
-
 @media (max-width: 920px) {
-  .hero-title    { font-size: 42px !important; }
-  .hero-desc     { font-size: 18px !important; }
-  .section-title { font-size: 34px !important; }
-  .section-sub   { font-size: 18px !important; }
-  .stat-value    { font-size: 38px !important; }
-  .stat-label    { font-size: 16px !important; }
-  .page-hero h1  { font-size: 32px !important; }
-  .page-hero-desc { font-size: 18px !important; }
-  .svc-title     { font-size: 21px !important; }
-  .svc-desc      { font-size: 17px !important; }
-  .hub-card-title { font-size: 20px !important; }
+  .section-title  { font-size: 28px !important; }
+  .section-sub    { font-size: 17px !important; }
+  .page-hero-desc { font-size: 17px !important; }
+  .svc-title      { font-size: 20px !important; }
+  .svc-desc       { font-size: 16px !important; }
+  .hub-card-title { font-size: 19px !important; }
   .hub-card-desc  { font-size: 16px !important; }
-  .cta-box-title  { font-size: 24px !important; }
-  .cta-box-desc   { font-size: 17px !important; }
+  .cta-box-title  { font-size: 22px !important; }
   .faq-q          { font-size: 18px !important; }
   .faq-a p        { font-size: 16px !important; }
-  .feature-item-title { font-size: 17px !important; }
-  .section { padding: 72px 0 !important; }
-  .section-tint, .section-dark, .section-contact, .section-govt, .section-ads { padding: 72px 0 !important; }
-  .svc-card  { padding: 28px 22px !important; }
-  .hub-card  { padding: 26px 22px !important; }
-  .cta-box   { padding: 34px 26px !important; }
+  .aeo-lead       { font-size: 17px !important; }
+  .section        { padding: 68px 0 !important; }
+  .section-tint, .section-dark, .section-contact, .section-govt, .section-ads { padding: 68px 0 !important; }
+  .svc-card  { padding: 24px 20px !important; }
+  .hub-card  { padding: 22px 18px !important; }
+  .cta-box   { padding: 28px 20px !important; }
 }
-
 @media (max-width: 560px) {
-  .hero-title    { font-size: 30px !important; }
-  .hero-desc     { font-size: 16px !important; }
-  .section-title { font-size: 26px !important; }
-  .section-sub   { font-size: 17px !important; }
-  .stat-value    { font-size: 32px !important; }
-  .page-hero h1  { font-size: 26px !important; }
-  .page-hero-desc { font-size: 17px !important; }
-  .svc-title     { font-size: 20px !important; }
-  .hub-card-title { font-size: 19px !important; }
-  .cta-box-title  { font-size: 22px !important; }
-  .plan-price .amount { font-size: 34px !important; }
-  .btn         { font-size: 17px !important; padding: 14px 22px !important; }
-  .btn-primary { font-size: 17px !important; padding: 14px 22px !important; }
-  .btn-outline { font-size: 16px !important; padding: 13px 20px !important; }
-  .section { padding: 60px 0 !important; }
-  .section-tint, .section-dark, .section-contact, .section-govt, .section-ads { padding: 60px 0 !important; }
+  .section-title  { font-size: 24px !important; }
+  .svc-title      { font-size: 19px !important; }
+  .hub-card-title { font-size: 18px !important; }
+  .cta-box-title  { font-size: 19px !important; }
+  .faq-q          { font-size: 17px !important; }
+  .btn  { font-size: 16px !important; padding: 14px 20px !important; }
+  .btn-primary { font-size: 16px !important; padding: 14px 20px !important; }
+  .section        { padding: 54px 0 !important; }
+  .section-tint, .section-dark, .section-contact, .section-govt, .section-ads { padding: 54px 0 !important; }
 }
 
 /* ============ GLOBAL MOBILE SAFETY NET ============ */
