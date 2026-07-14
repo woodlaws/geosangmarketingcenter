@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>성공사례 | 거상마케팅센터</title>
+  <meta name="description" content="거상마케팅센터의 성공사례 페이지에서는 스마트플레이스, 광고상품, 홈페이지 진단, AEO·GEO, 정부지원사업 이후 마케팅 실행 등 다양한 문제를 어떻게 진단하고 개선하는지 확인할 수 있습니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://geosangmarketing.com/cases" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="성공사례 | 문제를 진단하고 개선 방향을 설계합니다" />
+  <meta property="og:description" content="거상마케팅센터는 단순 광고 집행이 아니라 검색 노출, 스마트플레이스, 콘텐츠, 홈페이지, AI 검색 관점에서 사업의 온라인 구조를 진단하고 개선합니다." />
+  <meta property="og:url" content="https://geosangmarketing.com/cases" />
+  <meta property="og:image" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:secure_url" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="거상마케팅센터" />
+    <meta property="og:site_name" content="거상마케팅센터" />
+  <meta property="og:locale" content="ko_KR" />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── cases page specific ─────────────────────────── */
+
+    /* Hero visual: before/after mockup */
+    .ba-visual {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 20px;
+      padding: 22px;
+    }
+    .ba-vis-title {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .ba-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .ba-row:last-child { margin-bottom: 0; }
+    .ba-box {
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+    .ba-box.before { background: rgba(239,68,68,.12); border: 1px solid rgba(239,68,68,.2); color: #fca5a5; }
+    .ba-box.after  { background: rgba(45,212,191,.12); border: 1px solid rgba(45,212,191,.2); color: #7ff0dd; }
+    .ba-arrow { font-size: 16px; color: #9fb3df; text-align: center; flex-shrink: 0; }
+    .ba-label { font-size: 10px; font-weight: 800; letter-spacing: .06em; margin-bottom: 4px; text-transform: uppercase; }
+    .ba-box.before .ba-label { color: #f87171; }
+    .ba-box.after .ba-label  { color: var(--teal); }
+
+    /* Why section */
+    .cases-why-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      max-width: 760px;
+      text-wrap: pretty;
+    }
+
+    /* Problem type cards */
+    .prob-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .prob-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 22px;
+      box-shadow: 0 4px 14px rgba(15,23,42,.04);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .prob-card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px rgba(26,86,219,.11); border-color: #cdddfb; }
+    .prob-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    .prob-title { font-size: 16px; font-weight: 800; color: var(--ink-2); margin-bottom: 10px; }
+    .prob-problem-label { font-size: 11px; font-weight: 800; color: #dc2626; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 5px; }
+    .prob-problem-text { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+    .prob-fix-label { font-size: 11px; font-weight: 800; color: #15803d; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 5px; }
+    .prob-fix-text { font-size: 13px; color: var(--muted); line-height: 1.65; margin-bottom: 16px; flex: 1; text-wrap: pretty; }
+    .prob-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 7px 12px;
+      border: 1.5px solid #d0dff9;
+      border-radius: 8px;
+      align-self: flex-start;
+      transition: background .15s;
+    }
+    .prob-card:hover .prob-link { background: var(--tint); border-color: var(--blue); }
+
+    /* Case cards (placeholder structure) */
+    .case-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .case-example-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15,23,42,.05);
+    }
+    .case-card-head {
+      padding: 20px 22px;
+      background: linear-gradient(135deg, #0a1d4d, #1a56db);
+      color: #fff;
+    }
+    .case-card-type {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    .case-card-title { font-size: 17px; font-weight: 800; margin: 0; }
+    .case-card-industry {
+      margin-top: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: #c4d2f0;
+      background: rgba(255,255,255,.08);
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
+    .case-card-body { padding: 20px 22px; }
+    .case-section-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .case-section-title.before { color: #dc2626; }
+    .case-section-title.diag   { color: #d97706; }
+    .case-section-title.fix    { color: #15803d; }
+    .case-section-title.after  { color: var(--blue); }
+    .case-before-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .case-before-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .case-before-list li::before {
+      content: "·";
+      color: #dc2626;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .case-diag-box {
+      background: #fff9ec;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 11px 14px;
+      font-size: 13px;
+      color: #92400e;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .case-fix-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .case-fix-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .case-fix-list li::before {
+      content: "✓";
+      color: #15803d;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .case-after-placeholder {
+      background: var(--tint);
+      border: 1px dashed #d0dff9;
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .case-after-placeholder strong { display: block; font-size: 13px; color: var(--blue); margin-bottom: 4px; }
+    .case-cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1.5px solid #d0dff9;
+      border-radius: 10px;
+      transition: background .15s, border-color .15s;
+    }
+    .case-cta-link:hover { background: var(--tint); border-color: var(--blue); }
+
+    /* Before/After comparison */
+    .ba-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .ba-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(15,23,42,.04);
+    }
+    .ba-card-before {
+      padding: 18px 20px;
+      background: #fef2f2;
+      border-bottom: 1px solid #fecaca;
+    }
+    .ba-card-label { font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 6px; }
+    .ba-card-before .ba-card-label { color: #dc2626; }
+    .ba-card-after  .ba-card-label { color: #15803d; }
+    .ba-card-text { font-size: 14px; color: var(--ink-2); line-height: 1.65; font-weight: 600; }
+    .ba-card-divider {
+      padding: 10px 20px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      font-size: 18px;
+      color: var(--blue);
+    }
+    .ba-card-after {
+      padding: 18px 20px;
+      background: #f0fdf4;
+    }
+
+    /* Common success factors */
+    .success-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .success-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      box-shadow: 0 4px 10px rgba(15,23,42,.04);
+      transition: transform .18s, border-color .18s;
+    }
+    .success-card:hover { transform: translateY(-3px); border-color: #cdddfb; }
+    .success-num { font-size: 28px; font-weight: 800; color: #e8f0fe; letter-spacing: -.04em; line-height: 1; margin-bottom: 11px; }
+    .success-title { font-size: 15px; font-weight: 800; color: var(--ink-2); margin-bottom: 8px; }
+    .success-desc { font-size: 13px; color: var(--muted); line-height: 1.68; text-wrap: pretty; }
+
+    /* Review placeholders */
+    .review-ph-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .review-ph-card {
+      background: #fff;
+      border: 1.5px dashed #d0dff9;
+      border-radius: 18px;
+      padding: 26px 22px;
+      text-align: center;
+    }
+    .review-ph-icon { font-size: 32px; margin-bottom: 14px; opacity: .4; }
+    .review-ph-title { font-size: 14px; font-weight: 800; color: #94a3b8; margin-bottom: 8px; }
+    .review-ph-fields { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+    .review-ph-field {
+      background: var(--tint);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #94a3b8;
+      text-align: left;
+    }
+    .review-ph-note { font-size: 12px; color: #b0bec5; line-height: 1.6; }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 920px) {
+      .prob-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .case-cards-grid { grid-template-columns: 1fr; gap: 18px; }
+      .ba-compare-grid { grid-template-columns: 1fr; gap: 14px; }
+      .success-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .review-ph-grid { grid-template-columns: 1fr; gap: 14px; }
+    }
+    @media (max-width: 600px) {
+      .prob-grid { grid-template-columns: 1fr; gap: 12px; }
+      .success-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+  </style>
+    <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://geosangmarketing.com/og-image.png" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img src="assets/logo-mark.png" class="brand-logo" alt="거상마케팅센터 로고" />
+        <span class="brand-text">
+          <span class="brand-name">거상마케팅센터</span>
+          <span class="brand-sub">SMARTPLACE · AEO · GEO</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="/about">센터 소개</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-ddtrigger">서비스 <span class="nav-arrow">▾</span></a>
+          <div class="nav-dd-menu">
+            <a href="/services/smartplace">📍 스마트플레이스 상위노출</a>
+            <a href="/services/aeo-geo">💬 AEO · GEO 최적화</a>
+            <a href="/services/ads">📢 광고상품 안내</a>
+            <div class="nav-dd-sep"></div>
+            <a href="/services/government-support">🏛 정부지원사업 · 희망리턴패키지</a>
+            <a href="/services/marketing-consulting">🧭 마케팅 컨설팅</a>
+            <a href="/services/website-consulting">🌐 홈페이지 · 랜딩페이지 진단</a>
+          </div>
+        </div>
+        <a href="/services/government-support">정부지원사업</a>
+        <a href="/cases">성공사례</a>
+        <a href="/insights">인사이트</a>
+        <a href="/contact" class="btn-nav">상담문의</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile">
+      <a href="/about">센터 소개</a>
+      <div class="nav-mob-group">
+        <button class="nav-mob-trigger" id="navMobSvc">서비스 <span class="nav-mob-arrow">▾</span></button>
+        <div class="nav-mob-sub" id="navMobSvcSub">
+          <a href="/services">전체 서비스 보기</a>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업 · 희망리턴패키지</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+      </div>
+      <a href="/services/government-support">정부지원사업</a>
+      <a href="/cases">성공사례</a>
+      <a href="/insights">인사이트</a>
+      <a href="/contact" class="btn-nav">상담문의</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:52px;align-items:center;position:relative;">
+        <div class="page-hero-inner" style="max-width:none;">
+          <div class="page-hero-tag">SUCCESS CASES</div>
+          <h1 style="font-size:30px;word-break:keep-all;overflow-wrap:break-word;">숫자보다 먼저 보는 것은,<br /><span style="color:var(--teal);">문제가 어디서 막혀 있었는가입니다</span></h1>
+          <p class="page-hero-desc">
+            거상마케팅센터는 단순히 광고를 집행하는 것이 아니라,
+            검색 노출, 스마트플레이스, 콘텐츠, 홈페이지, AI 검색 관점에서
+            사업의 온라인 구조를 진단하고 개선 방향을 설계합니다.
+          </p>
+          <div class="page-hero-cta">
+            <a href="/contact" class="btn-primary">무료 진단 신청하기 →</a>
+            <a href="/services" class="btn-white-outline">서비스 전체 보기</a>
+          </div>
+        </div>
+        <div class="ba-visual">
+          <div class="ba-vis-title">진단 → 개선 흐름</div>
+          <div class="ba-row">
+            <div class="ba-box before"><div class="ba-label">Before</div>검색에는 나오지만 클릭 후 이탈</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-box after"><div class="ba-label">After</div>정보·후기·CTA 정비 후 문의 증가</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-box before"><div class="ba-label">Before</div>광고비 집행 중, 전환 없음</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-box after"><div class="ba-label">After</div>랜딩 구조 개선 후 상담 연결</div>
+          </div>
+          <div class="ba-row">
+            <div class="ba-box before"><div class="ba-label">Before</div>플레이스 순위 하위권</div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-box after"><div class="ba-label">After</div>키워드·소식·리뷰 정비 후 상위 진입</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>성공사례</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 사례를 보는 기준 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">OUR PERSPECTIVE</div>
+        <h2 class="section-title">거상마케팅센터는<br />결과보다 먼저 구조를 봅니다</h2>
+      </div>
+      <div class="cases-why-text" style="text-align:center;">
+        <p>마케팅 성과는 단순히 광고비를 더 쓴다고 만들어지지 않습니다.</p>
+        <p>어떤 업체는 스마트플레이스 기본 정보가 부족하고, 어떤 업체는 리뷰와 사진은 많지만 문의 동선이 약하며, 어떤 업체는 홈페이지는 있지만 고객이 무엇을 해야 할지 알기 어렵습니다.</p>
+        <p>거상마케팅센터는 성공사례를 단순한 숫자로만 보지 않습니다. 문제가 어디서 발생했는지, 어떤 순서로 개선해야 하는지, 검색과 콘텐츠, 플레이스, 광고, 홈페이지가 어떻게 연결되어야 하는지를 함께 봅니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 대표 사례 유형 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">CASE TYPES</div>
+        <h2 class="section-title">이런 문제를 가진<br />업체들을 돕습니다</h2>
+      </div>
+      <div class="prob-grid">
+        <div class="prob-card">
+          <div class="prob-icon" style="background:#e8f0fe;">📍</div>
+          <div class="prob-title">스마트플레이스 노출이 약한 지역 매장</div>
+          <div class="prob-problem-label">문제</div>
+          <div class="prob-problem-text">검색했을 때 경쟁 업체는 보이는데 우리 매장은 잘 보이지 않는 상황</div>
+          <div class="prob-fix-label">개선 방향</div>
+          <div class="prob-fix-text">업체 정보, 카테고리, 키워드, 사진, 소식, 리뷰 흐름을 점검하고 플레이스 노출 구조를 개선합니다.</div>
+          <a href="/services/smartplace" class="prob-link">스마트플레이스 상위노출 →</a>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon" style="background:#fff7ed;">📢</div>
+          <div class="prob-title">광고비는 쓰는데 문의가 부족한 업체</div>
+          <div class="prob-problem-label">문제</div>
+          <div class="prob-problem-text">광고 유입은 있지만 전화, 카카오톡, 상담 신청으로 이어지지 않는 상황</div>
+          <div class="prob-fix-label">개선 방향</div>
+          <div class="prob-fix-text">광고상품 선택, 랜딩페이지, 상담 버튼, 문의 동선, 후기 콘텐츠를 함께 점검합니다.</div>
+          <a href="/services/ads" class="prob-link">광고상품 안내 →</a>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon" style="background:#f8fafc;">🌐</div>
+          <div class="prob-title">홈페이지는 있지만 전환이 약한 업체</div>
+          <div class="prob-problem-label">문제</div>
+          <div class="prob-problem-text">홈페이지는 있으나 고객이 무엇을 하는 회사인지 빠르게 이해하지 못하고 이탈하는 상황</div>
+          <div class="prob-fix-label">개선 방향</div>
+          <div class="prob-fix-text">첫 화면 메시지, 서비스 구조, CTA, 모바일 사용성, SEO/GEO 정보 구조를 진단합니다.</div>
+          <a href="/services/website-consulting" class="prob-link">홈페이지 진단 →</a>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon" style="background:#f0fdf4;">🏛</div>
+          <div class="prob-title">정부지원사업 이후 실행이 막힌 소상공인</div>
+          <div class="prob-problem-label">문제</div>
+          <div class="prob-problem-text">지원사업은 참여했지만 실제 고객 유입과 매출 연결을 어떻게 해야 할지 모르는 상황</div>
+          <div class="prob-fix-label">개선 방향</div>
+          <div class="prob-fix-text">현재 사업 상태와 지원사업 목적에 맞춰 스마트플레이스, 콘텐츠, 광고 실행 방향을 정리합니다.</div>
+          <a href="/services/government-support" class="prob-link">정부지원사업 →</a>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon" style="background:#eafaf6;">💬</div>
+          <div class="prob-title">AI 검색 시대 대응이 필요한 사업자</div>
+          <div class="prob-problem-label">문제</div>
+          <div class="prob-problem-text">네이버 검색뿐 아니라 AI가 우리 사업을 어떻게 이해할지 고민되는 상황</div>
+          <div class="prob-fix-label">개선 방향</div>
+          <div class="prob-fix-text">업체 정보, FAQ, 서비스 설명, 지역 정보, 콘텐츠 주제를 AEO·GEO 관점에서 정리합니다.</div>
+          <a href="/services/aeo-geo" class="prob-link">AEO · GEO 최적화 →</a>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon" style="background:#eef0ff;">🧭</div>
+          <div class="prob-title">무엇부터 해야 할지 모르는 대표님</div>
+          <div class="prob-problem-label">문제</div>
+          <div class="prob-problem-text">블로그, 광고, SNS, 플레이스, 홈페이지 중 무엇을 먼저 해야 할지 판단이 어려운 상황</div>
+          <div class="prob-fix-label">개선 방향</div>
+          <div class="prob-fix-text">전체 마케팅 구조를 진단하고 지금 가장 먼저 실행해야 할 우선순위를 제안합니다.</div>
+          <a href="/services/marketing-consulting" class="prob-link">마케팅 컨설팅 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 진행 사례 예시 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">CASE EXAMPLES</div>
+        <h2 class="section-title">진행 사례 예시</h2>
+        <p class="section-sub">실제 진행 사례를 바탕으로 구성한 예시입니다. 업체명과 수치는 추후 업데이트됩니다.</p>
+      </div>
+      <div class="case-cards-grid">
+
+        <!-- Case 1 -->
+        <div class="case-example-card">
+          <div class="case-card-head">
+            <div class="case-card-type">SMARTPLACE</div>
+            <div class="case-card-title">지역 매장 스마트플레이스 개선 사례</div>
+            <div class="case-card-industry">🏪 지역 기반 매장</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-section-title before">Before — 문제 상황</div>
+            <ul class="case-before-list">
+              <li>플레이스 기본 정보가 부족함</li>
+              <li>사진과 소식 업데이트가 거의 없음</li>
+              <li>고객이 문의할 이유가 명확하지 않음</li>
+            </ul>
+            <div class="case-section-title diag">진단</div>
+            <div class="case-diag-box">검색 노출보다 먼저 플레이스 정보 완성도와 고객 신뢰 요소가 부족한 상태</div>
+            <div class="case-section-title fix">개선 방향</div>
+            <ul class="case-fix-list">
+              <li>카테고리와 키워드 재정리</li>
+              <li>대표 사진과 서비스 사진 보강</li>
+              <li>소식 콘텐츠 운영</li>
+              <li>리뷰와 후기 흐름 점검</li>
+              <li>전화·예약·문의 동선 개선</li>
+            </ul>
+            <div class="case-section-title after">After — 결과</div>
+            <div class="case-after-placeholder">
+              <strong>결과 수치 업데이트 예정</strong>
+              실제 진행 후 고객 동의를 받아 구체적인 수치를 공개할 예정입니다.
+            </div>
+            <a href="/contact" class="case-cta-link">비슷한 문제 상담하기 →</a>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-example-card">
+          <div class="case-card-head">
+            <div class="case-card-type">AD CONVERSION</div>
+            <div class="case-card-title">광고 유입 후 문의 전환 개선 사례</div>
+            <div class="case-card-industry">💼 서비스업 · 상담형 업종</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-section-title before">Before — 문제 상황</div>
+            <ul class="case-before-list">
+              <li>광고 클릭은 발생하지만 문의가 부족함</li>
+              <li>랜딩페이지 메시지가 불명확함</li>
+              <li>상담 버튼이 눈에 잘 띄지 않음</li>
+            </ul>
+            <div class="case-section-title diag">진단</div>
+            <div class="case-diag-box">광고 문제가 아니라 유입 후 전환 구조가 약한 상태</div>
+            <div class="case-section-title fix">개선 방향</div>
+            <ul class="case-fix-list">
+              <li>첫 화면 핵심 문구 정리</li>
+              <li>상담 CTA 위치 개선</li>
+              <li>고객 질문 기반 FAQ 추가</li>
+              <li>후기·사례 콘텐츠 보강</li>
+              <li>광고 유입 페이지 분리 제안</li>
+            </ul>
+            <div class="case-section-title after">After — 결과</div>
+            <div class="case-after-placeholder">
+              <strong>결과 수치 업데이트 예정</strong>
+              실제 진행 후 고객 동의를 받아 구체적인 수치를 공개할 예정입니다.
+            </div>
+            <a href="/contact" class="case-cta-link">문의 전환 구조 진단받기 →</a>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="case-example-card">
+          <div class="case-card-head">
+            <div class="case-card-type">GOVERNMENT SUPPORT</div>
+            <div class="case-card-title">정부지원사업 이후 마케팅 실행 사례</div>
+            <div class="case-card-industry">🏛 소상공인 · 자영업자</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-section-title before">Before — 문제 상황</div>
+            <ul class="case-before-list">
+              <li>지원사업은 참여했지만 이후 마케팅 실행 계획이 없음</li>
+              <li>스마트플레이스, 블로그, SNS가 따로 운영됨</li>
+              <li>고객 유입 경로가 정리되어 있지 않음</li>
+            </ul>
+            <div class="case-section-title diag">진단</div>
+            <div class="case-diag-box">지원사업 이후 실행 우선순위와 채널 연결 구조가 부족한 상태</div>
+            <div class="case-section-title fix">개선 방향</div>
+            <ul class="case-fix-list">
+              <li>사업 상태 진단</li>
+              <li>플레이스 기본 세팅 점검</li>
+              <li>콘텐츠 주제 제안</li>
+              <li>광고상품 우선순위 정리</li>
+              <li>30일 실행 계획 제안</li>
+            </ul>
+            <div class="case-section-title after">After — 결과</div>
+            <div class="case-after-placeholder">
+              <strong>결과 수치 업데이트 예정</strong>
+              실제 진행 후 고객 동의를 받아 구체적인 수치를 공개할 예정입니다.
+            </div>
+            <a href="/contact" class="case-cta-link">지원사업 이후 마케팅 상담하기 →</a>
+          </div>
+        </div>
+
+        <!-- Case 4 -->
+        <div class="case-example-card">
+          <div class="case-card-head">
+            <div class="case-card-type">AEO · GEO</div>
+            <div class="case-card-title">AEO · GEO 정보 구조 개선 사례</div>
+            <div class="case-card-industry">🎓 전문가형 사업 · 교육 · 컨설팅</div>
+          </div>
+          <div class="case-card-body">
+            <div class="case-section-title before">Before — 문제 상황</div>
+            <ul class="case-before-list">
+              <li>홈페이지와 SNS에 정보는 많지만 핵심 서비스가 불명확함</li>
+              <li>고객이 자주 묻는 질문에 대한 답변 콘텐츠가 부족함</li>
+              <li>AI가 이해하기 쉬운 정보 구조가 부족함</li>
+            </ul>
+            <div class="case-section-title diag">진단</div>
+            <div class="case-diag-box">사업의 전문성은 있으나 정보 구조와 콘텐츠 방향이 정리되지 않은 상태</div>
+            <div class="case-section-title fix">개선 방향</div>
+            <ul class="case-fix-list">
+              <li>브랜드 엔티티 정리</li>
+              <li>대표 서비스와 대상 고객 정리</li>
+              <li>FAQ 콘텐츠 설계</li>
+              <li>서비스 설명 구조화</li>
+              <li>AI 검색 대응 콘텐츠 주제 제안</li>
+            </ul>
+            <div class="case-section-title after">After — 결과</div>
+            <div class="case-after-placeholder">
+              <strong>결과 수치 업데이트 예정</strong>
+              실제 진행 후 고객 동의를 받아 구체적인 수치를 공개할 예정입니다.
+            </div>
+            <a href="/contact" class="case-cta-link">AI 검색 진단받기 →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Before / After 구조 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">BEFORE · AFTER</div>
+        <h2 class="section-title">우리는 Before와 After를<br />이렇게 봅니다</h2>
+      </div>
+      <div class="ba-compare-grid">
+        <div class="ba-card">
+          <div class="ba-card-before">
+            <div class="ba-card-label">Before</div>
+            <div class="ba-card-text">검색은 되지만 고객이 선택할 이유가 부족한 상태</div>
+          </div>
+          <div class="ba-card-divider">↓</div>
+          <div class="ba-card-after">
+            <div class="ba-card-label">After</div>
+            <div class="ba-card-text">검색 결과에서 정보, 사진, 후기, 콘텐츠가 함께 정리되어 신뢰를 주는 상태</div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-card-before">
+            <div class="ba-card-label">Before</div>
+            <div class="ba-card-text">광고는 하지만 문의 전환 구조가 약한 상태</div>
+          </div>
+          <div class="ba-card-divider">↓</div>
+          <div class="ba-card-after">
+            <div class="ba-card-label">After</div>
+            <div class="ba-card-text">광고 유입 후 고객이 상담, 전화, 카카오톡 문의로 자연스럽게 이동하는 상태</div>
+          </div>
+        </div>
+        <div class="ba-card">
+          <div class="ba-card-before">
+            <div class="ba-card-label">Before</div>
+            <div class="ba-card-text">홈페이지, 블로그, 플레이스, SNS가 각각 따로 말하는 상태</div>
+          </div>
+          <div class="ba-card-divider">↓</div>
+          <div class="ba-card-after">
+            <div class="ba-card-label">After</div>
+            <div class="ba-card-text">모든 채널이 같은 메시지와 정보 구조로 연결되어 고객과 AI가 이해하기 쉬운 상태</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 성과를 만드는 공통 요소 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">SUCCESS FACTORS</div>
+        <h2 class="section-title">성과를 만드는<br />공통 요소는 따로 있습니다</h2>
+      </div>
+      <div class="success-grid">
+        <div class="success-card">
+          <div class="success-num">01</div>
+          <div class="success-title">명확한 업체 정보</div>
+          <div class="success-desc">업체명, 위치, 연락처, 영업시간, 주요 서비스가 일관되게 정리되어야 합니다.</div>
+        </div>
+        <div class="success-card">
+          <div class="success-num">02</div>
+          <div class="success-title">고객 질문에 대한 답변</div>
+          <div class="success-desc">고객이 실제로 궁금해하는 질문에 답하는 콘텐츠가 있어야 합니다.</div>
+        </div>
+        <div class="success-card">
+          <div class="success-num">03</div>
+          <div class="success-title">신뢰를 만드는 후기와 사례</div>
+          <div class="success-desc">리뷰, 이용 사례, Before/After는 고객의 선택을 돕습니다.</div>
+        </div>
+        <div class="success-card">
+          <div class="success-num">04</div>
+          <div class="success-title">문의로 이어지는 CTA</div>
+          <div class="success-desc">전화, 예약, 카카오톡, 상담 폼이 자연스럽게 배치되어야 합니다.</div>
+        </div>
+        <div class="success-card">
+          <div class="success-num">05</div>
+          <div class="success-title">채널 간 연결성</div>
+          <div class="success-desc">플레이스, 블로그, 홈페이지, SNS가 같은 방향으로 연결되어야 합니다.</div>
+        </div>
+        <div class="success-card">
+          <div class="success-num">06</div>
+          <div class="success-title">꾸준한 개선</div>
+          <div class="success-desc">한 번의 광고보다 중요한 것은 반응을 확인하고 반복 개선하는 구조입니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 고객 후기 placeholder ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">CUSTOMER REVIEWS</div>
+        <h2 class="section-title">고객 후기</h2>
+        <p class="section-sub">실제 고객 후기 준비 중입니다. 추후 상담 및 프로젝트 완료 후 고객 동의를 받아 업데이트할 예정입니다.</p>
+      </div>
+      <div class="review-ph-grid">
+        <div class="review-ph-card">
+          <div class="review-ph-icon">💬</div>
+          <div class="review-ph-title">고객 후기 준비 중</div>
+          <div class="review-ph-fields">
+            <div class="review-ph-field">고객명 또는 업체명 입력 예정</div>
+            <div class="review-ph-field">업종 입력 예정</div>
+            <div class="review-ph-field">상담 전 고민 입력 예정</div>
+            <div class="review-ph-field">진행 후 느낀 점 입력 예정</div>
+          </div>
+          <div class="review-ph-note">고객 동의 후 실제 후기로 업데이트됩니다.</div>
+        </div>
+        <div class="review-ph-card">
+          <div class="review-ph-icon">💬</div>
+          <div class="review-ph-title">고객 후기 준비 중</div>
+          <div class="review-ph-fields">
+            <div class="review-ph-field">고객명 또는 업체명 입력 예정</div>
+            <div class="review-ph-field">업종 입력 예정</div>
+            <div class="review-ph-field">상담 전 고민 입력 예정</div>
+            <div class="review-ph-field">진행 후 느낀 점 입력 예정</div>
+          </div>
+          <div class="review-ph-note">고객 동의 후 실제 후기로 업데이트됩니다.</div>
+        </div>
+        <div class="review-ph-card">
+          <div class="review-ph-icon">💬</div>
+          <div class="review-ph-title">고객 후기 준비 중</div>
+          <div class="review-ph-fields">
+            <div class="review-ph-field">고객명 또는 업체명 입력 예정</div>
+            <div class="review-ph-field">업종 입력 예정</div>
+            <div class="review-ph-field">상담 전 고민 입력 예정</div>
+            <div class="review-ph-field">진행 후 느낀 점 입력 예정</div>
+          </div>
+          <div class="review-ph-note">고객 동의 후 실제 후기로 업데이트됩니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 관련 서비스 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">RELATED SERVICES</div>
+        <h2 class="section-title">사례와 연결되는<br />주요 서비스</h2>
+      </div>
+      <div class="hub-grid">
+        <a href="/services/smartplace" class="hub-card">
+          <div class="hub-card-icon" style="background:#e8f0fe;">📍</div>
+          <div class="hub-card-tag">SMARTPLACE</div>
+          <div class="hub-card-title">스마트플레이스 상위노출</div>
+          <div class="hub-card-desc">네이버와 지도 검색에서 먼저 발견되는 구조를 만듭니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/marketing-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#eef0ff;">🧭</div>
+          <div class="hub-card-tag">CONSULTING</div>
+          <div class="hub-card-title">마케팅 컨설팅</div>
+          <div class="hub-card-desc">현재 온라인 노출 구조와 문의 전환 구조를 먼저 진단합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/ads" class="hub-card">
+          <div class="hub-card-icon" style="background:#fff7ed;">📢</div>
+          <div class="hub-card-tag">ADS</div>
+          <div class="hub-card-title">광고상품 안내</div>
+          <div class="hub-card-desc">필요한 광고와 콘텐츠를 업종에 맞게 설계합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/aeo-geo" class="hub-card">
+          <div class="hub-card-icon" style="background:#eafaf6;">💬</div>
+          <div class="hub-card-tag">AEO · GEO</div>
+          <div class="hub-card-title">AEO · GEO 최적화</div>
+          <div class="hub-card-desc">AI와 검색엔진이 이해하기 쉬운 사업 정보 구조를 정리합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/government-support" class="hub-card">
+          <div class="hub-card-icon" style="background:#f0fdf4;">🏛</div>
+          <div class="hub-card-tag">GOVERNMENT SUPPORT</div>
+          <div class="hub-card-title">정부지원사업 · 희망리턴패키지</div>
+          <div class="hub-card-desc">지원사업 이후 실제 마케팅 실행까지 연결합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/website-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#f8fafc;">🌐</div>
+          <div class="hub-card-tag">WEBSITE CONSULTING</div>
+          <div class="hub-card-title">홈페이지 · 랜딩페이지 진단</div>
+          <div class="hub-card-desc">문의 전환 구조와 정보 구조를 점검하고 필요한 경우 제작 파트너와 연계합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section section-tint">
+    <div class="container container-narrow">
+      <div class="cta-box">
+        <div class="cta-box-title">우리 사업도 어디서 막혀 있는지<br />먼저 진단해보세요</div>
+        <div class="cta-box-desc">
+          검색 노출이 문제인지, 문의 전환이 문제인지, 콘텐츠가 부족한지,<br />
+          현재 온라인 구조를 먼저 점검하면 실행 우선순위가 보입니다.
+        </div>
+        <div class="cta-box-btns">
+          <a href="/contact" class="btn-teal">무료 진단 신청하기 →</a>
+          <a href="/services/marketing-consulting" class="btn-white-outline">마케팅 구조 진단하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo-mark.png" class="brand-logo sm" alt="거상마케팅센터 로고" />
+          <span>거상마케팅센터</span>
+        </div>
+        <p class="footer-meta">
+          네이버 스마트플레이스 · AEO · GEO 전문 마케팅 대행사<br />
+          대표 임헌수 | 사업자등록번호 711-86-01966<br />
+          서울시 강남구 테헤란로 313, 915호
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="fc-title">서비스</span>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">회사</span>
+          <a href="/about">센터 소개</a>
+          <a href="/cases">성공사례</a>
+          <a href="/insights">마케팅 인사이트</a>
+          <a href="/contact">상담문의</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">상담</span>
+          <span>📞 010-3422-8075</span>
+          <span>💬 카카오톡 @거상마케팅센터</span>
+          <span>평일 09:00–18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

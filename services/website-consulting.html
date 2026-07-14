@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>홈페이지 · 랜딩페이지 진단 및 제작 연계 | 거상마케팅센터</title>
+  <meta name="description" content="거상마케팅센터는 홈페이지와 랜딩페이지를 단순 제작물로 보지 않고, 문의 전환 구조, SEO, AEO·GEO 정보 구조, 모바일 사용성, 광고 유입 동선을 먼저 진단한 뒤 필요한 경우 검증된 제작 파트너와 연계합니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://geosangmarketing.com/services/website-consulting" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="홈페이지 진단 및 제작 연계 | 문의가 들어오는 구조를 먼저 봅니다" />
+  <meta property="og:description" content="예쁜 홈페이지보다 중요한 것은 고객이 문의하게 만드는 구조입니다." />
+  <meta property="og:url" content="https://geosangmarketing.com/services/website-consulting" />
+  <meta property="og:image" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:secure_url" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="거상마케팅센터" />
+    <meta property="og:site_name" content="거상마케팅센터" />
+  <meta property="og:locale" content="ko_KR" />
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── website-consulting page specific ───────────── */
+    .page-hero h1 {
+      font-size: 30px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* Hero visual — website wireframe mockup */
+    .site-mockup {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 24px 60px rgba(3,12,40,.45);
+      overflow: hidden;
+      color: var(--ink);
+    }
+    .mockup-bar {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 14px;
+      background: #f1f4f9;
+      border-bottom: 1px solid var(--border);
+    }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-url {
+      flex: 1;
+      height: 22px;
+      background: #fff;
+      border-radius: 5px;
+      margin: 0 8px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      font-size: 11px;
+      color: #64748b;
+    }
+    .mockup-body { padding: 16px; }
+    .mockup-hero-strip {
+      background: linear-gradient(135deg, #0a1d4d, #1a56db);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .mockup-hero-title { font-size: 13px; font-weight: 800; margin-bottom: 4px; }
+    .mockup-hero-sub { font-size: 11px; color: #c4d2f0; margin-bottom: 10px; }
+    .mockup-btns { display: flex; gap: 7px; }
+    .mockup-btn {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 5px 11px;
+      border-radius: 6px;
+    }
+    .mockup-btn.primary { background: #fff; color: var(--blue); }
+    .mockup-btn.ghost { background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+    .mockup-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .mockup-card {
+      background: var(--tint);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .mockup-card-label { font-size: 10px; font-weight: 800; color: var(--blue); margin-bottom: 4px; }
+    .mockup-card-text { font-size: 10px; color: var(--muted); line-height: 1.4; }
+    .mockup-badge {
+      position: absolute;
+      bottom: -12px;
+      right: -10px;
+    }
+    .diag-result-badge {
+      background: var(--navy);
+      border: 1px solid rgba(127,176,255,.3);
+      border-radius: 12px;
+      padding: 11px 15px;
+      color: #fff;
+      font-size: 12px;
+    }
+    .diag-result-badge-title { font-weight: 800; color: var(--teal); margin-bottom: 5px; }
+    .diag-result-item { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; font-size: 11px; color: #c4d2f0; }
+
+    /* Why section */
+    .wc-why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .wc-why-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      text-wrap: pretty;
+    }
+    .site-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .site-flow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 14px 16px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+    .site-flow-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .site-flow-title { font-size: 14px; font-weight: 800; color: var(--ink-2); margin-bottom: 2px; }
+    .site-flow-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* Checklist */
+    .wc-check-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+    }
+    .wc-check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      transition: border-color .15s;
+    }
+    .wc-check-item:hover { border-color: #cdddfb; }
+    .wc-check-q {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #fff3f3;
+      color: #dc2626;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .wc-check-text { font-size: 14px; font-weight: 600; color: var(--ink-2); line-height: 1.55; }
+
+    /* Diagnosis 8 cards */
+    .wc-diag-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .wc-diag-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 18px;
+      box-shadow: 0 4px 10px rgba(15,23,42,.04);
+      transition: transform .18s, border-color .18s;
+    }
+    .wc-diag-card:hover { transform: translateY(-3px); border-color: #cdddfb; }
+    .wc-diag-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .wc-diag-title { font-size: 14px; font-weight: 800; color: var(--ink-2); margin-bottom: 7px; }
+    .wc-diag-desc { font-size: 12px; color: var(--muted); line-height: 1.65; text-wrap: pretty; }
+
+    /* Question cards */
+    .q-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .q-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      box-shadow: 0 4px 12px rgba(15,23,42,.04);
+      transition: transform .18s, border-color .18s;
+    }
+    .q-card:hover { transform: translateY(-3px); border-color: #cdddfb; }
+    .q-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: #e8f0fe;
+      letter-spacing: -.04em;
+      line-height: 1;
+      margin-bottom: 11px;
+    }
+    .q-title { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 9px; }
+    .q-desc { font-size: 13px; color: var(--muted); line-height: 1.68; text-wrap: pretty; }
+
+    /* 5-step timeline (vertical, reusing aeo-geo style) */
+    .timeline5 { display: flex; flex-direction: column; gap: 0; }
+    .tl5-item {
+      display: flex;
+      gap: 22px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .tl5-item:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 23px;
+      top: 48px;
+      width: 2px;
+      height: calc(100%);
+      background: linear-gradient(180deg, var(--blue), #93c5fd);
+      z-index: 0;
+    }
+    .tl5-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 800;
+      flex-shrink: 0;
+      box-shadow: 0 6px 18px rgba(26,86,219,.28);
+      position: relative;
+      z-index: 1;
+    }
+    .tl5-body { padding-bottom: 32px; flex: 1; }
+    .tl5-item:last-child .tl5-body { padding-bottom: 0; }
+    .tl5-step { font-size: 11px; font-weight: 800; color: var(--blue); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; }
+    .tl5-title { font-size: 17px; font-weight: 800; color: var(--ink-2); margin-bottom: 7px; }
+    .tl5-desc { font-size: 14px; color: var(--muted); line-height: 1.68; text-wrap: pretty; }
+
+    /* Production approach section */
+    .wc-approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .wc-approach-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      text-wrap: pretty;
+    }
+    .wc-approach-points {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .wc-approach-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      background: var(--tint);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .wc-ap-icon { font-size: 18px; flex-shrink: 0; }
+    .wc-ap-title { font-size: 14px; font-weight: 800; color: var(--ink-2); margin-bottom: 2px; }
+    .wc-ap-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+    .wc-caution {
+      margin-top: 16px;
+      padding: 13px 16px;
+      background: #fff9ec;
+      border: 1px solid #fde68a;
+      border-radius: 11px;
+      font-size: 13px;
+      color: #92400e;
+      line-height: 1.65;
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+    }
+
+    /* Outcome grid */
+    .wc-outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .wc-outcome-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+    .wc-outcome-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .wc-outcome-text { font-size: 14px; font-weight: 600; color: var(--ink-2); line-height: 1.55; }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 920px) {
+      .page-hero [style*="grid-template-columns:1.1fr"] { grid-template-columns: 1fr !important; gap: 36px !important; }
+      .wc-why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .wc-check-grid { grid-template-columns: 1fr; gap: 10px; }
+      .wc-diag-grid { grid-template-columns: 1fr 1fr; gap: 13px; }
+      .q-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .wc-approach-grid { grid-template-columns: 1fr; gap: 40px; }
+      .wc-outcome-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .wc-related-grid { grid-template-columns: 1fr 1fr !important; gap: 14px !important; }
+    }
+    @media (max-width: 600px) {
+      .wc-diag-grid { grid-template-columns: 1fr; gap: 11px; }
+      .q-grid { grid-template-columns: 1fr; gap: 12px; }
+      .wc-outcome-grid { grid-template-columns: 1fr; gap: 11px; }
+      .wc-related-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+    }
+  </style>
+    <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://geosangmarketing.com/og-image.png" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img src="../assets/logo-mark.png" class="brand-logo" alt="거상마케팅센터 로고" />
+        <span class="brand-text">
+          <span class="brand-name">거상마케팅센터</span>
+          <span class="brand-sub">SMARTPLACE · AEO · GEO</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="/about">센터 소개</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-ddtrigger">서비스 <span class="nav-arrow">▾</span></a>
+          <div class="nav-dd-menu">
+            <a href="/services/smartplace">📍 스마트플레이스 상위노출</a>
+            <a href="/services/aeo-geo">💬 AEO · GEO 최적화</a>
+            <a href="/services/ads">📢 광고상품 안내</a>
+            <div class="nav-dd-sep"></div>
+            <a href="/services/government-support">🏛 정부지원사업 · 희망리턴패키지</a>
+            <a href="/services/marketing-consulting">🧭 마케팅 컨설팅</a>
+            <a href="/services/website-consulting">🌐 홈페이지 · 랜딩페이지 진단</a>
+          </div>
+        </div>
+        <a href="/services/government-support">정부지원사업</a>
+        <a href="/cases">성공사례</a>
+        <a href="/insights">인사이트</a>
+        <a href="/contact" class="btn-nav">상담문의</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile">
+      <a href="/about">센터 소개</a>
+      <div class="nav-mob-group">
+        <button class="nav-mob-trigger" id="navMobSvc">서비스 <span class="nav-mob-arrow">▾</span></button>
+        <div class="nav-mob-sub" id="navMobSvcSub">
+          <a href="/services">전체 서비스 보기</a>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업 · 희망리턴패키지</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+      </div>
+      <a href="/services/government-support">정부지원사업</a>
+      <a href="/cases">성공사례</a>
+      <a href="/insights">인사이트</a>
+      <a href="/contact" class="btn-nav">상담문의</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:52px;align-items:center;position:relative;">
+        <div class="page-hero-inner" style="max-width:none;">
+          <div class="page-hero-tag">WEBSITE CONSULTING</div>
+          <h1>예쁜 홈페이지보다 중요한 것은<br /><span style="color:var(--teal);">고객이 문의하게 만드는 구조입니다</span></h1>
+          <p class="page-hero-desc">
+            거상마케팅센터는 홈페이지를 단순 제작물로 보지 않습니다.
+            검색에서 발견되고, AI가 이해하고, 고객이 문의할 수 있는 구조를 먼저 진단합니다.
+            실제 제작이 필요한 경우 검증된 파트너와 연계하여 진행합니다.
+          </p>
+          <div class="page-hero-cta">
+            <a href="/contact" class="btn-primary">홈페이지 구조 진단받기 →</a>
+            <a href="/services/marketing-consulting" class="btn-white-outline">마케팅 구조 진단하기</a>
+          </div>
+        </div>
+        <!-- Hero visual: site mockup with diagnosis badge -->
+        <div style="position:relative;">
+          <div class="site-mockup">
+            <div class="mockup-bar">
+              <div class="mockup-dot" style="background:#f87171;"></div>
+              <div class="mockup-dot" style="background:#fbbf24;"></div>
+              <div class="mockup-dot" style="background:#4ade80;"></div>
+              <div class="mockup-url">geosangmarketing.com</div>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-hero-strip">
+                <div class="mockup-hero-title">우리 가게가 먼저 보이게</div>
+                <div class="mockup-hero-sub">스마트플레이스 · AEO · GEO 전문</div>
+                <div class="mockup-btns">
+                  <div class="mockup-btn primary">무료 진단</div>
+                  <div class="mockup-btn ghost">서비스 보기</div>
+                </div>
+              </div>
+              <div style="height:10px;"></div>
+              <div class="mockup-cards">
+                <div class="mockup-card">
+                  <div class="mockup-card-label">검색 노출 구조</div>
+                  <div class="mockup-card-text">검색에서 먼저 보이는가</div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-card-label">문의 전환 구조</div>
+                  <div class="mockup-card-text">버튼은 명확한가</div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-card-label">SEO / GEO</div>
+                  <div class="mockup-card-text">AI가 이해하는가</div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-card-label">모바일 사용성</div>
+                  <div class="mockup-card-text">모바일에서 깨지지 않는가</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;bottom:-14px;right:-10px;">
+            <div class="diag-result-badge">
+              <div class="diag-result-badge-title">진단 결과</div>
+              <div class="diag-result-item"><span style="color:#f87171;">●</span> 문의 버튼 부족</div>
+              <div class="diag-result-item"><span style="color:#fbbf24;">●</span> SEO 구조 미흡</div>
+              <div class="diag-result-item"><span style="color:#4ade80;">●</span> 모바일 정상</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/services">서비스</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>홈페이지 · 랜딩페이지 진단 및 제작 연계</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 왜 진단이 먼저인가 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="wc-why-grid">
+        <div class="wc-why-text">
+          <div class="eyebrow">WHY DIAGNOSIS FIRST</div>
+          <h2 class="section-title left">홈페이지는 만드는 것보다,<br />먼저 구조를 봐야 합니다</h2>
+          <p>많은 대표님들이 홈페이지가 필요하다고 생각하면 바로 제작부터 고민합니다. 하지만 홈페이지를 새로 만드는 것보다 먼저 확인해야 할 것이 있습니다.</p>
+          <p>고객이 어떤 검색어로 들어오는지, 첫 화면에서 무엇을 이해하는지, 어디서 신뢰를 느끼는지, 어떤 버튼을 눌러 문의하게 되는지, AI와 검색엔진이 우리 사업 정보를 제대로 이해할 수 있는지부터 점검해야 합니다.</p>
+          <p>구조 없이 만든 홈페이지는 예쁘게 보여도 문의로 이어지지 않습니다. 거상마케팅센터는 홈페이지를 만들기 전에 검색 노출, 정보 구조, 고객 동선, 상담 전환 흐름을 먼저 진단합니다.</p>
+        </div>
+        <div class="site-flow">
+          <div class="site-flow-step">
+            <div class="site-flow-icon" style="background:#e8f0fe;">🔍</div>
+            <div>
+              <div class="site-flow-title">검색에서 발견되는가</div>
+              <div class="site-flow-desc">네이버·구글 검색, 지도, AI 검색에서 우리 사업이 보이는가</div>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:18px;color:#cbd5e1;">↓</div>
+          <div class="site-flow-step">
+            <div class="site-flow-icon" style="background:#fef9ec;">👁️</div>
+            <div>
+              <div class="site-flow-title">첫 화면에서 이해되는가</div>
+              <div class="site-flow-desc">3초 안에 무엇을 하는 곳인지 방문자가 파악할 수 있는가</div>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:18px;color:#cbd5e1;">↓</div>
+          <div class="site-flow-step">
+            <div class="site-flow-icon" style="background:#f0fdf4;">🤝</div>
+            <div>
+              <div class="site-flow-title">신뢰를 주는가</div>
+              <div class="site-flow-desc">후기, 사례, 대표 소개, FAQ가 신뢰를 형성하는가</div>
+            </div>
+          </div>
+          <div style="text-align:center;font-size:18px;color:#cbd5e1;">↓</div>
+          <div class="site-flow-step">
+            <div class="site-flow-icon" style="background:#eafaf6;">📞</div>
+            <div>
+              <div class="site-flow-title">문의로 이어지는가</div>
+              <div class="site-flow-desc">상담 버튼, 전화, 카카오톡 문의 경로가 명확한가</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 이런 문제가 있다면 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">DO YOU HAVE THESE PROBLEMS?</div>
+        <h2 class="section-title">홈페이지는 있는데 문의가 없다면,<br />이유가 있습니다</h2>
+      </div>
+      <div class="wc-check-grid">
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">홈페이지는 있지만 실제 문의가 거의 없다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">광고를 해도 홈페이지에서 고객이 이탈한다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">첫 화면에서 무엇을 하는 회사인지 잘 전달되지 않는다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">서비스 설명이 길지만 고객이 이해하기 어렵다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">상담 버튼, 전화 버튼, 카카오톡 문의 버튼이 약하다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">모바일에서 화면이 깨지거나 보기 불편하다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">네이버나 구글에서 업체 정보가 잘 검색되지 않는다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">AI가 우리 사업을 설명할 수 있을 만큼 정보가 정리되어 있지 않다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">홈페이지, 블로그, 스마트플레이스의 설명이 서로 다르다</div>
+        </div>
+        <div class="wc-check-item">
+          <div class="wc-check-q">?</div>
+          <div class="wc-check-text">홈페이지를 새로 만들어야 할지, 기존 것을 고쳐야 할지 모르겠다</div>
+        </div>
+      </div>
+      <div style="margin-top:28px;text-align:center;">
+        <a href="/contact" class="btn-primary">하나라도 해당된다면 무료 진단 신청하기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 진단 영역 8개 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">DIAGNOSIS AREAS</div>
+        <h2 class="section-title">거상마케팅센터는<br />이 부분을 먼저 점검합니다</h2>
+      </div>
+      <div class="wc-diag-grid">
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#e8f0fe;">💬</div>
+          <div class="wc-diag-title">첫 화면 메시지</div>
+          <div class="wc-diag-desc">방문자가 3초 안에 무엇을 하는 회사인지 이해할 수 있는지 점검합니다.</div>
+        </div>
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#eafaf6;">📞</div>
+          <div class="wc-diag-title">문의 전환 구조</div>
+          <div class="wc-diag-desc">전화, 카카오톡, 상담 폼, 무료 진단 신청 버튼이 자연스럽게 배치되어 있는지 확인합니다.</div>
+        </div>
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#fef9ec;">📋</div>
+          <div class="wc-diag-title">서비스 정보 구조</div>
+          <div class="wc-diag-desc">서비스가 고객 입장에서 이해하기 쉽게 정리되어 있는지, 상세 페이지가 필요한지 점검합니다.</div>
+        </div>
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#fdf4ff;">📱</div>
+          <div class="wc-diag-title">모바일 사용성</div>
+          <div class="wc-diag-desc">모바일에서 글자, 버튼, 카드, 이미지, 상담 폼이 깨지지 않고 잘 보이는지 확인합니다.</div>
+        </div>
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#f0f9ff;">🔍</div>
+          <div class="wc-diag-title">SEO 기본 구조</div>
+          <div class="wc-diag-desc">페이지 제목, 설명, URL, 제목 태그, 내부 링크, 사이트맵, robots 설정을 점검합니다.</div>
+        </div>
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#eafaf6;">💬</div>
+          <div class="wc-diag-title">AEO · GEO 정보 구조</div>
+          <div class="wc-diag-desc">AI와 검색엔진이 사업명, 서비스, 지역, 강점, FAQ를 이해할 수 있는 구조인지 확인합니다.</div>
+        </div>
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#f8fafc;">⭐</div>
+          <div class="wc-diag-title">콘텐츠와 신뢰 요소</div>
+          <div class="wc-diag-desc">대표 소개, 성공사례, 후기, FAQ, Before/After, 인증 요소가 충분한지 점검합니다.</div>
+        </div>
+        <div class="wc-diag-card">
+          <div class="wc-diag-icon" style="background:#fff7ed;">📢</div>
+          <div class="wc-diag-title">광고 유입 후 동선</div>
+          <div class="wc-diag-desc">광고를 보고 들어온 고객이 어디서 이탈하는지, 어떤 페이지로 보내야 하는지 점검합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 새로 만들기 전에 확인할 것 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">BEFORE YOU BUILD</div>
+        <h2 class="section-title">새로 만들기 전에,<br />이 질문에 먼저 답해야 합니다</h2>
+      </div>
+      <div class="q-grid">
+        <div class="q-card">
+          <div class="q-num">Q1</div>
+          <div class="q-title">홈페이지의 1차 목표는 무엇인가요?</div>
+          <div class="q-desc">문의, 예약, 상담, 구매, 신뢰 확보 중 무엇이 가장 중요한지 먼저 정해야 합니다.</div>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q2</div>
+          <div class="q-title">고객은 어떤 경로로 들어오나요?</div>
+          <div class="q-desc">네이버 검색, 플레이스, 광고, 블로그, SNS, 카카오톡 등 유입 경로에 따라 구조가 달라집니다.</div>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q3</div>
+          <div class="q-title">고객이 가장 궁금해하는 질문은 무엇인가요?</div>
+          <div class="q-desc">FAQ와 서비스 설명이 고객의 실제 질문에 답해야 합니다.</div>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q4</div>
+          <div class="q-title">상담 버튼은 충분히 명확한가요?</div>
+          <div class="q-desc">고객이 문의하고 싶을 때 바로 행동할 수 있어야 합니다.</div>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q5</div>
+          <div class="q-title">모바일에서 보기 편한가요?</div>
+          <div class="q-desc">대부분의 고객은 모바일에서 홈페이지를 확인합니다.</div>
+        </div>
+        <div class="q-card">
+          <div class="q-num">Q6</div>
+          <div class="q-title">검색과 AI가 이해할 수 있는 정보가 있나요?</div>
+          <div class="q-desc">사업명, 위치, 서비스, 강점, 후기, FAQ가 명확하게 정리되어 있어야 합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 진행 방식 5단계 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2 class="section-title">진단부터 제작 연계까지,<br />이렇게 진행됩니다</h2>
+      </div>
+      <div style="max-width:700px;margin:0 auto;">
+        <div class="timeline5">
+          <div class="tl5-item">
+            <div class="tl5-circle">1</div>
+            <div class="tl5-body">
+              <div class="tl5-step">STEP 01</div>
+              <div class="tl5-title">현재 홈페이지 확인</div>
+              <div class="tl5-desc">기존 홈페이지, 랜딩페이지, 스마트플레이스, 블로그, SNS, 광고 유입 경로를 확인합니다.</div>
+            </div>
+          </div>
+          <div class="tl5-item">
+            <div class="tl5-circle">2</div>
+            <div class="tl5-body">
+              <div class="tl5-step">STEP 02</div>
+              <div class="tl5-title">문제 지점 진단</div>
+              <div class="tl5-desc">메시지, 정보 구조, 모바일 사용성, 상담 전환, SEO/GEO 관점에서 문제를 정리합니다.</div>
+            </div>
+          </div>
+          <div class="tl5-item">
+            <div class="tl5-circle">3</div>
+            <div class="tl5-body">
+              <div class="tl5-step">STEP 03</div>
+              <div class="tl5-title">개선 방향 제안</div>
+              <div class="tl5-desc">기존 홈페이지를 수정할지, 랜딩페이지가 필요한지, 다페이지 홈페이지가 필요한지 방향을 제안합니다.</div>
+            </div>
+          </div>
+          <div class="tl5-item">
+            <div class="tl5-circle">4</div>
+            <div class="tl5-body">
+              <div class="tl5-step">STEP 04</div>
+              <div class="tl5-title">제작 필요 여부 판단</div>
+              <div class="tl5-desc">직접 수정 가능한 부분과 제작 파트너 연계가 필요한 부분을 구분합니다.</div>
+            </div>
+          </div>
+          <div class="tl5-item">
+            <div class="tl5-circle">5</div>
+            <div class="tl5-body">
+              <div class="tl5-step">STEP 05</div>
+              <div class="tl5-title">제작 연계 및 마케팅 활용</div>
+              <div class="tl5-desc">필요한 경우 검증된 파트너와 제작을 연계하고, 광고·콘텐츠·스마트플레이스와 연결되는 활용 방향을 안내합니다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 제작 연계 방식 안내 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="wc-approach-grid">
+        <div class="wc-approach-text">
+          <div class="eyebrow">OUR APPROACH</div>
+          <h2 class="section-title left">거상마케팅센터는<br />제작보다 구조를 먼저 봅니다</h2>
+          <p>거상마케팅센터는 홈페이지를 단순히 예쁘게 만드는 제작사가 아닙니다.</p>
+          <p>우리는 먼저 대표님의 사업이 온라인에서 어떻게 보이고, 고객이 어디서 이탈하며, 검색과 AI가 어떤 정보를 이해하지 못하는지 진단합니다.</p>
+          <p>그 결과 홈페이지 제작이나 리뉴얼이 필요하다고 판단되면 검증된 제작 파트너와 연계하여 진행할 수 있습니다.</p>
+          <div class="wc-caution">
+            <span style="font-size:16px;flex-shrink:0;">⚠️</span>
+            <div>제작 범위, 비용, 일정, 수정 횟수는 프로젝트 내용과 제작 파트너의 기준에 따라 달라질 수 있습니다.</div>
+          </div>
+        </div>
+        <div class="wc-approach-points">
+          <div style="font-size:14px;font-weight:800;color:var(--ink-2);margin-bottom:12px;">이 과정에서 거상마케팅센터가 함께 정리하는 것</div>
+          <div class="wc-approach-point">
+            <div class="wc-ap-icon">📞</div>
+            <div>
+              <div class="wc-ap-title">문의 전환 구조</div>
+              <div class="wc-ap-desc">버튼 배치, 상담 경로, CTA 흐름 설계</div>
+            </div>
+          </div>
+          <div class="wc-approach-point">
+            <div class="wc-ap-icon">🔍</div>
+            <div>
+              <div class="wc-ap-title">SEO / GEO 정보 구조</div>
+              <div class="wc-ap-desc">검색엔진과 AI가 이해할 수 있는 정보 구성</div>
+            </div>
+          </div>
+          <div class="wc-approach-point">
+            <div class="wc-ap-icon">📋</div>
+            <div>
+              <div class="wc-ap-title">필요한 페이지 구성 제안</div>
+              <div class="wc-ap-desc">서비스, FAQ, 사례, 상담 페이지 구성 방향</div>
+            </div>
+          </div>
+          <div class="wc-approach-point">
+            <div class="wc-ap-icon">📝</div>
+            <div>
+              <div class="wc-ap-title">콘텐츠 방향</div>
+              <div class="wc-ap-desc">고객 설득 흐름, 신뢰 요소, 설명 구조</div>
+            </div>
+          </div>
+          <div class="wc-approach-point">
+            <div class="wc-ap-icon">📢</div>
+            <div>
+              <div class="wc-ap-title">광고 유입 후 동선</div>
+              <div class="wc-ap-desc">광고 클릭 → 랜딩페이지 → 문의 전환 흐름</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 진단 후 얻을 수 있는 것 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">WHAT YOU GET</div>
+        <h2 class="section-title">진단 후에는<br />이것이 명확해집니다</h2>
+      </div>
+      <div class="wc-outcome-grid">
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">1</div>
+          <div class="wc-outcome-text">새로 만들어야 하는지, 기존 것을 개선해도 되는지</div>
+        </div>
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">2</div>
+          <div class="wc-outcome-text">첫 화면에서 무엇을 강조해야 하는지</div>
+        </div>
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">3</div>
+          <div class="wc-outcome-text">어떤 페이지가 추가로 필요한지</div>
+        </div>
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">4</div>
+          <div class="wc-outcome-text">문의 버튼과 상담 흐름을 어떻게 바꿔야 하는지</div>
+        </div>
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">5</div>
+          <div class="wc-outcome-text">SEO와 AEO/GEO 관점에서 어떤 정보가 부족한지</div>
+        </div>
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">6</div>
+          <div class="wc-outcome-text">광고를 보낼 랜딩페이지가 필요한지</div>
+        </div>
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">7</div>
+          <div class="wc-outcome-text">모바일에서 어떤 부분을 고쳐야 하는지</div>
+        </div>
+        <div class="wc-outcome-item">
+          <div class="wc-outcome-dot">8</div>
+          <div class="wc-outcome-text">제작 파트너 연계가 필요한지</div>
+        </div>
+        <div class="wc-outcome-item" style="grid-column:1/-1;">
+          <div class="wc-outcome-dot">9</div>
+          <div class="wc-outcome-text">제작 후 어떤 광고·콘텐츠 전략과 연결해야 하는지</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 관련 서비스 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">RELATED SERVICES</div>
+        <h2 class="section-title">홈페이지 진단과 함께<br />보면 좋은 서비스</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="wc-related-grid">
+        <a href="/services/marketing-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#eef0ff;">🧭</div>
+          <div class="hub-card-tag">CONSULTING</div>
+          <div class="hub-card-title">마케팅 컨설팅</div>
+          <div class="hub-card-desc">홈페이지뿐 아니라 전체 마케팅 구조와 실행 우선순위를 함께 진단합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/aeo-geo" class="hub-card">
+          <div class="hub-card-icon" style="background:#eafaf6;">💬</div>
+          <div class="hub-card-tag">AEO · GEO</div>
+          <div class="hub-card-title">AEO · GEO 최적화</div>
+          <div class="hub-card-desc">AI와 검색엔진이 이해하기 쉬운 사업 정보 구조를 정리합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/ads" class="hub-card">
+          <div class="hub-card-icon" style="background:#fff7ed;">📢</div>
+          <div class="hub-card-tag">ADS</div>
+          <div class="hub-card-title">광고상품 안내</div>
+          <div class="hub-card-desc">광고 유입이 문의로 이어질 수 있도록 적합한 광고상품을 설계합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/smartplace" class="hub-card">
+          <div class="hub-card-icon" style="background:#e8f0fe;">📍</div>
+          <div class="hub-card-tag">SMARTPLACE</div>
+          <div class="hub-card-title">스마트플레이스 상위노출</div>
+          <div class="hub-card-desc">네이버와 지도 검색에서 먼저 발견되는 구조를 만듭니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/government-support" class="hub-card">
+          <div class="hub-card-icon" style="background:#f0fdf4;">🏛</div>
+          <div class="hub-card-tag">GOVERNMENT SUPPORT</div>
+          <div class="hub-card-title">정부지원사업 · 희망리턴패키지</div>
+          <div class="hub-card-desc">지원사업 이후 필요한 홈페이지, 콘텐츠, 마케팅 실행 방향을 함께 정리합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="cta-box">
+        <div class="cta-box-title">홈페이지를 새로 만들기 전에,<br />먼저 문의 구조를 진단하세요</div>
+        <div class="cta-box-desc">
+          예쁜 홈페이지보다 중요한 것은 고객이 이해하고, 신뢰하고, 문의할 수 있는 구조입니다.<br />
+          현재 홈페이지나 랜딩페이지가 실제 문의로 이어지고 있는지 먼저 점검해보세요.
+        </div>
+        <div class="cta-box-btns">
+          <a href="/contact" class="btn-teal">홈페이지 구조 진단받기 →</a>
+          <a href="/services/marketing-consulting" class="btn-white-outline">마케팅 구조 진단하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="../assets/logo-mark.png" class="brand-logo sm" alt="거상마케팅센터 로고" />
+          <span>거상마케팅센터</span>
+        </div>
+        <p class="footer-meta">
+          네이버 스마트플레이스 · AEO · GEO 전문 마케팅 대행사<br />
+          대표 임헌수 | 사업자등록번호 711-86-01966<br />
+          서울시 강남구 테헤란로 313, 915호
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="fc-title">서비스</span>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">회사</span>
+          <a href="/about">센터 소개</a>
+          <a href="/cases">성공사례</a>
+          <a href="/insights">마케팅 인사이트</a>
+          <a href="/contact">상담문의</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">상담</span>
+          <span>📞 010-3422-8075</span>
+          <span>💬 카카오톡 @거상마케팅센터</span>
+          <span>평일 09:00–18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved.</div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

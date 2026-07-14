@@ -1,0 +1,55 @@
+# 거상마케팅센터 (Geosang Marketing Center)
+
+> 네이버 스마트플레이스 상위노출, AEO·GEO 최적화, 정부지원사업 컨설팅, 광고상품 안내 전문 마케팅 대행사
+
+거상마케팅센터는 소상공인(식당, 카페, 미용실, 병의원 등 지역 기반 매장)의 온라인 발견과 문의를 설계하는 마케팅 전문 대행사입니다.
+
+## 핵심 서비스
+
+- **스마트플레이스 상위노출**: 네이버 지도·플레이스 키워드 순위 최적화, 리뷰·소식·사진·예약 관리, 월간 리포트
+- **AEO (Answer Engine Optimization)**: 네이버·구글 AI 답변에 우리 가게가 '정답'으로 인용되도록 정보 구조화
+- **GEO (Generative Engine Optimization)**: ChatGPT·제미나이·퍼플렉시티 추천 목록에 노출되도록 데이터 구성
+- **광고상품 안내**: 스마트플레이스, 블로그 마케팅, SNS 콘텐츠, 카드뉴스, 상세페이지 개선, 플레이스 광고, AI 검색 대응 콘텐츠
+- **정부지원사업·희망리턴패키지**: 소상공인 지원사업 신청 컨설팅, 폐업·재창업 상담, 지원 후 마케팅 실행 연계
+- **마케팅 컨설팅**: 현재 마케팅 구조 진단, 상권·경쟁 분석, 실행 로드맵 설계
+- **홈페이지·랜딩페이지 진단 및 제작 연계**: 문의 전환 구조 진단, SEO/GEO 관점 정보 구조 점검, 제작 파트너 연계
+
+## 중요 안내
+
+거상마케팅센터는 홈페이지를 직접 제작하는 회사가 아닙니다. 홈페이지와 랜딩페이지의 문의 전환 구조, SEO/GEO 정보 구조, 모바일 사용성, 광고 유입 동선을 진단하고, 필요한 경우 검증된 제작 파트너와 연계합니다.
+
+AEO·GEO 최적화는 특정 AI 답변 노출을 보장하는 서비스가 아닙니다. AI와 검색엔진이 사업 정보를 더 잘 이해할 수 있도록 정보 구조를 개선하는 작업입니다.
+
+정부지원사업 및 희망리턴패키지의 세부 지원 내용, 신청 자격, 기간은 사업별로 달라질 수 있습니다.
+
+## 서비스 대상
+
+- 네이버 스마트플레이스에 노출이 잘 안 되는 지역 매장
+- AI 검색(ChatGPT, 제미나이, 네이버 AI 등)에서 경쟁업체에 밀리는 가게
+- 광고비를 쓰지만 효과를 모르겠는 소상공인
+- 정부지원사업 신청을 고민 중인 소상공인
+- 폐업·업종전환·재창업을 고민 중인 자영업자
+- 홈페이지는 있지만 문의가 부족한 사업자
+- 무엇부터 해야 할지 모르는 대표님
+
+## 연락처
+
+- 전화: 010-3422-8075 (평일 09:00–18:00)
+- 카카오톡 채널: @거상마케팅센터
+- 주소: 서울시 강남구 테헤란로 313, 915호
+- 대표: 임헌수 | 사업자등록번호: 711-86-01966
+
+## 사이트 구조
+
+- 홈: https://geosangmarketing.com/
+- 센터 소개: https://geosangmarketing.com/about
+- 서비스 전체: https://geosangmarketing.com/services
+- 스마트플레이스: https://geosangmarketing.com/services/smartplace
+- AEO·GEO: https://geosangmarketing.com/services/aeo-geo
+- 광고상품: https://geosangmarketing.com/services/ads
+- 정부지원사업: https://geosangmarketing.com/services/government-support
+- 마케팅 컨설팅: https://geosangmarketing.com/services/marketing-consulting
+- 홈페이지 진단: https://geosangmarketing.com/services/website-consulting
+- 성공사례: https://geosangmarketing.com/cases
+- 마케팅 인사이트: https://geosangmarketing.com/insights
+- 상담문의: https://geosangmarketing.com/contact

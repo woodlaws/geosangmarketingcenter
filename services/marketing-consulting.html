@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마케팅 컨설팅 | 거상마케팅센터</title>
+  <meta name="description" content="거상마케팅센터의 마케팅 컨설팅은 스마트플레이스, 검색 노출, 콘텐츠, 광고, 홈페이지, AEO·GEO 관점에서 현재 사업의 온라인 노출과 문의 전환 구조를 진단하고 실행 우선순위를 제안합니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://geosangmarketing.com/services/marketing-consulting" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="마케팅 컨설팅 | 무엇부터 해야 할지 모를 때" />
+  <meta property="og:description" content="광고, 스마트플레이스, 홈페이지, 콘텐츠, AI 검색까지 현재 마케팅 구조를 진단하고 실행 우선순위를 제안합니다." />
+  <meta property="og:url" content="https://geosangmarketing.com/services/marketing-consulting" />
+  <meta property="og:image" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:secure_url" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="거상마케팅센터" />
+    <meta property="og:site_name" content="거상마케팅센터" />
+  <meta property="og:locale" content="ko_KR" />
+  <link rel="icon" type="image/png" href="../assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    /* ── marketing-consulting specific ───────────────── */
+    .page-hero h1 {
+      font-size: 30px;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* Hero visual card */
+    .hero-diag-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .hero-diag-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: .07em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .diag-row {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      padding: 11px 14px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 11px;
+      margin-bottom: 9px;
+    }
+    .diag-row:last-child { margin-bottom: 0; }
+    .diag-icon { font-size: 18px; flex-shrink: 0; }
+    .diag-label { font-size: 13px; font-weight: 700; color: #dbe5fb; flex: 1; }
+    .diag-status {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+    .diag-status.warn  { background: rgba(251,191,36,.18); color: #fbbf24; }
+    .diag-status.bad   { background: rgba(239,68,68,.18);  color: #f87171; }
+    .diag-status.ok    { background: rgba(45,212,191,.18); color: #7ff0dd; }
+
+    /* Why section */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .why-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      text-wrap: pretty;
+    }
+    .why-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .why-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px 18px;
+      border-radius: 14px;
+      border: 1.5px solid transparent;
+    }
+    .why-card.wrong {
+      background: #fff8f8;
+      border-color: #fecaca;
+    }
+    .why-card.right {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .why-card-badge {
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .why-card.wrong .why-card-badge { background: #fecaca; color: #b91c1c; }
+    .why-card.right .why-card-badge { background: #bbf7d0; color: #15803d; }
+    .why-card-text { font-size: 14px; color: var(--ink-2); line-height: 1.6; font-weight: 600; }
+
+    /* Checklist grid */
+    .checklist-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .check-item:hover {
+      border-color: #cdddfb;
+      box-shadow: 0 6px 18px rgba(26,86,219,.08);
+    }
+    .check-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e8f0fe;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    /* Diagnosis area cards */
+    .diag-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .diag-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 22px;
+      box-shadow: 0 4px 14px rgba(15,23,42,.04);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .diag-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(26,86,219,.11);
+      border-color: #cdddfb;
+    }
+    .diag-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .diag-card-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink-2);
+      margin-bottom: 10px;
+    }
+    .diag-card-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      text-wrap: pretty;
+    }
+
+    /* Timeline */
+    .mc-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .mc-timeline::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #3b82f6);
+      z-index: 0;
+    }
+    .mc-tl-item {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .mc-tl-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 22px rgba(26,86,219,.3);
+      flex-shrink: 0;
+    }
+    .mc-tl-step {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: .08em;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+    }
+    .mc-tl-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink-2);
+      margin-bottom: 8px;
+    }
+    .mc-tl-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* After-consulting outcome list */
+    .outcome-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .outcome-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .outcome-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .outcome-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    /* Related services (5 cards) */
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .related-grid .hub-card:nth-child(4),
+    .related-grid .hub-card:nth-child(5) {
+      /* center the last row of 2 */
+    }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 920px) {
+      .page-hero [style*="grid-template-columns:1.1fr"] { grid-template-columns: 1fr !important; gap: 36px !important; }
+      .hero-diag-card { max-width: 480px; }
+      .why-grid { grid-template-columns: 1fr; gap: 40px; }
+      .checklist-grid-3 { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .diag-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .mc-timeline { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .mc-timeline::before { display: none; }
+      .mc-tl-item { align-items: flex-start; text-align: left; }
+      .outcome-grid { grid-template-columns: 1fr; gap: 11px; }
+      .related-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+    }
+    @media (max-width: 600px) {
+      .checklist-grid-3 { grid-template-columns: 1fr; gap: 10px; }
+      .diag-grid { grid-template-columns: 1fr; gap: 12px; }
+      .mc-timeline { grid-template-columns: 1fr; gap: 14px; }
+      .mc-tl-item {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 0;
+        text-align: left;
+      }
+      .mc-tl-circle { margin-bottom: 0; flex-shrink: 0; width: 48px; height: 48px; font-size: 17px; }
+      .related-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+  </style>
+    <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://geosangmarketing.com/og-image.png" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img src="../assets/logo-mark.png" class="brand-logo" alt="거상마케팅센터 로고" />
+        <span class="brand-text">
+          <span class="brand-name">거상마케팅센터</span>
+          <span class="brand-sub">SMARTPLACE · AEO · GEO</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="/about">센터 소개</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-ddtrigger">서비스 <span class="nav-arrow">▾</span></a>
+          <div class="nav-dd-menu">
+            <a href="/services/smartplace">📍 스마트플레이스 상위노출</a>
+            <a href="/services/aeo-geo">💬 AEO · GEO 최적화</a>
+            <a href="/services/ads">📢 광고상품 안내</a>
+            <div class="nav-dd-sep"></div>
+            <a href="/services/government-support">🏛 정부지원사업 · 희망리턴패키지</a>
+            <a href="/services/marketing-consulting">🧭 마케팅 컨설팅</a>
+            <a href="/services/website-consulting">🌐 홈페이지 · 랜딩페이지 진단</a>
+          </div>
+        </div>
+        <a href="/services/government-support">정부지원사업</a>
+        <a href="/cases">성공사례</a>
+        <a href="/insights">인사이트</a>
+        <a href="/contact" class="btn-nav">상담문의</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile">
+      <a href="/about">센터 소개</a>
+      <div class="nav-mob-group">
+        <button class="nav-mob-trigger" id="navMobSvc">서비스 <span class="nav-mob-arrow">▾</span></button>
+        <div class="nav-mob-sub" id="navMobSvcSub">
+          <a href="/services">전체 서비스 보기</a>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업 · 희망리턴패키지</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+      </div>
+      <a href="/services/government-support">정부지원사업</a>
+      <a href="/cases">성공사례</a>
+      <a href="/insights">인사이트</a>
+      <a href="/contact" class="btn-nav">상담문의</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:52px;align-items:center;position:relative;">
+        <div class="page-hero-inner" style="max-width:none;">
+          <div class="page-hero-tag">MARKETING CONSULTING</div>
+          <h1>광고부터 할지, 플레이스부터 고칠지,<br />홈페이지부터 바꿔야 할지 모르겠다면<br /><span style="color:var(--teal);">먼저 마케팅 구조부터 진단하세요</span></h1>
+          <p class="page-hero-desc">
+            거상마케팅센터는 네이버 검색, 스마트플레이스, 콘텐츠, 광고, 홈페이지, AI 검색 관점에서
+            현재 사업의 온라인 노출과 문의 전환 구조를 점검하고
+            지금 가장 먼저 실행해야 할 마케팅 우선순위를 제안합니다.
+          </p>
+          <div class="page-hero-cta">
+            <a href="/contact" class="btn-primary">무료 진단 신청하기 →</a>
+            <a href="/services" class="btn-white-outline">서비스 전체 보기</a>
+          </div>
+        </div>
+        <div class="hero-diag-card" style="flex-shrink:0;">
+          <div class="hero-diag-title">마케팅 구조 진단 결과</div>
+          <div class="diag-row">
+            <div class="diag-icon">🗺️</div>
+            <div class="diag-label">스마트플레이스 상태</div>
+            <div class="diag-status bad">개선 필요</div>
+          </div>
+          <div class="diag-row">
+            <div class="diag-icon">🔍</div>
+            <div class="diag-label">검색 노출 구조</div>
+            <div class="diag-status warn">미흡</div>
+          </div>
+          <div class="diag-row">
+            <div class="diag-icon">📝</div>
+            <div class="diag-label">콘텐츠 흐름</div>
+            <div class="diag-status bad">부족</div>
+          </div>
+          <div class="diag-row">
+            <div class="diag-icon">📢</div>
+            <div class="diag-label">광고 효율</div>
+            <div class="diag-status warn">점검 필요</div>
+          </div>
+          <div class="diag-row">
+            <div class="diag-icon">🌐</div>
+            <div class="diag-label">홈페이지 전환 구조</div>
+            <div class="diag-status bad">문의 전환 약함</div>
+          </div>
+          <div class="diag-row">
+            <div class="diag-icon">💬</div>
+            <div class="diag-label">AI 검색 노출</div>
+            <div class="diag-status warn">미설정</div>
+          </div>
+          <div style="margin-top:14px;padding:12px 14px;background:rgba(45,212,191,.12);border:1px solid rgba(45,212,191,.3);border-radius:10px;font-size:12px;color:#7ff0dd;font-weight:700;text-align:center;">
+            🧭 1순위: 스마트플레이스 최적화부터 시작하세요
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="/services">서비스</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>마케팅 컨설팅</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 왜 마케팅 컨설팅이 필요한가 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="why-grid">
+        <div class="why-text">
+          <div class="eyebrow">WHY CONSULTING</div>
+          <h2 class="section-title left">마케팅은 많이 하는 것보다,<br />순서가 중요합니다</h2>
+          <p>많은 대표님들이 블로그도 하고, 광고도 하고, 인스타그램도 하고, 스마트플레이스도 관리합니다. 하지만 각각의 채널이 따로 움직이면 돈과 시간은 쓰이는데 문의로 이어지지 않는 경우가 많습니다.</p>
+          <p>문제는 마케팅을 안 해서가 아니라, 무엇부터 해야 하는지, 어디가 막혀 있는지, 어떤 채널을 먼저 개선해야 하는지 모른다는 데 있습니다.</p>
+          <p>거상마케팅센터의 마케팅 컨설팅은 현재 상태를 먼저 진단하고, 가장 효과적인 실행 순서를 정리하는 것에서 시작합니다.</p>
+        </div>
+        <div class="why-visual">
+          <div class="why-card wrong">
+            <div class="why-card-badge">흔한 실수</div>
+            <div class="why-card-text">블로그 + 광고 + 인스타 + 플레이스를 동시에 운영하지만 각각 따로 움직여 시너지 없음. 비용은 쓰이는데 문의가 없음.</div>
+          </div>
+          <div style="text-align:center;font-size:20px;color:#94a3b8;padding:2px 0;">↓</div>
+          <div class="why-card right">
+            <div class="why-card-badge">올바른 순서</div>
+            <div class="why-card-text">현재 막힌 지점을 먼저 확인 → 가장 효과적인 채널을 1순위로 집중 → 단계적으로 확장하며 문의를 만들어가는 구조.</div>
+          </div>
+          <div style="padding:16px 18px;background:var(--tint);border:1px solid var(--border);border-radius:13px;font-size:13px;color:var(--muted);line-height:1.65;">
+            <strong style="color:var(--ink-2);">진단 없이 실행하면</strong> 어디서 효과가 나고 어디서 낭비가 생기는지 알 수 없습니다.<br />거상마케팅센터는 먼저 현재 구조를 파악합니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 이런 고민이 있다면 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">DO YOU FEEL THIS?</div>
+        <h2 class="section-title">이런 고민이 있다면<br />먼저 진단이 필요합니다</h2>
+      </div>
+      <div class="checklist-grid-3">
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">광고비는 쓰고 있는데 문의가 늘지 않는다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">네이버 플레이스 노출이 잘 안 된다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">블로그, 인스타그램, 홈페이지를 하고 있지만 각각 따로 노는 느낌이다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">홈페이지는 있는데 고객 문의가 거의 없다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">정부지원사업을 받았지만 이후 마케팅 실행이 막막하다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">어떤 광고상품이 우리 업종에 맞는지 모르겠다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">AI 검색 시대에 우리 업체가 어떻게 보일지 궁금하다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">경쟁업체는 잘 보이는데 우리 업체는 잘 보이지 않는다</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">?</div>
+          <div class="check-text">무엇부터 고쳐야 할지 몰라 계속 미루고 있다</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="/contact" class="btn-primary">하나라도 해당된다면 무료 진단 신청하기 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 진단 영역 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">DIAGNOSIS AREAS</div>
+        <h2 class="section-title">거상마케팅센터는<br />이 부분을 함께 점검합니다</h2>
+      </div>
+      <div class="diag-grid">
+        <div class="diag-card">
+          <div class="diag-card-icon" style="background:#e8f0fe;">📍</div>
+          <div class="diag-card-title">스마트플레이스 상태 진단</div>
+          <div class="diag-card-desc">업체명, 카테고리, 키워드, 사진, 리뷰, 소식, 예약, 지도 노출 상태를 점검합니다. 순위에 영향을 미치는 요소를 하나씩 확인합니다.</div>
+        </div>
+        <div class="diag-card">
+          <div class="diag-card-icon" style="background:#f0f9ff;">🔍</div>
+          <div class="diag-card-title">검색 노출 구조 진단</div>
+          <div class="diag-card-desc">네이버, 구글, 블로그, 지도, 콘텐츠 검색에서 우리 사업이 어떻게 보이는지 확인합니다. 누락된 접점을 파악합니다.</div>
+        </div>
+        <div class="diag-card">
+          <div class="diag-card-icon" style="background:#fef9ec;">📝</div>
+          <div class="diag-card-title">콘텐츠 흐름 진단</div>
+          <div class="diag-card-desc">블로그, SNS, 카드뉴스, 상세페이지 등 고객에게 신뢰를 주는 콘텐츠가 충분한지, 구매 전환을 돕는 흐름인지 점검합니다.</div>
+        </div>
+        <div class="diag-card">
+          <div class="diag-card-icon" style="background:#fff7ed;">📢</div>
+          <div class="diag-card-title">광고 효율 진단</div>
+          <div class="diag-card-desc">현재 집행 중인 광고가 있다면 광고비 대비 문의와 전환 구조를 확인합니다. 광고가 없다면 필요 여부를 함께 판단합니다.</div>
+        </div>
+        <div class="diag-card">
+          <div class="diag-card-icon" style="background:#f8fafc;">🌐</div>
+          <div class="diag-card-title">홈페이지 · 랜딩페이지 진단</div>
+          <div class="diag-card-desc">홈페이지가 단순 소개용인지, 실제 문의로 이어지는 구조인지 점검합니다. CTA, 폼, 정보 구조를 확인합니다.</div>
+        </div>
+        <div class="diag-card">
+          <div class="diag-card-icon" style="background:#eafaf6;">💬</div>
+          <div class="diag-card-title">AEO · GEO 관점 진단</div>
+          <div class="diag-card-desc">AI가 우리 사업을 이해하고 추천할 수 있도록 정보 구조, FAQ, 위치 정보, 서비스 설명을 점검합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 진행 방식 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2 class="section-title">진단부터 실행 우선순위까지,<br />이렇게 진행합니다</h2>
+      </div>
+      <div class="mc-timeline">
+        <div class="mc-tl-item">
+          <div class="mc-tl-circle">1</div>
+          <div>
+            <div class="mc-tl-step">STEP 01</div>
+            <div class="mc-tl-title">기본 정보 확인</div>
+            <div class="mc-tl-desc">업종, 지역, 주요 상품, 고객층, 현재 운영 중인 채널을 확인합니다.</div>
+          </div>
+        </div>
+        <div class="mc-tl-item">
+          <div class="mc-tl-circle">2</div>
+          <div>
+            <div class="mc-tl-step">STEP 02</div>
+            <div class="mc-tl-title">온라인 노출 상태 분석</div>
+            <div class="mc-tl-desc">스마트플레이스, 검색 결과, 콘텐츠, 홈페이지, 광고 상태를 점검합니다.</div>
+          </div>
+        </div>
+        <div class="mc-tl-item">
+          <div class="mc-tl-circle">3</div>
+          <div>
+            <div class="mc-tl-step">STEP 03</div>
+            <div class="mc-tl-title">문제 지점 정리</div>
+            <div class="mc-tl-desc">노출이 부족한지, 신뢰 콘텐츠가 부족한지, CTA가 약한지 정리합니다.</div>
+          </div>
+        </div>
+        <div class="mc-tl-item">
+          <div class="mc-tl-circle">4</div>
+          <div>
+            <div class="mc-tl-step">STEP 04</div>
+            <div class="mc-tl-title">실행 우선순위 제안</div>
+            <div class="mc-tl-desc">지금 바로 실행해야 할 1순위, 2순위, 3순위 과제를 제안합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 컨설팅 후 얻는 것 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">WHAT YOU GET</div>
+        <h2 class="section-title">컨설팅 후에는<br />이것이 명확해집니다</h2>
+        <p class="section-sub">막막하던 마케팅 방향이 구체적인 실행 순서로 정리됩니다.</p>
+      </div>
+      <div class="outcome-grid">
+        <div class="outcome-item">
+          <div class="outcome-dot">1</div>
+          <div class="outcome-text">지금 가장 먼저 고쳐야 할 마케팅 문제</div>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-dot">2</div>
+          <div class="outcome-text">우리 업종에 맞는 핵심 마케팅 채널</div>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-dot">3</div>
+          <div class="outcome-text">스마트플레이스 개선 방향</div>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-dot">4</div>
+          <div class="outcome-text">광고를 해야 할지, 콘텐츠를 먼저 해야 할지에 대한 판단</div>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-dot">5</div>
+          <div class="outcome-text">홈페이지나 랜딩페이지 개선 필요 여부</div>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-dot">6</div>
+          <div class="outcome-text">AI 검색 시대에 필요한 정보 구조</div>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-dot">7</div>
+          <div class="outcome-text">실행 가능한 30일 마케팅 우선순위</div>
+        </div>
+        <div class="outcome-item">
+          <div class="outcome-dot">8</div>
+          <div class="outcome-text">거상마케팅센터에서 직접 도울 수 있는 영역과 외부 연계가 필요한 영역</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 이런 분께 추천 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">WHO THIS IS FOR</div>
+        <h2 class="section-title">이런 대표님께 추천합니다</h2>
+      </div>
+      <div class="checklist-grid-3">
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">마케팅을 해야 하지만 어디서부터 시작해야 할지 모르는 분</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">광고비를 쓰기 전에 현재 상태를 먼저 점검하고 싶은 분</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">스마트플레이스와 블로그, SNS를 함께 정리하고 싶은 분</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">정부지원사업 이후 실제 마케팅 실행이 필요한 분</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">홈페이지는 있지만 문의가 부족한 분</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">AEO·GEO, AI 검색 대응이 궁금한 분</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">소상공인, 자영업자, 지역 기반 매장 대표님</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">1인 기업가, 강사, 컨설턴트, 전문가형 사업자</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 관련 서비스 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">CONNECTED SERVICES</div>
+        <h2 class="section-title">진단 후 필요한 서비스로<br />연결됩니다</h2>
+        <p class="section-sub">컨설팅에서 확인된 개선 영역을 실제 서비스로 이어드립니다.</p>
+      </div>
+      <div class="related-grid">
+        <a href="/services/smartplace" class="hub-card">
+          <div class="hub-card-icon" style="background:#e8f0fe;">📍</div>
+          <div class="hub-card-tag">SMARTPLACE</div>
+          <div class="hub-card-title">스마트플레이스 상위노출</div>
+          <div class="hub-card-desc">네이버에서 먼저 보이는 가게가 되기 위한 플레이스 최적화</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/aeo-geo" class="hub-card">
+          <div class="hub-card-icon" style="background:#eafaf6;">💬</div>
+          <div class="hub-card-tag">AEO · GEO</div>
+          <div class="hub-card-title">AEO · GEO 최적화</div>
+          <div class="hub-card-desc">AI 검색 시대에 우리 사업이 이해되고 추천되도록 정보 구조 정리</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/ads" class="hub-card">
+          <div class="hub-card-icon" style="background:#fff7ed;">📢</div>
+          <div class="hub-card-tag">ADS</div>
+          <div class="hub-card-title">광고상품 안내</div>
+          <div class="hub-card-desc">필요한 광고만 실행 가능한 방식으로 설계</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/government-support" class="hub-card">
+          <div class="hub-card-icon" style="background:#f0fdf4;">🏛</div>
+          <div class="hub-card-tag">GOVERNMENT SUPPORT</div>
+          <div class="hub-card-title">정부지원사업 · 희망리턴패키지</div>
+          <div class="hub-card-desc">지원사업 이후 실제 마케팅 실행까지 연결</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/website-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#f8fafc;">🌐</div>
+          <div class="hub-card-tag">WEBSITE CONSULTING</div>
+          <div class="hub-card-title">홈페이지 · 랜딩페이지 진단 및 제작 연계</div>
+          <div class="hub-card-desc">문의 전환 구조를 점검하고 필요한 경우 제작 파트너와 연계</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section section-tint">
+    <div class="container container-narrow">
+      <div class="cta-box">
+        <div class="cta-box-title">무엇부터 해야 할지 모르겠다면,<br />먼저 현재 상태를 진단하세요</div>
+        <div class="cta-box-desc">
+          마케팅은 많이 하는 것보다 순서가 중요합니다.<br />
+          지금 우리 사업이 어디에서 막혀 있는지, 어떤 실행이 가장 먼저 필요한지<br />
+          거상마케팅센터와 함께 점검해보세요.
+        </div>
+        <div class="cta-box-btns">
+          <a href="/contact" class="btn-teal">무료 진단 신청하기 →</a>
+          <a href="/services" class="btn-white-outline">서비스 전체 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="../assets/logo-mark.png" class="brand-logo sm" alt="거상마케팅센터 로고" />
+          <span>거상마케팅센터</span>
+        </div>
+        <p class="footer-meta">
+          네이버 스마트플레이스 · AEO · GEO 전문 마케팅 대행사<br />
+          대표 임헌수 | 사업자등록번호 711-86-01966<br />
+          서울시 강남구 테헤란로 313, 915호
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="fc-title">서비스</span>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">회사</span>
+          <a href="/about">센터 소개</a>
+          <a href="/cases">성공사례</a>
+          <a href="/insights">마케팅 인사이트</a>
+          <a href="/contact">상담문의</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">상담</span>
+          <span>📞 010-3422-8075</span>
+          <span>💬 카카오톡 @거상마케팅센터</span>
+          <span>평일 09:00–18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved.</div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

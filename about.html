@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>거상마케팅센터 소개 | 스마트플레이스·AEO·GEO 마케팅센터</title>
+  <meta name="description" content="거상마케팅센터는 스마트플레이스 상위노출, AEO·GEO 최적화, 광고 실행, 정부지원사업 연계를 통해 소상공인과 자영업자가 고객에게 먼저 발견되고 선택될 수 있도록 돕는 실행형 마케팅센터입니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://geosangmarketing.com/about" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="거상마케팅센터 소개 | 소상공인의 발견과 문의를 설계합니다" />
+  <meta property="og:description" content="네이버 검색에서 AI 검색까지, 거상마케팅센터는 스마트플레이스·AEO·GEO·광고 실행·정부지원사업을 연결해 소상공인의 온라인 노출 구조를 설계합니다." />
+  <meta property="og:url" content="https://geosangmarketing.com/about" />
+  <meta property="og:image" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:secure_url" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="거상마케팅센터" />
+    <meta property="og:site_name" content="거상마케팅센터" />
+  <meta property="og:locale" content="ko_KR" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="거상마케팅센터 소개 | 소상공인의 발견과 문의를 설계합니다" />
+  <meta name="twitter:description" content="네이버 검색에서 AI 검색까지, 거상마케팅센터는 스마트플레이스·AEO·GEO·광고 실행·정부지원사업을 연결해 소상공인의 온라인 노출 구조를 설계합니다." />
+  <meta name="twitter:image" content="https://geosangmarketing.com/og-image.png" />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── About-page specific ─────────────────────────── */
+    .about-what {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .about-what-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      text-wrap: pretty;
+    }
+    .about-what-text p:last-child { margin: 0; }
+    .about-what-visual {
+      background: linear-gradient(160deg, #0a1d4d 0%, #1a56db 100%);
+      border-radius: 22px;
+      padding: 36px 32px;
+      color: #fff;
+    }
+    .about-what-visual-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: .06em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    .channel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .channel-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 16px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+    }
+    .channel-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: rgba(255,255,255,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .channel-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .channel-sub {
+      font-size: 12px;
+      color: #9fb3df;
+      margin-top: 1px;
+    }
+    .channel-badge {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--teal);
+      background: rgba(45,212,191,.15);
+      padding: 3px 9px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+
+    /* Focus cards */
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .focus-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 14px rgba(15,23,42,.04);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .focus-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(26,86,219,.11);
+      border-color: #cdddfb;
+    }
+    .focus-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: #e8f0fe;
+      letter-spacing: -.04em;
+      margin-bottom: 14px;
+      line-height: 1;
+    }
+    .focus-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink-2);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .focus-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.7;
+      text-wrap: pretty;
+    }
+
+    /* CEO Message */
+    .ceo-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    .ceo-photo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .ceo-photo {
+      width: 300px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      line-height: 0;
+    }
+    .ceo-photo-placeholder {
+      font-size: 52px;
+      opacity: .4;
+    }
+    .ceo-photo-note {
+      font-size: 11px;
+      color: #94a3b8;
+      text-align: center;
+      padding: 0 12px;
+    }
+    .ceo-name-card {
+      text-align: center;
+    }
+    .ceo-name {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--ink-2);
+    }
+    .ceo-title {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 3px;
+      white-space: nowrap;
+    }
+    .ceo-text p {
+      font-size: 16px;
+      color: #384258;
+      line-height: 1.88;
+      margin: 0 0 18px;
+      text-wrap: pretty;
+    }
+    .ceo-text p:last-child { margin: 0; }
+    .ceo-quote-mark {
+      font-size: 72px;
+      line-height: .8;
+      color: #dbe6fb;
+      font-family: Georgia, serif;
+      margin-bottom: 10px;
+    }
+    .ceo-sign {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+    .ceo-sign-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #e8f0fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+    .ceo-sign-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink-2);
+    }
+    .ceo-sign-role {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Process timeline */
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #3b82f6);
+      z-index: 0;
+    }
+    .tl-item {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .tl-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 22px rgba(26,86,219,.3);
+      flex-shrink: 0;
+    }
+    .tl-step {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: .08em;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .tl-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--ink-2);
+      margin-bottom: 10px;
+    }
+    .tl-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* AEO section */
+    .aeo-about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .aeo-about-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      text-wrap: pretty;
+    }
+    .aeo-compare {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .aeo-compare-item {
+      padding: 18px 20px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+    }
+    .aeo-compare-item.old {
+      background: #fafafa;
+    }
+    .aeo-compare-item.new {
+      background: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+    .aeo-compare-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .07em;
+      margin-bottom: 7px;
+      text-transform: uppercase;
+    }
+    .aeo-compare-item.old .aeo-compare-label { color: #94a3b8; }
+    .aeo-compare-item.new .aeo-compare-label { color: #16a34a; }
+    .aeo-compare-text {
+      font-size: 14px;
+      color: var(--ink-2);
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    /* Checklist cards */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 18px 20px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .check-item:hover {
+      border-color: #cdddfb;
+      box-shadow: 0 6px 18px rgba(26,86,219,.08);
+    }
+    .check-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #e8f0fe;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .check-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink-2);
+      line-height: 1.55;
+    }
+
+    /* Education section */
+    .edu-section {
+      background: var(--tint);
+      border-top: 1px solid var(--border);
+      padding: 80px 0;
+    }
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .edu-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      text-wrap: pretty;
+    }
+    .edu-brands {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+    .edu-brand-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+    .edu-brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      flex-shrink: 0;
+    }
+    .edu-brand-name {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--ink-2);
+      margin-bottom: 2px;
+    }
+    .edu-brand-desc {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── Responsive ─────────────────────────────────── */
+    @media (max-width: 920px) {
+      .about-what { grid-template-columns: 1fr; gap: 40px; }
+      .focus-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .ceo-grid { grid-template-columns: 1fr; gap: 36px; }
+      .ceo-photo-wrap { flex-direction: row; align-items: center; }
+      .ceo-photo { width: 160px; border-radius: 14px; }
+      .ceo-photo-placeholder { font-size: 36px; }
+      .ceo-photo-note { display: none; }
+      .timeline { grid-template-columns: 1fr 1fr; gap: 28px; }
+      .timeline::before { display: none; }
+      .tl-item { align-items: flex-start; text-align: left; }
+      .aeo-about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .checklist-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .edu-grid { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 600px) {
+      .focus-grid { grid-template-columns: 1fr; gap: 12px; }
+      .focus-card { padding: 22px 18px; }
+      .ceo-photo-wrap { flex-direction: column; }
+      .ceo-photo { width: 220px; }
+      .ceo-photo-note { display: block; }
+      .timeline { grid-template-columns: 1fr; gap: 16px; }
+      .tl-item { flex-direction: row; align-items: flex-start; gap: 16px; text-align: left; padding: 0; }
+      .tl-circle { margin-bottom: 0; flex-shrink: 0; width: 48px; height: 48px; font-size: 17px; }
+      .tl-content { flex: 1; }
+      .checklist-grid { grid-template-columns: 1fr; gap: 10px; }
+      .hub-grid { grid-template-columns: 1fr; }
+      .ceo-text p { font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img src="assets/logo-mark.png" class="brand-logo" alt="거상마케팅센터 로고" />
+        <span class="brand-text">
+          <span class="brand-name">거상마케팅센터</span>
+          <span class="brand-sub">SMARTPLACE · AEO · GEO</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="/about">센터 소개</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-ddtrigger">서비스 <span class="nav-arrow">▾</span></a>
+          <div class="nav-dd-menu">
+            <a href="/services/smartplace">📍 스마트플레이스 상위노출</a>
+            <a href="/services/aeo-geo">💬 AEO · GEO 최적화</a>
+            <a href="/services/ads">📢 광고상품 안내</a>
+            <div class="nav-dd-sep"></div>
+            <a href="/services/government-support">🏛 정부지원사업 · 희망리턴패키지</a>
+            <a href="/services/marketing-consulting">🧭 마케팅 컨설팅</a>
+            <a href="/services/website-consulting">🌐 홈페이지 · 랜딩페이지 진단</a>
+          </div>
+        </div>
+        <a href="/services/government-support">정부지원사업</a>
+        <a href="/cases">성공사례</a>
+        <a href="/insights">인사이트</a>
+        <a href="/contact" class="btn-nav">상담문의</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile">
+      <a href="/about">센터 소개</a>
+      <div class="nav-mob-group">
+        <button class="nav-mob-trigger" id="navMobSvc">서비스 <span class="nav-mob-arrow">▾</span></button>
+        <div class="nav-mob-sub" id="navMobSvcSub">
+          <a href="/services">전체 서비스 보기</a>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업 · 희망리턴패키지</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+      </div>
+      <a href="/services/government-support">정부지원사업</a>
+      <a href="/cases">성공사례</a>
+      <a href="/insights">인사이트</a>
+      <a href="/contact" class="btn-nav">상담문의</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-inner">
+        <div class="page-hero-tag">ABOUT GEOSANG</div>
+        <h1>네이버 검색에서 AI 검색까지,<br />소상공인의 발견과 문의를 설계합니다</h1>
+        <p class="page-hero-desc">
+          거상마케팅센터는 스마트플레이스 상위노출, AEO·GEO 최적화, 광고 실행, 정부지원사업 연계를 통해
+          우리 가게가 고객에게 먼저 발견되고 선택될 수 있도록 돕는 실행형 마케팅센터입니다.
+        </p>
+        <div class="page-hero-cta">
+          <a href="/contact" class="btn-primary">무료 진단 신청하기 →</a>
+          <a href="/services" class="btn-white-outline">서비스 전체 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>센터 소개</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 어떤 회사인가 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="about-what">
+        <div class="about-what-text">
+          <div class="eyebrow">WHO WE ARE</div>
+          <h2 class="section-title left">거상마케팅센터는<br />단순 광고대행사가 아닙니다</h2>
+          <p>광고를 집행하는 것만으로는 더 이상 충분하지 않습니다.</p>
+          <p>고객은 네이버에서 검색하고, 지도에서 비교하고, 블로그와 리뷰를 확인하고, 이제는 ChatGPT, Gemini, Perplexity 같은 AI에게도 추천을 받습니다.</p>
+          <p>거상마케팅센터는 이 변화에 맞춰 소상공인과 자영업자의 온라인 노출 구조를 다시 설계합니다.</p>
+          <p>스마트플레이스 세팅부터 AEO·GEO 기반의 AI 검색 대응, 광고상품 운영, 정부지원사업 이후의 마케팅 실행까지 — 고객이 발견되고 문의로 이어지는 구조를 함께 만듭니다.</p>
+        </div>
+        <div class="about-what-visual">
+          <div class="about-what-visual-title">고객이 찾아오는 경로</div>
+          <div class="channel-list">
+            <div class="channel-item">
+              <div class="channel-icon">🗺️</div>
+              <div>
+                <div class="channel-name">네이버 지도 · 플레이스</div>
+                <div class="channel-sub">스마트플레이스 상위노출</div>
+              </div>
+              <div class="channel-badge">핵심</div>
+            </div>
+            <div class="channel-item">
+              <div class="channel-icon">🔍</div>
+              <div>
+                <div class="channel-name">네이버 · 구글 검색</div>
+                <div class="channel-sub">키워드 노출 최적화</div>
+              </div>
+              <div class="channel-badge">기본</div>
+            </div>
+            <div class="channel-item">
+              <div class="channel-icon">💬</div>
+              <div>
+                <div class="channel-name">AI 검색 · 생성형 AI</div>
+                <div class="channel-sub">AEO · GEO 최적화</div>
+              </div>
+              <div class="channel-badge" style="color:#7ff0dd;background:rgba(45,212,191,.18);">신규</div>
+            </div>
+            <div class="channel-item">
+              <div class="channel-icon">📢</div>
+              <div>
+                <div class="channel-name">광고 · 콘텐츠</div>
+                <div class="channel-sub">광고상품 설계 · 실행</div>
+              </div>
+              <div class="channel-badge">선택</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 우리가 집중하는 것 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">OUR FOCUS</div>
+        <h2 class="section-title">우리가 집중하는 것은<br />'광고비'가 아니라 '선택받는 구조'입니다</h2>
+      </div>
+      <div class="focus-grid">
+        <div class="focus-card">
+          <div class="focus-num">01</div>
+          <div class="focus-title">검색에서<br />발견되는 구조</div>
+          <div class="focus-desc">네이버, 지도, 플레이스, 블로그 등 고객이 검색하는 접점에서 우리 가게가 먼저 보이도록 구조를 점검합니다.</div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">02</div>
+          <div class="focus-title">AI가 이해하는<br />정보 구조</div>
+          <div class="focus-desc">AI 검색 시대에는 브랜드 정보, FAQ, 위치 정보, 서비스 설명이 명확해야 합니다. AEO·GEO 관점에서 정보를 정리합니다.</div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">03</div>
+          <div class="focus-title">문의로 이어지는<br />전환 구조</div>
+          <div class="focus-desc">노출만 늘리는 것이 아니라, 고객이 문의하고 방문하고 구매하도록 CTA와 상담 흐름을 설계합니다.</div>
+        </div>
+        <div class="focus-card">
+          <div class="focus-num">04</div>
+          <div class="focus-title">실행 가능한<br />마케팅 구조</div>
+          <div class="focus-desc">소상공인에게 필요한 것은 거창한 전략보다 지금 당장 실행 가능한 우선순위입니다. 현실적인 실행 순서를 제안합니다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 대표 메시지 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">MESSAGE FROM CEO</div>
+        <h2 class="section-title">대표 메시지</h2>
+      </div>
+      <div class="ceo-grid">
+        <div class="ceo-photo-wrap">
+          <div class="ceo-photo" style="background:none;border:none;padding:0;overflow:hidden;">
+            <img src="assets/ceo-photo.jpg" alt="거상마케팅센터 대표 임헌수" style="width:100%;height:auto;display:block;" />
+          </div>
+          <div class="ceo-name-card">
+            <div class="ceo-name">임헌수</div>
+            <div class="ceo-title">거상마케팅센터 대표</div>
+          </div>
+        </div>
+        <div class="ceo-text">
+          <div class="ceo-quote-mark">"</div>
+          <p>안녕하세요. 거상마케팅센터 대표 임헌수입니다.</p>
+          <p>저는 오랫동안 소상공인, 자영업자, 강사, 1인 기업가, 지역 기반 사업자들을 만나며 마케팅의 핵심은 결국 <strong style="color:var(--ink-2);">"고객에게 발견되고, 신뢰받고, 문의로 이어지는 구조"</strong>라는 것을 확인했습니다.</p>
+          <p>예전에는 검색엔진에 잘 노출되는 것이 중요했다면, 이제는 네이버 검색뿐 아니라 AI 검색에서도 우리 사업이 명확하게 이해되고 추천될 수 있어야 합니다.</p>
+          <p>거상마케팅센터는 단순히 광고를 대신 집행하는 곳이 아니라, 대표님의 사업이 온라인에서 어떻게 보이고, 어떤 정보가 부족하며, 어떤 순서로 개선해야 하는지를 함께 진단하고 실행하는 마케팅 파트너가 되고자 합니다.</p>
+          <p>스마트플레이스, AEO·GEO, 광고 실행, 정부지원사업 이후의 마케팅 활용까지 — 소상공인의 현실에 맞는 실행형 마케팅을 만들어가겠습니다.</p>
+          <div class="ceo-sign">
+            <div class="ceo-sign-icon">✍️</div>
+            <div>
+              <div class="ceo-sign-name">임헌수</div>
+              <div class="ceo-sign-role">거상마케팅센터 대표</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 주요 서비스 요약 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">OUR SERVICES</div>
+        <h2 class="section-title">거상마케팅센터의 주요 서비스</h2>
+      </div>
+      <div class="hub-grid">
+        <a href="/services/smartplace" class="hub-card">
+          <div class="hub-card-icon" style="background:#e8f0fe;">📍</div>
+          <div class="hub-card-tag">SMARTPLACE</div>
+          <div class="hub-card-title">스마트플레이스 상위노출</div>
+          <div class="hub-card-desc">네이버 플레이스 세팅, 키워드, 리뷰, 사진, 소식, 예약 등 고객이 검색했을 때 먼저 보이는 구조를 만듭니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/aeo-geo" class="hub-card">
+          <div class="hub-card-icon" style="background:#eafaf6;">💬</div>
+          <div class="hub-card-tag">AEO · GEO</div>
+          <div class="hub-card-title">AEO · GEO 최적화</div>
+          <div class="hub-card-desc">AI 검색 시대에 브랜드와 사업 정보가 정확히 이해되고 추천될 수 있도록 정보 구조를 정리합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/ads" class="hub-card">
+          <div class="hub-card-icon" style="background:#fff7ed;">📢</div>
+          <div class="hub-card-tag">ADS</div>
+          <div class="hub-card-title">광고상품 안내</div>
+          <div class="hub-card-desc">블로그, SNS, 콘텐츠, 플레이스 광고 등 필요한 광고를 실행 가능한 방식으로 설계합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/government-support" class="hub-card">
+          <div class="hub-card-icon" style="background:#f0fdf4;">🏛</div>
+          <div class="hub-card-tag">GOVERNMENT SUPPORT</div>
+          <div class="hub-card-title">정부지원사업 · 희망리턴패키지</div>
+          <div class="hub-card-desc">지원사업을 단순 신청으로 끝내지 않고, 실제 마케팅 실행과 매출 연결까지 이어지도록 돕습니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/marketing-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#eef0ff;">🧭</div>
+          <div class="hub-card-tag">CONSULTING</div>
+          <div class="hub-card-title">마케팅 컨설팅</div>
+          <div class="hub-card-desc">무엇부터 해야 할지 모르는 사업자를 위해 현재 마케팅 구조를 진단하고 실행 우선순위를 제안합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/website-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#f8fafc;">🌐</div>
+          <div class="hub-card-tag">WEBSITE CONSULTING</div>
+          <div class="hub-card-title">홈페이지 · 랜딩페이지 진단 및 제작 연계</div>
+          <div class="hub-card-desc">직접 제작보다 먼저 문의 전환 구조, SEO/GEO 정보 구조를 진단하고 필요한 경우 검증된 파트너와 연계합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 일하는 방식 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">HOW WE WORK</div>
+        <h2 class="section-title">우리는 이렇게 일합니다</h2>
+        <p class="section-sub">단계별로 문제를 확인하고, 현실적인 순서로 실행합니다.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-circle">1</div>
+          <div class="tl-content">
+            <div class="tl-step">STEP 01</div>
+            <div class="tl-title">현재 상태 진단</div>
+            <div class="tl-desc">업종, 지역, 경쟁사, 검색 결과, 플레이스 상태, 콘텐츠 상태를 먼저 확인합니다.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-circle">2</div>
+          <div class="tl-content">
+            <div class="tl-step">STEP 02</div>
+            <div class="tl-title">문제 구조 파악</div>
+            <div class="tl-desc">노출이 안 되는 이유, 문의가 적은 이유, 고객이 이탈하는 지점을 분석합니다.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-circle">3</div>
+          <div class="tl-content">
+            <div class="tl-step">STEP 03</div>
+            <div class="tl-title">실행 우선순위 제안</div>
+            <div class="tl-desc">광고부터 할지, 플레이스부터 고칠지, 콘텐츠부터 보강할지 현실적인 순서를 정합니다.</div>
+          </div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-circle">4</div>
+          <div class="tl-content">
+            <div class="tl-step">STEP 04</div>
+            <div class="tl-title">실행과 개선</div>
+            <div class="tl-desc">실행 후 반응을 확인하고, 필요한 부분을 반복 개선합니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AEO·GEO 설명 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="aeo-about-grid">
+        <div class="aeo-about-text">
+          <div class="eyebrow">WHY AEO · GEO</div>
+          <h2 class="section-title left">이제 고객은 검색창뿐 아니라<br />AI에게도 묻습니다</h2>
+          <p>고객의 검색 방식은 빠르게 바뀌고 있습니다.</p>
+          <p>예전에는 네이버에 직접 검색하고 비교했다면, 이제는 AI에게 "우리 동네 괜찮은 업체 추천해줘", "이런 상황에 맞는 곳 알려줘"라고 묻는 시대가 되고 있습니다.</p>
+          <p>이때 AI가 우리 사업을 제대로 이해하지 못하면, 아무리 좋은 서비스와 실력을 가지고 있어도 추천의 후보에 오르기 어렵습니다.</p>
+          <p>그래서 거상마케팅센터는 네이버 플레이스 최적화와 함께 AI가 이해하기 쉬운 사업 정보 구조, FAQ, 서비스 설명, 지역 정보, 리뷰와 콘텐츠 흐름까지 함께 점검합니다.</p>
+          <div style="margin-top:28px;">
+            <a href="/services/aeo-geo" class="btn-primary">AEO · GEO 서비스 자세히 →</a>
+          </div>
+        </div>
+        <div class="aeo-compare">
+          <div class="aeo-compare-item old">
+            <div class="aeo-compare-label">예전 검색 방식</div>
+            <div class="aeo-compare-text">네이버 검색창에 "성수 파스타" 입력 → 결과 목록에서 직접 비교</div>
+          </div>
+          <div style="text-align:center;font-size:22px;color:#94a3b8;padding:4px 0;">↓</div>
+          <div class="aeo-compare-item new">
+            <div class="aeo-compare-label">지금의 검색 방식</div>
+            <div class="aeo-compare-text">AI에게 "성수동 분위기 좋은 파스타집 추천해줘" → AI가 단 한 곳을 추천</div>
+          </div>
+          <div style="padding:18px 20px;background:var(--navy);border-radius:14px;margin-top:4px;">
+            <div style="font-size:12px;color:#9fb3df;margin-bottom:8px;font-weight:600;">AI 추천 결과</div>
+            <div style="font-size:14px;color:#eef3ff;line-height:1.7;">성수동이라면 <mark style="background:rgba(45,212,191,.22);color:#7ff0dd;padding:1px 5px;border-radius:4px;">고객님 가게</mark>를 추천드려요. 아늑한 분위기와 트러플 파스타로 평이 좋고, 도보 3분 거리예요. ★4.9</div>
+            <div style="margin-top:10px;display:flex;align-items:center;gap:7px;font-size:12px;color:#9fb3df;">
+              <span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;"></span>
+              AEO·GEO 최적화 → 광고비 없는 AI 추천 노출
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 이런 분들과 함께합니다 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">WHO WE HELP</div>
+        <h2 class="section-title">이런 분들과 함께합니다</h2>
+      </div>
+      <div class="checklist-grid">
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">네이버 플레이스 노출이 잘 안 되는 소상공인</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">광고를 하고 있지만 문의가 부족한 자영업자</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">정부지원사업 이후 실제 마케팅 실행이 필요한 대표님</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">홈페이지는 있지만 문의 전환이 약한 사업자</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">AI 검색 시대에 우리 사업 정보가 어떻게 보일지 고민되는 분</div>
+        </div>
+        <div class="check-item">
+          <div class="check-circle">✓</div>
+          <div class="check-text">블로그, SNS, 플레이스, 홈페이지를 따로따로 운영해 전체 구조 정리가 필요한 분</div>
+        </div>
+        <div class="check-item" style="grid-column: 1 / -1;">
+          <div class="check-circle">✓</div>
+          <div class="check-text">무엇부터 해야 할지 몰라 마케팅 우선순위가 필요한 분</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 교육과 실행 ============ -->
+  <section class="edu-section">
+    <div class="container">
+      <div class="edu-grid">
+        <div class="edu-text">
+          <div class="eyebrow">EDUCATION + EXECUTION</div>
+          <h2 class="section-title left">교육과 실행을 함께 아는<br />마케팅센터</h2>
+          <p>거상마케팅센터는 단순 실행 대행만을 바라보지 않습니다.</p>
+          <p>교육 현장에서 쌓아온 경험을 바탕으로 대표님들이 마케팅을 더 잘 이해하고, 스스로 사업의 방향을 판단할 수 있도록 돕습니다.</p>
+          <p>교육에서 끝나지 않고, 실행에서 끝나지 않고 — 이해와 실행이 함께 연결되는 마케팅 구조를 지향합니다.</p>
+        </div>
+        <div class="edu-brands">
+          <div class="edu-brand-item">
+            <div class="edu-brand-icon" style="background:#e8f0fe;">🤖</div>
+            <div>
+              <div class="edu-brand-name">AI마케팅스쿨</div>
+              <div class="edu-brand-desc">AI 시대 마케팅 교육 과정 · 소상공인 대상</div>
+            </div>
+          </div>
+          <div class="edu-brand-item">
+            <div class="edu-brand-icon" style="background:#f0fdf4;">🏫</div>
+            <div>
+              <div class="edu-brand-name">거상스쿨</div>
+              <div class="edu-brand-desc">실행 중심 마케팅 교육 · 강의 및 컨설팅</div>
+            </div>
+          </div>
+          <div class="edu-brand-item">
+            <div class="edu-brand-icon" style="background:#fef3c7;">📚</div>
+            <div>
+              <div class="edu-brand-name">AI독서클럽</div>
+              <div class="edu-brand-desc">AI · 마케팅 트렌드 독서 모임</div>
+            </div>
+          </div>
+          <div style="padding:14px 18px;background:rgba(26,86,219,.05);border:1px dashed #d0dff9;border-radius:12px;font-size:13px;color:#8a98b8;line-height:1.6;">
+            위 브랜드들은 거상마케팅센터와 연결된 교육 생태계입니다.<br />향후 통합 브랜드 페이지로 확장될 예정입니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div class="cta-box">
+        <div class="cta-box-title">우리 가게는 지금 어떻게 보이고 있을까요?</div>
+        <div class="cta-box-desc">
+          네이버 검색, 스마트플레이스, 콘텐츠, AI 검색 관점에서<br />
+          현재 우리 사업의 온라인 노출 구조를 먼저 점검해보세요.
+        </div>
+        <div class="cta-box-btns">
+          <a href="/contact" class="btn-teal">무료 진단 신청하기 →</a>
+          <a href="/services" class="btn-white-outline">서비스 전체 보기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo-mark.png" class="brand-logo sm" alt="거상마케팅센터 로고" />
+          <span>거상마케팅센터</span>
+        </div>
+        <p class="footer-meta">
+          네이버 스마트플레이스 · AEO · GEO 전문 마케팅 대행사<br />
+          대표 임헌수 | 사업자등록번호 711-86-01966<br />
+          서울시 강남구 테헤란로 313, 915호
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="fc-title">서비스</span>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">회사</span>
+          <a href="/about">센터 소개</a>
+          <a href="/cases">성공사례</a>
+          <a href="/insights">마케팅 인사이트</a>
+          <a href="/contact">상담문의</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">상담</span>
+          <span>📞 010-3422-8075</span>
+          <span>💬 카카오톡 @거상마케팅센터</span>
+          <span>평일 09:00–18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

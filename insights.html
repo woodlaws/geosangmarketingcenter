@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마케팅 인사이트 | 거상마케팅센터</title>
+  <meta name="description" content="거상마케팅센터의 마케팅 인사이트는 스마트플레이스, AEO·GEO, 광고상품, 정부지원사업, 홈페이지 진단, 소상공인 마케팅 구조 진단에 대한 칼럼과 가이드를 제공합니다." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://geosangmarketing.com/insights" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="마케팅 인사이트 | 소상공인 마케팅을 구조로 이해합니다" />
+  <meta property="og:description" content="스마트플레이스, AEO·GEO, 광고상품, 정부지원사업, 홈페이지 진단까지 소상공인과 자영업자에게 필요한 마케팅 인사이트를 쉽게 정리합니다." />
+  <meta property="og:url" content="https://geosangmarketing.com/insights" />
+  <meta property="og:image" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:secure_url" content="https://geosangmarketing.com/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="거상마케팅센터" />
+    <meta property="og:site_name" content="거상마케팅센터" />
+  <meta property="og:locale" content="ko_KR" />
+  <link rel="icon" type="image/png" href="assets/logo-mark.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── insights page specific ──────────────────────── */
+
+    /* Hero visual: content cards stack */
+    .ins-hero-visual {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ins-vis-title {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .ins-vis-card {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      padding: 11px 13px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 11px;
+    }
+    .ins-vis-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .ins-vis-cat {
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--teal);
+      letter-spacing: .05em;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+    .ins-vis-ttl { font-size: 12px; font-weight: 700; color: #dbe5fb; line-height: 1.4; }
+    .ins-vis-badge {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 99px;
+      white-space: nowrap;
+      align-self: flex-start;
+      flex-shrink: 0;
+    }
+    .ins-vis-badge.prep { background: rgba(251,191,36,.18); color: #fbbf24; }
+
+    /* Why section */
+    .ins-why-text {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .ins-why-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 14px;
+      text-wrap: pretty;
+    }
+
+    /* Category cards */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .cat-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 26px 22px;
+      box-shadow: 0 4px 12px rgba(15,23,42,.04);
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+      cursor: default;
+    }
+    .cat-card:hover { transform: translateY(-4px); border-color: #cdddfb; box-shadow: 0 14px 34px rgba(26,86,219,.1); }
+    .cat-card-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+    .cat-card-title { font-size: 17px; font-weight: 800; color: var(--ink-2); margin-bottom: 9px; }
+    .cat-card-desc { font-size: 13px; color: var(--muted); line-height: 1.68; text-wrap: pretty; margin-bottom: 14px; }
+    .cat-count {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+      background: var(--tint);
+      border: 1px solid var(--border);
+      padding: 4px 11px;
+      border-radius: 99px;
+    }
+
+    /* Article cards */
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .article-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(15,23,42,.04);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(26,86,219,.1); border-color: #cdddfb; }
+    .article-thumb {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+    .article-body { padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+    .article-cat {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--blue);
+      background: #eef3fc;
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 10px;
+      align-self: flex-start;
+    }
+    .article-title { font-size: 15px; font-weight: 800; color: var(--ink-2); line-height: 1.45; margin-bottom: 10px; }
+    .article-summary { font-size: 13px; color: var(--muted); line-height: 1.68; margin-bottom: 14px; flex: 1; text-wrap: pretty; }
+    .article-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .article-tag { font-size: 11px; font-weight: 600; color: #64748b; background: var(--tint); border: 1px solid var(--border); padding: 3px 8px; border-radius: 6px; }
+    .article-footer { display: flex; align-items: center; justify-content: space-between; }
+    .article-status {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 99px;
+    }
+    .article-status.prep { background: rgba(251,191,36,.14); color: #b45309; }
+    .article-status.published { background: rgba(45,212,191,.14); color: #0d9488; }
+    .article-read {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .article-read:hover { text-decoration: underline; }
+
+    /* Keyword chips */
+    .keyword-cloud { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .kw-chip {
+      display: inline-flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #384258;
+      background: #fff;
+      border: 1.5px solid var(--border);
+      padding: 9px 16px;
+      border-radius: 999px;
+      cursor: default;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .kw-chip:hover { background: #eef3fc; border-color: #cdddfb; color: var(--blue); }
+
+    /* Connect section */
+    .connect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .connect-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
+      box-shadow: 0 4px 12px rgba(15,23,42,.04);
+      text-decoration: none;
+      color: inherit;
+      transition: transform .2s, border-color .2s, box-shadow .2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .connect-card:hover { transform: translateY(-4px); border-color: #cdddfb; box-shadow: 0 14px 32px rgba(26,86,219,.1); }
+    .connect-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 13px;
+    }
+    .connect-title { font-size: 14px; font-weight: 800; color: var(--ink-2); margin-bottom: 6px; }
+    .connect-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 14px; flex: 1; }
+    .connect-btn {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--blue);
+      background: var(--tint);
+      border: 1px solid #d0dff9;
+      padding: 7px 14px;
+      border-radius: 8px;
+    }
+    .connect-card:hover .connect-btn { background: #e0ebff; border-color: var(--blue); }
+
+    /* Update notice */
+    .update-notice {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px 40px;
+      box-shadow: 0 4px 18px rgba(15,23,42,.04);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .update-text p {
+      font-size: 16px;
+      color: var(--muted);
+      line-height: 1.85;
+      margin: 0 0 13px;
+      text-wrap: pretty;
+    }
+    .update-note {
+      margin-top: 4px;
+      padding: 13px 16px;
+      background: var(--tint);
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      font-size: 13px;
+      color: #64748b;
+      line-height: 1.65;
+    }
+    .update-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .update-topic {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 15px;
+      background: var(--tint);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    .update-topic-icon { font-size: 18px; flex-shrink: 0; }
+    .update-topic-text { font-size: 13px; font-weight: 700; color: var(--ink-2); }
+    .update-topic-badge {
+      margin-left: auto;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 99px;
+      white-space: nowrap;
+    }
+    .update-topic-badge.soon { background: rgba(251,191,36,.18); color: #b45309; }
+    .update-topic-badge.plan { background: rgba(99,102,241,.15); color: #4f46e5; }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 920px) {
+      .cat-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .article-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .connect-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+      .update-notice { grid-template-columns: 1fr; gap: 32px; padding: 28px 24px; }
+    }
+    @media (max-width: 600px) {
+      .cat-grid { grid-template-columns: 1fr; gap: 12px; }
+      .article-grid { grid-template-columns: 1fr; gap: 14px; }
+      .connect-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+  </style>
+    <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://geosangmarketing.com/og-image.png" />
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand">
+        <img src="assets/logo-mark.png" class="brand-logo" alt="거상마케팅센터 로고" />
+        <span class="brand-text">
+          <span class="brand-name">거상마케팅센터</span>
+          <span class="brand-sub">SMARTPLACE · AEO · GEO</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="/about">센터 소개</a>
+        <div class="nav-dropdown">
+          <a href="/services" class="nav-ddtrigger">서비스 <span class="nav-arrow">▾</span></a>
+          <div class="nav-dd-menu">
+            <a href="/services/smartplace">📍 스마트플레이스 상위노출</a>
+            <a href="/services/aeo-geo">💬 AEO · GEO 최적화</a>
+            <a href="/services/ads">📢 광고상품 안내</a>
+            <div class="nav-dd-sep"></div>
+            <a href="/services/government-support">🏛 정부지원사업 · 희망리턴패키지</a>
+            <a href="/services/marketing-consulting">🧭 마케팅 컨설팅</a>
+            <a href="/services/website-consulting">🌐 홈페이지 · 랜딩페이지 진단</a>
+          </div>
+        </div>
+        <a href="/services/government-support">정부지원사업</a>
+        <a href="/cases">성공사례</a>
+        <a href="/insights">인사이트</a>
+        <a href="/contact" class="btn-nav">상담문의</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile">
+      <a href="/about">센터 소개</a>
+      <div class="nav-mob-group">
+        <button class="nav-mob-trigger" id="navMobSvc">서비스 <span class="nav-mob-arrow">▾</span></button>
+        <div class="nav-mob-sub" id="navMobSvcSub">
+          <a href="/services">전체 서비스 보기</a>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업 · 희망리턴패키지</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+      </div>
+      <a href="/services/government-support">정부지원사업</a>
+      <a href="/cases">성공사례</a>
+      <a href="/insights">인사이트</a>
+      <a href="/contact" class="btn-nav">상담문의</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:52px;align-items:center;position:relative;">
+        <div class="page-hero-inner" style="max-width:none;">
+          <div class="page-hero-tag">MARKETING INSIGHTS</div>
+          <h1 style="font-size:30px;word-break:keep-all;overflow-wrap:break-word;">소상공인 마케팅,<br /><span style="color:var(--teal);">이제 감이 아니라 구조로 이해해야 합니다</span></h1>
+          <p class="page-hero-desc">
+            거상마케팅센터는 스마트플레이스, 광고, 콘텐츠, AEO·GEO, 정부지원사업 이후 실행까지
+            소상공인과 자영업자에게 필요한 마케팅 인사이트를 쉽게 정리합니다.
+          </p>
+          <div class="page-hero-cta">
+            <a href="/contact" class="btn-primary">무료 진단 신청하기 →</a>
+            <a href="/services" class="btn-white-outline">서비스 전체 보기</a>
+          </div>
+        </div>
+        <div class="ins-hero-visual">
+          <div class="ins-vis-title">인사이트 주제</div>
+          <div class="ins-vis-card">
+            <div class="ins-vis-icon" style="background:#e8f0fe;">📍</div>
+            <div>
+              <div class="ins-vis-cat">스마트플레이스</div>
+              <div class="ins-vis-ttl">플레이스 상위노출, 먼저 점검해야 할 7가지</div>
+            </div>
+            <div class="ins-vis-badge prep">준비 중</div>
+          </div>
+          <div class="ins-vis-card">
+            <div class="ins-vis-icon" style="background:#eafaf6;">💬</div>
+            <div>
+              <div class="ins-vis-cat">AEO · GEO</div>
+              <div class="ins-vis-ttl">AEO와 GEO, 소상공인에게 왜 필요할까?</div>
+            </div>
+            <div class="ins-vis-badge prep">준비 중</div>
+          </div>
+          <div class="ins-vis-card">
+            <div class="ins-vis-icon" style="background:#fff7ed;">📢</div>
+            <div>
+              <div class="ins-vis-cat">광고상품</div>
+              <div class="ins-vis-ttl">광고비 쓰기 전에 먼저 봐야 할 전환 구조</div>
+            </div>
+            <div class="ins-vis-badge prep">준비 중</div>
+          </div>
+          <div class="ins-vis-card">
+            <div class="ins-vis-icon" style="background:#f0fdf4;">🏛</div>
+            <div>
+              <div class="ins-vis-cat">정부지원사업</div>
+              <div class="ins-vis-ttl">희망리턴패키지 이후 마케팅 시작 방향</div>
+            </div>
+            <div class="ins-vis-badge prep">준비 중</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb-bar">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">홈</a>
+        <span class="breadcrumb-sep">›</span>
+        <span>마케팅 인사이트</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 왜 인사이트가 필요한가 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">WHY INSIGHTS</div>
+        <h2 class="section-title">마케팅은 실행보다<br />먼저 이해가 필요합니다</h2>
+      </div>
+      <div class="ins-why-text">
+        <p>소상공인과 자영업자에게 마케팅은 점점 복잡해지고 있습니다. 예전에는 블로그, 광고, 스마트플레이스 정도만 고민하면 됐지만, 이제는 네이버 검색, 지도, SNS, 홈페이지, 콘텐츠, 리뷰, AI 검색까지 함께 봐야 합니다.</p>
+        <p>하지만 모든 것을 한꺼번에 할 필요는 없습니다. 중요한 것은 지금 우리 사업에 필요한 것이 무엇인지, 어떤 순서로 실행해야 하는지, 어떤 채널이 실제 문의와 매출로 이어지는지를 이해하는 것입니다.</p>
+        <p>거상마케팅센터의 마케팅 인사이트는 복잡한 마케팅을 소상공인의 눈높이에 맞게 정리하고, 실행 가능한 방향으로 연결하기 위한 콘텐츠입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 인사이트 카테고리 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">CATEGORIES</div>
+        <h2 class="section-title">필요한 주제별로<br />마케팅을 정리합니다</h2>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-card-icon" style="background:#e8f0fe;">📍</div>
+          <div class="cat-card-title">스마트플레이스</div>
+          <div class="cat-card-desc">네이버 플레이스 상위노출, 사진, 리뷰, 소식, 예약, 지역 검색 최적화에 대한 인사이트</div>
+          <div class="cat-count">📄 콘텐츠 준비 중</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-icon" style="background:#eafaf6;">💬</div>
+          <div class="cat-card-title">AEO · GEO</div>
+          <div class="cat-card-desc">AI 검색 시대에 사업 정보가 어떻게 이해되고 추천되는지에 대한 인사이트</div>
+          <div class="cat-count">📄 콘텐츠 준비 중</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-icon" style="background:#fff7ed;">📢</div>
+          <div class="cat-card-title">광고상품</div>
+          <div class="cat-card-desc">블로그, SNS, 플레이스 광고, 콘텐츠 광고 등 업종별 광고상품 선택 기준</div>
+          <div class="cat-count">📄 콘텐츠 준비 중</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-icon" style="background:#f0fdf4;">🏛</div>
+          <div class="cat-card-title">정부지원사업</div>
+          <div class="cat-card-desc">희망리턴패키지, 소상공인 지원사업 이후 실제 마케팅 실행 방향</div>
+          <div class="cat-count">📄 콘텐츠 준비 중</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-icon" style="background:#f8fafc;">🌐</div>
+          <div class="cat-card-title">홈페이지 · 랜딩페이지</div>
+          <div class="cat-card-desc">문의 전환 구조, SEO/GEO 정보 구조, 모바일 사용성, 랜딩페이지 개선 포인트</div>
+          <div class="cat-count">📄 콘텐츠 준비 중</div>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-icon" style="background:#eef0ff;">🧭</div>
+          <div class="cat-card-title">마케팅 구조 진단</div>
+          <div class="cat-card-desc">무엇부터 해야 할지 모르는 대표님을 위한 마케팅 우선순위와 실행 전략</div>
+          <div class="cat-count">📄 콘텐츠 준비 중</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 추천 인사이트 글 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">FEATURED ARTICLES</div>
+        <h2 class="section-title">먼저 읽어보면 좋은 인사이트</h2>
+        <p class="section-sub">아래 글은 순차적으로 업데이트될 예정입니다.</p>
+      </div>
+      <div class="article-grid">
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:#eef3fc;">📍</div>
+          <div class="article-body">
+            <div class="article-cat">스마트플레이스</div>
+            <div class="article-title">스마트플레이스 상위노출, 먼저 점검해야 할 7가지</div>
+            <div class="article-summary">업체명, 카테고리, 사진, 리뷰, 소식, 예약, 키워드까지 플레이스 노출 전에 먼저 확인해야 할 기본 요소를 정리합니다.</div>
+            <div class="article-tags">
+              <span class="article-tag">#스마트플레이스</span>
+              <span class="article-tag">#상위노출</span>
+              <span class="article-tag">#지역마케팅</span>
+            </div>
+            <div class="article-footer">
+              <div class="article-status prep">준비 중</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:#eafaf6;">💬</div>
+          <div class="article-body">
+            <div class="article-cat">AEO · GEO</div>
+            <div class="article-title">AEO와 GEO, 소상공인에게 왜 필요할까?</div>
+            <div class="article-summary">AI 검색 시대에 우리 사업 정보가 어떻게 이해되고 추천될 수 있는지, 소상공인 관점에서 쉽게 설명합니다.</div>
+            <div class="article-tags">
+              <span class="article-tag">#AEO</span>
+              <span class="article-tag">#GEO</span>
+              <span class="article-tag">#AI검색</span>
+            </div>
+            <div class="article-footer">
+              <div class="article-status prep">준비 중</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:#fff7ed;">📢</div>
+          <div class="article-body">
+            <div class="article-cat">광고상품</div>
+            <div class="article-title">광고비를 쓰기 전에 먼저 봐야 할 문의 전환 구조</div>
+            <div class="article-summary">광고 클릭은 있는데 문의가 부족한 이유를 랜딩페이지, CTA, 후기, 상담 동선 관점에서 점검합니다.</div>
+            <div class="article-tags">
+              <span class="article-tag">#광고상품</span>
+              <span class="article-tag">#문의전환</span>
+              <span class="article-tag">#랜딩페이지</span>
+            </div>
+            <div class="article-footer">
+              <div class="article-status prep">준비 중</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:#f0fdf4;">🏛</div>
+          <div class="article-body">
+            <div class="article-cat">정부지원사업</div>
+            <div class="article-title">희망리턴패키지 이후, 마케팅은 어디서부터 시작해야 할까?</div>
+            <div class="article-summary">지원사업 이후 실제 고객 유입과 매출 연결을 위해 먼저 정리해야 할 스마트플레이스, 콘텐츠, 광고 실행 방향을 안내합니다.</div>
+            <div class="article-tags">
+              <span class="article-tag">#희망리턴패키지</span>
+              <span class="article-tag">#정부지원사업</span>
+              <span class="article-tag">#소상공인마케팅</span>
+            </div>
+            <div class="article-footer">
+              <div class="article-status prep">준비 중</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:#f8fafc;">🌐</div>
+          <div class="article-body">
+            <div class="article-cat">홈페이지 · 랜딩페이지</div>
+            <div class="article-title">홈페이지는 있는데 문의가 없다면 확인해야 할 것들</div>
+            <div class="article-summary">첫 화면 메시지, 상담 버튼, 모바일 사용성, SEO/GEO 정보 구조 등 홈페이지 진단의 핵심 기준을 정리합니다.</div>
+            <div class="article-tags">
+              <span class="article-tag">#홈페이지진단</span>
+              <span class="article-tag">#랜딩페이지</span>
+              <span class="article-tag">#문의전환</span>
+            </div>
+            <div class="article-footer">
+              <div class="article-status prep">준비 중</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="article-card">
+          <div class="article-thumb" style="background:#eef0ff;">🧭</div>
+          <div class="article-body">
+            <div class="article-cat">마케팅 구조 진단</div>
+            <div class="article-title">블로그, SNS, 플레이스 중 무엇부터 해야 할까?</div>
+            <div class="article-summary">사업 유형과 고객 유입 경로에 따라 어떤 채널을 먼저 정리해야 하는지 실행 우선순위 관점에서 설명합니다.</div>
+            <div class="article-tags">
+              <span class="article-tag">#마케팅컨설팅</span>
+              <span class="article-tag">#우선순위</span>
+              <span class="article-tag">#소상공인</span>
+            </div>
+            <div class="article-footer">
+              <div class="article-status prep">준비 중</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 인기 키워드 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">POPULAR TOPICS</div>
+        <h2 class="section-title">대표님들이 자주 묻는 주제</h2>
+      </div>
+      <div class="keyword-cloud">
+        <div class="kw-chip">스마트플레이스 상위노출</div>
+        <div class="kw-chip">네이버 플레이스 최적화</div>
+        <div class="kw-chip">지역 마케팅</div>
+        <div class="kw-chip">블로그 마케팅</div>
+        <div class="kw-chip">SNS 콘텐츠</div>
+        <div class="kw-chip">광고비 효율</div>
+        <div class="kw-chip">문의 전환</div>
+        <div class="kw-chip">홈페이지 진단</div>
+        <div class="kw-chip">랜딩페이지 개선</div>
+        <div class="kw-chip">AEO</div>
+        <div class="kw-chip">GEO</div>
+        <div class="kw-chip">AI 검색 최적화</div>
+        <div class="kw-chip">희망리턴패키지</div>
+        <div class="kw-chip">정부지원사업 마케팅</div>
+        <div class="kw-chip">소상공인 마케팅</div>
+        <div class="kw-chip">마케팅 우선순위</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 실행으로 연결 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">FROM INSIGHT TO ACTION</div>
+        <h2 class="section-title">읽고 끝나는 콘텐츠가 아니라,<br />실행으로 연결합니다</h2>
+        <p class="section-sub" style="max-width:640px;margin:0 auto;">거상마케팅센터의 인사이트는 읽고 나서 어떤 서비스를 먼저 봐야 하는지까지 자연스럽게 연결됩니다.</p>
+      </div>
+      <div class="connect-grid">
+        <a href="/services/smartplace" class="connect-card">
+          <div class="connect-icon" style="background:#e8f0fe;">📍</div>
+          <div class="connect-title">스마트플레이스 진단받기</div>
+          <div class="connect-desc">플레이스 인사이트를 읽었다면 실제 진단으로 이어집니다</div>
+          <div class="connect-btn">서비스 자세히 보기 →</div>
+        </a>
+        <a href="/services/aeo-geo" class="connect-card">
+          <div class="connect-icon" style="background:#eafaf6;">💬</div>
+          <div class="connect-title">AI 검색 진단받기</div>
+          <div class="connect-desc">AEO·GEO 인사이트를 읽었다면 실제 진단으로 이어집니다</div>
+          <div class="connect-btn">서비스 자세히 보기 →</div>
+        </a>
+        <a href="/services/ads" class="connect-card">
+          <div class="connect-icon" style="background:#fff7ed;">📢</div>
+          <div class="connect-title">광고상품 상담받기</div>
+          <div class="connect-desc">광고 인사이트를 읽었다면 상품 상담으로 이어집니다</div>
+          <div class="connect-btn">서비스 자세히 보기 →</div>
+        </a>
+        <a href="/services/marketing-consulting" class="connect-card">
+          <div class="connect-icon" style="background:#eef0ff;">🧭</div>
+          <div class="connect-title">마케팅 구조 진단받기</div>
+          <div class="connect-desc">여러 주제를 읽었다면 전체 구조 진단으로 시작하세요</div>
+          <div class="connect-btn">서비스 자세히 보기 →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 업데이트 예정 ============ -->
+  <section class="section section-tint">
+    <div class="container">
+      <div class="update-notice">
+        <div class="update-text">
+          <div class="eyebrow">CONTENT UPDATE</div>
+          <h2 class="section-title left" style="font-size:28px;">계속 업데이트되는<br />마케팅 가이드</h2>
+          <p>마케팅 환경은 계속 바뀝니다. 네이버 검색 정책, 스마트플레이스 운영 방식, 광고상품, AI 검색 환경, 정부지원사업 흐름은 계속 변화합니다.</p>
+          <p>거상마케팅센터는 소상공인과 자영업자가 놓치기 쉬운 변화를 쉽고 실행 가능한 형태로 정리해 업데이트할 예정입니다.</p>
+          <div class="update-note">
+            현재 인사이트 콘텐츠는 순차적으로 업데이트 중입니다.<br />
+            상세 글은 준비되는 대로 추가될 예정입니다.
+          </div>
+        </div>
+        <div class="update-visual">
+          <div style="font-size:13px;font-weight:800;color:var(--ink-2);margin-bottom:12px;">준비 중인 주제</div>
+          <div class="update-topic">
+            <div class="update-topic-icon">📍</div>
+            <div class="update-topic-text">스마트플레이스 완전 정복 가이드</div>
+            <div class="update-topic-badge soon">준비 중</div>
+          </div>
+          <div class="update-topic">
+            <div class="update-topic-icon">💬</div>
+            <div class="update-topic-text">AI 검색 대응 실전 체크리스트</div>
+            <div class="update-topic-badge soon">준비 중</div>
+          </div>
+          <div class="update-topic">
+            <div class="update-topic-icon">🏛</div>
+            <div class="update-topic-text">정부지원사업 종류와 신청 가이드</div>
+            <div class="update-topic-badge plan">기획 중</div>
+          </div>
+          <div class="update-topic">
+            <div class="update-topic-icon">🌐</div>
+            <div class="update-topic-text">홈페이지 진단 셀프 체크 방법</div>
+            <div class="update-topic-badge plan">기획 중</div>
+          </div>
+          <div class="update-topic">
+            <div class="update-topic-icon">🧭</div>
+            <div class="update-topic-text">업종별 마케팅 우선순위 정리</div>
+            <div class="update-topic-badge plan">기획 중</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 관련 서비스 ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">RELATED SERVICES</div>
+        <h2 class="section-title">인사이트와 연결되는<br />주요 서비스</h2>
+      </div>
+      <div class="hub-grid">
+        <a href="/services/smartplace" class="hub-card">
+          <div class="hub-card-icon" style="background:#e8f0fe;">📍</div>
+          <div class="hub-card-tag">SMARTPLACE</div>
+          <div class="hub-card-title">스마트플레이스 상위노출</div>
+          <div class="hub-card-desc">네이버와 지도 검색에서 먼저 발견되는 구조를 만듭니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/aeo-geo" class="hub-card">
+          <div class="hub-card-icon" style="background:#eafaf6;">💬</div>
+          <div class="hub-card-tag">AEO · GEO</div>
+          <div class="hub-card-title">AEO · GEO 최적화</div>
+          <div class="hub-card-desc">AI와 검색엔진이 이해하기 쉬운 사업 정보 구조를 정리합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/ads" class="hub-card">
+          <div class="hub-card-icon" style="background:#fff7ed;">📢</div>
+          <div class="hub-card-tag">ADS</div>
+          <div class="hub-card-title">광고상품 안내</div>
+          <div class="hub-card-desc">필요한 광고와 콘텐츠를 업종에 맞게 설계합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/government-support" class="hub-card">
+          <div class="hub-card-icon" style="background:#f0fdf4;">🏛</div>
+          <div class="hub-card-tag">GOVERNMENT SUPPORT</div>
+          <div class="hub-card-title">정부지원사업 · 희망리턴패키지</div>
+          <div class="hub-card-desc">지원사업 이후 실제 마케팅 실행까지 연결합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/marketing-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#eef0ff;">🧭</div>
+          <div class="hub-card-tag">CONSULTING</div>
+          <div class="hub-card-title">마케팅 컨설팅</div>
+          <div class="hub-card-desc">현재 온라인 노출 구조와 문의 전환 구조를 먼저 진단합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+        <a href="/services/website-consulting" class="hub-card">
+          <div class="hub-card-icon" style="background:#f8fafc;">🌐</div>
+          <div class="hub-card-tag">WEBSITE CONSULTING</div>
+          <div class="hub-card-title">홈페이지 · 랜딩페이지 진단</div>
+          <div class="hub-card-desc">문의 전환 구조와 정보 구조를 점검하고 필요한 경우 제작 파트너와 연계합니다.</div>
+          <div class="hub-card-btn">자세히 보기 →</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="section section-tint">
+    <div class="container container-narrow">
+      <div class="cta-box">
+        <div class="cta-box-title">읽어도 막막하다면,<br />우리 사업 기준으로 먼저 진단해보세요</div>
+        <div class="cta-box-desc">
+          마케팅 정보는 많지만, 중요한 것은 우리 사업에 맞는 실행 순서입니다.<br />
+          현재 노출 구조와 문의 전환 흐름을 점검하면 무엇부터 해야 할지 명확해집니다.
+        </div>
+        <div class="cta-box-btns">
+          <a href="/contact" class="btn-teal">무료 진단 신청하기 →</a>
+          <a href="/services/marketing-consulting" class="btn-white-outline">마케팅 구조 진단하기</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">
+          <img src="assets/logo-mark.png" class="brand-logo sm" alt="거상마케팅센터 로고" />
+          <span>거상마케팅센터</span>
+        </div>
+        <p class="footer-meta">
+          네이버 스마트플레이스 · AEO · GEO 전문 마케팅 대행사<br />
+          대표 임헌수 | 사업자등록번호 711-86-01966<br />
+          서울시 강남구 테헤란로 313, 915호
+        </p>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <span class="fc-title">서비스</span>
+          <a href="/services/smartplace">스마트플레이스 상위노출</a>
+          <a href="/services/aeo-geo">AEO · GEO 최적화</a>
+          <a href="/services/ads">광고상품 안내</a>
+          <a href="/services/government-support">정부지원사업</a>
+          <a href="/services/marketing-consulting">마케팅 컨설팅</a>
+          <a href="/services/website-consulting">홈페이지 · 랜딩페이지 진단</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">회사</span>
+          <a href="/about">센터 소개</a>
+          <a href="/cases">성공사례</a>
+          <a href="/insights">마케팅 인사이트</a>
+          <a href="/contact">상담문의</a>
+        </div>
+        <div class="footer-col">
+          <span class="fc-title">상담</span>
+          <span>📞 010-3422-8075</span>
+          <span>💬 카카오톡 @거상마케팅센터</span>
+          <span>평일 09:00–18:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
