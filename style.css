@@ -619,7 +619,7 @@ body { font-size: 20px !important; }
 .section-sub   { font-size: 26px !important; line-height: 1.72 !important; }
 
 /* Hero */
-.hero-title       { font-size: var(--t-hero) !important; line-height: 1.12 !important; }
+.hero-title       { font-size: clamp(48px, 4vw, 64px) !important; line-height: 1.2 !important; }
 .hero-desc        { font-size: 28px !important; line-height: 1.72 !important; }
 .float-stat-value { font-size: 38px !important; }
 .float-stat-label { font-size: 22px !important; }
@@ -911,3 +911,134 @@ body { font-size: 20px !important; }
   .results-grid { grid-template-columns: repeat(3, 1fr); }
   .btn-primary, .btn-outline { font-size: 14px; padding: 12px 20px; }
 }
+
+
+/* ================================================================
+   PAGE-SPECIFIC CLASS OVERRIDES — 하위 페이지 폰트 통일 v1
+   모든 하위 페이지의 <style> 블록 클래스를 홈페이지 기준으로 통일
+   ================================================================ */
+
+/* --- government-support.html --- */
+.govt-vis-title    { font-size: 20px !important; }
+.govt-flow-step    { font-size: 18px !important; }
+.govt-vis-note     { font-size: 18px !important; line-height: 1.65 !important; }
+.govt-why-text p   { font-size: 24px !important; line-height: 1.85 !important; }
+.govt-chain-title  { font-size: 22px !important; }
+.govt-chain-desc   { font-size: 20px !important; line-height: 1.65 !important; }
+.govt-chain-arrow  { font-size: 22px !important; }
+.govt-check-text   { font-size: 22px !important; }
+.help8-title       { font-size: 22px !important; }
+.help8-desc        { font-size: 20px !important; line-height: 1.65 !important; }
+.tl5-step          { font-size: 18px !important; }
+.tl5-title         { font-size: 26px !important; }
+.tl5-desc          { font-size: 22px !important; line-height: 1.68 !important; }
+.sit-title         { font-size: 24px !important; }
+.sit-tag           { font-size: 16px !important; }
+.sit-desc          { font-size: 20px !important; line-height: 1.68 !important; }
+.return-text p     { font-size: 24px !important; line-height: 1.85 !important; }
+.return-item-title { font-size: 22px !important; }
+.return-item-desc  { font-size: 20px !important; line-height: 1.55 !important; }
+.precon-text       { font-size: 22px !important; }
+.reason-title      { font-size: 24px !important; }
+.reason-desc       { font-size: 20px !important; line-height: 1.68 !important; }
+
+/* --- marketing-consulting.html --- */
+.hero-diag-title   { font-size: 20px !important; }
+.diag-label        { font-size: 20px !important; }
+.diag-status       { font-size: 16px !important; }
+.why-text p        { font-size: 24px !important; line-height: 1.85 !important; }
+.why-card-badge    { font-size: 16px !important; }
+.why-card-text     { font-size: 22px !important; line-height: 1.6 !important; }
+.check-text        { font-size: 22px !important; }
+.diag-card-title   { font-size: 24px !important; }
+.diag-card-desc    { font-size: 20px !important; line-height: 1.7 !important; }
+.mc-tl-step        { font-size: 18px !important; }
+.mc-tl-title       { font-size: 24px !important; }
+.mc-tl-desc        { font-size: 20px !important; line-height: 1.65 !important; }
+.outcome-text      { font-size: 22px !important; }
+
+/* --- aeo-geo.html --- */
+.chat-head         { font-size: 20px !important; }
+.chat-bubble       { font-size: 20px !important; line-height: 1.6 !important; }
+.aeo-why-text p    { font-size: 24px !important; line-height: 1.85 !important; }
+.shift-label       { font-size: 16px !important; }
+.shift-text        { font-size: 22px !important; line-height: 1.65 !important; }
+.ai-q-item         { font-size: 20px !important; }
+.def-full          { font-size: 22px !important; }
+.def-desc          { font-size: 22px !important; line-height: 1.75 !important; }
+.def-quote         { font-size: 22px !important; }
+.def-plain-label   { font-size: 18px !important; }
+.ai-need-title     { font-size: 24px !important; }
+.ai-need-desc      { font-size: 20px !important; line-height: 1.68 !important; }
+.diag8-title       { font-size: 22px !important; }
+.diag8-desc        { font-size: 20px !important; line-height: 1.65 !important; }
+.sme-text p        { font-size: 24px !important; line-height: 1.85 !important; }
+.sme-who-text      { font-size: 22px !important; }
+.industry5-name    { font-size: 24px !important; }
+.industry5-desc    { font-size: 20px !important; line-height: 1.68 !important; }
+.outcome7-text     { font-size: 22px !important; }
+.caution-note      { font-size: 20px !important; line-height: 1.65 !important; }
+
+/* --- ads.html --- */
+.ads-why-text p     { font-size: 24px !important; line-height: 1.85 !important; }
+.ads-compare-label  { font-size: 16px !important; }
+.ads-compare-text   { font-size: 22px !important; }
+.ad-card-title      { font-size: 24px !important; }
+.ad-card-desc       { font-size: 20px !important; line-height: 1.68 !important; }
+.ad-tag             { font-size: 16px !important; }
+.ad-link            { font-size: 18px !important; }
+.industry-name      { font-size: 24px !important; }
+.industry-combo-tag { font-size: 16px !important; }
+.industry-desc      { font-size: 20px !important; line-height: 1.65 !important; }
+.criteria-title     { font-size: 24px !important; }
+.criteria-desc      { font-size: 20px !important; line-height: 1.68 !important; }
+.ads-tl-step        { font-size: 18px !important; }
+.ads-tl-title       { font-size: 24px !important; }
+.ads-tl-desc        { font-size: 20px !important; line-height: 1.65 !important; }
+.precheck-text      { font-size: 22px !important; }
+
+/* --- website-consulting.html --- */
+.wc-why-text p      { font-size: 24px !important; line-height: 1.85 !important; }
+.site-flow-title    { font-size: 22px !important; }
+.site-flow-desc     { font-size: 20px !important; line-height: 1.5 !important; }
+.wc-check-text      { font-size: 22px !important; }
+.wc-diag-title      { font-size: 22px !important; }
+.wc-diag-desc       { font-size: 20px !important; line-height: 1.65 !important; }
+.q-title            { font-size: 24px !important; }
+.q-desc             { font-size: 20px !important; line-height: 1.68 !important; }
+.wc-approach-text p { font-size: 24px !important; line-height: 1.85 !important; }
+.wc-ap-title        { font-size: 22px !important; }
+.wc-ap-desc         { font-size: 20px !important; line-height: 1.55 !important; }
+.wc-caution         { font-size: 20px !important; line-height: 1.65 !important; }
+.wc-outcome-text    { font-size: 22px !important; }
+.diag-result-item   { font-size: 18px !important; }
+.mockup-hero-title  { font-size: 18px !important; }
+.mockup-hero-sub    { font-size: 16px !important; }
+
+/* --- about.html page-specific --- */
+.ceo-quote         { font-size: 22px !important; line-height: 1.8 !important; }
+.ceo-name          { font-size: 20px !important; }
+.value-title       { font-size: 22px !important; }
+.value-desc        { font-size: 20px !important; line-height: 1.65 !important; }
+.about-lead        { font-size: 22px !important; line-height: 1.8 !important; }
+.career-item       { font-size: 20px !important; }
+.partner-name      { font-size: 20px !important; }
+
+/* --- cases.html page-specific --- */
+.case-type-title   { font-size: 22px !important; }
+.case-type-desc    { font-size: 20px !important; line-height: 1.65 !important; }
+.ba-item-label     { font-size: 18px !important; }
+.ba-item-text      { font-size: 20px !important; }
+.factor-title      { font-size: 22px !important; }
+.factor-desc       { font-size: 20px !important; line-height: 1.65 !important; }
+
+/* --- insights.html page-specific --- */
+.article-tag       { font-size: 16px !important; }
+.article-title     { font-size: 24px !important; }
+.article-excerpt   { font-size: 20px !important; line-height: 1.65 !important; }
+.article-date      { font-size: 18px !important; }
+.connect-title     { font-size: 22px !important; }
+.connect-desc      { font-size: 20px !important; }
+
+/* --- contact.html page-specific --- */
+.contact-notice    { font-size: 20px !important; line-height: 1.7 !important; }
