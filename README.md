@@ -74,8 +74,8 @@ https://geosangmarketing.com/llms.txt
 | 이메일 주소 | 입력 예정 | `contact.html` |
 | 카카오톡 채널 링크 | @거상마케팅센터 (URL 미연결) | 전 페이지 footer + contact.html |
 | 상담 폼 백엔드 | 미연결 (Web3Forms 권장) | `contact.html` `#contactForm` |
-| 실제 성공사례 수치 | placeholder | `cases.html` |
-| 실제 고객 후기 | placeholder | `cases.html` |
+| 실제 성공사례 | 가연·옛기와·도담 증빙자료 반영 | `index.html`, `cases.html` |
+| 실제 고객 피드백 | 개인정보 제거 후 반영 | `cases.html` |
 
 ### Web3Forms 연결 방법
 1. https://web3forms.com 에서 API 키 발급

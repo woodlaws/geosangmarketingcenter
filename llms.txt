@@ -7,6 +7,7 @@
 ## 핵심 서비스
 
 - **스마트플레이스 상위노출**: 네이버 지도·플레이스 키워드 순위 최적화, 리뷰·소식·사진·예약 관리, 월간 리포트
+- **구글 비즈니스 프로필**: Google 검색과 Google Maps의 업체 정보 등록·정비, 고객 연결 경로 점검, 다점포 지점 정보 관리
 - **AEO (Answer Engine Optimization)**: 네이버·구글 AI 답변에 우리 가게가 '정답'으로 인용되도록 정보 구조화
 - **GEO (Generative Engine Optimization)**: ChatGPT·제미나이·퍼플렉시티 추천 목록에 노출되도록 데이터 구성
 - **광고상품 안내**: 스마트플레이스, 블로그 마케팅, SNS 콘텐츠, 카드뉴스, 상세페이지 개선, 플레이스 광고, AI 검색 대응 콘텐츠
@@ -45,6 +46,7 @@ AEO·GEO 최적화는 특정 AI 답변 노출을 보장하는 서비스가 아�
 - 센터 소개: https://geosangmarketing.com/about
 - 서비스 전체: https://geosangmarketing.com/services
 - 스마트플레이스: https://geosangmarketing.com/services/smartplace
+- 구글 비즈니스 프로필: https://geosangmarketing.com/services/google-business-profile
 - AEO·GEO: https://geosangmarketing.com/services/aeo-geo
 - 광고상품: https://geosangmarketing.com/services/ads
 - 정부지원사업: https://geosangmarketing.com/services/government-support
