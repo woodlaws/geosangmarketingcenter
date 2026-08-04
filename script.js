@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (lightboxTriggers.length) {
     var caseGalleries = {
       gayeon: {
-        client: "가연역삼점 강남역삼점",
+        client: "가연중식당 강남역삼점",
         result: "‘역삼역 맛집’ 광고 제외 4위",
         images: [
           ["/assets/images/cases/gayeon/keyword-yeoksam-matjip.webp", "‘역삼역 맛집’ 검색 결과", "2026년 7월 3일 검색 화면 기준"],
