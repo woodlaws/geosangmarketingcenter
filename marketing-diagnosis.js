@@ -74,4 +74,5 @@
   }
 
   document.querySelectorAll("[data-diagnosis-type]").forEach(function (link) { link.addEventListener("click", function () { track("diagnosis_start", { entry_type: link.getAttribute("data-diagnosis-type"), entry_location: link.getAttribute("data-location") || "page" }); }); });
+  document.querySelectorAll("[data-marketing-type-card]").forEach(function (link) { link.addEventListener("click", function () { track("marketing_type_card_click", { type: link.getAttribute("data-marketing-type-card"), source: "marketing-diagnosis" }); }); });
 })();

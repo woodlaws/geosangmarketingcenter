@@ -1444,7 +1444,51 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .diagnosis-facts span{padding:17px 12px;border-radius:14px;background:#f2faf7;color:#526273;font-size:14px!important}
 .diagnosis-facts b{display:block;margin-bottom:4px;color:#087f5b;font-size:18px}
 .diagnosis-start{border:0;cursor:pointer;font-size:18px;padding:16px 26px}
+.diagnosis-intro-expanded{padding:46px 38px;text-align:left}
+.diagnosis-business-head{text-align:center}
+.diagnosis-business-head h2{margin:12px 0 14px}
+.diagnosis-business-head p{max-width:800px;margin:0 auto;color:var(--muted);font-size:18px!important;line-height:1.7}
+.diagnosis-type-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:34px}
+.diagnosis-type-card{display:flex;min-width:0;min-height:570px;flex-direction:column;padding:22px;border:1px solid #d7e3df;border-radius:20px;background:#fff;color:var(--ink);text-decoration:none;box-shadow:0 10px 28px rgba(10,48,44,.06);transition:transform .18s,border-color .18s,box-shadow .18s}
+.diagnosis-type-card:hover{transform:translateY(-4px);border-color:#56bca4;box-shadow:0 18px 38px rgba(10,72,59,.12)}
+.diagnosis-type-card:focus-visible{outline:4px solid rgba(13,148,136,.25);outline-offset:4px;border-color:#0d9488}
+.diagnosis-type-visual{position:relative;display:block;height:145px;margin-bottom:22px;overflow:hidden;border-radius:16px;background:linear-gradient(145deg,#e5f8f1,#f5fbf9)}
+.diagnosis-type-card.type-online .diagnosis-type-visual{background:linear-gradient(145deg,#e9f1ff,#f5f8ff)}
+.diagnosis-type-card.type-consulting .diagnosis-type-visual{background:linear-gradient(145deg,#f1ecff,#faf8ff)}
+.diagnosis-type-visual i{position:absolute;display:block;box-sizing:border-box}
+.visual-map-pin{left:25px;top:27px;width:44px;height:56px;border:7px solid #0d9488;border-radius:50% 50% 50% 6px;transform:rotate(-45deg)}
+.visual-map-pin:after{content:'';position:absolute;left:8px;top:8px;width:14px;height:14px;border-radius:50%;background:#0d9488}
+.visual-store{left:75px;bottom:21px;width:82px;height:59px;border:6px solid #0f766e;border-radius:6px;background:#fff}
+.visual-store:before{content:'';position:absolute;left:-10px;top:-19px;width:90px;height:20px;border-radius:8px 8px 3px 3px;background:repeating-linear-gradient(90deg,#0f766e 0 15px,#8bd7c3 15px 30px)}
+.visual-calendar{right:21px;top:22px;width:53px;height:49px;border:5px solid #22a38a;border-radius:8px;background:linear-gradient(#22a38a 0 13px,#fff 13px)}
+.visual-calendar:after{content:'✓';position:absolute;left:13px;top:14px;color:#087f5b;font-style:normal;font-size:23px;font-weight:900}
+.visual-phone{left:28px;top:17px;width:75px;height:111px;border:7px solid #2563a8;border-radius:14px;background:#fff}
+.visual-phone:before{content:'';position:absolute;left:10px;top:15px;width:41px;height:33px;border-radius:5px;background:#cfe4ff}
+.visual-phone:after{content:'';position:absolute;left:16px;bottom:13px;width:29px;height:7px;border-radius:5px;background:#2563a8}
+.visual-box{left:89px;bottom:20px;width:68px;height:59px;border:5px solid #4b7fbd;background:#dceaff;transform:skewY(-5deg)}
+.visual-box:after{content:'';position:absolute;left:29px;top:0;height:100%;border-left:4px solid #4b7fbd}
+.visual-cart{right:24px;top:31px;width:55px;height:41px;border:6px solid #1d4ed8;border-top:0;border-radius:0 0 9px 9px;transform:skew(-8deg)}
+.visual-cart:before,.visual-cart:after{content:'';position:absolute;bottom:-18px;width:10px;height:10px;border-radius:50%;background:#1d4ed8}
+.visual-cart:before{left:4px}.visual-cart:after{right:4px}
+.visual-bubble{left:24px;top:28px;width:86px;height:57px;border:6px solid #7552b8;border-radius:20px;background:#fff}
+.visual-bubble:after{content:'';position:absolute;left:12px;bottom:-17px;width:22px;height:22px;border-left:6px solid #7552b8;transform:skewY(-35deg)}
+.visual-document{right:38px;top:20px;width:70px;height:94px;border:6px solid #5b3f9c;border-radius:6px;background:repeating-linear-gradient(#fff 0 15px,#dcd3f5 15px 19px)}
+.visual-check{right:17px;bottom:17px;width:53px;height:53px;border-radius:50%;background:#6d4eb3}
+.visual-check:after{content:'✓';position:absolute;left:13px;top:6px;color:#fff;font-style:normal;font-size:31px;font-weight:900}
+.diagnosis-type-name{color:#087f5b;font-size:14px!important;font-weight:900;letter-spacing:.08em}
+.type-online .diagnosis-type-name{color:#1d5ea8}.type-consulting .diagnosis-type-name{color:#6745a8}
+.diagnosis-type-card>strong{min-height:72px;margin:9px 0 19px;font-size:21px;line-height:1.45}
+.diagnosis-type-detail{display:block;margin-top:12px;color:#536477;font-size:15px!important;line-height:1.6}
+.diagnosis-type-detail b{display:block;margin-bottom:3px;color:#243548;font-size:13px}
+.diagnosis-type-link{display:flex;align-items:center;justify-content:space-between;min-height:48px;margin-top:auto;padding-top:20px;border-top:1px solid #e5ecea;color:#087f5b;font-size:15px!important;font-weight:900}
+.diagnosis-type-link i{font-style:normal;font-size:20px}
+.diagnosis-type-help{scroll-margin-top:110px;margin-top:30px;padding:30px;border:1px solid #bfe3d7;border-radius:18px;background:#effaf6;text-align:center}
+.diagnosis-type-help h2{margin:0 0 10px;font-size:26px}
+.diagnosis-type-help p{max-width:850px;margin:0 auto 23px;color:#526576;font-size:16px!important;line-height:1.7}
+.diagnosis-type-help .diagnosis-facts{max-width:880px;margin:0 auto 24px}
+.diagnosis-type-help small{display:block;margin-top:17px}
 .diagnosis-quiz{padding:38px;border:1px solid #dbe7ec;border-radius:24px;background:#fff;box-shadow:0 20px 55px rgba(10,48,44,.08)}
+.diagnosis-quiz{max-width:920px;margin:0 auto}
 .diagnosis-progress-head{display:flex;justify-content:space-between;align-items:center;color:#607083;font-size:14px}
 .diagnosis-progress-head strong{color:#087f5b;font-size:17px}
 .diagnosis-progress-track{height:9px;margin:11px 0 34px;overflow:hidden;border-radius:999px;background:#e7efee}
@@ -1475,6 +1519,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .type-guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.type-guide-card{padding:28px;border-radius:20px;background:#fff;border:1px solid var(--border)}.type-guide-card>span{font-size:13px!important;font-weight:900}.type-guide-card h2{font-size:23px;margin:8px 0 15px}.type-guide-card li{margin:8px 0;color:#46576a;font-size:16px!important}.type-guide-card.essential{border-color:#6ec4b0}.type-guide-card.essential>span{color:#087f5b}.type-guide-card.recommended>span{color:#1d4ed8}.type-guide-card.optional>span{color:#7c3aed}.type-guide-card.later{background:#f4f5f6}.type-guide-card.later>span{color:#6b7280}
 .type-strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.type-strategy-grid article{padding:27px;border-radius:18px;border:1px solid var(--border)}.type-strategy-grid h2{font-size:22px;margin-top:0}.type-strategy-grid li{margin:8px 0;color:#4b5b6d;font-size:16px!important}.type-portfolio{margin-top:24px;padding:32px;border-radius:22px;background:#0b2249;color:#fff}.type-portfolio span{color:#73dfc7;font-size:12px!important;font-weight:900;letter-spacing:.08em}.type-portfolio h2{font-size:28px;color:#fff;margin:8px 0}.type-portfolio p{margin:0;color:#cbd8ea;font-size:16px!important}.type-related{margin-top:24px;padding:27px;border:1px solid var(--border);border-radius:18px}.type-related h2{font-size:23px;margin-top:0}
 
-@media(max-width:920px){.diagnosis-home-grid,.diagnosis-result-grid,.diagnosis-priority-section,.diagnosis-related,.type-guide-grid{grid-template-columns:1fr}.diagnosis-facts,.diagnosis-benefit-grid,.diagnosis-recommend-grid,.type-summary-grid,.type-strategy-grid{grid-template-columns:1fr 1fr}.diagnosis-portfolio{align-items:flex-start;flex-direction:column}.diagnosis-page-hero h1,.type-guide-hero h1{font-size:42px}.diagnosis-result-hero h1{font-size:34px}}
-@media(max-width:600px){.diagnosis-home-grid,.diagnosis-facts,.diagnosis-benefit-grid,.diagnosis-recommend-grid,.type-summary-grid,.type-strategy-grid,.diagnosis-options{grid-template-columns:1fr}.diagnosis-home-card{min-height:230px;padding:22px}.diagnosis-page-hero,.type-guide-hero{padding:72px 0 52px}.diagnosis-page-hero h1,.type-guide-hero h1{font-size:34px}.diagnosis-page-hero p,.type-guide-hero p{font-size:17px!important}.diagnosis-intro,.diagnosis-quiz{padding:22px 16px;border-radius:18px}.diagnosis-intro h2{font-size:27px}.diagnosis-question legend{font-size:25px}.diagnosis-option{min-height:68px}.diagnosis-nav{position:sticky;bottom:0;padding:12px 0;background:#fff}.diagnosis-nav button{min-width:0;flex:1}.diagnosis-result-page{padding-top:20px}.diagnosis-result-hero{padding:26px 20px}.diagnosis-result-hero h1{font-size:28px}.diagnosis-result-card,.diagnosis-priority-card,.diagnosis-recommend-grid article{padding:21px}.diagnosis-portfolio,.diagnosis-final-cta,.type-portfolio{padding:24px 20px}.diagnosis-final-cta h2{font-size:25px}.type-guide-card,.type-strategy-grid article{padding:22px}}
+@media(max-width:920px){.diagnosis-home-grid,.diagnosis-result-grid,.diagnosis-priority-section,.diagnosis-related,.type-guide-grid{grid-template-columns:1fr}.diagnosis-type-grid{grid-template-columns:1fr}.diagnosis-type-card{min-height:0}.diagnosis-type-card>strong{min-height:0}.diagnosis-facts,.diagnosis-benefit-grid,.diagnosis-recommend-grid,.type-summary-grid,.type-strategy-grid{grid-template-columns:1fr 1fr}.diagnosis-portfolio{align-items:flex-start;flex-direction:column}.diagnosis-page-hero h1,.type-guide-hero h1{font-size:42px}.diagnosis-result-hero h1{font-size:34px}}
+@media(max-width:600px){.diagnosis-home-grid,.diagnosis-facts,.diagnosis-benefit-grid,.diagnosis-recommend-grid,.type-summary-grid,.type-strategy-grid,.diagnosis-options{grid-template-columns:1fr}.diagnosis-home-card{min-height:230px;padding:22px}.diagnosis-page-hero,.type-guide-hero{padding:72px 0 52px}.diagnosis-page-hero h1,.type-guide-hero h1{font-size:34px}.diagnosis-page-hero p,.type-guide-hero p{font-size:17px!important}.diagnosis-intro,.diagnosis-quiz{padding:22px 16px;border-radius:18px}.diagnosis-intro-expanded{padding:24px 14px}.diagnosis-business-head h2{font-size:27px;line-height:1.35}.diagnosis-business-head h2 br{display:none}.diagnosis-business-head p{font-size:16px!important}.diagnosis-type-grid{gap:16px;margin-top:26px}.diagnosis-type-card{min-height:0;padding:18px}.diagnosis-type-visual{height:132px}.diagnosis-type-card>strong{font-size:20px}.diagnosis-type-help{padding:24px 16px}.diagnosis-type-help h2{font-size:24px}.diagnosis-question legend{font-size:25px}.diagnosis-option{min-height:68px}.diagnosis-nav{position:sticky;bottom:0;padding:12px 0;background:#fff}.diagnosis-nav button{min-width:0;flex:1}.diagnosis-result-page{padding-top:20px}.diagnosis-result-hero{padding:26px 20px}.diagnosis-result-hero h1{font-size:28px}.diagnosis-result-card,.diagnosis-priority-card,.diagnosis-recommend-grid article{padding:21px}.diagnosis-portfolio,.diagnosis-final-cta,.type-portfolio{padding:24px 20px}.diagnosis-final-cta h2{font-size:25px}.type-guide-card,.type-strategy-grid article{padding:22px}}
 @media (min-width:921px) and (max-width:1500px){.nav{gap:10px}.nav>a,.nav-ddtrigger{font-size:16px!important}.btn-nav{font-size:16px!important;padding:10px 13px!important}.brand-name{font-size:25px!important}.brand-sub{font-size:14px!important}}
