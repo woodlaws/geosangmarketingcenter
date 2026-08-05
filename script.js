@@ -108,6 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (contactForm && contactSuccess) {
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
+      if (new URLSearchParams(window.location.search).get("source") === "diagnosis" && typeof window.gtag === "function") {
+        window.gtag("event", "diagnosis_lead_submit", { service_type: "marketing-diagnosis" });
+      }
       contactForm.setAttribute("hidden", "");
       contactSuccess.removeAttribute("hidden");
     });
