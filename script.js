@@ -183,13 +183,18 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       var submitButton = contactForm.querySelector('button[type="submit"]');
       var statusBox = document.getElementById("contactFormStatus");
-      var endpoint = "/api/contact";
+      var endpoint = window.CONTACT_FORM_CONFIG && window.CONTACT_FORM_CONFIG.googleScriptUrl;
 
       function setContactStatus(message, state) {
         if (!statusBox) return;
         statusBox.textContent = message;
         statusBox.classList.toggle("is-error", state === "error");
         statusBox.classList.toggle("is-sending", state === "sending");
+      }
+
+      if (!endpoint) {
+        setContactStatus("전송 중 문제가 발생했습니다. 잠시 후 다시 시도하거나 010-3422-8075로 문의해 주세요.", "error");
+        return;
       }
 
       var formData = new FormData(contactForm);
@@ -244,16 +249,13 @@ document.addEventListener("DOMContentLoaded", function () {
       setContactStatus("문의 내용을 안전하게 접수하고 있습니다.", "sending");
 
       try {
-        var response = await fetch(endpoint, {
+        await fetch(endpoint, {
           method: "POST",
+          mode: "no-cors",
           headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(payload),
           keepalive: true
         });
-        var result = await response.json();
-        if (!response.ok || result.ok === false || result.success === false) {
-          throw new Error(result.error || "HTTP " + response.status);
-        }
         if (new URLSearchParams(window.location.search).get("source") === "diagnosis" && typeof window.gtag === "function") {
           window.gtag("event", "diagnosis_lead_submit", { service_type: "marketing-diagnosis" });
         }
