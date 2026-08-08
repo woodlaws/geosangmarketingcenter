@@ -2,7 +2,69 @@
    거상마케팅센터 — script.js (다페이지 v2)
    ============================================================ */
 
+var CONTACT_CTA_TYPES = Object.freeze({
+  diagnosis: { label: "무료 온라인 노출 진단 받기", url: "/contact?type=diagnosis", contactSelectValue: "무료 온라인 노출 진단", description: "현재 온라인 노출 상태와 우선 개선 항목을 확인합니다." },
+  smartplace: { label: "스마트플레이스 상담받기", url: "/contact?type=smartplace", contactSelectValue: "스마트플레이스 상담", description: "네이버 플레이스 정보와 지역 검색 노출 상태를 상담합니다." },
+  google: { label: "구글 비즈니스 프로필 상담받기", url: "/contact?type=google", contactSelectValue: "구글 비즈니스 프로필 상담", description: "Google 검색과 지도에 표시되는 비즈니스 프로필을 상담합니다." },
+  "aeo-geo": { label: "AEO·GEO 상담받기", url: "/contact?type=aeo-geo", contactSelectValue: "AEO·GEO 상담", description: "검색엔진과 AI 답변을 위한 정보 구조를 상담합니다." },
+  ads: { label: "광고 운영 상담받기", url: "/contact?type=ads", contactSelectValue: "광고 운영 상담", description: "현재 광고 운영과 채널별 실행 범위를 상담합니다." },
+  enterprise: { label: "기업·다점포 상담 요청하기", url: "/contact?type=enterprise", contactSelectValue: "기업·다점포 상담", description: "여러 지점의 네이버·구글 통합 관리 방식을 상담합니다." },
+  government: { label: "정부지원사업 마케팅 상담", url: "/contact?type=government", contactSelectValue: "정부지원사업 상담", description: "지원사업 신청과 이후 마케팅 실행 범위를 상담합니다." },
+  website: { label: "홈페이지·랜딩페이지 진단받기", url: "/contact?type=website", contactSelectValue: "홈페이지·랜딩페이지 진단", description: "홈페이지 정보 구조와 문의 전환 경로를 진단합니다." },
+  etc: { label: "기타 문의하기", url: "/contact?type=etc", contactSelectValue: "기타 문의", description: "목록에 없는 서비스와 협업 내용을 문의합니다." }
+});
+window.ContactCTA = Object.freeze({
+  types: CONTACT_CTA_TYPES,
+  get: function (type) { return CONTACT_CTA_TYPES[type] || CONTACT_CTA_TYPES.diagnosis; },
+  href: function (type, source) {
+    var base = (CONTACT_CTA_TYPES[type] || CONTACT_CTA_TYPES.diagnosis).url;
+    return source ? base + "&source=" + encodeURIComponent(source) : base;
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
+
+  /* ---------- 공통 상담 CTA ---------- */
+  var legacyCtaServices = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", ads: "ads", enterprise: "enterprise", government: "government", website: "website", "marketing-diagnosis": "diagnosis", consulting: "etc", "content-sns": "etc" };
+  var pageCtaType = window.location.pathname.indexOf("/services/ads") === 0 ? "ads" : window.location.pathname.indexOf("/services/aeo-geo") === 0 ? "aeo-geo" : window.location.pathname.indexOf("/services/government-support") === 0 ? "government" : window.location.pathname.indexOf("/services/smartplace") === 0 ? "smartplace" : window.location.pathname.indexOf("/services/google-business-profile") === 0 ? "google" : window.location.pathname.indexOf("/services/website-") === 0 ? "website" : window.location.pathname.indexOf("/enterprise") === 0 ? "enterprise" : window.location.pathname.indexOf("/services/consulting") === 0 || window.location.pathname.indexOf("/services/marketing-consulting") === 0 || window.location.pathname.indexOf("/services/content-sns") === 0 ? "etc" : "diagnosis";
+  var ctaPageName = (window.location.pathname.replace(/^\//, "").replace(/\.html$/, "").replace(/\/index$/, "").replace(/\//g, "-") || "home");
+  var ctaIndex = 0;
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    var rawHref = link.getAttribute("href") || "";
+    var isContactLink = /^\/?contact(?:\.html)?(?:[?#]|$)/.test(rawHref) || rawHref === "#contact" || rawHref === "/#contact" || rawHref === "#contact-form" || rawHref === "#contactForm";
+    if (!isContactLink && !link.hasAttribute("data-contact-cta")) return;
+    var params = new URLSearchParams((rawHref.split("?")[1] || "").split("#")[0].replace(/&amp;/g, "&"));
+    var label = link.textContent.replace(/\s+/g, " ").trim();
+    var type = link.getAttribute("data-contact-cta") || params.get("type") || legacyCtaServices[params.get("service")] || "";
+    if (!CONTACT_CTA_TYPES[type]) {
+      if (label === "상담문의") type = "diagnosis";
+      else if (/기업|다점포|프랜차이즈/.test(label)) type = "enterprise";
+      else if (/구글|Google/.test(label)) type = "google";
+      else if (/AEO|GEO|AI 검색/.test(label)) type = "aeo-geo";
+      else if (/광고/.test(label)) type = "ads";
+      else if (/지원사업|희망리턴/.test(label)) type = "government";
+      else if (/홈페이지|랜딩페이지/.test(label)) type = "website";
+      else if (/스마트플레이스|플레이스/.test(label)) type = "smartplace";
+      else type = pageCtaType;
+    }
+    var resolvedType = CONTACT_CTA_TYPES[type] ? type : "diagnosis";
+    ctaIndex += 1;
+    var source = link.getAttribute("data-cta-location") || ctaPageName + "-cta-" + String(ctaIndex).padStart(2, "0");
+    var targetHref = window.ContactCTA.href(resolvedType, source);
+    if (window.location.pathname === "/contact" || window.location.pathname.endsWith("/contact.html")) targetHref += "#contact-form";
+    link.setAttribute("href", targetHref);
+    link.setAttribute("data-contact-cta", resolvedType);
+    link.setAttribute("data-cta-location", source);
+    link.setAttribute("data-cta-type", resolvedType);
+    if (!link.textContent.trim()) link.textContent = CONTACT_CTA_TYPES[resolvedType].label;
+    if (label !== "상담문의") {
+      link.classList.add("contact-cta");
+      link.classList.add(resolvedType === "enterprise" ? "contact-cta--enterprise" : "contact-cta--primary");
+    }
+    link.addEventListener("click", function () {
+      if (typeof window.gtag === "function") window.gtag("event", "contact_cta_click", { cta_type: resolvedType, cta_location: source });
+    });
+  });
 
   /* ---------- 모바일 메뉴 열기/닫기 ---------- */
   var navToggle = document.getElementById("navToggle");
@@ -70,16 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* ---------- 홈 간편 진단 폼 ---------- */
-  var form = document.getElementById("leadForm");
-  var success = document.getElementById("formSuccess");
-  if (form && success) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      form.setAttribute("hidden", "");
-      success.removeAttribute("hidden");
-    });
-  }
-
   /* ---------- 상담문의 페이지 전체 폼 ---------- */
   var contactForm = document.getElementById("contactForm");
   var contactSuccess = document.getElementById("contactSuccess");
@@ -88,9 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var requestedService = contactParams.get("service");
     var requestedType = contactParams.get("type");
     var requestedMessage = contactParams.get("message");
-    if (requestedType === "enterprise") requestedService = "enterprise";
+    var legacyServiceTypes = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", enterprise: "enterprise", government: "government", website: "website", "marketing-diagnosis": "diagnosis", ads: "ads", "content-sns": "etc", consulting: "etc" };
+    var resolvedContactType = CONTACT_CTA_TYPES[requestedType] ? requestedType : (legacyServiceTypes[requestedService] || "diagnosis");
     var serviceSelect = contactForm.querySelector('select[name="service"]');
     var concernField = contactForm.querySelector('textarea[name="concern"]');
+    var ctaTypeField = contactForm.querySelector('input[name="cta_type"]');
+    var ctaSourceField = contactForm.querySelector('input[name="cta_source"]');
     var enterpriseFields = document.getElementById("enterpriseFields");
     function updateEnterpriseFields() {
       if (!enterpriseFields || !serviceSelect) return;
@@ -101,12 +156,15 @@ document.addEventListener("DOMContentLoaded", function () {
         field.required = isEnterprise;
       });
     }
-    if (requestedService && serviceSelect && serviceSelect.querySelector('option[value="' + requestedService + '"]')) {
-      serviceSelect.value = requestedService;
-    }
+    if (serviceSelect) serviceSelect.value = resolvedContactType;
+    if (ctaTypeField) ctaTypeField.value = resolvedContactType;
+    if (ctaSourceField) ctaSourceField.value = contactParams.get("source") || "direct";
     if (requestedMessage && concernField && !concernField.value.trim()) concernField.value = requestedMessage;
     updateEnterpriseFields();
-    if (serviceSelect) serviceSelect.addEventListener("change", updateEnterpriseFields);
+    if (serviceSelect) serviceSelect.addEventListener("change", function () {
+      if (ctaTypeField) ctaTypeField.value = serviceSelect.value;
+      updateEnterpriseFields();
+    });
   }
 
   /* ---------- 과거 홈 기업 앵커 호환 ---------- */

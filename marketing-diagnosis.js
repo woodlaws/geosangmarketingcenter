@@ -13,6 +13,43 @@
     var intro = document.getElementById("diagnosisIntro"), quiz = document.getElementById("diagnosisQuiz"), questionMount = document.getElementById("diagnosisQuestion");
     var progress = document.getElementById("diagnosisProgress"), counter = document.getElementById("diagnosisCounter"), prev = document.getElementById("diagnosisPrev"), next = document.getElementById("diagnosisNext"), start = document.getElementById("diagnosisStart");
     track("diagnosis_view", { page_type: "diagnosis" });
+    var typeTabs = Array.from(app.querySelectorAll("[data-marketing-type-tab]"));
+    var typePanels = Array.from(app.querySelectorAll("[data-marketing-type-panel]"));
+    function activateTypeTab(tab, shouldTrack) {
+      if (tab.getAttribute("aria-selected") === "true") return;
+      var type = tab.getAttribute("data-marketing-type-tab");
+      typeTabs.forEach(function (item) {
+        var selected = item === tab;
+        item.classList.toggle("is-active", selected);
+        item.setAttribute("aria-selected", selected ? "true" : "false");
+        item.tabIndex = selected ? 0 : -1;
+      });
+      typePanels.forEach(function (panel) {
+        var selected = panel.getAttribute("data-marketing-type-panel") === type;
+        panel.hidden = !selected;
+        panel.classList.toggle("is-active", selected);
+        panel.classList.remove("is-entering");
+        if (selected) {
+          window.requestAnimationFrame(function () { panel.classList.add("is-entering"); });
+          window.setTimeout(function () { panel.classList.remove("is-entering"); }, 220);
+        }
+      });
+      if (shouldTrack) track("marketing_type_card_click", { type: type, source: "marketing-diagnosis" });
+    }
+    typeTabs.forEach(function (tab, tabIndex) {
+      tab.addEventListener("click", function () { activateTypeTab(tab, true); });
+      tab.addEventListener("keydown", function (event) {
+        var targetIndex = tabIndex;
+        if (event.key === "ArrowRight") targetIndex = (tabIndex + 1) % typeTabs.length;
+        else if (event.key === "ArrowLeft") targetIndex = (tabIndex - 1 + typeTabs.length) % typeTabs.length;
+        else if (event.key === "Home") targetIndex = 0;
+        else if (event.key === "End") targetIndex = typeTabs.length - 1;
+        else return;
+        event.preventDefault();
+        activateTypeTab(typeTabs[targetIndex], true);
+        typeTabs[targetIndex].focus();
+      });
+    });
     function renderQuestion() {
       var q = questions[index], selected = answers[q.id] || (q.multiple ? [] : "");
       counter.textContent = (index + 1) + " / " + questions.length;
@@ -60,7 +97,7 @@
     var bars = ranked.map(function (item) { return '<div class="diagnosis-score-row"><div><strong>' + escapeHtml(DATA.types[item.key].label) + '</strong><span>' + item.percent + '%</span></div><div class="diagnosis-score-track"><i style="width:' + item.percent + '%"></i></div></div>'; }).join("");
     var summaryLines = DATA.questions.filter(function (q) { return decoded[q.id]; }).map(function (q) { var value = decoded[q.id]; var labels = (Array.isArray(value) ? value : [value]).map(function (v) { return DATA.answerLabel(q.id, v); }); return "Q" + q.id.slice(1) + " " + labels.join(", "); });
     var message = ["내 업종 마케팅 진단 결과를 바탕으로 상담을 요청합니다.", "주 유형: " + primary.label, "보조 유형: " + (secondary ? secondary.label : "없음"), "사업 단계: " + stage, "가장 원하는 결과: " + goal, "월 예산: " + budget, "추천 포트폴리오: " + primary.portfolio, "응답 요약: " + summaryLines.join(" / ")].join("\n");
-    var contactUrl = "/contact.html?service=marketing-diagnosis&source=diagnosis&message=" + encodeURIComponent(message) + "#contact-form";
+    var contactUrl = "/contact?type=diagnosis&source=diagnosis-result&message=" + encodeURIComponent(message);
     var caseHtml = primaryKey === "online-sales" ? '<a href="/cases/dodam">도담참숯닭갈비 통합 실행 사례 →</a>' : primaryKey === "local-store" ? '<a href="/cases/gayeon">가연중식당 강남역삼점 검색 사례 →</a><a href="/cases/oldgiwa">옛기와 한우 지역 검색 사례 →</a>' : '<a href="/cases">문제 유형별 성공사례 확인 →</a>';
     resultMount.innerHTML = '<section class="diagnosis-result-hero"><div class="eyebrow">YOUR DIAGNOSIS</div><h1>귀사는 ‘' + escapeHtml(typeTitle) + '’ 사업자입니다.</h1><p>가장 중요한 고객 행동은 <strong>' + escapeHtml(primary.action) + '</strong>입니다. 모든 채널을 동시에 운영하기보다 필수 기반부터 단계적으로 실행하세요.</p>' + tagHtml + '</section>' +
       '<div class="diagnosis-result-grid"><section class="diagnosis-result-card"><h2>사업자 유형 비율</h2>' + bars + '<a class="diagnosis-text-link" href="' + primary.detailUrl + '">' + primary.label + ' 상세 가이드 →</a></section><section class="diagnosis-result-card"><h2>지금 가장 중요한 목표</h2><strong class="diagnosis-main-action">' + escapeHtml(goal) + '</strong><p>월 실행 예산: ' + escapeHtml(budget) + '<br />진단 단계: ' + escapeHtml(stage) + '</p></section></div>' +
@@ -74,5 +111,4 @@
   }
 
   document.querySelectorAll("[data-diagnosis-type]").forEach(function (link) { link.addEventListener("click", function () { track("diagnosis_start", { entry_type: link.getAttribute("data-diagnosis-type"), entry_location: link.getAttribute("data-location") || "page" }); }); });
-  document.querySelectorAll("[data-marketing-type-card]").forEach(function (link) { link.addEventListener("click", function () { track("marketing_type_card_click", { type: link.getAttribute("data-marketing-type-card"), source: "marketing-diagnosis" }); }); });
 })();
