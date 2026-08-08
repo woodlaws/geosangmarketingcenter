@@ -32,7 +32,7 @@
       label: "상담·계약형",
       action: "문의·상담·제안 후 계약",
       portfolio: "홈페이지·랜딩페이지 + 전문 블로그 + AEO·GEO + 검색광고",
-      detailUrl: "/marketing-types/consulting",
+      detailUrl: "/marketing-types/consulting-contract",
       essential: ["서비스별 홈페이지 또는 랜딩페이지", "상담 신청 폼", "전화·카카오·톡톡 연결", "성공사례", "대표자와 담당자 신뢰 정보", "FAQ", "전문 블로그", "검색광고", "상담 후속 관리"],
       recommended: ["무료 진단", "PDF·체크리스트", "사례형 숏폼", "리타기팅", "상담 예약 자동화", "CRM"],
       optional: ["유튜브 강의", "웨비나", "뉴스레터", "백서", "진단 테스트", "견적 계산기"],

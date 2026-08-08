@@ -84,8 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
   var contactForm = document.getElementById("contactForm");
   var contactSuccess = document.getElementById("contactSuccess");
   if (contactForm) {
-    var requestedService = new URLSearchParams(window.location.search).get("service");
-    var requestedMessage = new URLSearchParams(window.location.search).get("message");
+    var contactParams = new URLSearchParams(window.location.search);
+    var requestedService = contactParams.get("service");
+    var requestedType = contactParams.get("type");
+    var requestedMessage = contactParams.get("message");
+    if (requestedType === "enterprise") requestedService = "enterprise";
     var serviceSelect = contactForm.querySelector('select[name="service"]');
     var concernField = contactForm.querySelector('textarea[name="concern"]');
     var enterpriseFields = document.getElementById("enterpriseFields");
@@ -104,6 +107,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (requestedMessage && concernField && !concernField.value.trim()) concernField.value = requestedMessage;
     updateEnterpriseFields();
     if (serviceSelect) serviceSelect.addEventListener("change", updateEnterpriseFields);
+  }
+
+  /* ---------- 과거 홈 기업 앵커 호환 ---------- */
+  if ((window.location.pathname === "/" || window.location.pathname.endsWith("/index.html")) && window.location.hash === "#enterprise") {
+    window.location.replace("/enterprise");
   }
   if (contactForm && contactSuccess) {
     contactForm.addEventListener("submit", function (e) {

@@ -1,6 +1,12 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/services/marketing-consulting", "destination": "/services/consulting", "permanent": true },
+    { "source": "/services/website-consulting", "destination": "/services/website-diagnosis", "permanent": true },
+    { "source": "/marketing-types/consulting", "destination": "/marketing-types/consulting-contract", "permanent": true },
+    { "source": "/cases/yetgiwa", "destination": "/cases/oldgiwa", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
