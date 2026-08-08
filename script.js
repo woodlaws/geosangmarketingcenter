@@ -162,9 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
       var isEnterprise = serviceSelect.value === "enterprise";
       enterpriseFields.hidden = !isEnterprise;
       enterpriseFields.setAttribute("aria-hidden", isEnterprise ? "false" : "true");
-      enterpriseFields.querySelectorAll("[data-enterprise-required]").forEach(function (field) {
-        field.required = isEnterprise;
-      });
     }
     if (serviceSelect) serviceSelect.value = resolvedContactType;
     if (ctaTypeField) ctaTypeField.value = resolvedContactType;
@@ -182,13 +179,95 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.replace("/enterprise");
   }
   if (contactForm && contactSuccess) {
-    contactForm.addEventListener("submit", function (e) {
+    contactForm.addEventListener("submit", async function (e) {
       e.preventDefault();
-      if (new URLSearchParams(window.location.search).get("source") === "diagnosis" && typeof window.gtag === "function") {
-        window.gtag("event", "diagnosis_lead_submit", { service_type: "marketing-diagnosis" });
+      var submitButton = contactForm.querySelector('button[type="submit"]');
+      var statusBox = document.getElementById("contactFormStatus");
+      var endpoint = "/api/contact";
+
+      function setContactStatus(message, state) {
+        if (!statusBox) return;
+        statusBox.textContent = message;
+        statusBox.classList.toggle("is-error", state === "error");
+        statusBox.classList.toggle("is-sending", state === "sending");
       }
-      contactForm.setAttribute("hidden", "");
-      contactSuccess.removeAttribute("hidden");
+
+      var formData = new FormData(contactForm);
+      var selectedService = String(formData.get("service") || "diagnosis");
+      var selectedIndustry = String(formData.get("industry") || "");
+      var serviceLabel = contactForm.querySelector('select[name="service"] option:checked');
+      var industryLabel = contactForm.querySelector('select[name="industry"] option:checked');
+      var businessType = "아직 잘 모르겠음";
+      if (selectedService === "enterprise") businessType = "기업 / B2B";
+      else if (selectedService === "government-support") businessType = "정부지원사업 수혜자";
+      else if (selectedService === "online-sales" || selectedIndustry === "online") businessType = "온라인 판매형";
+      else if (selectedService === "consulting-contract" || selectedIndustry === "consultant") businessType = "상담·계약형";
+      else if (["local-store", "smartplace", "google"].indexOf(selectedService) !== -1 || ["restaurant", "cafe", "beauty", "clinic", "education", "retail", "fitness"].indexOf(selectedIndustry) !== -1) businessType = "매장 방문형";
+      else if (selectedIndustry === "other") businessType = "기타";
+
+      var referenceLinks = [formData.get("website"), formData.get("sns")].filter(Boolean).join("\n");
+      var details = [
+        "업종: " + (industryLabel ? industryLabel.textContent.trim() : "미입력"),
+        "지역: " + String(formData.get("region") || "미입력")
+      ];
+      if (formData.get("branchCount")) details.push("운영 지점 수: " + formData.get("branchCount"));
+      if (formData.get("managementChannel")) details.push("현재 관리 채널: " + formData.get("managementChannel"));
+      if (formData.get("concern")) details.push("문의 내용: " + formData.get("concern"));
+
+      if (String(formData.get("website_hidden") || "").trim()) {
+        return;
+      }
+
+      var payload = {
+        type: contactParams.get("type") || selectedService,
+        source: contactParams.get("source") || String(formData.get("cta_source") || "direct"),
+        name: String(formData.get("name") || ""),
+        company: String(formData.get("bizname") || ""),
+        phone: String(formData.get("phone") || ""),
+        email: String(formData.get("enterpriseEmail") || ""),
+        referenceUrl: referenceLinks,
+        businessType: businessType,
+        interestedServices: serviceLabel ? serviceLabel.textContent.trim() : selectedService,
+        currentProblems: String(formData.get("concern") || ""),
+        budgetRange: String(formData.get("budget") || "아직 미정"),
+        preferredContact: String(formData.get("preferredContact") || "먼저 자료 검토 후 연락 희망"),
+        message: details.join("\n"),
+        privacyAgree: formData.get("privacyAgree") === "true",
+        userAgent: navigator.userAgent,
+        pageUrl: window.location.href
+      };
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "접수 중...";
+      }
+      setContactStatus("문의 내용을 안전하게 접수하고 있습니다.", "sending");
+
+      try {
+        var response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+          keepalive: true
+        });
+        var result = await response.json();
+        if (!response.ok || result.ok === false || result.success === false) {
+          throw new Error(result.error || "HTTP " + response.status);
+        }
+        if (new URLSearchParams(window.location.search).get("source") === "diagnosis" && typeof window.gtag === "function") {
+          window.gtag("event", "diagnosis_lead_submit", { service_type: "marketing-diagnosis" });
+        }
+        contactForm.setAttribute("hidden", "");
+        contactSuccess.removeAttribute("hidden");
+        contactSuccess.focus({ preventScroll: true });
+        contactSuccess.scrollIntoView({ behavior: "smooth", block: "center" });
+      } catch (error) {
+        setContactStatus("전송 중 문제가 발생했습니다. 잠시 후 다시 시도하거나 010-3422-8075로 문의해 주세요.", "error");
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = "무료 진단 신청하기 →";
+        }
+      }
     });
   }
 
