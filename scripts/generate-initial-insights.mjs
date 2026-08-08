@@ -293,6 +293,30 @@ const articles = [
   }
 ];
 
+const coverBySlug = {
+  "ai-search-website-importance": ["/images/insights/ai-search-website-importance.jpg", "AI 검색과 공식 홈페이지 정보가 연결되는 구조"],
+  "aeo-geo-small-business-guide": ["/images/insights/aeo-geo-small-business-guide.jpg", "고객 질문에서 AI 답변과 매장 선택으로 이어지는 AEO GEO 흐름"],
+  "why-ai-cannot-explain-your-business": ["/images/insights/why-ai-cannot-explain-your-business.jpg", "여러 채널에 흩어진 기업 정보와 이를 이해하지 못하는 AI"],
+  "what-is-entity-ai-search": ["/images/insights/what-is-entity-ai-search.jpg", "기업 중심으로 브랜드와 서비스 정보가 연결된 Entity 구조"],
+  "naver-smartplace-management": ["/images/insights/naver-smartplace-management.jpg", "스마트폰에서 매장 정보와 리뷰를 관리하는 스마트플레이스 화면"],
+  "local-store-before-ads-checklist": ["/images/insights/local-store-before-ads-checklist.jpg", "광고 전 지도와 리뷰와 매장 정보를 점검하는 지역 매장"],
+  "google-business-profile-local-store": ["/images/insights/google-business-profile-local-store.jpg", "지도 검색으로 지역 매장을 찾는 구글 비즈니스 프로필 이용 장면"],
+  "online-sales-product-page-problem": ["/images/insights/online-sales-product-page-problem.jpg", "상품 상세페이지와 후기 및 장바구니 구매 전환 화면"],
+  "online-store-before-ads-checklist": ["/images/insights/online-store-before-ads-checklist.jpg", "온라인 광고 전 상품과 후기 및 결제 과정을 점검하는 화면"],
+  "consulting-contract-price-comparison": ["/images/insights/consulting-contract-price-comparison.jpg", "가격 제안서와 전문성 자료를 비교하는 상담 테이블"],
+  "consulting-business-website-faq": ["/images/insights/consulting-business-website-faq.jpg", "전문 서비스 홈페이지와 FAQ 및 상담 문의 화면"],
+  "government-support-marketing-budget": ["/images/insights/government-support-marketing-budget.jpg", "정부지원사업 마케팅 예산과 실행 항목을 검토하는 사업자"],
+  "hope-return-package-marketing-assets": ["/images/insights/hope-return-package-marketing-assets.jpg", "재도약을 위해 홈페이지와 콘텐츠 자산을 준비하는 작업 공간"],
+  "marketing-priority-consulting": ["/images/insights/marketing-priority-consulting.jpg", "거상마케팅센터 대표 임헌수 프로필 사진"],
+  "marketing-priority-order": ["/images/insights/marketing-priority-order.jpg", "마케팅 기반부터 AI 검색까지 순서대로 연결된 실행 단계"],
+};
+
+for (const article of articles) {
+  const [coverImage, coverAlt] = coverBySlug[article.slug];
+  article.coverImage = coverImage;
+  article.coverAlt = coverAlt;
+}
+
 const categoryNotes = {
   "홈페이지·AEO/GEO": "실행 내용을 기록할 때는 수정한 페이지 주소, 변경한 핵심 문장, 연결한 서비스와 FAQ를 함께 남겨야 합니다. 이후 실제 상담에서 어떤 질문이 계속 나오는지 살펴보면 다음 갱신 항목을 정할 수 있습니다. 검색 화면만 확인하지 말고 모바일에서 제목, 본문, 내부 링크와 상담 버튼이 자연스럽게 이어지는지도 직접 점검하세요. 정보의 정확성과 갱신 책임자가 정해져 있어야 새로운 검색 환경에도 흔들리지 않는 기준을 유지할 수 있습니다.",
   "기업 Entity": "실무에서는 회사 정보 원본표를 만들고 변경 요청일, 확인한 공식 자료, 수정할 채널과 담당자를 함께 기록하는 방식이 유용합니다. 같은 이름의 다른 업체나 과거 주소가 검색될 때는 무리하게 삭제부터 시도하기보다 소유권과 사실 관계를 확인하고 각 플랫폼의 정식 절차를 따라야 합니다. 홈페이지, 지도, SNS와 보도 자료가 같은 회사를 가리키는 단서를 꾸준히 유지하는 것이 기업 정보 관리의 기본입니다.",
@@ -327,6 +351,7 @@ const toDataEntry = (article, index) => `  {
     publishedAt: ${JSON.stringify(publishedAt)},
     readingTime: ${JSON.stringify(article.readingTime)},
     coverImage: ${JSON.stringify(article.coverImage)},
+    coverAlt: ${JSON.stringify(article.coverAlt)},
     content: ${JSON.stringify(article.blocks.map(([heading, paragraph, bullets]) => ({ heading, paragraphs: [paragraph], ...(bullets ? { bullets } : {}) })), null, 6).replace(/^/gm, "    ").trimStart()},
     relatedServices: ${JSON.stringify(article.relatedServices)},
     ctaLabel: ${JSON.stringify(article.ctaLabel)},
@@ -358,7 +383,13 @@ function renderArticle(article) {
   return `<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" /><title>${escapeHtml(article.title)} | 거상마케팅센터</title><meta name="description" content="${escapeHtml(article.excerpt)}" /><link rel="canonical" href="${canonical}" /><meta property="og:type" content="article" /><meta property="og:title" content="${escapeHtml(article.title)}" /><meta property="og:description" content="${escapeHtml(article.excerpt)}" /><meta property="og:url" content="${canonical}" /><meta property="og:image" content="${absoluteImage}" /><meta property="article:published_time" content="${publishedAt}" /><link rel="icon" href="/assets/favicon.svg" /><link rel="stylesheet" href="/style.css?v=33" /><script type="application/ld+json">${JSON.stringify(schema).replaceAll("<", "\\u003c")}</script><script type="application/ld+json">${JSON.stringify(breadcrumb).replaceAll("<", "\\u003c")}</script></head><body class="insight-article-page">${header}<main><div class="ia-breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><a href="/insights">인사이트</a><span>›</span><b>${escapeHtml(article.category)}</b></div></div><section class="ia-hero"><div class="container ia-head"><span class="ia-category">${escapeHtml(article.category)}</span><h1>${escapeHtml(article.title)}</h1><p>${escapeHtml(article.excerpt)}</p><div class="ia-meta"><span>${displayDate}</span><span>읽는 시간 ${escapeHtml(article.readingTime)}</span></div></div></section><img class="ia-cover" src="${article.coverImage}" alt="${escapeHtml(article.title)} 관련 이미지" /><section class="section"><div class="container ia-layout"><article class="ia-content">${content}<div class="ia-summary"><small>핵심 요약</small><h2>실행 전에 기준 정보를 확인하고 우선순위를 정하세요</h2><ul>${summary.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></div></article><aside class="ia-aside"><small>RELATED SERVICE</small><h2>우리 사업에 맞는 우선순위가 궁금하다면 상담을 남겨주세요.</h2><p>${escapeHtml(article.excerpt)}</p><div class="ia-service-links">${article.relatedServices.map((service) => `<a href="${service.href}">${escapeHtml(service.label)} →</a>`).join("")}</div><a href="${article.ctaHref}" class="btn-primary">${escapeHtml(article.ctaLabel)}</a></aside></div></section><section class="section ia-related-section"><div class="container"><div class="section-head"><div class="eyebrow">RELATED INSIGHTS</div><h2 class="section-title">함께 읽으면 좋은 글</h2></div><div class="ia-related-grid">${related}</div><div class="ia-back"><a href="/insights">← 인사이트 목록으로 돌아가기</a></div></div></section></main>${footer}</body></html>`;
 }
 
-for (const article of articles) fs.writeFileSync(path.join(root, "insights", `${article.slug}.html`), renderArticle(article), "utf8");
+for (const article of articles) {
+  const page = renderArticle(article).replace(
+    /<img class="ia-cover"[^>]+>/,
+    `<img class="ia-cover" src="${article.coverImage}" alt="${escapeHtml(article.coverAlt)}" width="1200" height="675" loading="eager" decoding="async" />`,
+  );
+  fs.writeFileSync(path.join(root, "insights", `${article.slug}.html`), page, "utf8");
+}
 
 const renderCard = (article) => `<article class="ih-card" data-insight-card data-category="${escapeHtml(article.category)}"><img src="${article.coverImage}" alt="${escapeHtml(article.title)}" /><div class="ih-card-body"><span>${escapeHtml(article.category)}</span><h3>${escapeHtml(article.title)}</h3><p>${escapeHtml(article.excerpt)}</p><div class="ih-tags">${article.tags.map((tag) => `<i>#${escapeHtml(tag)}</i>`).join("")}</div><small>${displayDate} · ${escapeHtml(article.readingTime)}</small><div class="ih-card-service">관련 서비스 · <a href="${article.relatedServices[0].href}">${escapeHtml(article.relatedServices[0].label)}</a></div><a href="/insights/${article.slug}" class="ih-read">자세히 보기 →</a></div></article>`;
 
@@ -366,7 +397,10 @@ const hubPath = path.join(root, "insights.html");
 let hub = fs.readFileSync(hubPath, "utf8");
 hub = hub.replace(/<!-- INITIAL-INSIGHTS-2026-08-09:START -->[\s\S]*?<!-- INITIAL-INSIGHTS-2026-08-09:END -->/g, "");
 hub = hub.replace(/<b id="insightsCount">\d+<\/b>/, '<b id="insightsCount">22</b>');
-const hubBlock = `<!-- INITIAL-INSIGHTS-2026-08-09:START -->${articles.map(renderCard).join("")}<!-- INITIAL-INSIGHTS-2026-08-09:END -->`;
+const hubBlock = `<!-- INITIAL-INSIGHTS-2026-08-09:START -->${articles.map((article) => renderCard(article).replace(
+  /<img[^>]+>/,
+  `<img src="${article.coverImage}" alt="${escapeHtml(article.coverAlt)}" width="1200" height="675" loading="lazy" decoding="async" />`,
+)).join("")}<!-- INITIAL-INSIGHTS-2026-08-09:END -->`;
 hub = hub.replace(/<\/div><p class="ih-empty" id="insightsEmpty"/, `${hubBlock}</div><p class="ih-empty" id="insightsEmpty"`);
 const schemaMatch = hub.match(/<script type="application\/ld\+json">(\{[\s\S]*?"@type":"CollectionPage"[\s\S]*?\})<\/script>/);
 if (schemaMatch) {
