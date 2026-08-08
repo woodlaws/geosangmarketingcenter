@@ -59,7 +59,7 @@ Vercel 영구 리디렉션으로 아래 이전 주소를 새 주소에 연결합
 
 ## 상담 폼
 
-`/contact?type=enterprise&source=entity-header`처럼 접근하면 문의 유형과 유입 경로가 자동 반영됩니다. 폼은 `/api/contact`로 제출되며 Vercel 서버리스 함수가 `NEXT_PUBLIC_GOOGLE_SCRIPT_URL` 환경변수의 Apps Script Web App으로 전달합니다. 실제 URL은 코드나 GitHub 저장소에 넣지 않습니다.
+`/contact?type=enterprise&source=entity-header`처럼 접근하면 문의 유형과 유입 경로가 자동 반영됩니다. 폼은 `/api/contact`로 제출되며 Vercel 서버리스 함수는 `NEXT_PUBLIC_GOOGLE_SCRIPT_URL` 환경변수를 우선 사용하고, 없으면 `api/contact-config.js`의 Apps Script Web App URL을 사용합니다.
 
 ## 검색 파일
 
