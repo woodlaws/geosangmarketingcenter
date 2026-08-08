@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* ---------- 공통 상담 CTA ---------- */
   var legacyCtaServices = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", ads: "ads", enterprise: "enterprise", government: "government-support", "government-support": "government-support", website: "website-diagnosis", "website-diagnosis": "website-diagnosis", "marketing-diagnosis": "marketing-diagnosis", "local-store": "local-store", "online-sales": "online-sales", "consulting-contract": "consulting-contract", cases: "cases", consulting: "consulting", services: "services", "content-sns": "content-sns" };
-  var pageCtaType = window.location.pathname.indexOf("/services/ads") === 0 ? "ads" : window.location.pathname.indexOf("/services/content-sns") === 0 ? "content-sns" : window.location.pathname.indexOf("/services/aeo-geo") === 0 ? "aeo-geo" : window.location.pathname.indexOf("/services/government-support") === 0 ? "government-support" : window.location.pathname.indexOf("/services/smartplace") === 0 ? "smartplace" : window.location.pathname.indexOf("/services/google-business-profile") === 0 ? "google" : window.location.pathname.indexOf("/services/website-") === 0 ? "website-diagnosis" : window.location.pathname.indexOf("/enterprise") === 0 ? "enterprise" : window.location.pathname.indexOf("/services/consulting") === 0 || window.location.pathname.indexOf("/services/marketing-consulting") === 0 ? "consulting" : window.location.pathname === "/services" || window.location.pathname.endsWith("/services/index.html") ? "services" : window.location.pathname.indexOf("/marketing-types/local-store") === 0 ? "local-store" : window.location.pathname.indexOf("/marketing-types/online-sales") === 0 ? "online-sales" : window.location.pathname.indexOf("/marketing-types/consulting-contract") === 0 ? "consulting-contract" : window.location.pathname.indexOf("/marketing-diagnosis") === 0 ? "marketing-diagnosis" : "diagnosis";
+  var pageCtaType = window.location.pathname.indexOf("/services/ads") === 0 ? "ads" : window.location.pathname.indexOf("/services/content-sns") === 0 ? "content-sns" : window.location.pathname.indexOf("/services/aeo-geo") === 0 ? "aeo-geo" : window.location.pathname.indexOf("/services/government-support") === 0 ? "government-support" : window.location.pathname.indexOf("/services/smartplace") === 0 ? "smartplace" : window.location.pathname.indexOf("/services/google-business-profile") === 0 ? "google" : window.location.pathname.indexOf("/services/website-") === 0 ? "website-diagnosis" : window.location.pathname.indexOf("/enterprise") === 0 ? "enterprise" : window.location.pathname.indexOf("/services/consulting") === 0 || window.location.pathname.indexOf("/services/marketing-consulting") === 0 ? "consulting" : window.location.pathname === "/services" || window.location.pathname.endsWith("/services/index.html") ? "services" : window.location.pathname.indexOf("/marketing-types/local-store") === 0 ? "local-store" : window.location.pathname.indexOf("/marketing-types/online-sales") === 0 ? "online-sales" : window.location.pathname.indexOf("/marketing-types/consulting-contract") === 0 ? "consulting-contract" : window.location.pathname.indexOf("/marketing-diagnosis") === 0 ? "marketing-diagnosis" : window.location.pathname.indexOf("/cases") === 0 ? "cases" : window.location.pathname.indexOf("/about") === 0 ? "consulting" : "diagnosis";
   var ctaPageName = (window.location.pathname.replace(/^\//, "").replace(/\.html$/, "").replace(/\/index$/, "").replace(/\//g, "-") || "home");
   var ctaIndex = 0;
   document.querySelectorAll("a[href]").forEach(function (link) {
@@ -71,6 +71,72 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     link.addEventListener("click", function () {
       if (typeof window.gtag === "function") window.gtag("event", "contact_cta_click", { cta_type: resolvedType, cta_location: source });
+    });
+  });
+
+  /* ---------- 카카오톡 빠른 상담 ---------- */
+  var KAKAO_CHAT_URL = "https://pf.kakao.com/_hxlxaQG/chat";
+  var kakaoPath = window.location.pathname.replace(/\/index\.html$/, "").replace(/\.html$/, "").replace(/\/$/, "") || "/";
+  var kakaoPage = kakaoPath.replace(/^\//, "").replace(/\//g, "-") || "home";
+  var kakaoFinalSelectors = {
+    "/services": ".sh-final-actions",
+    "/services/smartplace": ".sp-final-cta .cta-box-btns",
+    "/services/google-business-profile": ".gp-final-actions",
+    "/services/content-sns": ".cs-final-actions",
+    "/services/ads": ".ad-final-actions",
+    "/services/government-support": ".gs-final-actions",
+    "/services/website-diagnosis": ".wd-final-actions",
+    "/services/consulting": ".mc-final-actions",
+    "/services/aeo-geo": ".ai-final-actions",
+    "/enterprise": ".en-final .en-actions",
+    "/marketing-diagnosis": ".md-final-actions",
+    "/marketing-types/local-store": ".ls-final .ls-actions",
+    "/marketing-types/online-sales": ".os-final .os-actions",
+    "/marketing-types/consulting-contract": ".os-final .os-actions",
+    "/cases": ".ch-final .ch-actions",
+    "/about": ".about-final-actions"
+  };
+
+  function createKakaoLink(label, source, className) {
+    var link = document.createElement("a");
+    link.href = KAKAO_CHAT_URL;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.className = className || "btn-kakao";
+    link.setAttribute("aria-label", "카카오톡 상담하기");
+    link.setAttribute("data-cta", "kakao-chat");
+    link.setAttribute("data-source", source);
+    link.setAttribute("data-page", kakaoPage);
+    link.setAttribute("data-service-type", pageCtaType);
+    link.innerHTML = '<span class="kakao-wordmark" aria-hidden="true">톡</span><span>' + label + '</span>';
+    return link;
+  }
+
+  var kakaoFinalSelector = kakaoFinalSelectors[kakaoPath];
+  var kakaoFinalActions = kakaoFinalSelector ? document.querySelector(kakaoFinalSelector) : null;
+  if (kakaoFinalActions && !kakaoFinalActions.querySelector('[data-cta="kakao-chat"]')) {
+    var kakaoFinalLink = createKakaoLink("카카오톡 상담하기", "service-footer", "btn-kakao");
+    var directPhoneLink = kakaoFinalActions.querySelector('a[href^="tel:"]');
+    if (directPhoneLink) directPhoneLink.replaceWith(kakaoFinalLink);
+    else kakaoFinalActions.appendChild(kakaoFinalLink);
+  }
+
+  var kakaoMobileNav = document.getElementById("navMobile");
+  if (kakaoMobileNav && !kakaoMobileNav.querySelector('[data-cta="kakao-chat"]')) {
+    kakaoMobileNav.appendChild(createKakaoLink("카카오톡 상담", "mobile-menu", "nav-kakao-link"));
+  }
+
+  if (!document.querySelector(".kakao-floating")) {
+    document.body.appendChild(createKakaoLink("카톡 상담", "floating", "kakao-floating"));
+  }
+
+  document.addEventListener("click", function (event) {
+    var target = event.target instanceof Element ? event.target.closest('[data-cta="kakao-chat"]') : null;
+    if (!target || typeof window.gtag !== "function") return;
+    window.gtag("event", "kakao_chat_click", {
+      page_path: window.location.pathname,
+      cta_location: target.getAttribute("data-source") || "unknown",
+      service_type: target.getAttribute("data-service-type") || pageCtaType
     });
   });
 
