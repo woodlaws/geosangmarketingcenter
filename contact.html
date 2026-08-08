@@ -240,6 +240,27 @@
       line-height: 1.65;
       text-align: center;
     }
+    .form-pending-note.is-error {
+      color: #991b1b;
+      background: #fef2f2;
+      border-color: #fecaca;
+    }
+    .form-pending-note.is-sending {
+      color: #1e40af;
+      background: #eff6ff;
+      border-color: #bfdbfe;
+    }
+    .form-honeypot {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
     .form-success-box {
       text-align: center;
       padding: 36px 16px;
@@ -672,6 +693,9 @@
           <form id="contactForm">
             <input type="hidden" name="cta_type" value="diagnosis" />
             <input type="hidden" name="cta_source" value="direct" />
+            <div class="form-honeypot" aria-hidden="true">
+              <label>웹사이트 <input type="text" name="website_hidden" tabindex="-1" autocomplete="off" /></label>
+            </div>
             <div class="form-row-2">
               <div class="form-group">
                 <label>이름 <span class="req">*</span></label>
@@ -683,13 +707,13 @@
               </div>
             </div>
             <div class="form-group">
-              <label>업체명 <span class="req">*</span></label>
-              <input type="text" name="bizname" placeholder="예) 성수 파스타하우스" required="required" />
+              <label>업체명 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
+              <input type="text" name="bizname" placeholder="예) 성수 파스타하우스" />
             </div>
             <div class="form-row-2">
               <div class="form-group">
-                <label>업종 <span class="req">*</span></label>
-                <select name="industry" required="required">
+                <label>업종 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
+                <select name="industry">
                   <option value="">업종 선택</option>
                   <option value="restaurant">식당·음식점</option>
                   <option value="cafe">카페</option>
@@ -704,13 +728,13 @@
                 </select>
               </div>
               <div class="form-group">
-                <label>지역 <span class="req">*</span></label>
-                <input type="text" name="region" placeholder="예) 서울 성동구" required="required" />
+                <label>지역 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
+                <input type="text" name="region" placeholder="예) 서울 성동구" />
               </div>
             </div>
             <div class="form-group">
               <label>문의 유형 <span class="req">*</span></label>
-              <select name="service" required="required">
+              <select name="service">
                 <option value="diagnosis">무료 온라인 노출 진단</option>
                 <option value="smartplace">스마트플레이스 상담</option>
                 <option value="google">구글 비즈니스 프로필 상담</option>
@@ -734,13 +758,13 @@
               <legend>기업·다점포 상담 추가 정보</legend>
               <p class="enterprise-fields-note">회사명·브랜드명은 위 업체명에, 담당자명은 이름에 입력해 주세요.</p>
               <div class="form-group">
-                <label>담당자 이메일 <span class="req">*</span></label>
-                <input type="email" name="enterpriseEmail" placeholder="name@company.com" data-enterprise-required="true" />
+                <label>담당자 이메일 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
+                <input type="email" name="enterpriseEmail" placeholder="name@company.com" />
               </div>
               <div class="form-row-2">
                 <div class="form-group">
-                  <label>운영 지점 수 <span class="req">*</span></label>
-                  <select name="branchCount" data-enterprise-required="true">
+                  <label>운영 지점 수 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
+                  <select name="branchCount">
                     <option value="">지점 수 선택</option>
                     <option value="2-5">2~5개</option>
                     <option value="6-10">6~10개</option>
@@ -751,8 +775,8 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label>현재 관리 채널 <span class="req">*</span></label>
-                  <select name="managementChannel" data-enterprise-required="true">
+                  <label>현재 관리 채널 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
+                  <select name="managementChannel">
                     <option value="">관리 채널 선택</option>
                     <option value="naver">네이버 플레이스</option>
                     <option value="google">구글 비즈니스 프로필</option>
@@ -775,12 +799,12 @@
               <label>월 마케팅 예산 범위 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
               <select name="budget">
                 <option value="">예산 범위 선택</option>
-                <option value="under30">30만원 미만</option>
-                <option value="30-50">30~50만원</option>
-                <option value="50-100">50~100만원</option>
-                <option value="100-200">100~200만원</option>
-                <option value="over200">200만원 이상</option>
-                <option value="undecided">아직 미정</option>
+                <option value="아직 미정">아직 미정</option>
+                <option value="50만원 이하">50만원 이하</option>
+                <option value="50만~100만원">50만~100만원</option>
+                <option value="100만~300만원">100만~300만원</option>
+                <option value="300만원 이상">300만원 이상</option>
+                <option value="정부지원사업 예산 활용 예정">정부지원사업 예산 활용 예정</option>
               </select>
             </div>
             <div class="form-group">
@@ -788,32 +812,33 @@
               <textarea name="concern" placeholder="예) 플레이스 순위가 자꾸 밀려요. 광고를 해봤는데 문의가 없었어요. 지원사업 이후 어떻게 해야 할지 모르겠어요."></textarea>
             </div>
             <div class="form-group">
-              <label>상담 희망 시간대 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
-              <select name="preferredTime">
-                <option value="">시간대 선택</option>
-                <option value="morning">오전 9~12시</option>
-                <option value="afternoon">오후 12~15시</option>
-                <option value="late">오후 15~18시</option>
-                <option value="any">언제든 가능</option>
+              <label>희망 상담 방식 <span style="color:#94a3b8;font-weight:400;">(선택)</span></label>
+              <select name="preferredContact">
+                <option value="">상담 방식 선택</option>
+                <option value="전화 상담">전화 상담</option>
+                <option value="카카오톡 상담">카카오톡 상담</option>
+                <option value="줌 미팅">줌 미팅</option>
+                <option value="방문 미팅">방문 미팅</option>
+                <option value="먼저 자료 검토 후 연락 희망">먼저 자료 검토 후 연락 희망</option>
               </select>
             </div>
             <div class="privacy-check">
-              <input type="checkbox" id="agreePrivacy" required="required" />
+              <input type="checkbox" id="agreePrivacy" name="privacyAgree" value="true" required="required" />
               <label for="agreePrivacy" style="cursor:pointer;">
                 입력하신 정보는 상담 및 진단 안내 목적으로만 사용됩니다.
                 <strong style="color:var(--ink-2);">개인정보 수집·이용에 동의합니다.</strong>
               </label>
             </div>
             <button type="submit" class="form-submit-btn">무료 진단 신청하기 →</button>
-            <div class="form-pending-note">
-              ⚠️ 온라인 신청 기능은 현재 연결 작업 중입니다. 신청 시 카카오톡(@거상마케팅센터) 또는 전화(010-3422-8075)로 문의해 주시면 더 빠르게 안내드립니다.
+            <div id="contactFormStatus" class="form-pending-note" role="status" aria-live="polite">
+              상담 신청 내용은 개인정보 동의 후 담당자 확인용 문의DB에 안전하게 접수됩니다.
             </div>
           </form>
 
-          <div id="contactSuccess" hidden="hidden" class="form-success-box">
+          <div id="contactSuccess" hidden="hidden" class="form-success-box" tabindex="-1">
             <div class="success-ic">✓</div>
-            <div class="success-title">상담 신청이 완료되었습니다</div>
-            <div class="success-desc">담당자가 1영업일 이내 연락드립니다.<br />급하신 경우 010-3422-8075로 직접 연락주세요.</div>
+            <div class="success-title">문의가 접수되었습니다.</div>
+            <div class="success-desc">확인 후 연락드리겠습니다.</div>
             <div style="margin-top:20px;">
               <a href="/" class="btn-outline">홈으로 돌아가기</a>
             </div>
@@ -1080,6 +1105,6 @@
     <div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved.</div>
   </footer>
 
-  <script src="script.js?v=16"></script>
+  <script src="script.js?v=18"></script>
 </body>
 </html>
