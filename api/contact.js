@@ -1,4 +1,5 @@
 const GOOGLE_SCRIPT_URL_PATTERN = /^https:\/\/script\.google\.com\/macros\/s\/.+\/exec$/;
+const { GOOGLE_SCRIPT_URL } = require("./contact-config");
 
 module.exports = async function contactHandler(request, response) {
   if (request.method !== "POST") {
@@ -6,7 +7,7 @@ module.exports = async function contactHandler(request, response) {
     return response.status(405).json({ ok: false, error: "Method not allowed" });
   }
 
-  const scriptUrl = String(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL || "").trim();
+  const scriptUrl = String(GOOGLE_SCRIPT_URL || "").trim();
   if (!GOOGLE_SCRIPT_URL_PATTERN.test(scriptUrl)) {
     return response.status(500).json({ ok: false, error: "Contact endpoint is not configured" });
   }

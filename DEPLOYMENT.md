@@ -9,15 +9,15 @@ ZIP 압축을 해제한 뒤 전체 파일을 GitHub 저장소 루트에 업로�
 1. GitHub 저장소를 Vercel 프로젝트로 가져옵니다.
 2. Framework Preset은 `Other`, Root Directory는 `./`로 둡니다.
 3. Install Command, Build Command, Output Directory는 비워 둡니다.
-4. Settings → Environment Variables에 아래 값을 등록합니다.
+4. 환경변수 메뉴를 사용할 수 있다면 아래 값을 등록할 수 있습니다.
 
    - Name: `NEXT_PUBLIC_GOOGLE_SCRIPT_URL`
    - Value: 실제 Google Apps Script Web App `/exec` URL
    - Environments: Production, Preview, Development
 
-5. 환경변수 저장 후 새로 배포합니다.
+5. 환경변수를 등록하지 않아도 `api/contact-config.js`에 설정된 Apps Script Web App URL을 fallback으로 사용합니다.
 
-브라우저는 실제 Apps Script URL을 읽지 않습니다. `/contact`는 같은 도메인의 `/api/contact`로 제출하고, Vercel 서버리스 함수가 환경변수를 읽어 Apps Script로 전달합니다.
+브라우저는 실제 Apps Script URL을 읽지 않습니다. `/contact`는 같은 도메인의 `/api/contact`로 제출하고, Vercel 서버리스 함수는 환경변수를 우선 사용한 뒤 없으면 설정 파일의 fallback URL로 Apps Script에 전달합니다.
 
 ## 확인
 

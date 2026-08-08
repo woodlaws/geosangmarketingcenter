@@ -7,7 +7,7 @@
 3. **배포 → 새 배포 → 유형 선택 → 웹 앱**을 선택합니다.
 4. 실행 사용자는 **나**, 액세스 권한은 **모든 사용자**로 선택한 뒤 배포합니다.
 5. Google 권한 요청을 승인하고 발급된 `/exec` 웹 앱 URL을 복사합니다.
-6. Vercel 프로젝트의 Environment Variables에 `NEXT_PUBLIC_GOOGLE_SCRIPT_URL` 이름으로 해당 URL을 등록합니다.
+6. Vercel 환경변수를 사용할 수 있으면 `NEXT_PUBLIC_GOOGLE_SCRIPT_URL`로 등록합니다. 환경변수가 없으면 `api/contact-config.js`의 fallback URL을 사용합니다.
 7. 사이트를 다시 배포한 뒤 `/contact`에서 1건을 테스트하고 `문의DB`의 새 행을 확인합니다.
 
 Apps Script 코드를 수정한 뒤에는 **배포 관리 → 수정 → 새 버전**으로 다시 배포해야 변경사항이 반영됩니다.
