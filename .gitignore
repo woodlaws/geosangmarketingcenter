@@ -1,0 +1,6 @@
+# Local deployment artifacts and Vercel account linkage
+deploy-package/
+.vercel/
+.env
+.env.*
+!.env.example

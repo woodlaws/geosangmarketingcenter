@@ -42,7 +42,7 @@ export const insights: Insight[] = [
     tags: ["스마트플레이스", "지역검색", "매장방문"],
     publishedAt: "2026-08-08",
     readingTime: "5분",
-    coverImage: "/images/insights/photo-local-business-owners.jpg",
+    coverImage: "/images/insights/cafe-smartplace-checklist.png",
     content: [
       { heading: "노출보다 기준 정보가 먼저입니다", paragraphs: ["플레이스 운영은 상호명, 카테고리, 주소, 전화번호와 영업시간이 실제 매장 정보와 일치하는지 확인하는 일에서 시작합니다."], bullets: ["기본 정보 일치", "대표 카테고리 명확화", "전화·예약·길찾기 동선 확인"] },
       { heading: "고객이 비교하는 자료를 채웁니다", paragraphs: ["사진과 메뉴, 소식, 리뷰 답변은 고객이 방문 전 비교하는 핵심 자료입니다. 한 번에 많이 올리기보다 현재 상태를 정확히 보여주는 자료를 꾸준히 정리하는 편이 좋습니다."] },
@@ -63,7 +63,7 @@ export const insights: Insight[] = [
     tags: ["AEO", "GEO", "홈페이지진단"],
     publishedAt: "2026-08-08",
     readingTime: "6분",
-    coverImage: "/images/insights/photo-website-developer.jpg",
+    coverImage: "/images/insights/ai-search-local-growth.png",
     content: [
       { heading: "공식 홈페이지는 기업 정보의 기준점입니다", paragraphs: ["AI와 검색엔진이 회사를 이해하려면 회사 소개, 서비스, 위치, 대표자, 사례와 문의 경로를 확인할 수 있는 공식 기준점이 필요합니다."] },
       { heading: "질문에 답하는 구조를 만듭니다", paragraphs: ["고객이 실제로 묻는 질문을 FAQ와 서비스 페이지에 분명하게 답하면 검색과 상담 모두에 도움이 됩니다."], bullets: ["서비스 대상과 범위", "진행 방식", "자주 묻는 질문", "명확한 상담 경로"] },
@@ -84,7 +84,7 @@ export const insights: Insight[] = [
     tags: ["블로그", "릴스", "콘텐츠전략"],
     publishedAt: "2026-08-08",
     readingTime: "5분",
-    coverImage: "/images/insights/photo-social-content.jpg",
+    coverImage: "/images/insights/blog-sns-place-priority.png",
     content: [
       { heading: "채널보다 고객의 확인 순서를 봅니다", paragraphs: ["고객이 검색으로 정보를 찾는지, 짧은 영상으로 관심을 갖는지, 상세페이지에서 비교하는지를 먼저 확인해야 합니다."] },
       { heading: "한 콘텐츠를 여러 역할로 나눕니다", paragraphs: ["하나의 촬영 자료를 블로그 설명, 짧은 영상, 플레이스 소식과 FAQ로 재구성하면 운영 부담을 줄일 수 있습니다."], bullets: ["검색되는 설명형 콘텐츠", "관심을 만드는 짧은 영상", "신뢰를 보완하는 사례·FAQ"] },
@@ -105,7 +105,7 @@ export const insights: Insight[] = [
     tags: ["정부지원사업", "후속마케팅", "온라인자산"],
     publishedAt: "2026-08-08",
     readingTime: "5분",
-    coverImage: "/images/insights/photo-budget-review.jpg",
+    coverImage: "/images/insights/government-support-assets.png",
     coverAlt: "지원사업 결과물을 장기 운영 자산으로 정리하는 인수인계 작업 공간",
     content: [
       { heading: "결과물의 운영 주체와 주소를 확인합니다", paragraphs: ["제작된 페이지와 콘텐츠가 어디에 저장되어 있고 누가 수정할 수 있는지부터 확인해야 합니다."] },
@@ -127,7 +127,7 @@ export const insights: Insight[] = [
     tags: ["업종별진단", "고객행동", "마케팅우선순위"],
     publishedAt: "2026-08-08",
     readingTime: "6분",
-    coverImage: "/images/insights/photo-team-laptop.jpg",
+    coverImage: "/images/insights/business-type-priority.png",
     content: [
       { heading: "매장 방문형은 발견과 방문 동선이 먼저입니다", paragraphs: ["지역 검색, 지도 정보, 리뷰와 길찾기·예약 동선을 우선 확인합니다."] },
       { heading: "온라인 판매형은 비교와 구매 정보가 먼저입니다", paragraphs: ["상품 설명, 상세페이지, 후기, 배송·교환 정보와 결제 흐름이 고객의 판단을 돕는지 확인합니다."] },
@@ -148,7 +148,7 @@ export const insights: Insight[] = [
     tags: ["기업Entity", "공식정보", "구조화데이터"],
     publishedAt: "2026-08-08",
     readingTime: "6분",
-    coverImage: "/images/insights/photo-team-office.jpg",
+    coverImage: "/images/insights/enterprise-entity-review.png",
     coverAlt: "기업 건물과 공식 정보를 연결한 Entity 구조",
     content: [
       { heading: "Entity는 하나의 대상으로 인식되는 정보 묶음입니다", paragraphs: ["기업은 회사명만이 아니라 대표자, 서비스, 위치, 고객 반응과 공식 채널이 연결될 때 더 명확하게 설명될 수 있습니다."] },
@@ -170,7 +170,7 @@ export const insights: Insight[] = [
     tags: ["마케팅컨설팅", "실행계획", "우선순위"],
     publishedAt: "2026-08-08",
     readingTime: "5분",
-    coverImage: "/images/insights/photo-consulting-meeting.jpg",
+    coverImage: "/images/insights/consulting-marketing-problem.png",
     coverAlt: "마케팅 채널을 진단하고 우선순위를 정하는 컨설팅 과정",
     content: [
       { heading: "무엇을 늘릴지보다 어디에서 막히는지 봅니다", paragraphs: ["노출, 비교, 문의, 예약, 구매 중 현재 고객 흐름이 막히는 구간을 먼저 찾아야 합니다."] },
@@ -193,7 +193,7 @@ export const insights: Insight[] = [
     tags: ["AI검색","홈페이지진단","공식정보"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-website-developer.jpg",
+    coverImage: "/images/insights/ai-search-website-importance-square.png",
     coverAlt: "AI 검색과 공식 홈페이지 정보가 연결되는 구조",
     content: [
           {
@@ -248,7 +248,7 @@ export const insights: Insight[] = [
     tags: ["AEO","GEO","소상공인"],
     publishedAt: "2026-08-09",
     readingTime: "8분",
-    coverImage: "/images/insights/photo-ai-technology-work.jpg",
+    coverImage: "/images/insights/aeo-geo-small-business-square.png",
     coverAlt: "고객 질문에서 AI 답변과 매장 선택으로 이어지는 AEO GEO 흐름",
     content: [
           {
@@ -303,7 +303,7 @@ export const insights: Insight[] = [
     tags: ["기업Entity","AI검색","정보일치"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-it-professional.jpg",
+    coverImage: "/images/insights/ai-company-identity-review.png",
     coverAlt: "여러 채널에 흩어진 기업 정보와 이를 이해하지 못하는 AI",
     content: [
           {
@@ -358,7 +358,7 @@ export const insights: Insight[] = [
     tags: ["Entity","기업정보","구조화데이터"],
     publishedAt: "2026-08-09",
     readingTime: "8분",
-    coverImage: "/images/insights/photo-team-office.jpg",
+    coverImage: "/images/insights/entity-information-map.png",
     coverAlt: "기업 중심으로 브랜드와 서비스 정보가 연결된 Entity 구조",
     content: [
           {
@@ -413,7 +413,7 @@ export const insights: Insight[] = [
     tags: ["스마트플레이스","매장관리","지역검색"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-local-cafe-interior.jpg",
+    coverImage: "/images/insights/naver-place-management.png",
     coverAlt: "스마트폰에서 매장 정보와 리뷰를 관리하는 스마트플레이스 화면",
     content: [
           {
@@ -468,7 +468,7 @@ export const insights: Insight[] = [
     tags: ["매장방문형","광고점검","예약동선"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-local-business-owners.jpg",
+    coverImage: "/images/insights/local-store-before-ads.png",
     coverAlt: "광고 전 지도와 리뷰와 매장 정보를 점검하는 지역 매장",
     content: [
           {
@@ -524,7 +524,7 @@ export const insights: Insight[] = [
     tags: ["구글비즈니스프로필","지도검색","지역매장"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-local-cafe-interior.jpg",
+    coverImage: "/images/insights/google-map-profile-check.png",
     coverAlt: "지도 검색으로 지역 매장을 찾는 구글 비즈니스 프로필 이용 장면",
     content: [
           {
@@ -579,7 +579,7 @@ export const insights: Insight[] = [
     tags: ["온라인판매","상세페이지","구매전환"],
     publishedAt: "2026-08-09",
     readingTime: "8분",
-    coverImage: "/images/insights/photo-ecommerce-devices.jpg",
+    coverImage: "/images/insights/online-product-page-review.png",
     coverAlt: "상품 상세페이지와 후기 및 장바구니 구매 전환 화면",
     content: [
           {
@@ -634,7 +634,7 @@ export const insights: Insight[] = [
     tags: ["스마트스토어","자사몰","광고준비"],
     publishedAt: "2026-08-09",
     readingTime: "8분",
-    coverImage: "/images/insights/photo-ecommerce-cart.jpg",
+    coverImage: "/images/insights/smartstore-ad-checklist.png",
     coverAlt: "온라인 광고 전 상품과 후기 및 결제 과정을 점검하는 화면",
     content: [
           {
@@ -689,7 +689,7 @@ export const insights: Insight[] = [
     tags: ["상담계약형","가격비교","신뢰콘텐츠"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-consulting-documents.jpg",
+    coverImage: "/images/insights/consulting-price-comparison.png",
     coverAlt: "가격 제안서와 전문성 자료를 비교하는 상담 테이블",
     content: [
           {
@@ -744,7 +744,7 @@ export const insights: Insight[] = [
     tags: ["상담형사업","FAQ","홈페이지진단"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-consulting-meeting.jpg",
+    coverImage: "/images/insights/homepage-faq-first.png",
     coverAlt: "전문 서비스 홈페이지와 FAQ 및 상담 문의 화면",
     content: [
           {
@@ -799,7 +799,7 @@ export const insights: Insight[] = [
     tags: ["정부지원사업","마케팅예산","실행계획"],
     publishedAt: "2026-08-09",
     readingTime: "8분",
-    coverImage: "/images/insights/photo-budget-calculator.jpg",
+    coverImage: "/images/insights/government-budget-planning.png",
     coverAlt: "정부지원사업 마케팅 예산과 실행 항목을 검토하는 사업자",
     content: [
           {
@@ -854,7 +854,7 @@ export const insights: Insight[] = [
     tags: ["희망리턴패키지","마케팅자산","사후운영"],
     publishedAt: "2026-08-09",
     readingTime: "8분",
-    coverImage: "/images/insights/photo-finance-planning.jpg",
+    coverImage: "/images/insights/hope-return-assets.png",
     coverAlt: "재도약을 위해 홈페이지와 콘텐츠 자산을 준비하는 작업 공간",
     content: [
           {
@@ -909,7 +909,7 @@ export const insights: Insight[] = [
     tags: ["마케팅우선순위","채널선택","컨설팅"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-consulting-documents.jpg",
+    coverImage: "/images/insights/website-conversion-checklist.png",
     coverAlt: "거상마케팅센터 대표 임헌수 프로필 사진",
     content: [
           {
@@ -964,7 +964,7 @@ export const insights: Insight[] = [
     tags: ["마케팅전략","실행순서","서비스선택"],
     publishedAt: "2026-08-09",
     readingTime: "7분",
-    coverImage: "/images/insights/photo-team-laptop.jpg",
+    coverImage: "/images/insights/marketing-sequence-board.png",
     coverAlt: "마케팅 기반부터 AI 검색까지 순서대로 연결된 실행 단계",
     content: [
           {
