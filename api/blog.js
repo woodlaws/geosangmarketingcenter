@@ -62,6 +62,7 @@ function mapPost(page) {
   const editorialCovers = {
     "why-homepage-is-center-of-ai-search-marketing": "/images/blog/ai-search-homepage-center.png",
     "why-local-business-needs-homepage-ai-search": "/images/blog/ai-search-local-business-homepage.webp",
+    "how-to-write-website-content-cited-by-ai-search": "/images/blog/ai-search-cited-content/cover.webp",
     "why-website-not-showing-in-search-7-reasons": "/images/blog/website-search-7-reasons.svg",
   };
   return {
@@ -257,21 +258,3 @@ module.exports = async function handler(req, res) {
     }
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     if (mode === "detail") {
-      const post = posts.find((item) => item.slug === slug);
-      if (!post) return res.status(404).send(notFoundPage());
-      const blocks = await fetchBlocks(post.id);
-      const related = posts.filter((item) => item.slug !== post.slug && item.category === post.category).slice(0, 3);
-      return res.status(200).send(detailPage(post, blocks, related));
-    }
-    return res.status(200).send(listPage(posts));
-  } catch (error) {
-    console.error("[notion-blog]", error.message);
-    if (mode === "rss") {
-      res.setHeader("Content-Type", "application/rss+xml; charset=utf-8");
-      return res.status(200).send(rss([]));
-    }
-    res.setHeader("Content-Type", "text/html; charset=utf-8");
-    if (mode === "detail") return res.status(404).send(notFoundPage());
-    return res.status(200).send(listPage([]));
-  }
-};
