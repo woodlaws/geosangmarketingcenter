@@ -62,6 +62,7 @@ function mapPost(page) {
   const editorialCovers = {
     "why-homepage-is-center-of-ai-search-marketing": "/images/blog/ai-search-homepage-center.png",
     "why-local-business-needs-homepage-ai-search": "/images/blog/ai-search-local-business-homepage.webp",
+    "why-website-not-showing-in-search-7-reasons": "/images/blog/website-search-7-reasons.svg",
   };
   return {
     id: page.id,
