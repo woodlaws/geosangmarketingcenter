@@ -58,14 +58,18 @@ function mapPost(page) {
   const services = selectValues(p["관련 서비스"]);
   const rawCta = p["CTA 링크"]?.url || richText(p["CTA 링크"]);
   const ctaLink = rawCta && (rawCta.startsWith("/") || rawCta.startsWith(SITE_URL)) ? rawCta : "/contact?type=consulting&source=blog";
+  const slug = richText(p["Slug"]);
+  const editorialCovers = {
+    "why-homepage-is-center-of-ai-search-marketing": "/images/blog/ai-search-homepage-center.png",
+  };
   return {
     id: page.id,
     title: richText(p["제목"]),
-    slug: richText(p["Slug"]),
+    slug,
     category: selectValues(p["카테고리"])[0] || "마케팅 인사이트",
     question: richText(p["핵심 질문"]),
     excerpt: richText(p["요약"]),
-    image: fileUrl(p["대표 이미지"]),
+    image: fileUrl(p["대표 이미지"]) || editorialCovers[slug] || "",
     publishedAt: p["작성일"]?.date?.start || "",
     modifiedAt: page.last_edited_time || "",
     featured: Boolean(p["추천 여부"]?.checkbox),
@@ -196,7 +200,7 @@ function layout({ title, description, canonical, image, body, schemas = [], type
   return `<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8" /><meta name="naver-site-verification" content="2c7ee16c39e1aef5cabb4e7532b2b9642809f782" /><meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}" />${keywords.length ? `<meta name="keywords" content="${escapeHtml(keywords.join(", "))}" />` : ""}<link rel="canonical" href="${escapeHtml(canonical)}" />
 <meta property="og:type" content="${escapeHtml(type)}" /><meta property="og:title" content="${escapeHtml(title)}" /><meta property="og:description" content="${escapeHtml(description)}" /><meta property="og:url" content="${escapeHtml(canonical)}" /><meta property="og:image" content="${escapeHtml(ogImage)}" />
-<meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/assets/favicon.svg" /><link rel="stylesheet" href="/style.css?v=34" /><link rel="stylesheet" href="/blog.css?v=1" />
+<meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/assets/favicon.svg" /><link rel="stylesheet" href="/style.css?v=34" /><link rel="stylesheet" href="/blog.css?v=1" /><link rel="stylesheet" href="/blog-featured.css?v=1" />
 ${schemas.map((schema) => `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("")}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E79QT0R9Z3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-E79QT0R9Z3');</script></head>
 <body class="blog-page"><header class="site-header"><div class="container header-inner"><a href="/" class="brand"><img src="/assets/logo-mark.png" class="brand-logo" alt="거상마케팅센터 로고" /><span class="brand-text"><span class="brand-name">거상마케팅센터</span><span class="brand-sub">SMARTPLACE · AEO · GEO</span></span></a><nav class="nav" aria-label="주요 메뉴"><a href="/about">센터 소개</a><a href="/services">서비스</a><a href="/marketing-diagnosis">업종별 진단</a><a href="/enterprise">기업·다점포</a><a href="/cases">성공사례</a><a href="/insights">인사이트</a><a href="/blog" class="active">블로그</a><a href="/contact" class="btn-nav">상담문의</a></nav><button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button></div><nav class="nav-mobile" id="navMobile"><a href="/about">센터 소개</a><a href="/services">서비스</a><a href="/marketing-diagnosis">업종별 진단</a><a href="/enterprise">기업·다점포</a><a href="/cases">성공사례</a><a href="/insights">인사이트</a><a href="/blog">마케팅 블로그</a><a href="/contact" class="btn-nav">상담문의</a></nav></header>${body}<footer class="site-footer"><div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved. · <a href="/blog">마케팅 블로그</a> · <a href="/contact">상담문의</a></div></footer><script src="/script.js?v=31"></script></body></html>`;
@@ -212,7 +216,7 @@ function listPage(posts, notice = "") {
   const empty = `<div class="blog-empty"><span>CONTENT UPDATE</span><h2>마케팅 인사이트를 준비하고 있습니다</h2><p>거상마케팅센터의 스마트플레이스, AEO·GEO, 블로그 마케팅 인사이트가 곧 업데이트됩니다.</p><a href="/contact" class="btn-primary">상담 문의하기</a></div>`;
   const body = `<main><section class="blog-hero"><div class="container"><span>GEOSANG MARKETING BLOG</span><h1>마케팅 블로그</h1><p>스마트플레이스, AEO·GEO, 블로그 마케팅, 체험단 마케팅까지.<br />거상마케팅센터가 현장에서 쌓은 마케팅 인사이트를 정리합니다.</p></div></section><div class="blog-breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><b>마케팅 블로그</b></div></div>
 ${notice ? `<div class="container blog-notice" role="status">${escapeHtml(notice)}</div>` : ""}
-${featured.length ? `<section class="blog-section"><div class="container"><div class="blog-section-head"><span>FEATURED</span><h2>추천 글</h2></div><div class="blog-grid blog-featured">${featured.map(card).join("")}</div></div></section>` : ""}
+${featured.length ? `<section class="blog-section"><div class="container"><div class="blog-section-head"><span>FEATURED</span><h2>추천 글</h2><p>지금 가장 먼저 읽어야 할 마케팅 인사이트입니다.</p></div><div class="blog-grid blog-featured">${featured.map(card).join("")}</div></div></section>` : ""}
 <section class="blog-section blog-list-section"><div class="container"><div class="blog-section-head"><span>LATEST INSIGHTS</span><h2>최신 글</h2><p>관심 있는 주제를 선택하거나 검색해 보세요.</p></div><div class="blog-tools"><div class="blog-filters" role="group" aria-label="카테고리 필터"><button type="button" class="is-active" data-filter="전체">전체</button>${CATEGORIES.map((category) => `<button type="button" data-filter="${escapeHtml(category)}">${escapeHtml(category)}</button>`).join("")}</div><label class="blog-search"><span class="sr-only">블로그 검색</span><input type="search" id="blogSearch" placeholder="제목·질문·키워드 검색" /></label></div>${posts.length ? `<div class="blog-grid" id="blogGrid">${posts.map(card).join("")}</div><div class="blog-no-results" id="blogNoResults" hidden>검색 조건에 맞는 글이 없습니다.</div>` : empty}</div></section>
 <section class="blog-cta"><div class="container"><div><span>FREE MARKETING DIAGNOSIS</span><h2>우리 사업에 맞는 마케팅 우선순위가 궁금하신가요?</h2><p>현재 온라인 노출과 콘텐츠 구조를 확인하고 먼저 해야 할 일을 정리해드립니다.</p></div><div><a href="/contact?type=consulting&source=blog-footer" class="btn-primary">무료 진단 신청하기</a><a href="https://pf.kakao.com/_hxlxaQG/chat" class="btn-kakao" target="_blank" rel="noopener noreferrer">카카오톡 상담하기</a></div></div></section></main><script src="/blog-client.js?v=1"></script>`;
   const breadcrumb = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "홈", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "마케팅 블로그", item: `${SITE_URL}/blog` }] };
