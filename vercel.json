@@ -5,7 +5,9 @@
     { "source": "/services/marketing-consulting", "destination": "/services/consulting", "permanent": true },
     { "source": "/services/website-consulting", "destination": "/services/website-diagnosis", "permanent": true },
     { "source": "/marketing-types/consulting", "destination": "/marketing-types/consulting-contract", "permanent": true },
-    { "source": "/cases/yetgiwa", "destination": "/cases/oldgiwa", "permanent": true }
+    { "source": "/cases/yetgiwa", "destination": "/cases/oldgiwa", "permanent": true },
+    { "source": "/insights", "destination": "/blog", "permanent": true },
+    { "source": "/insights/:slug", "destination": "/blog/:slug", "permanent": true }
   ],
   "rewrites": [
     { "source": "/blog/rss.xml", "destination": "/api/blog?mode=rss" },
