@@ -2239,3 +2239,46 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .kakao-floating { right: 14px; bottom: 84px; min-height: 44px; padding-right: 13px; }
   .kakao-floating .kakao-wordmark { width: 27px; height: 27px; }
 }
+
+/* Home: Notion CMS blog bridge */
+.home-blog-teaser {
+  background: linear-gradient(135deg, #f4fbf8 0%, #f8fafc 58%, #eef5ff 100%);
+  border-top: 1px solid #e3ece8;
+  border-bottom: 1px solid #e3ece8;
+}
+.home-blog-teaser-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, .72fr);
+  gap: 64px;
+  align-items: center;
+}
+.home-blog-teaser .section-sub { max-width: 650px; margin-bottom: 0; }
+.home-blog-teaser-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 34px;
+  border: 1px solid rgba(13, 148, 136, .18);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .9);
+  box-shadow: 0 18px 48px rgba(15, 43, 37, .09);
+}
+.home-blog-teaser-panel span {
+  color: #0f766e;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+.home-blog-teaser-panel strong {
+  color: #102a26;
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.45;
+}
+@media (max-width: 900px) {
+  .home-blog-teaser-inner { grid-template-columns: 1fr; gap: 30px; }
+}
+@media (max-width: 600px) {
+  .home-blog-teaser-panel { padding: 25px 22px; border-radius: 20px; }
+  .home-blog-teaser-panel .btn-teal { width: 100%; text-align: center; }
+}

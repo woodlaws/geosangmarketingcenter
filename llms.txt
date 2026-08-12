@@ -24,6 +24,7 @@
 - 기업·다점포: https://geosangmarketing.com/enterprise
 - 성공사례: https://geosangmarketing.com/cases
 - 인사이트: https://geosangmarketing.com/insights
+- 블로그: https://geosangmarketing.com/blog — 노션 CMS에서 발행하는 스마트플레이스·AEO/GEO·업종별 마케팅 실전 가이드
 - 상담문의: https://geosangmarketing.com/contact
 
 ## 안내

@@ -23,6 +23,7 @@
 | 기업·다점포 | `/enterprise` |
 | 성공사례 | `/cases` |
 | 인사이트 | `/insights` |
+| 노션 CMS 블로그 | `/blog` |
 | 상담문의 | `/contact` |
 
 ### 서비스
@@ -60,6 +61,10 @@ Vercel 영구 리디렉션으로 아래 이전 주소를 새 주소에 연결합
 ## 상담 폼
 
 `/contact?type=enterprise&source=entity-header`처럼 접근하면 문의 유형과 유입 경로가 자동 반영됩니다. 폼은 `contact-form-config.js`에 설정된 Apps Script Web App으로 `no-cors` POST 전송합니다. opaque 응답은 읽지 않으며 네트워크 요청이 reject되지 않으면 접수 완료 화면을 표시합니다.
+
+## 노션 CMS 블로그
+
+`/blog`, `/blog/{slug}`, `/blog/rss.xml`은 Vercel Function인 `api/blog.js`가 노션 데이터베이스의 공개 글을 읽어 생성합니다. 서버 전용 환경변수 `NOTION_TOKEN`, `NOTION_BLOG_DATABASE_ID`가 필요하며 브라우저 번들에는 포함하지 않습니다. 데이터베이스 생성과 속성 설정, Vercel 환경변수 등록 방법은 [`docs/notion-blog.md`](docs/notion-blog.md)를 참고하세요.
 
 ## 검색 파일
 
