@@ -54,6 +54,7 @@ test("Notion CMS list, detail and RSS render public posts", async () => {
   assert.match(list.body, /노션 블로그 테스트 글/);
   assert.match(list.body, /\/blog\/notion-blog-test/);
   assert.match(list.body, /CollectionPage/);
+  assert.doesNotMatch(list.body, /추천 글|blog-featured|FEATURED/);
 
   const detail = response();
   await handler({ query: { mode: "detail", slug: "notion-blog-test" } }, detail);
@@ -61,6 +62,7 @@ test("Notion CMS list, detail and RSS render public posts", async () => {
   assert.match(detail.body, /BlogPosting/);
   assert.match(detail.body, /점검 항목/);
   assert.match(detail.body, /스마트플레이스 상담하기/);
+  assert.doesNotMatch(detail.body, /RELATED POSTS|같은 주제의 글|blog-related/);
 
   const rss = response();
   await handler({ query: { mode: "rss" } }, rss);
