@@ -95,6 +95,7 @@ function mapPost(page) {
     "how-to-write-website-content-cited-by-ai-search": "/images/blog/ai-search-cited-content/cover.webp",
     "aeo-geo-website-diagnostic-checklist-20": "/images/blog/aeo-geo-checklist-20/cover.webp",
     "why-website-not-showing-in-search-7-reasons": "/images/blog/website-search-7-reasons.svg",
+    "restaurant-signature-menu-marketing": "/images/blog/restaurant-signature-menu-marketing/cover-v2.webp",
     ...MIGRATED_INSIGHT_COVERS,
   };
   return {
