@@ -20,6 +20,36 @@ const SERVICE_LINKS = {
 };
 
 const INLINE_BLOG_IMAGES = {
+  "naver-smartplace-management": [
+    { afterHeading: "도입: 등록은 시작일 뿐입니다", src: "/images/blog/naver-smartplace-management/profile-review.webp", alt: "매장 대표가 태블릿으로 스마트플레이스 정보를 점검하는 모습", caption: "스마트플레이스 등록은 시작이며, 고객이 보는 정보와 반응을 지속적으로 관리해야 합니다." },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/blog/naver-smartplace-management/common-mistakes.webp", alt: "영업시간 사진 리뷰 등 매장 정보가 서로 달라 혼란스러운 모습", caption: "오래된 사진, 잘못된 영업시간과 방치된 리뷰는 고객의 선택을 방해합니다." },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/blog/naver-smartplace-management/management-checklist.webp", alt: "매장 정보 사진 리뷰 예약과 지도 위치를 확인하는 체크리스트", caption: "기본 정보부터 사진, 리뷰, 예약과 지도 위치까지 빠짐없이 점검해야 합니다." },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/blog/naver-smartplace-management/monthly-cycle.webp", alt: "매장 대표와 마케터가 월간 관리 지표와 개선 주기를 검토하는 모습", caption: "월간 단위로 업데이트와 고객 반응을 확인하면 스마트플레이스가 꾸준히 성장합니다." },
+  ],
+  "google-business-profile-local-store": [
+    { afterHeading: "도입: 고객의 지도 선택지는 하나가 아닙니다", src: "/images/blog/google-business-profile-local-store/local-discovery.webp", alt: "국내외 방문객이 지도 검색으로 한국의 지역 매장을 발견하는 모습", caption: "지역 고객과 외국인 방문객 모두 다양한 지도 검색을 통해 매장을 발견합니다." },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/blog/google-business-profile-local-store/profile-errors.webp", alt: "잘못된 지도 위치와 영업시간 오래된 사진 미답변 리뷰를 보여주는 이미지", caption: "지도 위치와 영업시간이 틀리거나 리뷰를 방치하면 방문 전 신뢰가 떨어집니다." },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/blog/google-business-profile-local-store/field-checklist.webp", alt: "지도 전화 영업시간 사진 웹사이트와 리뷰 정보를 연결한 매장 프로필", caption: "위치, 연락처, 영업시간, 사진과 웹사이트 정보를 정확하게 연결해야 합니다." },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/blog/google-business-profile-local-store/info-sync.webp", alt: "두 지도 서비스의 동일한 매장 정보를 동기화해 관리하는 모습", caption: "여러 지도 서비스에 표시되는 매장 정보를 일치시키고 정기적으로 갱신해야 합니다." },
+  ],
+  "why-ai-cannot-explain-your-business": [
+    { afterHeading: "도입: 정보가 없어서가 아니라 연결되지 않아서입니다", src: "/images/blog/why-ai-cannot-explain-your-business/scattered-data.webp", alt: "웹사이트 블로그 지도와 문서에 흩어진 회사 정보 때문에 AI가 혼란스러운 모습", caption: "회사 정보가 여러 채널에 흩어져 있으면 AI가 하나의 정확한 답으로 연결하기 어렵습니다." },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/blog/why-ai-cannot-explain-your-business/inconsistent-identity.webp", alt: "채널마다 다른 회사 정보와 연락처 위치가 표시된 모습", caption: "회사명, 서비스, 연락처와 위치가 채널마다 다르면 사람과 AI 모두 혼란을 겪습니다." },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/blog/why-ai-cannot-explain-your-business/entity-graph.webp", alt: "회사 대표 서비스 위치 사례 FAQ와 연락처가 연결된 정보 구조", caption: "회사와 대표, 서비스, 지역, 사례와 FAQ를 일관된 구조로 연결해야 합니다." },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/blog/why-ai-cannot-explain-your-business/trusted-ai-answer.webp", alt: "정리된 회사 정보를 바탕으로 AI가 고객에게 정확히 답하는 모습", caption: "명확한 회사 소개와 구조화된 정보는 AI의 정확한 답변과 고객 신뢰로 이어집니다." },
+  ],
+  "consulting-business-website-faq": [
+    { afterHeading: "도입: 상담 전에 이미 여러 질문이 생깁니다", src: "/images/blog/consulting-business-website-faq/pre-consultation-questions.webp", alt: "고객이 상담 전에 비용 절차 대상 기간과 결과를 고민하는 모습", caption: "상담 신청 전 고객은 비용, 절차, 대상, 기간과 결과에 관한 답을 먼저 찾습니다." },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/blog/consulting-business-website-faq/vague-website.webp", alt: "디자인은 좋지만 서비스와 절차 정보가 부족해 고객이 이탈하는 홈페이지", caption: "보기 좋은 홈페이지라도 구체적인 판단 정보가 없으면 고객은 상담 전에 이탈합니다." },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/blog/consulting-business-website-faq/service-page-flow.webp", alt: "서비스 대상 절차 사례 FAQ와 상담 신청으로 이어지는 홈페이지 구조", caption: "서비스 설명, 대상, 절차, 사례, FAQ와 상담 신청을 하나의 흐름으로 설계해야 합니다." },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/blog/consulting-business-website-faq/faq-feedback-loop.webp", alt: "실제 상담 질문을 분석해 홈페이지 FAQ를 꾸준히 갱신하는 모습", caption: "실제 상담에서 반복되는 질문을 FAQ에 반영하면 상담 효율과 고객 신뢰가 함께 높아집니다." },
+  ],
+  "government-support-marketing-budget": [
+    { afterHeading: "도입: 선정 이후에는 실행 순서가 중요합니다", src: "/images/blog/government-support-marketing-budget/budget-planning.webp", alt: "정부지원사업 선정 후 홈페이지 콘텐츠 광고 예산을 계획하는 모습", caption: "선정 이후에는 홈페이지, 콘텐츠와 광고가 고객 행동으로 이어지도록 실행 순서를 정해야 합니다." },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/blog/government-support-marketing-budget/fragmented-budget.webp", alt: "지원 예산이 연결되지 않은 홈페이지 사진 영상 광고 제작물로 흩어진 모습", caption: "개별 결과물만 제작하면 예산은 집행되지만 고객 유입과 매출로 이어지는 흐름이 남지 않습니다." },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/blog/government-support-marketing-budget/execution-checklist.webp", alt: "지원사업 지침 소유권 원본 파일 계정과 성과 지표를 확인하는 체크리스트", caption: "집행 지침과 계정 소유권, 원본 파일, 운영 권한과 고객 행동 지표를 사전에 확인해야 합니다." },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/blog/government-support-marketing-budget/lasting-assets.webp", alt: "사업 종료 뒤에도 도메인 소스 파일 콘텐츠 운영 매뉴얼과 분석 자료가 남는 모습", caption: "사업 종료 후에도 회사 소유의 도메인, 원본, 콘텐츠와 운영 기준이 남아야 합니다." },
+  ],
   "why-website-not-showing-in-search-7-reasons": [
     {
       afterHeading: "홈페이지를 만들었는데 왜 검색에 안 뜰까요?",
