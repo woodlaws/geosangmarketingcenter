@@ -19,6 +19,35 @@ const SERVICE_LINKS = {
   "AEO·GEO 컨설팅": "/services/aeo-geo",
 };
 
+const INLINE_BLOG_IMAGES = {
+  "why-website-not-showing-in-search-7-reasons": [
+    {
+      afterHeading: "홈페이지를 만들었는데 왜 검색에 안 뜰까요?",
+      src: "/images/blog/website-search-7-reasons/search-result-missing.webp",
+      alt: "홈페이지가 검색 결과에 나타나지 않아 원인을 확인하는 소상공인",
+      caption: "홈페이지를 공개했더라도 검색엔진이 사이트를 발견하고 이해하기까지 별도의 점검이 필요합니다.",
+    },
+    {
+      afterHeading: "홈페이지가 검색에 안 뜨는 7가지 이유",
+      src: "/images/blog/website-search-7-reasons/crawling-indexing-flow.webp",
+      alt: "검색 로봇의 홈페이지 크롤링과 검색엔진 색인 과정을 설명한 이미지",
+      caption: "검색 노출은 검색 로봇의 발견, 페이지 수집, 정보 이해와 색인의 순서로 이루어집니다.",
+    },
+    {
+      afterHeading: "가장 먼저 확인할 10분 체크리스트",
+      src: "/images/blog/website-search-7-reasons/technical-seo-audit.webp",
+      alt: "사이트맵 모바일 속도 보안 링크와 색인 상태를 점검하는 기술 SEO 진단",
+      caption: "사이트맵, 모바일 화면, 페이지 속도, 보안과 링크 상태를 함께 확인해야 합니다.",
+    },
+    {
+      afterHeading: "검색 노출을 매출로 연결하는 운영 순서",
+      src: "/images/blog/website-search-7-reasons/search-visibility-roadmap.webp",
+      alt: "홈페이지 구조 개선부터 검색 노출과 고객 유입으로 이어지는 운영 순서",
+      caption: "기술 구조와 콘텐츠를 보완한 뒤 검색에서 발견된 고객이 상담까지 이동하도록 연결합니다.",
+    },
+  ],
+};
+
 function escapeHtml(value = "") {
   return String(value).replace(/[&<>"']/g, (char) => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
@@ -165,8 +194,9 @@ function blockText(block) {
   }).join("");
 }
 
-function renderBlocks(blocks) {
+function renderBlocks(blocks, slug = "") {
   const output = [];
+  const inlineImages = INLINE_BLOG_IMAGES[slug] || [];
   let listType = "";
   for (const block of blocks) {
     const type = block.type;
@@ -179,7 +209,14 @@ function renderBlocks(blocks) {
       continue;
     }
     if (type === "paragraph") output.push(`<p>${blockText(block)}</p>`);
-    else if (type === "heading_2") output.push(`<h2>${blockText(block)}</h2>`);
+    else if (type === "heading_2") {
+      const headingText = (block[type]?.rich_text || []).map((item) => item.plain_text || "").join("").trim();
+      output.push(`<h2>${blockText(block)}</h2>`);
+      const inlineImage = inlineImages.find((item) => item.afterHeading === headingText);
+      if (inlineImage) {
+        output.push(`<figure class="blog-inline-figure"><img src="${escapeHtml(inlineImage.src)}" alt="${escapeHtml(inlineImage.alt)}" loading="lazy" width="1600" height="900" /><figcaption>${escapeHtml(inlineImage.caption)}</figcaption></figure>`);
+      }
+    }
     else if (type === "heading_3") output.push(`<h3>${blockText(block)}</h3>`);
     else if (type === "quote") output.push(`<blockquote>${blockText(block)}</blockquote>`);
     else if (type === "image") {
@@ -233,7 +270,7 @@ function detailPage(post, blocks) {
   const schema = { "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description, datePublished: post.publishedAt, dateModified: post.modifiedAt || post.publishedAt, author: { "@type": "Organization", name: "거상마케팅센터" }, publisher: { "@type": "Organization", name: "거상마케팅센터", logo: { "@type": "ImageObject", url: `${SITE_URL}/assets/logo-mark.png` } }, image: absoluteUrl(post.image) || `${SITE_URL}/og-image.png`, mainEntityOfPage: canonical };
   const breadcrumb = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "홈", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "마케팅 블로그", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: post.title, item: canonical }] };
   const serviceLinks = post.services.map((service) => `<a href="${escapeHtml(SERVICE_LINKS[service] || "/services")}">${escapeHtml(service)} →</a>`).join("");
-  const body = `<main><div class="blog-breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><a href="/blog">마케팅 블로그</a><span>›</span><b>${escapeHtml(post.title)}</b></div></div><article><header class="blog-post-head"><div class="container"><span class="blog-category">${escapeHtml(post.category)}</span><h1>${escapeHtml(post.title)}</h1>${post.question ? `<p class="blog-post-question"><small>핵심 질문</small>${escapeHtml(post.question)}</p>` : ""}<div class="blog-post-meta"><time datetime="${escapeHtml(post.publishedAt)}">${formatDate(post.publishedAt)}</time>${post.keywords.map((keyword) => `<i>#${escapeHtml(keyword)}</i>`).join("")}</div></div></header>${post.image ? `<div class="container"><img class="blog-post-cover" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" /></div>` : ""}<div class="container blog-post-layout"><div><section class="blog-answer"><small>한 문장 결론</small><strong>${escapeHtml(post.excerpt || post.question)}</strong></section><section class="blog-content">${renderBlocks(blocks) || `<p>본문을 준비하고 있습니다.</p>`}</section></div><aside class="blog-service-cta"><small>RELATED SERVICE</small><h2>${escapeHtml(post.ctaLabel)}</h2><p>${escapeHtml(post.excerpt)}</p><div>${serviceLinks}</div><a href="${escapeHtml(post.ctaLink)}" class="btn-primary">${escapeHtml(post.ctaLabel)}</a></aside></div></article><div class="blog-back"><a href="/blog">← 블로그 목록 보기</a></div></main>`;
+  const body = `<main><div class="blog-breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><a href="/blog">마케팅 블로그</a><span>›</span><b>${escapeHtml(post.title)}</b></div></div><article><header class="blog-post-head"><div class="container"><span class="blog-category">${escapeHtml(post.category)}</span><h1>${escapeHtml(post.title)}</h1>${post.question ? `<p class="blog-post-question"><small>핵심 질문</small>${escapeHtml(post.question)}</p>` : ""}<div class="blog-post-meta"><time datetime="${escapeHtml(post.publishedAt)}">${formatDate(post.publishedAt)}</time>${post.keywords.map((keyword) => `<i>#${escapeHtml(keyword)}</i>`).join("")}</div></div></header>${post.image ? `<div class="container"><img class="blog-post-cover" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" /></div>` : ""}<div class="container blog-post-layout"><div><section class="blog-answer"><small>한 문장 결론</small><strong>${escapeHtml(post.excerpt || post.question)}</strong></section><section class="blog-content">${renderBlocks(blocks, post.slug) || `<p>본문을 준비하고 있습니다.</p>`}</section></div><aside class="blog-service-cta"><small>RELATED SERVICE</small><h2>${escapeHtml(post.ctaLabel)}</h2><p>${escapeHtml(post.excerpt)}</p><div>${serviceLinks}</div><a href="${escapeHtml(post.ctaLink)}" class="btn-primary">${escapeHtml(post.ctaLabel)}</a></aside></div></article><div class="blog-back"><a href="/blog">← 블로그 목록 보기</a></div></main>`;
   return layout({ title: post.seoTitle || `${post.title} | 거상마케팅센터`, description, canonical, image: post.image, body, schemas: [schema, breadcrumb], type: "article", keywords: post.keywords });
 }
 
