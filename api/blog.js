@@ -20,6 +20,66 @@ const SERVICE_LINKS = {
 };
 
 const INLINE_BLOG_IMAGES = {
+  "dental-marketing-channel-priority": [
+    { afterHeading: "세 채널의 역할은 서로 다릅니다", src: "/images/blog/dental-marketing-channel-priority/1.webp", alt: "발견·비교·예약에서 서로 다른 역할을 맡는 플레이스, 홈페이지와 블로그", caption: "세 채널은 경쟁 관계가 아니라 환자의 선택 과정에서 서로 다른 역할을 맡습니다." },
+    { afterHeading: "먼저 확인할 10분 체크리스트", src: "/images/blog/dental-marketing-channel-priority/2.webp", alt: "치과의 기본 정보와 모바일 예약 동선을 함께 점검하는 모습", caption: "채널을 늘리기 전에 기본 정보와 실제 예약 동선을 먼저 확인해야 합니다." },
+    { afterHeading: "AEO·GEO 관점에서 중요한 점", src: "/images/blog/dental-marketing-channel-priority/3.webp", alt: "공식 정보와 질문형 콘텐츠를 연결해 관리하는 치과 마케팅 환경", caption: "일관된 공식 정보와 명확한 질문형 콘텐츠가 AI 검색 이해의 기반이 됩니다." },
+    { afterHeading: "실행 순서", src: "/images/blog/dental-marketing-channel-priority/4.webp", alt: "치과 원장과 마케터가 개선할 채널의 우선순위를 정하는 회의", caption: "현재 환자 동선에서 가장 크게 막힌 한두 영역부터 개선합니다." },
+  ],
+  "hospital-ads-no-new-patients": [
+    { afterHeading: "신규 환자가 늘지 않는 7가지 이유", src: "/images/blog/hospital-ads-no-new-patients/1.webp", alt: "광고 유입과 예약 사이의 문제를 검토하는 병원 마케팅 회의", caption: "광고 클릭 이후의 정보와 상담 동선이 끊기면 신규 환자로 이어지기 어렵습니다." },
+    { afterHeading: "광고보다 먼저 볼 숫자", src: "/images/blog/hospital-ads-no-new-patients/2.webp", alt: "병원 광고의 문의·예약·내원 전환 지표를 확인하는 화면", caption: "클릭 수뿐 아니라 문의, 예약과 실제 내원을 단계별로 구분해 측정합니다." },
+    { afterHeading: "진료별 페이지를 구분하세요", src: "/images/blog/hospital-ads-no-new-patients/3.webp", alt: "진료별 랜딩 페이지와 고객 질문을 연결하는 작업 화면", caption: "환자의 질문이 다른 진료를 하나의 일반 페이지로 연결하지 않아야 합니다." },
+    { afterHeading: "2주 개선 방법", src: "/images/blog/hospital-ads-no-new-patients/4.webp", alt: "병원 광고와 상담 전환 데이터를 바탕으로 개선안을 정하는 모습", caption: "한 진료를 정해 검색어, 페이지와 상담 기록을 함께 개선하고 비교합니다." },
+  ],
+  "dental-website-no-consultation": [
+    { afterHeading: "환자가 홈페이지에서 확인하는 것", src: "/images/blog/dental-website-no-consultation/1.webp", alt: "치과 홈페이지를 모바일과 데스크톱에서 비교하는 사용자", caption: "환자는 진료 범위, 의료진, 위치와 예약 방법을 빠르게 확인하려고 합니다." },
+    { afterHeading: "문의를 막는 대표적인 화면", src: "/images/blog/dental-website-no-consultation/2.webp", alt: "모바일 치과 홈페이지에서 예약 동선을 점검하는 모습", caption: "모바일에서 가려진 정보와 긴 신청 과정은 문의를 막을 수 있습니다." },
+    { afterHeading: "AEO·GEO에 맞는 페이지 구조", src: "/images/blog/dental-website-no-consultation/3.webp", alt: "질문·답변·진료 정보가 분명하게 구성된 치과 홈페이지", caption: "질문에 바로 답하고 세부 정보와 예약을 연결하는 구조가 필요합니다." },
+    { afterHeading: "고칠 순서", src: "/images/blog/dental-website-no-consultation/4.webp", alt: "치과 홈페이지의 사용자 흐름을 분석하고 개선하는 담당자", caption: "전체 개편보다 문의가 많은 진료 페이지 한 곳부터 점검합니다." },
+  ],
+  "hospital-blog-medical-ad-law-checklist": [
+    { afterHeading: "특히 조심할 표현", src: "/images/blog/hospital-blog-medical-ad-law-checklist/1.webp", alt: "병원 블로그 원고의 위험 표현을 검토하는 의료진과 마케터", caption: "치료 효과 단정, 비교와 과장 표현은 발행 전에 반드시 검토해야 합니다." },
+    { afterHeading: "정보형 글도 검수해야 합니다", src: "/images/blog/hospital-blog-medical-ad-law-checklist/2.webp", alt: "의료진이 교육형 콘텐츠의 사실관계를 확인하는 모습", caption: "정보형 글도 진료 결과를 단정하거나 중요한 한계를 누락하면 안 됩니다." },
+    { afterHeading: "안전한 작성 순서", src: "/images/blog/hospital-blog-medical-ad-law-checklist/3.webp", alt: "출처 확인부터 의료진 승인까지 병원 콘텐츠 검수 과정", caption: "질문 선정, 출처 확인과 최종 의료진 검수를 운영 절차로 만듭니다." },
+    { afterHeading: "AEO·GEO와 법 준수는 함께 가야 합니다", src: "/images/blog/hospital-blog-medical-ad-law-checklist/4.webp", alt: "법적 기준과 검색 품질을 함께 검토하는 병원 콘텐츠 회의", caption: "명확한 답변 구조는 정확성, 균형과 법 준수를 전제로 해야 합니다." },
+  ],
+  "dental-naver-place-review-photo-management": [
+    { afterHeading: "1단계: 기본 정보부터 맞춥니다", src: "/images/blog/dental-naver-place-review-photo-management/1.webp", alt: "치과 외부와 내부 방문 정보를 정확하게 기록한 사진", caption: "위치, 진료시간과 방문 안내를 실제 상태에 맞게 관리합니다." },
+    { afterHeading: "2단계: 사진은 방문 불안을 줄여야 합니다", src: "/images/blog/dental-naver-place-review-photo-management/2.webp", alt: "치과 접수 공간에서 플레이스 사진을 확인하는 모습", caption: "입구와 접수 공간 등 실제 방문에 도움이 되는 사진을 제공합니다." },
+    { afterHeading: "3단계: 리뷰 답변 원칙을 정합니다", src: "/images/blog/dental-naver-place-review-photo-management/3.webp", alt: "개인정보를 보호하며 온라인 리뷰 답변을 작성하는 담당자", caption: "공개 답변에서 진료 내용과 개인정보를 노출하지 않는 원칙이 필요합니다." },
+    { afterHeading: "4단계: 예약 동선을 직접 시험합니다", src: "/images/blog/dental-naver-place-review-photo-management/4.webp", alt: "스마트폰으로 치과 전화·예약·길찾기 기능을 점검하는 모습", caption: "모바일에서 전화, 예약과 길찾기 버튼을 직접 시험해야 합니다." },
+  ],
+  "local-hospital-ai-search-visibility": [
+    { afterHeading: "먼저 정리할 공식 정보", src: "/images/blog/local-hospital-ai-search-visibility/1.webp", alt: "여러 화면에 표시된 병원 공식 정보를 대조하는 작업 환경", caption: "병원명, 주소, 의료진과 진료 정보가 공식 채널에서 일치해야 합니다." },
+    { afterHeading: "질문 하나에 페이지 하나를 만드세요", src: "/images/blog/local-hospital-ai-search-visibility/2.webp", alt: "환자 질문을 하나의 명확한 답변 페이지로 만드는 콘텐츠 작업", caption: "한 페이지에서 한 질문에 충분히 답하는 고유한 콘텐츠를 만듭니다." },
+    { afterHeading: "Google의 공식 안내에서 확인할 점", src: "/images/blog/local-hospital-ai-search-visibility/3.webp", alt: "검색과 AI 콘텐츠 성과를 분석하는 병원 마케팅 담당자", caption: "특별한 비법보다 색인 가능한 구조와 사람에게 유용한 콘텐츠가 우선입니다." },
+    { afterHeading: "측정 방법", src: "/images/blog/local-hospital-ai-search-visibility/4.webp", alt: "여러 AI 검색 결과를 같은 질의로 비교하는 담당자", caption: "같은 질문을 반복 측정하고 검색, 출처와 본문 인용을 구분해 기록합니다." },
+  ],
+  "high-consideration-dental-content-conversion": [
+    { afterHeading: "환자의 질문은 단계별로 달라집니다", src: "/images/blog/high-consideration-dental-content-conversion/1.webp", alt: "치과 상담에서 환자의 단계별 질문을 설명하는 의료진", caption: "탐색, 비교와 예약 단계에 따라 환자가 필요로 하는 답이 달라집니다." },
+    { afterHeading: "추천 콘텐츠 구조", src: "/images/blog/high-consideration-dental-content-conversion/2.webp", alt: "임플란트와 교정 상담 콘텐츠의 흐름을 설계하는 모습", caption: "상담 대상, 과정, 기간 요인과 준비 사항을 단계별 콘텐츠로 나눕니다." },
+    { afterHeading: "가격 중심 콘텐츠의 한계", src: "/images/blog/high-consideration-dental-content-conversion/3.webp", alt: "치과 진료의 가격보다 판단 기준을 설명하는 상담 장면", caption: "가격만 강조하기보다 범위와 개인별 차이를 함께 안내해야 합니다." },
+    { afterHeading: "페이지 간 연결", src: "/images/blog/high-consideration-dental-content-conversion/4.webp", alt: "질문형 콘텐츠와 진료 페이지의 전환 경로를 분석하는 화면", caption: "블로그, 진료 페이지, FAQ와 예약을 하나의 정보 흐름으로 연결합니다." },
+  ],
+  "hospital-marketing-agency-selection-checklist": [
+    { afterHeading: "상담할 때 물어볼 8가지", src: "/images/blog/hospital-marketing-agency-selection-checklist/1.webp", alt: "병원 원장과 마케팅 담당자가 여러 제안서를 비교하는 회의", caption: "검수, 계정 소유권, 측정과 인계 조건을 계약 전에 확인합니다." },
+    { afterHeading: "경계해야 할 신호", src: "/images/blog/hospital-marketing-agency-selection-checklist/2.webp", alt: "병원 마케팅 계약서와 운영 조건을 꼼꼼히 검토하는 모습", caption: "성과 보장과 불투명한 계정 운영 제안은 주의해서 살펴야 합니다." },
+    { afterHeading: "좋은 보고서는 다음 행동을 보여줍니다", src: "/images/blog/hospital-marketing-agency-selection-checklist/3.webp", alt: "병원 마케팅 성과와 다음 개선안을 함께 검토하는 보고 회의", caption: "좋은 보고서는 숫자뿐 아니라 문제 원인과 다음 실행을 설명합니다." },
+    { afterHeading: "계약 전에 남길 문서", src: "/images/blog/hospital-marketing-agency-selection-checklist/4.webp", alt: "병원과 대행사가 업무 범위와 자산 인계를 문서로 확인하는 모습", caption: "업무 범위, 승인 절차, 계정과 원본 인계 조건을 문서로 남깁니다." },
+  ],
+  "medical-staff-profile-trust-page": [
+    { afterHeading: "기본으로 넣을 정보", src: "/images/blog/medical-staff-profile-trust-page/1.webp", alt: "의료진의 경력과 담당 진료 정보를 검증하는 콘텐츠 팀", caption: "확인 가능한 경력, 현재 직함과 담당 진료를 정확하게 정리합니다." },
+    { afterHeading: "사진과 문장은 실제 경험과 맞아야 합니다", src: "/images/blog/medical-staff-profile-trust-page/2.webp", alt: "밝은 치과에서 자연스러운 의료진 사진을 촬영하는 모습", caption: "과도한 연출보다 실제 진료 환경과 맞는 자연스러운 이미지를 사용합니다." },
+    { afterHeading: "진료 페이지와 연결합니다", src: "/images/blog/medical-staff-profile-trust-page/3.webp", alt: "의료진 프로필과 관련 진료 페이지가 연결된 홈페이지 화면", caption: "의료진 소개에서 담당 진료와 검수한 콘텐츠로 자연스럽게 이동해야 합니다." },
+    { afterHeading: "AEO·GEO 관점", src: "/images/blog/medical-staff-profile-trust-page/4.webp", alt: "의료진 프로필 페이지의 정보 일관성을 점검하는 모습", caption: "이름, 직함과 담당 진료가 홈페이지와 외부 채널에서 일관되어야 합니다." },
+  ],
+  "hospital-inquiry-to-booking-conversion": [
+    { afterHeading: "예약을 막는 대표적인 원인", src: "/images/blog/hospital-inquiry-to-booking-conversion/1.webp", alt: "많은 문의와 적은 확정 예약을 비교하는 병원 상담 담당자", caption: "문의가 많아도 늦은 응답과 불분명한 다음 단계는 예약을 막습니다." },
+    { afterHeading: "첫 응대에서 확인할 것", src: "/images/blog/hospital-inquiry-to-booking-conversion/2.webp", alt: "병원 상담 직원이 표준 응대 절차를 교육받는 모습", caption: "방문 목적과 희망 시간을 확인하고 의료 상담과 행정 안내를 구분합니다." },
+    { afterHeading: "홈페이지가 상담을 도와야 합니다", src: "/images/blog/hospital-inquiry-to-booking-conversion/3.webp", alt: "병원 홈페이지의 FAQ와 예약 안내를 활용하는 상담 환경", caption: "반복 질문을 홈페이지에 정리하면 환자와 담당자가 같은 기준을 볼 수 있습니다." },
+    { afterHeading: "기록할 전환 단계", src: "/images/blog/hospital-inquiry-to-booking-conversion/4.webp", alt: "문의부터 실제 내원까지 전환 흐름을 분석하는 화면", caption: "문의, 응답, 예약 확정과 실제 내원을 단계별로 기록합니다." },
+  ],
   "naver-smartplace-management": [
     { afterHeading: "도입: 등록은 시작일 뿐입니다", src: "/images/blog/naver-smartplace-management/profile-review.webp", alt: "매장 대표가 태블릿으로 스마트플레이스 정보를 점검하는 모습", caption: "스마트플레이스 등록은 시작이며, 고객이 보는 정보와 반응을 지속적으로 관리해야 합니다." },
     { afterHeading: "대표님들이 자주 하는 실수", src: "/images/blog/naver-smartplace-management/common-mistakes.webp", alt: "영업시간 사진 리뷰 등 매장 정보가 서로 달라 혼란스러운 모습", caption: "오래된 사진, 잘못된 영업시간과 방치된 리뷰는 고객의 선택을 방해합니다." },
@@ -204,6 +264,16 @@ function mapPost(page) {
   const ctaLink = rawCta && (rawCta.startsWith("/") || rawCta.startsWith(SITE_URL)) ? rawCta : "/contact?type=consulting&source=blog";
   const slug = richText(p["Slug"]);
   const editorialCovers = {
+    "dental-marketing-channel-priority": "/images/blog/dental-marketing-channel-priority/cover.webp",
+    "hospital-ads-no-new-patients": "/images/blog/hospital-ads-no-new-patients/cover.webp",
+    "dental-website-no-consultation": "/images/blog/dental-website-no-consultation/cover.webp",
+    "hospital-blog-medical-ad-law-checklist": "/images/blog/hospital-blog-medical-ad-law-checklist/cover.webp",
+    "dental-naver-place-review-photo-management": "/images/blog/dental-naver-place-review-photo-management/cover.webp",
+    "local-hospital-ai-search-visibility": "/images/blog/local-hospital-ai-search-visibility/cover.webp",
+    "high-consideration-dental-content-conversion": "/images/blog/high-consideration-dental-content-conversion/cover.webp",
+    "hospital-marketing-agency-selection-checklist": "/images/blog/hospital-marketing-agency-selection-checklist/cover.webp",
+    "medical-staff-profile-trust-page": "/images/blog/medical-staff-profile-trust-page/cover.webp",
+    "hospital-inquiry-to-booking-conversion": "/images/blog/hospital-inquiry-to-booking-conversion/cover.webp",
     "why-homepage-is-center-of-ai-search-marketing": "/images/blog/ai-search-homepage-center.png",
     "why-local-business-needs-homepage-ai-search": "/images/blog/ai-search-local-business-homepage.webp",
     "how-to-write-website-content-cited-by-ai-search": "/images/blog/ai-search-cited-content/cover.webp",
