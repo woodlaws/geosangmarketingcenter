@@ -76,6 +76,90 @@ const INLINE_BLOG_IMAGES = {
       caption: "기술 구조와 콘텐츠를 보완한 뒤 검색에서 발견된 고객이 상담까지 이동하도록 연결합니다.",
     },
   ],
+  "aeo-geo-small-business-guide": [
+    { afterHeading: "도입: 답변에 포함될 수 있는 정보 구조", src: "/images/blog/editorial/homepage-review.webp", alt: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가", caption: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/photo-ai-technology-work.jpg", alt: "AI 검색 환경에서 사업 정보를 확인하는 실무 장면", caption: "AI 검색 환경에서 사업 정보를 확인하는 실무 장면" },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/insights/entity-information-map.png", alt: "사업의 공식 정보와 채널 연결 구조", caption: "사업의 공식 정보와 채널 연결 구조" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/photo-team-laptop.jpg", alt: "고객 질문과 답변 콘텐츠를 정리하는 팀", caption: "고객 질문과 답변 콘텐츠를 정리하는 팀" },
+  ],
+  "ai-search-website-importance": [
+    { afterHeading: "도입: 홈페이지는 공식 정보의 기준점입니다", src: "/images/blog/editorial/homepage-review.webp", alt: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가", caption: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/ai-search-website-importance.jpg", alt: "AI 검색 시대 공식 정보의 중심이 되는 홈페이지", caption: "AI 검색 시대 공식 정보의 중심이 되는 홈페이지" },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/insights/photo-website-developer.jpg", alt: "홈페이지 정보 구조를 점검하는 실무자", caption: "홈페이지 정보 구조를 점검하는 실무자" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/website-conversion-checklist.png", alt: "홈페이지 정보와 상담 전환 점검 항목", caption: "홈페이지 정보와 상담 전환 점검 항목" },
+  ],
+  "ai-search-website-structure": [
+    { afterHeading: "공식 홈페이지는 기업 정보의 기준점입니다", src: "/images/blog/editorial/entity-audit.webp", alt: "여러 채널에 흩어진 회사 정보를 하나의 기준으로 정리하는 팀", caption: "여러 채널에 흩어진 회사 정보를 하나의 기준으로 정리하는 팀" },
+    { afterHeading: "질문에 답하는 구조를 만듭니다", src: "/images/insights/ai-search-local-growth.png", alt: "AI 검색과 지역 고객 유입을 연결하는 구조", caption: "AI 검색과 지역 고객 유입을 연결하는 구조" },
+    { afterHeading: "AEO/GEO는 보장이 아니라 이해 기반을 만드는 일입니다", src: "/images/insights/photo-team-office.jpg", alt: "공식 홈페이지와 채널 정보를 정리하는 사무실 회의", caption: "공식 홈페이지와 채널 정보를 정리하는 사무실 회의" },
+    { afterHeading: "AEO/GEO는 보장이 아니라 이해 기반을 만드는 일입니다", src: "/images/insights/photo-it-professional.jpg", alt: "여러 온라인 채널의 사업 정보를 점검하는 실무자", caption: "여러 온라인 채널의 사업 정보를 점검하는 실무자" },
+  ],
+  "business-type-marketing-priority": [
+    { afterHeading: "매장 방문형은 발견과 방문 동선이 먼저입니다", src: "/images/blog/editorial/business-types.webp", alt: "사업 유형별로 서로 다른 마케팅 우선순위를 정리하는 소상공인들", caption: "사업 유형별로 서로 다른 마케팅 우선순위를 정리하는 소상공인들" },
+    { afterHeading: "매장 방문형은 발견과 방문 동선이 먼저입니다", src: "/images/insights/photo-local-business-owners.jpg", alt: "지역 매장을 운영하는 소상공인", caption: "지역 매장을 운영하는 소상공인" },
+    { afterHeading: "온라인 판매형은 비교와 구매 정보가 먼저입니다", src: "/images/insights/photo-ecommerce-devices.jpg", alt: "온라인 판매를 위한 상품 페이지와 모바일 화면", caption: "온라인 판매를 위한 상품 페이지와 모바일 화면" },
+    { afterHeading: "상담·계약형은 신뢰와 문의 동선이 먼저입니다", src: "/images/insights/photo-consulting-meeting.jpg", alt: "상담 계약형 서비스의 신뢰 형성 과정", caption: "상담 계약형 서비스의 신뢰 형성 과정" },
+  ],
+  "consulting-contract-price-comparison": [
+    { afterHeading: "도입: 차이를 이해하지 못하면 가격부터 묻게 됩니다", src: "/images/blog/editorial/consultation-value.webp", alt: "서비스 가격보다 판단 기준과 진행 과정을 설명하는 상담 장면", caption: "서비스 가격보다 판단 기준과 진행 과정을 설명하는 상담 장면" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/consulting-contract-price-comparison.jpg", alt: "상담형 서비스의 가치와 차이를 설명하는 회의", caption: "상담형 서비스의 가치와 차이를 설명하는 회의" },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/insights/photo-consulting-documents.jpg", alt: "상담 전에 비교할 서비스 범위와 자료", caption: "상담 전에 비교할 서비스 범위와 자료" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/homepage-faq-first.png", alt: "가격 문의 전에 제공해야 할 홈페이지와 FAQ 정보", caption: "가격 문의 전에 제공해야 할 홈페이지와 FAQ 정보" },
+  ],
+  "enterprise-entity-basics": [
+    { afterHeading: "Entity는 하나의 대상으로 인식되는 정보 묶음입니다", src: "/images/blog/editorial/entity-audit.webp", alt: "여러 채널에 흩어진 회사 정보를 하나의 기준으로 정리하는 팀", caption: "여러 채널에 흩어진 회사 정보를 하나의 기준으로 정리하는 팀" },
+    { afterHeading: "Entity는 하나의 대상으로 인식되는 정보 묶음입니다", src: "/images/insights/enterprise-entity-basics.jpg", alt: "기업의 공식 정보를 한곳에서 검토하는 실무 장면", caption: "기업의 공식 정보를 한곳에서 검토하는 실무 장면" },
+    { afterHeading: "홈페이지를 중심으로 채널을 연결합니다", src: "/images/insights/enterprise-entity-review.png", alt: "기업명과 서비스 및 공식 채널을 연결하는 정보 구조", caption: "기업명과 서비스 및 공식 채널을 연결하는 정보 구조" },
+    { afterHeading: "정보 정리는 지속적으로 관리해야 합니다", src: "/images/insights/photo-team-office.jpg", alt: "기업 정보의 일관성을 점검하는 팀", caption: "기업 정보의 일관성을 점검하는 팀" },
+  ],
+  "hope-return-package-marketing-assets": [
+    { afterHeading: "도입: 결과물보다 운영 가능성이 중요합니다", src: "/images/blog/editorial/support-budget.webp", alt: "정부지원 마케팅 예산을 지속 가능한 자산 중심으로 설계하는 회의", caption: "정부지원 마케팅 예산을 지속 가능한 자산 중심으로 설계하는 회의" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/hope-return-package-marketing-assets.jpg", alt: "지원사업 결과물을 장기 마케팅 자산으로 계획하는 모습", caption: "지원사업 결과물을 장기 마케팅 자산으로 계획하는 모습" },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/insights/photo-budget-calculator.jpg", alt: "예산과 실행 항목을 구체적으로 계산하는 과정", caption: "예산과 실행 항목을 구체적으로 계산하는 과정" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/hope-return-assets.png", alt: "지원사업 이후 남겨야 할 마케팅 자산", caption: "지원사업 이후 남겨야 할 마케팅 자산" },
+  ],
+  "local-store-before-ads-checklist": [
+    { afterHeading: "도입: 광고는 방문 동선을 확대합니다", src: "/images/blog/editorial/local-store-review.webp", alt: "매장 안에서 지도 정보와 리뷰 및 예약 동선을 확인하는 점주", caption: "매장 안에서 지도 정보와 리뷰 및 예약 동선을 확인하는 점주" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/local-store-before-ads-checklist.jpg", alt: "광고 전에 매장 정보와 고객 동선을 점검하는 점주", caption: "광고 전에 매장 정보와 고객 동선을 점검하는 점주" },
+    { afterHeading: "광고 전에 점검할 5가지", src: "/images/insights/photo-local-cafe-interior.jpg", alt: "사진과 방문 정보가 중요한 지역 매장 내부", caption: "사진과 방문 정보가 중요한 지역 매장 내부" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/local-store-before-ads.png", alt: "지역 매장이 광고 전에 확인할 기본 항목", caption: "지역 매장이 광고 전에 확인할 기본 항목" },
+  ],
+  "marketing-priority-consulting": [
+    { afterHeading: "도입: 채널보다 고객의 다음 행동을 먼저 봅니다", src: "/images/blog/editorial/consultation-value.webp", alt: "서비스 가격보다 판단 기준과 진행 과정을 설명하는 상담 장면", caption: "서비스 가격보다 판단 기준과 진행 과정을 설명하는 상담 장면" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/marketing-priority-consulting.jpg", alt: "마케팅 실행 순서를 상담하는 사업자와 전문가", caption: "마케팅 실행 순서를 상담하는 사업자와 전문가" },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/insights/photo-team-laptop.jpg", alt: "현재 보유한 채널과 콘텐츠를 점검하는 팀", caption: "현재 보유한 채널과 콘텐츠를 점검하는 팀" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/marketing-sequence-board.png", alt: "진단부터 개선까지 이어지는 마케팅 실행 순서", caption: "진단부터 개선까지 이어지는 마케팅 실행 순서" },
+  ],
+  "online-store-before-ads-checklist": [
+    { afterHeading: "도입: 광고는 준비된 판매 구조로 보내야 합니다", src: "/images/blog/editorial/ecommerce-review.webp", alt: "광고 전에 상품 상세페이지와 구매 정보를 점검하는 온라인 판매자", caption: "광고 전에 상품 상세페이지와 구매 정보를 점검하는 온라인 판매자" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/online-store-before-ads-checklist.jpg", alt: "온라인 광고 전에 상품 페이지를 확인하는 판매자", caption: "온라인 광고 전에 상품 페이지를 확인하는 판매자" },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/insights/photo-ecommerce-cart.jpg", alt: "구매 전환 과정에서 확인해야 할 장바구니 동선", caption: "구매 전환 과정에서 확인해야 할 장바구니 동선" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/smartstore-ad-checklist.png", alt: "온라인 판매자가 광고 전에 점검할 항목", caption: "온라인 판매자가 광고 전에 점검할 항목" },
+  ],
+  "smartplace-first-checklist": [
+    { afterHeading: "노출보다 기준 정보가 먼저입니다", src: "/images/blog/editorial/local-store-review.webp", alt: "매장 안에서 지도 정보와 리뷰 및 예약 동선을 확인하는 점주", caption: "매장 안에서 지도 정보와 리뷰 및 예약 동선을 확인하는 점주" },
+    { afterHeading: "노출보다 기준 정보가 먼저입니다", src: "/images/insights/naver-smartplace-management.jpg", alt: "스마트플레이스 정보를 관리하는 지역 점주", caption: "스마트플레이스 정보를 관리하는 지역 점주" },
+    { afterHeading: "고객이 비교하는 자료를 채웁니다", src: "/images/insights/google-map-profile-check.png", alt: "지도 검색에서 매장 정보를 확인하는 과정", caption: "지도 검색에서 매장 정보를 확인하는 과정" },
+    { afterHeading: "검색어는 고객의 방문 목적에서 찾습니다", src: "/images/insights/featured-smartplace-review.png", alt: "매장 정보와 사진 및 리뷰 관리 항목", caption: "매장 정보와 사진 및 리뷰 관리 항목" },
+  ],
+  "what-is-entity-ai-search": [
+    { afterHeading: "도입: Entity는 식별할 수 있는 하나의 대상입니다", src: "/images/blog/editorial/entity-audit.webp", alt: "여러 채널에 흩어진 회사 정보를 하나의 기준으로 정리하는 팀", caption: "여러 채널에 흩어진 회사 정보를 하나의 기준으로 정리하는 팀" },
+    { afterHeading: "대표님들이 자주 하는 실수", src: "/images/insights/what-is-entity-ai-search.jpg", alt: "AI가 이해할 수 있도록 기업 정보를 연결하는 실무 장면", caption: "AI가 이해할 수 있도록 기업 정보를 연결하는 실무 장면" },
+    { afterHeading: "먼저 점검해야 할 항목", src: "/images/insights/entity-information-map.png", alt: "회사와 대표자 및 서비스의 관계를 보여주는 정보 구조", caption: "회사와 대표자 및 서비스의 관계를 보여주는 정보 구조" },
+    { afterHeading: "거상마케팅센터 관점의 해결 방향", src: "/images/insights/photo-ai-technology-work.jpg", alt: "AI 검색에서 기업 정보를 확인하는 과정", caption: "AI 검색에서 기업 정보를 확인하는 과정" },
+  ],
+  "why-homepage-is-center-of-ai-search-marketing": [
+    { afterHeading: "블로그와 SNS만으로는 부족한 이유", src: "/images/blog/editorial/homepage-review.webp", alt: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가", caption: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가" },
+    { afterHeading: "AI가 이해하기 좋은 홈페이지의 5가지 조건", src: "/images/insights/ai-search-website-importance.jpg", alt: "AI 검색 마케팅의 기준점이 되는 공식 홈페이지", caption: "AI 검색 마케팅의 기준점이 되는 공식 홈페이지" },
+    { afterHeading: "홈페이지 중심 마케팅 퍼널", src: "/images/insights/featured-ai-website.png", alt: "홈페이지와 검색 및 상담을 연결하는 구조", caption: "홈페이지와 검색 및 상담을 연결하는 구조" },
+    { afterHeading: "지금 확인해야 할 홈페이지 체크리스트", src: "/images/insights/photo-website-developer.jpg", alt: "홈페이지 콘텐츠와 기술 요소를 점검하는 실무자", caption: "홈페이지 콘텐츠와 기술 요소를 점검하는 실무자" },
+  ],
+  "why-local-business-needs-homepage-ai-search": [
+    { afterHeading: "손님은 이제 검색창이 아니라 AI에게 묻습니다", src: "/images/blog/editorial/homepage-review.webp", alt: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가", caption: "공식 홈페이지와 고객 질문을 함께 점검하는 소상공인과 마케팅 전문가" },
+    { afterHeading: "스마트플레이스와 SNS만으로 부족한 이유", src: "/images/insights/photo-local-business-owners.jpg", alt: "온라인 채널을 운영하는 지역 소상공인", caption: "온라인 채널을 운영하는 지역 소상공인" },
+    { afterHeading: "AI 검색에 강한 홈페이지의 5가지 조건", src: "/images/insights/ai-search-local-growth.png", alt: "홈페이지와 지역 고객 유입의 연결 구조", caption: "홈페이지와 지역 고객 유입의 연결 구조" },
+    { afterHeading: "소상공인 홈페이지 구축 체크리스트", src: "/images/insights/aeo-geo-small-business-guide.jpg", alt: "소상공인의 공식 홈페이지 정보를 확인하는 상담 장면", caption: "소상공인의 공식 홈페이지 정보를 확인하는 상담 장면" },
+  ],
 };
 
 function escapeHtml(value = "") {
@@ -243,8 +327,8 @@ function renderBlocks(blocks, slug = "") {
     else if (type === "heading_2") {
       const headingText = (block[type]?.rich_text || []).map((item) => item.plain_text || "").join("").trim();
       output.push(`<h2>${blockText(block)}</h2>`);
-      const inlineImage = inlineImages.find((item) => item.afterHeading === headingText);
-      if (inlineImage) {
+      const matchingImages = inlineImages.filter((item) => item.afterHeading === headingText);
+      for (const inlineImage of matchingImages) {
         output.push(`<figure class="blog-inline-figure"><img src="${escapeHtml(inlineImage.src)}" alt="${escapeHtml(inlineImage.alt)}" loading="lazy" width="1600" height="900" /><figcaption>${escapeHtml(inlineImage.caption)}</figcaption></figure>`);
       }
     }
