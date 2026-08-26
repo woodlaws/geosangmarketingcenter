@@ -309,6 +309,19 @@ function blockText(block) {
   }).join("");
 }
 
+function inlineImageLayout(src = "") {
+  if (src.startsWith("/images/insights/photo-") || [
+    "/images/blog/editorial/business-types.webp",
+    "/images/blog/editorial/local-store-review.webp",
+  ].includes(src)) {
+    return { className: "is-photo-four-three", width: 1200, height: 900 };
+  }
+  if (src.startsWith("/images/insights/") && src.endsWith(".png")) {
+    return { className: "is-square-graphic", width: 900, height: 900 };
+  }
+  return { className: "is-landscape", width: 1600, height: 900 };
+}
+
 function renderBlocks(blocks, slug = "") {
   const output = [];
   const inlineImages = INLINE_BLOG_IMAGES[slug] || [];
@@ -329,7 +342,8 @@ function renderBlocks(blocks, slug = "") {
       output.push(`<h2>${blockText(block)}</h2>`);
       const matchingImages = inlineImages.filter((item) => item.afterHeading === headingText);
       for (const inlineImage of matchingImages) {
-        output.push(`<figure class="blog-inline-figure"><img src="${escapeHtml(inlineImage.src)}" alt="${escapeHtml(inlineImage.alt)}" loading="lazy" width="1600" height="900" /><figcaption>${escapeHtml(inlineImage.caption)}</figcaption></figure>`);
+        const layout = inlineImageLayout(inlineImage.src);
+        output.push(`<figure class="blog-inline-figure ${layout.className}"><img src="${escapeHtml(inlineImage.src)}" alt="${escapeHtml(inlineImage.alt)}" loading="lazy" width="${layout.width}" height="${layout.height}" /><figcaption>${escapeHtml(inlineImage.caption)}</figcaption></figure>`);
       }
     }
     else if (type === "heading_3") output.push(`<h3>${blockText(block)}</h3>`);
