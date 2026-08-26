@@ -441,7 +441,7 @@ function layout({ title, description, canonical, image, body, schemas = [], type
   return `<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8" /><meta name="naver-site-verification" content="2c7ee16c39e1aef5cabb4e7532b2b9642809f782" /><meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>${escapeHtml(title)}</title><meta name="description" content="${escapeHtml(description)}" />${keywords.length ? `<meta name="keywords" content="${escapeHtml(keywords.join(", "))}" />` : ""}<link rel="canonical" href="${escapeHtml(canonical)}" />
 <meta property="og:type" content="${escapeHtml(type)}" /><meta property="og:title" content="${escapeHtml(title)}" /><meta property="og:description" content="${escapeHtml(description)}" /><meta property="og:url" content="${escapeHtml(canonical)}" /><meta property="og:image" content="${escapeHtml(ogImage)}" />
-<meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/assets/favicon.svg" /><link rel="stylesheet" href="/style.css?v=34" /><link rel="stylesheet" href="/blog.css?v=2" />
+<meta name="twitter:card" content="summary_large_image" /><link rel="icon" href="/assets/favicon.svg" /><link rel="stylesheet" href="/style.css?v=34" /><link rel="stylesheet" href="/blog.css?v=3" />
 ${schemas.map((schema) => `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("")}
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-E79QT0R9Z3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-E79QT0R9Z3');</script></head>
 <body class="blog-page"><header class="site-header"><div class="container header-inner"><a href="/" class="brand"><img src="/assets/logo-mark.png" class="brand-logo" alt="거상마케팅센터 로고" /><span class="brand-text"><span class="brand-name">거상마케팅센터</span><span class="brand-sub">SMARTPLACE · AEO · GEO</span></span></a><nav class="nav" aria-label="주요 메뉴"><a href="/about">센터 소개</a><a href="/services">서비스</a><a href="/marketing-diagnosis">업종별 진단</a><a href="/enterprise">기업·다점포</a><a href="/cases">성공사례</a><a href="/blog" class="active">블로그</a><a href="/contact" class="btn-nav">상담문의</a></nav><button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button></div><nav class="nav-mobile" id="navMobile"><a href="/about">센터 소개</a><a href="/services">서비스</a><a href="/marketing-diagnosis">업종별 진단</a><a href="/enterprise">기업·다점포</a><a href="/cases">성공사례</a><a href="/blog">마케팅 블로그</a><a href="/contact" class="btn-nav">상담문의</a></nav></header>${body}<footer class="site-footer"><div class="container footer-copy">© 2026 거상마케팅센터. All rights reserved. · <a href="/blog">마케팅 블로그</a> · <a href="/contact">상담문의</a></div></footer><script src="/script.js?v=31"></script></body></html>`;
@@ -463,13 +463,64 @@ ${notice ? `<div class="container blog-notice" role="status">${escapeHtml(notice
   return layout({ title: "마케팅 블로그 | 거상마케팅센터", description: "스마트플레이스, AEO·GEO, AI 검색 최적화, 블로그 마케팅, 체험단 마케팅, 식당 마케팅 인사이트를 전하는 거상마케팅센터 공식 블로그입니다.", canonical: `${SITE_URL}/blog`, body, schemas: [collection, breadcrumb] });
 }
 
-function detailPage(post, blocks) {
+
+const READING_STEPS = [
+  { eyebrow: "STEP 01", label: "기준 이해" },
+  { eyebrow: "STEP 02", label: "문제 점검" },
+  { eyebrow: "STEP 03", label: "실행 방법" },
+  { eyebrow: "STEP 04", label: "확장·성과" },
+];
+
+function readingStage(post) {
+  const text = `${post.title} ${post.question} ${post.excerpt}`;
+  if (/체크리스트|점검|문제|안 뜨|못하는|늘지 않|없는 이유|미노출/.test(text)) return 1;
+  if (/방법|작성법|관리|연결|구조|만드는|해야 할|실행|운영/.test(text)) return 2;
+  if (/AI 검색|AEO|GEO|인용|성과|사례|Entity|추천/.test(text)) return 3;
+  return 0;
+}
+
+function relatedPostsFor(post, posts) {
+  const keywords = new Set(post.keywords || []);
+  const services = new Set(post.services || []);
+  return posts
+    .filter((item) => item.slug !== post.slug)
+    .map((item) => {
+      const keywordOverlap = (item.keywords || []).filter((keyword) => keywords.has(keyword)).length;
+      const serviceOverlap = (item.services || []).filter((service) => services.has(service)).length;
+      const score =
+        (item.category === post.category ? 100 : 0) +
+        keywordOverlap * 16 +
+        serviceOverlap * 9 +
+        (item.image ? 2 : 0);
+      return { item, score, stage: readingStage(item) };
+    })
+    .sort((a, b) => b.score - a.score || b.item.publishedAt.localeCompare(a.item.publishedAt))
+    .slice(0, 4)
+    .sort((a, b) => a.stage - b.stage || b.score - a.score)
+    .map(({ item }) => item);
+}
+
+function relatedReading(post, posts) {
+  const related = relatedPostsFor(post, posts);
+  if (!related.length) return "";
+  const items = related.map((item, index) => {
+    const step = READING_STEPS[index] || READING_STEPS[READING_STEPS.length - 1];
+    const image = item.image
+      ? `<img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" />`
+      : `<div class="blog-related-placeholder" aria-hidden="true"><span>GEOSANG</span></div>`;
+    return `<li><a href="/blog/${encodeURIComponent(item.slug)}">${image}<div><small>${step.eyebrow} · ${step.label}</small><h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.excerpt || item.question)}</p><span>이어서 읽기 →</span></div></a></li>`;
+  }).join("");
+  return `<section class="blog-related-section" aria-labelledby="related-reading-title"><div class="container"><header><span>RECOMMENDED READING PATH</span><h2 id="related-reading-title">함께 읽을 글</h2><p>이 주제는 아래 순서로 읽으면 이해와 실행이 빨라집니다.</p></header><ol class="blog-reading-path">${items}</ol></div></section>`;
+}
+
+function detailPage(post, blocks, allPosts) {
   const canonical = `${SITE_URL}/blog/${encodeURIComponent(post.slug)}`;
   const description = post.seoDescription || post.excerpt;
   const schema = { "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description, datePublished: post.publishedAt, dateModified: post.modifiedAt || post.publishedAt, author: { "@type": "Organization", name: "거상마케팅센터" }, publisher: { "@type": "Organization", name: "거상마케팅센터", logo: { "@type": "ImageObject", url: `${SITE_URL}/assets/logo-mark.png` } }, image: absoluteUrl(post.image) || `${SITE_URL}/og-image.png`, mainEntityOfPage: canonical };
   const breadcrumb = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "홈", item: `${SITE_URL}/` }, { "@type": "ListItem", position: 2, name: "마케팅 블로그", item: `${SITE_URL}/blog` }, { "@type": "ListItem", position: 3, name: post.title, item: canonical }] };
   const serviceLinks = post.services.map((service) => `<a href="${escapeHtml(SERVICE_LINKS[service] || "/services")}">${escapeHtml(service)} →</a>`).join("");
-  const body = `<main><div class="blog-breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><a href="/blog">마케팅 블로그</a><span>›</span><b>${escapeHtml(post.title)}</b></div></div><article><header class="blog-post-head"><div class="container"><span class="blog-category">${escapeHtml(post.category)}</span><h1>${escapeHtml(post.title)}</h1>${post.question ? `<p class="blog-post-question"><small>핵심 질문</small>${escapeHtml(post.question)}</p>` : ""}<div class="blog-post-meta"><time datetime="${escapeHtml(post.publishedAt)}">${formatDate(post.publishedAt)}</time>${post.keywords.map((keyword) => `<i>#${escapeHtml(keyword)}</i>`).join("")}</div></div></header>${post.image ? `<div class="container"><img class="blog-post-cover" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" /></div>` : ""}<div class="container blog-post-layout"><div><section class="blog-answer"><small>한 문장 결론</small><strong>${escapeHtml(post.excerpt || post.question)}</strong></section><section class="blog-content">${renderBlocks(blocks, post.slug) || `<p>본문을 준비하고 있습니다.</p>`}</section></div><aside class="blog-service-cta"><small>RELATED SERVICE</small><h2>${escapeHtml(post.ctaLabel)}</h2><p>${escapeHtml(post.excerpt)}</p><div>${serviceLinks}</div><a href="${escapeHtml(post.ctaLink)}" class="btn-primary">${escapeHtml(post.ctaLabel)}</a></aside></div></article><div class="blog-back"><a href="/blog">← 블로그 목록 보기</a></div></main>`;
+  const relatedSection = relatedReading(post, allPosts);
+  const body = `<main><div class="blog-breadcrumb"><div class="container"><a href="/">홈</a><span>›</span><a href="/blog">마케팅 블로그</a><span>›</span><b>${escapeHtml(post.title)}</b></div></div><article><header class="blog-post-head"><div class="container"><span class="blog-category">${escapeHtml(post.category)}</span><h1>${escapeHtml(post.title)}</h1>${post.question ? `<p class="blog-post-question"><small>핵심 질문</small>${escapeHtml(post.question)}</p>` : ""}<div class="blog-post-meta"><time datetime="${escapeHtml(post.publishedAt)}">${formatDate(post.publishedAt)}</time>${post.keywords.map((keyword) => `<i>#${escapeHtml(keyword)}</i>`).join("")}</div></div></header>${post.image ? `<div class="container"><img class="blog-post-cover" src="${escapeHtml(post.image)}" alt="${escapeHtml(post.title)}" /></div>` : ""}<div class="container blog-post-layout"><div><section class="blog-answer"><small>한 문장 결론</small><strong>${escapeHtml(post.excerpt || post.question)}</strong></section><section class="blog-content">${renderBlocks(blocks, post.slug) || `<p>본문을 준비하고 있습니다.</p>`}</section></div><aside class="blog-service-cta"><small>RELATED SERVICE</small><h2>${escapeHtml(post.ctaLabel)}</h2><p>${escapeHtml(post.excerpt)}</p><div>${serviceLinks}</div><a href="${escapeHtml(post.ctaLink)}" class="btn-primary">${escapeHtml(post.ctaLabel)}</a></aside></div></article>${relatedSection}<div class="blog-back"><a href="/blog">← 블로그 목록 보기</a></div></main>`;
   return layout({ title: post.seoTitle || `${post.title} | 거상마케팅센터`, description, canonical, image: post.image, body, schemas: [schema, breadcrumb], type: "article", keywords: post.keywords });
 }
 
@@ -497,7 +548,7 @@ module.exports = async function handler(req, res) {
       const post = posts.find((item) => item.slug === slug);
       if (!post) return res.status(404).send(notFoundPage());
       const blocks = await fetchBlocks(post.id);
-      return res.status(200).send(detailPage(post, blocks));
+      return res.status(200).send(detailPage(post, blocks, posts));
     }
     return res.status(200).send(listPage(posts));
   } catch (error) {
