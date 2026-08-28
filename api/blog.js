@@ -20,6 +20,12 @@ const SERVICE_LINKS = {
 };
 
 const INLINE_BLOG_IMAGES = {
+  "restaurant-review-response-repeat-visit": [
+    { afterHeading: "좋은 리뷰는 신규 고객의 불안을 줄입니다", src: "/images/blog/restaurant-review-response-repeat-visit/customer-review.webp", alt: "식당에서 음식 사진과 만족한 경험을 스마트폰으로 기록하는 고객들", caption: "구체적인 메뉴와 이용 상황이 담긴 후기는 처음 방문하는 고객의 판단을 돕습니다." },
+    { afterHeading: "리뷰를 네 가지 항목으로 분류하세요", src: "/images/blog/restaurant-review-response-repeat-visit/review-analysis.webp", alt: "식당 운영자가 고객 리뷰를 음식 서비스 청결 대기시간 항목으로 분석하는 모습", caption: "리뷰를 감정적으로 읽기보다 음식·서비스·청결·대기시간으로 분류하면 개선 과제가 보입니다." },
+    { afterHeading: "답변보다 먼저 현장의 반복 문제를 고칩니다", src: "/images/blog/restaurant-review-response-repeat-visit/staff-training.webp", alt: "식당 직원들이 고객 피드백과 서비스 개선 방법을 함께 논의하는 모습", caption: "같은 불만이 반복되면 답변 문구보다 조리·응대·대기 안내 기준을 먼저 고쳐야 합니다." },
+    { afterHeading: "리뷰 관리는 재방문 설계까지 이어져야 합니다", src: "/images/blog/restaurant-review-response-repeat-visit/repeat-visit.webp", alt: "재방문 고객을 반갑게 맞이하는 식당 직원들", caption: "후기에서 발견한 고객의 기대를 현장 서비스에 반영할 때 재방문과 추천의 기반이 생깁니다." },
+  ],
   "dental-marketing-channel-priority": [
     { afterHeading: "세 채널의 역할은 서로 다릅니다", src: "/images/blog/dental-marketing-channel-priority/1.webp", alt: "발견·비교·예약에서 서로 다른 역할을 맡는 플레이스, 홈페이지와 블로그", caption: "세 채널은 경쟁 관계가 아니라 환자의 선택 과정에서 서로 다른 역할을 맡습니다." },
     { afterHeading: "먼저 확인할 10분 체크리스트", src: "/images/blog/dental-marketing-channel-priority/2.webp", alt: "치과의 기본 정보와 모바일 예약 동선을 함께 점검하는 모습", caption: "채널을 늘리기 전에 기본 정보와 실제 예약 동선을 먼저 확인해야 합니다." },
@@ -280,6 +286,7 @@ function mapPost(page) {
     "aeo-geo-website-diagnostic-checklist-20": "/images/blog/aeo-geo-checklist-20/cover.webp",
     "why-website-not-showing-in-search-7-reasons": "/images/blog/website-search-7-reasons.svg",
     "restaurant-signature-menu-marketing": "/images/blog/restaurant-signature-menu-marketing/cover-v2.webp",
+    "restaurant-review-response-repeat-visit": "/images/blog/restaurant-review-response-repeat-visit/cover.webp",
     ...MIGRATED_INSIGHT_COVERS,
   };
   return {
