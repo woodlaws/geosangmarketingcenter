@@ -24,6 +24,7 @@
 | 성공사례 | `/cases` |
 | 인사이트 | `/insights` |
 | 노션 CMS 블로그 | `/blog` |
+| 홈페이지 제작 포트폴리오 | `/services/website-production#portfolio` |
 | 상담문의 | `/contact` |
 
 ### 서비스
@@ -65,6 +66,10 @@ Vercel 영구 리디렉션으로 아래 이전 주소를 새 주소에 연결합
 ## 노션 CMS 블로그
 
 `/blog`, `/blog/{slug}`, `/blog/rss.xml`은 Vercel Function인 `api/blog.js`가 노션 데이터베이스의 공개 글을 읽어 생성합니다. 서버 전용 환경변수 `NOTION_TOKEN`, `NOTION_BLOG_DATABASE_ID`가 필요하며 브라우저 번들에는 포함하지 않습니다. 데이터베이스 생성과 속성 설정, Vercel 환경변수 등록 방법은 [`docs/notion-blog.md`](docs/notion-blog.md)를 참고하세요.
+
+## 노션 홈페이지 포트폴리오
+
+`/services/website-production#portfolio`는 브라우저가 `/api/portfolio` JSON을 받아 Notion 데이터 소스의 `운영중`·`작업중` 항목과 틱톡커머스 랩 예외 항목을 카드로 렌더링합니다. 30분 CDN 캐시, 정렬·상태 필터, 이미지 fallback과 전체 21개 정적 데이터 fallback을 적용했습니다. `NOTION_TOKEN`, `NOTION_PORTFOLIO_DATA_SOURCE_ID`가 필요하며 연결 방법은 [`docs/notion-portfolio.md`](docs/notion-portfolio.md)를 참고하세요.
 
 ## 검색 파일
 
