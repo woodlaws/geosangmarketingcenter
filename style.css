@@ -2270,21 +2270,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 .brand-sub {
   margin-top: 1px;
-  font-size: 16px !important;
-  letter-spacing: .015em !important;
+  font-size: 14.4px !important;
+  letter-spacing: .012em !important;
 }
 @media (min-width: 921px) and (max-width: 1500px) {
   .brand-sub {
-    font-size: 9.4px !important;
-    letter-spacing: .008em !important;
+    font-size: 8.46px !important;
+    letter-spacing: .006em !important;
   }
 }
 @media (max-width: 920px) {
   .brand-sub {
     display: block !important;
     margin-top: 2px;
-    font-size: 15px !important;
-    letter-spacing: .01em !important;
+    font-size: 13.5px !important;
+    letter-spacing: .008em !important;
   }
 }
 
