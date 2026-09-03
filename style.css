@@ -2269,9 +2269,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   align-items: flex-start;
 }
 .brand-sub {
+  align-self: stretch;
   margin-top: 1px;
   font-size: 14.4px !important;
   letter-spacing: .012em !important;
+  text-align: justify;
+  text-align-last: justify;
+  white-space: nowrap;
 }
 @media (min-width: 921px) and (max-width: 1500px) {
   .brand-sub {
