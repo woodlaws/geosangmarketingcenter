@@ -2262,6 +2262,32 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .kakao-floating .kakao-wordmark { width: 27px; height: 27px; }
 }
 
+/* Header logo subtitle: keep the English line within the Korean wordmark width */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.brand-sub {
+  margin-top: 1px;
+  font-size: 16px !important;
+  letter-spacing: .015em !important;
+}
+@media (min-width: 921px) and (max-width: 1500px) {
+  .brand-sub {
+    font-size: 9.4px !important;
+    letter-spacing: .008em !important;
+  }
+}
+@media (max-width: 920px) {
+  .brand-sub {
+    display: block !important;
+    margin-top: 2px;
+    font-size: 15px !important;
+    letter-spacing: .01em !important;
+  }
+}
+
 /* Home: Notion CMS blog bridge */
 .home-blog-teaser {
   background: linear-gradient(135deg, #f4fbf8 0%, #f8fafc 58%, #eef5ff 100%);
