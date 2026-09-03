@@ -69,7 +69,7 @@ export const insights: Insight[] = [
       { heading: "질문에 답하는 구조를 만듭니다", paragraphs: ["고객이 실제로 묻는 질문을 FAQ와 서비스 페이지에 분명하게 답하면 검색과 상담 모두에 도움이 됩니다."], bullets: ["서비스 대상과 범위", "진행 방식", "자주 묻는 질문", "명확한 상담 경로"] },
       { heading: "AEO/GEO는 보장이 아니라 이해 기반을 만드는 일입니다", paragraphs: ["정리된 정보는 노출이나 추천을 보장하지 않습니다. 다만 AI와 검색엔진이 참고할 수 있는 명확한 기반을 만드는 데 도움이 됩니다."] }
     ],
-    relatedServices: [{ label: "AEO·GEO 서비스", href: "/services/aeo-geo" }, { label: "홈페이지 진단", href: "/services/website-diagnosis" }],
+    relatedServices: [{ label: "AEO·GEO 서비스", href: "/services/aeo-geo" }, { label: "홈페이지 진단", href: "/services/website-production" }],
     ctaLabel: "홈페이지·AI 검색 구조 진단받기",
     ctaHref: "/contact?type=website-content",
     isPublished: true,
@@ -112,7 +112,7 @@ export const insights: Insight[] = [
       { heading: "고객이 찾는 경로와 연결합니다", paragraphs: ["홈페이지, 플레이스, SNS와 상담 경로가 서로 연결되어야 결과물이 일회성 보고 자료에 머물지 않습니다."], bullets: ["검색 가능한 주소", "모바일 확인", "상담 버튼", "분석 도구와 운영 권한"] },
       { heading: "다음 실행의 우선순위를 정합니다", paragraphs: ["지원 범위 밖의 광고나 콘텐츠를 무리하게 추가하기보다 현재 자산의 누락과 연결 문제부터 정리하는 것이 좋습니다."] }
     ],
-    relatedServices: [{ label: "정부지원사업 마케팅", href: "/services/government-support" }, { label: "홈페이지 진단", href: "/services/website-diagnosis" }],
+    relatedServices: [{ label: "정부지원사업 마케팅", href: "/services/government-support" }, { label: "홈페이지 진단", href: "/services/website-production" }],
     ctaLabel: "지원사업 후속 실행 상담받기",
     ctaHref: "/contact?type=government-support",
     isPublished: true,
@@ -223,7 +223,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "먼저 현재 홈페이지가 사업을 얼마나 정확히 설명하는지 진단하고, 빠진 정보와 중복 문구를 목록으로 만듭니다. 그다음 서비스 페이지, 업종별 설명, FAQ, 회사 정보 사이의 연결을 설계합니다. 거상마케팅센터는 홈페이지를 직접 제작한다고 안내하기보다 진단과 콘텐츠 구조 컨설팅을 제공하고, 실제 제작이 필요할 때는 협력 제작사와 연결해 실행 범위를 조율합니다."
+                      "먼저 현재 홈페이지가 사업을 얼마나 정확히 설명하는지 진단하고, 빠진 정보와 중복 문구를 목록으로 만듭니다. 그다음 서비스 페이지, 업종별 설명, FAQ, 회사 정보 사이의 연결을 설계합니다. 거상마케팅센터는 진단과 콘텐츠 구조 설계를 바탕으로 실행 범위를 협의하고 홈페이지를 직접 제작·배포합니다."
                 ]
           },
           {
@@ -233,9 +233,9 @@ export const insights: Insight[] = [
                 ]
           }
     ],
-    relatedServices: [{"label":"홈페이지 진단","href":"/services/website-diagnosis"},{"label":"AEO·GEO 서비스","href":"/services/aeo-geo"}],
+    relatedServices: [{"label":"홈페이지 진단","href":"/services/website-production"},{"label":"AEO·GEO 서비스","href":"/services/aeo-geo"}],
     ctaLabel: "홈페이지 진단 서비스 보기",
-    ctaHref: "/services/website-diagnosis",
+    ctaHref: "/services/website-production",
     isPublished: true,
     isFeatured: false
   },
@@ -278,7 +278,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "검색어를 먼저 늘리기보다 회사와 서비스를 설명하는 핵심 문장을 정리하고, 그 문장이 홈페이지와 주요 플랫폼에서 같은 의미로 사용되는지 확인합니다. 이후 질문형 제목, 요약 문단, 목록과 표처럼 사람이 빠르게 읽을 수 있는 형식으로 콘텐츠를 구성합니다. 필요한 경우 구조화 데이터 적용 범위를 진단하고 협력 제작사와 기술 반영을 조율합니다."
+                      "검색어를 먼저 늘리기보다 회사와 서비스를 설명하는 핵심 문장을 정리하고, 그 문장이 홈페이지와 주요 플랫폼에서 같은 의미로 사용되는지 확인합니다. 이후 질문형 제목, 요약 문단, 목록과 표처럼 사람이 빠르게 읽을 수 있는 형식으로 콘텐츠를 구성합니다. 필요한 경우 구조화 데이터 적용 범위를 진단하고 거상마케팅센터가 기술 반영 범위를 정해 직접 적용합니다."
                 ]
           },
           {
@@ -288,7 +288,7 @@ export const insights: Insight[] = [
                 ]
           }
     ],
-    relatedServices: [{"label":"AEO·GEO 서비스","href":"/services/aeo-geo"},{"label":"홈페이지 진단","href":"/services/website-diagnosis"}],
+    relatedServices: [{"label":"AEO·GEO 서비스","href":"/services/aeo-geo"},{"label":"홈페이지 진단","href":"/services/website-production"}],
     ctaLabel: "AEO·GEO 준비 항목 보기",
     ctaHref: "/services/aeo-geo",
     isPublished: true,
@@ -333,7 +333,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "기업 Entity 진단에서는 온라인에 노출된 정보를 모아 불일치와 누락을 찾고, 홈페이지를 중심으로 공식 채널의 관계를 정리합니다. 회사 소개, 서비스, 지점, 대표자와 문의 정보가 각각 어떤 페이지에서 설명되어야 하는지도 구분합니다. 이후 구조화 데이터와 내부 링크 적용이 필요하다면 현재 사이트 환경을 확인한 뒤 협력 제작사와 반영 범위를 협의합니다."
+                      "기업 Entity 진단에서는 온라인에 노출된 정보를 모아 불일치와 누락을 찾고, 홈페이지를 중심으로 공식 채널의 관계를 정리합니다. 회사 소개, 서비스, 지점, 대표자와 문의 정보가 각각 어떤 페이지에서 설명되어야 하는지도 구분합니다. 이후 구조화 데이터와 내부 링크 적용이 필요하다면 현재 사이트 환경을 확인한 뒤 거상마케팅센터가 반영 범위를 협의해 직접 적용합니다."
                 ]
           },
           {
@@ -388,7 +388,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "현재 검색되는 회사 정보를 조사하고 홈페이지의 회사 소개와 서비스 구조를 기준으로 연결 지도를 만듭니다. 각각의 Entity에 독립 페이지가 필요한지, 한 페이지에서 관계를 설명할지 판단합니다. 이후 Organization, LocalBusiness, Service 같은 구조화 데이터 적용 가능성을 진단하되 실제 페이지 내용과 일치하는 범위에서만 제안합니다. 기술 적용은 사이트 환경에 맞는 협력 제작사와 조율할 수 있습니다."
+                      "현재 검색되는 회사 정보를 조사하고 홈페이지의 회사 소개와 서비스 구조를 기준으로 연결 지도를 만듭니다. 각각의 Entity에 독립 페이지가 필요한지, 한 페이지에서 관계를 설명할지 판단합니다. 이후 Organization, LocalBusiness, Service 같은 구조화 데이터 적용 가능성을 진단하되 실제 페이지 내용과 일치하는 범위에서만 제안합니다. 기술 적용은 사이트 환경을 확인한 뒤 거상마케팅센터가 범위를 협의해 직접 반영할 수 있습니다."
                 ]
           },
           {
@@ -398,7 +398,7 @@ export const insights: Insight[] = [
                 ]
           }
     ],
-    relatedServices: [{"label":"기업 Entity 서비스","href":"/enterprise"},{"label":"홈페이지 진단","href":"/services/website-diagnosis"}],
+    relatedServices: [{"label":"기업 Entity 서비스","href":"/enterprise"},{"label":"홈페이지 진단","href":"/services/website-production"}],
     ctaLabel: "기업 Entity 서비스 보기",
     ctaHref: "/enterprise",
     isPublished: true,
@@ -609,7 +609,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "제품의 강점을 주장하기보다 고객 상황, 문제, 선택 기준, 사용 장면과 구매 조건 순으로 정보를 재배치합니다. 콘텐츠와 광고에서는 상세페이지가 답하는 핵심 질문으로 연결하고, 문의에서 반복되는 내용을 FAQ와 이미지 설명에 반영합니다. 페이지 제작이 필요하면 진단과 구성 컨설팅을 바탕으로 협력 제작사와 연결해 실제 제작 범위와 자료 준비를 조율합니다."
+                      "제품의 강점을 주장하기보다 고객 상황, 문제, 선택 기준, 사용 장면과 구매 조건 순으로 정보를 재배치합니다. 콘텐츠와 광고에서는 상세페이지가 답하는 핵심 질문으로 연결하고, 문의에서 반복되는 내용을 FAQ와 이미지 설명에 반영합니다. 페이지 제작이 필요하면 진단과 구성 컨설팅을 바탕으로 거상마케팅센터가 실제 제작 범위와 자료 준비를 조율해 직접 진행합니다."
                 ]
           },
           {
@@ -725,7 +725,7 @@ export const insights: Insight[] = [
           {
                 "heading": "가격이 아니라 판단 기준을 제공하세요",
                 "paragraphs": [
-                      "모든 정보를 공개할 필요는 없지만 고객이 자신의 상황과 서비스 적합성을 스스로 확인할 수 있어야 합니다. 전문성은 어려운 말을 많이 쓰는 것보다 복잡한 과정을 이해하기 쉽게 설명할 때 전달됩니다. 홈페이지가 필요하다면 거상마케팅센터는 진단과 구조 컨설팅을 제공하고 협력 제작사 연결을 안내합니다. 상담 동선을 점검하려면 관련 페이지를 확인해 보세요. 실행 전후에는 방문 수 같은 숫자 하나보다 고객이 어떤 질문을 했고 어느 단계에서 결정을 미뤘는지 함께 기록해야 합니다. 직원이나 상담 담당자에게 반복 문의를 모아 달라고 요청하면 온라인 정보에서 빠진 내용을 찾을 수 있습니다. 업종 이름이 같아도 지역, 고객 구성, 단가와 운영 방식이 다르므로 다른 업체의 실행안을 그대로 적용하지 말고 현재 사업의 고객 행동을 기준으로 우선순위를 조정하세요."
+                      "모든 정보를 공개할 필요는 없지만 고객이 자신의 상황과 서비스 적합성을 스스로 확인할 수 있어야 합니다. 전문성은 어려운 말을 많이 쓰는 것보다 복잡한 과정을 이해하기 쉽게 설명할 때 전달됩니다. 홈페이지가 필요하다면 거상마케팅센터가 진단과 구조 설계부터 제작·배포까지 직접 진행합니다. 상담 동선을 점검하려면 관련 페이지를 확인해 보세요. 실행 전후에는 방문 수 같은 숫자 하나보다 고객이 어떤 질문을 했고 어느 단계에서 결정을 미뤘는지 함께 기록해야 합니다. 직원이나 상담 담당자에게 반복 문의를 모아 달라고 요청하면 온라인 정보에서 빠진 내용을 찾을 수 있습니다. 업종 이름이 같아도 지역, 고객 구성, 단가와 운영 방식이 다르므로 다른 업체의 실행안을 그대로 적용하지 말고 현재 사업의 고객 행동을 기준으로 우선순위를 조정하세요."
                 ]
           }
     ],
@@ -774,7 +774,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "홈페이지 진단을 통해 서비스 설명, FAQ, 관련 글과 상담 폼이 하나의 흐름으로 연결되는지 확인합니다. 질문마다 짧은 답을 먼저 제공하고 필요한 경우 상세 페이지로 이어지게 구성합니다. 직접 제작을 약속하기보다 현재 구조와 콘텐츠를 진단하고 우선순위를 제안하며, 개편이나 기능 개발이 필요하면 협력 제작사와 연결해 요구사항을 전달할 수 있습니다."
+                      "홈페이지 진단을 통해 서비스 설명, FAQ, 관련 글과 상담 폼이 하나의 흐름으로 연결되는지 확인합니다. 질문마다 짧은 답을 먼저 제공하고 필요한 경우 상세 페이지로 이어지게 구성합니다. 현재 구조와 콘텐츠를 진단하고 우선순위를 제안한 뒤, 개편이나 기능 개발 범위는 거상마케팅센터가 요구사항을 확정해 직접 반영할 수 있습니다."
                 ]
           },
           {
@@ -784,9 +784,9 @@ export const insights: Insight[] = [
                 ]
           }
     ],
-    relatedServices: [{"label":"홈페이지 진단","href":"/services/website-diagnosis"},{"label":"상담·계약형 마케팅","href":"/marketing-types/consulting-contract"}],
+    relatedServices: [{"label":"홈페이지 진단","href":"/services/website-production"},{"label":"상담·계약형 마케팅","href":"/marketing-types/consulting-contract"}],
     ctaLabel: "홈페이지 진단 서비스 보기",
-    ctaHref: "/services/website-diagnosis",
+    ctaHref: "/services/website-production",
     isPublished: true,
     isFeatured: false
   },
@@ -829,7 +829,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "현재 온라인 상태를 진단해 정보 오류와 고객 동선의 막힌 지점을 먼저 찾습니다. 이후 공식 정보 정비, 핵심 콘텐츠, 연결 페이지와 필요한 광고 순으로 실행안을 구성합니다. 홈페이지 관련 작업은 직접 제작으로 안내하지 않고 진단과 콘텐츠 구조 컨설팅을 제공하며, 제작이 필요하면 협력 제작사 연결을 통해 예산 범위와 산출물을 조율합니다."
+                      "현재 온라인 상태를 진단해 정보 오류와 고객 동선의 막힌 지점을 먼저 찾습니다. 이후 공식 정보 정비, 핵심 콘텐츠, 연결 페이지와 필요한 광고 순으로 실행안을 구성합니다. 홈페이지 관련 작업은 거상마케팅센터가 예산 범위와 산출물을 협의한 뒤 콘텐츠 구조 설계부터 제작·배포까지 직접 진행합니다."
                 ]
           },
           {
@@ -884,7 +884,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "현재 사업의 고객 유형과 온라인 자산을 먼저 진단해 지원 예산으로 보완할 우선순위를 정합니다. 홈페이지가 필요하다면 필요한 페이지와 콘텐츠를 정의하고 협력 제작사와 연결해 제작 범위를 조율합니다. 동시에 스마트플레이스, 구글 프로필과 SNS의 기준 정보를 맞추고, 완성된 콘텐츠를 어떤 채널에서 재사용할지 운영 계획을 만듭니다."
+                      "현재 사업의 고객 유형과 온라인 자산을 먼저 진단해 지원 예산으로 보완할 우선순위를 정합니다. 홈페이지가 필요하다면 필요한 페이지와 콘텐츠를 정의하고 거상마케팅센터가 제작 범위를 조율해 직접 진행합니다. 동시에 스마트플레이스, 구글 프로필과 SNS의 기준 정보를 맞추고, 완성된 콘텐츠를 어떤 채널에서 재사용할지 운영 계획을 만듭니다."
                 ]
           },
           {
@@ -894,7 +894,7 @@ export const insights: Insight[] = [
                 ]
           }
     ],
-    relatedServices: [{"label":"정부지원사업 마케팅","href":"/services/government-support"},{"label":"홈페이지 진단","href":"/services/website-diagnosis"}],
+    relatedServices: [{"label":"정부지원사업 마케팅","href":"/services/government-support"},{"label":"홈페이지 진단","href":"/services/website-production"}],
     ctaLabel: "정부지원사업 활용 방향 보기",
     ctaHref: "/services/government-support",
     isPublished: true,
@@ -939,7 +939,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "사업 유형을 매장 방문형, 온라인 판매형, 상담·계약형으로 구분하고 고객 행동에 맞는 우선순위를 제안합니다. 기본 정보가 틀리면 채널 관리부터, 비교 자료가 부족하면 콘텐츠와 서비스 페이지부터, 동선이 준비되었지만 도달이 부족하면 광고를 검토합니다. 홈페이지는 진단과 구조 컨설팅을 제공하고 실제 제작이 필요하면 협력 제작사 연결로 진행합니다."
+                      "사업 유형을 매장 방문형, 온라인 판매형, 상담·계약형으로 구분하고 고객 행동에 맞는 우선순위를 제안합니다. 기본 정보가 틀리면 채널 관리부터, 비교 자료가 부족하면 콘텐츠와 서비스 페이지부터, 동선이 준비되었지만 도달이 부족하면 광고를 검토합니다. 홈페이지는 진단과 구조 컨설팅부터 직접 제작·배포까지 거상마케팅센터가 직접 제작·배포합니다."
                 ]
           },
           {
@@ -994,7 +994,7 @@ export const insights: Insight[] = [
           {
                 "heading": "거상마케팅센터 관점의 해결 방향",
                 "paragraphs": [
-                      "첫 단계는 현재 자산과 고객 동선 진단입니다. 그다음 공식 정보와 핵심 페이지를 정비하고, 고객 질문을 콘텐츠로 만들며, 준비된 동선에 필요한 광고와 채널 운영을 연결합니다. 각 단계는 결과를 단정하는 방식이 아니라 확인 가능한 운영 지표와 고객 반응을 바탕으로 다음 우선순위를 정합니다. 홈페이지 제작이 필요하면 협력 제작사와 연결해 구조와 요구사항을 조율합니다."
+                      "첫 단계는 현재 자산과 고객 동선 진단입니다. 그다음 공식 정보와 핵심 페이지를 정비하고, 고객 질문을 콘텐츠로 만들며, 준비된 동선에 필요한 광고와 채널 운영을 연결합니다. 각 단계는 결과를 단정하는 방식이 아니라 확인 가능한 운영 지표와 고객 반응을 바탕으로 다음 우선순위를 정합니다. 홈페이지 제작이 필요하면 거상마케팅센터가 구조와 요구사항을 조율해 직접 제작합니다."
                 ]
           },
           {

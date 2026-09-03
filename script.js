@@ -12,6 +12,7 @@ var CONTACT_CTA_TYPES = Object.freeze({
   enterprise: { label: "기업·다점포 상담 요청하기", url: "/contact?type=enterprise", contactSelectValue: "기업·다점포 상담", description: "여러 지점의 네이버·구글 통합 관리 방식을 상담합니다." },
   "government-support": { label: "정부지원사업 마케팅 상담받기", url: "/contact?type=government-support", contactSelectValue: "정부지원사업 마케팅 상담", description: "선정된 지원사업의 예산과 지침에 맞는 마케팅 실행 범위를 상담합니다." },
   "website-diagnosis": { label: "홈페이지 진단 상담받기", url: "/contact?type=website-diagnosis", contactSelectValue: "홈페이지 진단·컨설팅", description: "공식 홈페이지의 정보 구조, 검색·AI 이해 기반과 문의 전환 경로를 진단합니다." },
+  "website-production": { label: "무료 홈페이지 제작 상담", url: "/contact?type=website-production", contactSelectValue: "AI 홈페이지 제작", description: "사업 구조와 고객 동선을 설계한 뒤 홈페이지를 직접 제작하고 배포합니다." },
   consulting: { label: "마케팅 컨설팅 상담받기", url: "/contact?type=consulting", contactSelectValue: "마케팅 컨설팅", description: "업종, 고객, 예산과 현재 채널을 보고 실행 우선순위와 로드맵을 상담합니다." },
   services: { label: "내 상황에 맞는 서비스 상담받기", url: "/contact?type=services", contactSelectValue: "전체 서비스 상담", description: "업종과 현재 온라인 상태를 보고 필요한 마케팅 서비스의 우선순위를 상담합니다." },
   "marketing-diagnosis": { label: "내 유형 상담받기", url: "/contact?type=marketing-diagnosis", contactSelectValue: "업종별 마케팅 진단", description: "고객 행동을 기준으로 사업 유형과 마케팅 실행 우선순위를 상담합니다." },
@@ -33,8 +34,8 @@ window.ContactCTA = Object.freeze({
 document.addEventListener("DOMContentLoaded", function () {
 
   /* ---------- 공통 상담 CTA ---------- */
-  var legacyCtaServices = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", ads: "ads", enterprise: "enterprise", government: "government-support", "government-support": "government-support", website: "website-diagnosis", "website-diagnosis": "website-diagnosis", "marketing-diagnosis": "marketing-diagnosis", "local-store": "local-store", "online-sales": "online-sales", "consulting-contract": "consulting-contract", cases: "cases", consulting: "consulting", services: "services", "content-sns": "content-sns" };
-  var pageCtaType = window.location.pathname.indexOf("/services/ads") === 0 ? "ads" : window.location.pathname.indexOf("/services/content-sns") === 0 ? "content-sns" : window.location.pathname.indexOf("/services/aeo-geo") === 0 ? "aeo-geo" : window.location.pathname.indexOf("/services/government-support") === 0 ? "government-support" : window.location.pathname.indexOf("/services/smartplace") === 0 ? "smartplace" : window.location.pathname.indexOf("/services/google-business-profile") === 0 ? "google" : window.location.pathname.indexOf("/services/website-") === 0 ? "website-diagnosis" : window.location.pathname.indexOf("/enterprise") === 0 ? "enterprise" : window.location.pathname.indexOf("/services/consulting") === 0 || window.location.pathname.indexOf("/services/marketing-consulting") === 0 ? "consulting" : window.location.pathname === "/services" || window.location.pathname.endsWith("/services/index.html") ? "services" : window.location.pathname.indexOf("/marketing-types/local-store") === 0 ? "local-store" : window.location.pathname.indexOf("/marketing-types/online-sales") === 0 ? "online-sales" : window.location.pathname.indexOf("/marketing-types/consulting-contract") === 0 ? "consulting-contract" : window.location.pathname.indexOf("/marketing-diagnosis") === 0 ? "marketing-diagnosis" : window.location.pathname.indexOf("/cases") === 0 ? "cases" : window.location.pathname.indexOf("/about") === 0 ? "consulting" : "diagnosis";
+  var legacyCtaServices = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", ads: "ads", enterprise: "enterprise", government: "government-support", "government-support": "government-support", website: "website-production", "website-diagnosis": "website-production", "website-production": "website-production", "marketing-diagnosis": "marketing-diagnosis", "local-store": "local-store", "online-sales": "online-sales", "consulting-contract": "consulting-contract", cases: "cases", consulting: "consulting", services: "services", "content-sns": "content-sns" };
+  var pageCtaType = window.location.pathname.indexOf("/services/ads") === 0 ? "ads" : window.location.pathname.indexOf("/services/content-sns") === 0 ? "content-sns" : window.location.pathname.indexOf("/services/aeo-geo") === 0 ? "aeo-geo" : window.location.pathname.indexOf("/services/government-support") === 0 ? "government-support" : window.location.pathname.indexOf("/services/smartplace") === 0 ? "smartplace" : window.location.pathname.indexOf("/services/google-business-profile") === 0 ? "google" : window.location.pathname.indexOf("/services/website-") === 0 ? "website-production" : window.location.pathname.indexOf("/enterprise") === 0 ? "enterprise" : window.location.pathname.indexOf("/services/consulting") === 0 || window.location.pathname.indexOf("/services/marketing-consulting") === 0 ? "consulting" : window.location.pathname === "/services" || window.location.pathname.endsWith("/services/index.html") ? "services" : window.location.pathname.indexOf("/marketing-types/local-store") === 0 ? "local-store" : window.location.pathname.indexOf("/marketing-types/online-sales") === 0 ? "online-sales" : window.location.pathname.indexOf("/marketing-types/consulting-contract") === 0 ? "consulting-contract" : window.location.pathname.indexOf("/marketing-diagnosis") === 0 ? "marketing-diagnosis" : window.location.pathname.indexOf("/cases") === 0 ? "cases" : window.location.pathname.indexOf("/about") === 0 ? "consulting" : "diagnosis";
   var ctaPageName = (window.location.pathname.replace(/^\//, "").replace(/\.html$/, "").replace(/\/index$/, "").replace(/\//g, "-") || "home");
   var ctaIndex = 0;
   document.querySelectorAll("a[href]").forEach(function (link) {
@@ -51,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       else if (/AEO|GEO|AI 검색/.test(label)) type = "aeo-geo";
       else if (/광고/.test(label)) type = "ads";
       else if (/지원사업|희망리턴/.test(label)) type = "government-support";
-      else if (/홈페이지|랜딩페이지/.test(label)) type = "website-diagnosis";
+      else if (/홈페이지|랜딩페이지/.test(label)) type = "website-production";
       else if (/스마트플레이스|플레이스/.test(label)) type = "smartplace";
       else type = pageCtaType;
     }
@@ -59,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ctaIndex += 1;
     var source = link.getAttribute("data-cta-location") || ctaPageName + "-cta-" + String(ctaIndex).padStart(2, "0");
     var targetHref = window.ContactCTA.href(resolvedType, source);
+    if (params.get("plan")) targetHref += "&plan=" + encodeURIComponent(params.get("plan"));
     if (window.location.pathname === "/contact" || window.location.pathname.endsWith("/contact.html")) targetHref += "#contact-form";
     link.setAttribute("href", targetHref);
     link.setAttribute("data-contact-cta", resolvedType);
@@ -85,7 +87,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "/services/content-sns": ".cs-final-actions",
     "/services/ads": ".ad-final-actions",
     "/services/government-support": ".gs-final-actions",
-    "/services/website-diagnosis": ".wd-final-actions",
+    "/services/website-production": ".wd-final-actions",
+    "/services/website-production": ".wp-final .wp-actions",
     "/services/consulting": ".mc-final-actions",
     "/services/aeo-geo": ".ai-final-actions",
     "/enterprise": ".en-final .en-actions",
@@ -214,29 +217,48 @@ document.addEventListener("DOMContentLoaded", function () {
     var requestedService = contactParams.get("service");
     var requestedType = contactParams.get("type");
     var requestedMessage = contactParams.get("message");
-    var legacyServiceTypes = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", enterprise: "enterprise", government: "government-support", "government-support": "government-support", website: "website-diagnosis", "website-diagnosis": "website-diagnosis", "marketing-diagnosis": "marketing-diagnosis", "local-store": "local-store", "online-sales": "online-sales", "consulting-contract": "consulting-contract", cases: "cases", ads: "ads", "content-sns": "content-sns", consulting: "consulting", services: "services" };
+    var legacyServiceTypes = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", enterprise: "enterprise", government: "government-support", "government-support": "government-support", website: "website-production", "website-diagnosis": "website-production", "website-production": "website-production", "marketing-diagnosis": "marketing-diagnosis", "local-store": "local-store", "online-sales": "online-sales", "consulting-contract": "consulting-contract", cases: "cases", ads: "ads", "content-sns": "content-sns", consulting: "consulting", services: "services" };
     if (requestedType === "government") requestedType = "government-support";
-    if (requestedType === "website") requestedType = "website-diagnosis";
+    if (requestedType === "website" || requestedType === "website-diagnosis") requestedType = "website-production";
     var resolvedContactType = CONTACT_CTA_TYPES[requestedType] ? requestedType : (legacyServiceTypes[requestedService] || "diagnosis");
     var serviceSelect = contactForm.querySelector('select[name="service"]');
     var concernField = contactForm.querySelector('textarea[name="concern"]');
     var ctaTypeField = contactForm.querySelector('input[name="cta_type"]');
     var ctaSourceField = contactForm.querySelector('input[name="cta_source"]');
     var enterpriseFields = document.getElementById("enterpriseFields");
+    var websiteProductionFields = document.getElementById("websiteProductionFields");
+    var websitePlanField = contactForm.querySelector('select[name="websitePlan"]');
     function updateEnterpriseFields() {
       if (!enterpriseFields || !serviceSelect) return;
       var isEnterprise = serviceSelect.value === "enterprise";
       enterpriseFields.hidden = !isEnterprise;
       enterpriseFields.setAttribute("aria-hidden", isEnterprise ? "false" : "true");
     }
+    function updateWebsiteProductionFields() {
+      if (!websiteProductionFields || !serviceSelect) return;
+      var isWebsiteProduction = serviceSelect.value === "website-production";
+      websiteProductionFields.hidden = !isWebsiteProduction;
+      websiteProductionFields.setAttribute("aria-hidden", isWebsiteProduction ? "false" : "true");
+      websiteProductionFields.querySelectorAll("input, select, textarea").forEach(function (field) {
+        field.disabled = !isWebsiteProduction;
+        field.required = isWebsiteProduction && field.getAttribute("data-website-required") === "true";
+      });
+      var companyField = contactForm.querySelector('input[name="bizname"]');
+      var industryField = contactForm.querySelector('select[name="industry"]');
+      if (companyField) companyField.required = isWebsiteProduction;
+      if (industryField) industryField.required = isWebsiteProduction;
+    }
     if (serviceSelect) serviceSelect.value = resolvedContactType;
     if (ctaTypeField) ctaTypeField.value = resolvedContactType;
     if (ctaSourceField) ctaSourceField.value = contactParams.get("source") || "direct";
     if (requestedMessage && concernField && !concernField.value.trim()) concernField.value = requestedMessage;
+    if (websitePlanField && contactParams.get("plan")) websitePlanField.value = contactParams.get("plan");
     updateEnterpriseFields();
+    updateWebsiteProductionFields();
     if (serviceSelect) serviceSelect.addEventListener("change", function () {
       if (ctaTypeField) ctaTypeField.value = serviceSelect.value;
       updateEnterpriseFields();
+      updateWebsiteProductionFields();
     });
   }
 
@@ -276,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
       else if (["local-store", "smartplace", "google"].indexOf(selectedService) !== -1 || ["restaurant", "cafe", "beauty", "clinic", "education", "retail", "fitness"].indexOf(selectedIndustry) !== -1) businessType = "매장 방문형";
       else if (selectedIndustry === "other") businessType = "기타";
 
-      var referenceLinks = [formData.get("website"), formData.get("sns")].filter(Boolean).join("\n");
+      var referenceLinks = [formData.get("website"), formData.get("currentWebsite"), formData.get("referenceWebsites"), formData.get("sns")].filter(Boolean).join("\n");
       var details = [
         "업종: " + (industryLabel ? industryLabel.textContent.trim() : "미입력"),
         "지역: " + String(formData.get("region") || "미입력")
@@ -284,6 +306,17 @@ document.addEventListener("DOMContentLoaded", function () {
       if (formData.get("branchCount")) details.push("운영 지점 수: " + formData.get("branchCount"));
       if (formData.get("managementChannel")) details.push("현재 관리 채널: " + formData.get("managementChannel"));
       if (formData.get("concern")) details.push("문의 내용: " + formData.get("concern"));
+      if (selectedService === "website-production") {
+        details.push("홈페이지 보유 여부: " + String(formData.get("websiteStatus") || "미입력"));
+        details.push("현재 홈페이지: " + String(formData.get("currentWebsite") || "미입력"));
+        details.push("제작 목적: " + String(formData.get("productionGoal") || "미입력"));
+        details.push("희망 플랜: " + String(formData.get("websitePlan") || "undecided"));
+        details.push("예상 예산: " + String(formData.get("websiteBudget") || "미입력"));
+        details.push("원하는 기능: " + String(formData.get("desiredFeatures") || "미입력"));
+        details.push("제작 희망일: " + String(formData.get("desiredLaunchDate") || "미입력"));
+        details.push("참고 홈페이지: " + String(formData.get("referenceWebsites") || "미입력"));
+        details.push("보유 자료: " + String(formData.get("availableAssets") || "미입력"));
+      }
 
       if (String(formData.get("website_hidden") || "").trim()) {
         return;
@@ -300,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function () {
         businessType: businessType,
         interestedServices: serviceLabel ? serviceLabel.textContent.trim() : selectedService,
         currentProblems: String(formData.get("concern") || ""),
-        budgetRange: String(formData.get("budget") || "아직 미정"),
+        budgetRange: String(formData.get("websiteBudget") || formData.get("budget") || "아직 미정"),
         preferredContact: String(formData.get("preferredContact") || "먼저 자료 검토 후 연락 희망"),
         message: details.join("\n"),
         privacyAgree: formData.get("privacyAgree") === "true",
