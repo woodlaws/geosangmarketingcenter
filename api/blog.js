@@ -21,22 +21,22 @@ const SERVICE_LINKS = {
 
 const INLINE_BLOG_IMAGES = {
   "experience-marketing-recruitment-checklist": [
-    { afterHeading: "체험단 성과는 모집 전에 결정됩니다", src: "/images/insights/photo-consulting-meeting.jpg", alt: "체험단 캠페인의 목표 고객과 운영 조건을 논의하는 마케팅 회의", caption: "모집 인원보다 목표 고객과 남겨야 할 콘텐츠를 먼저 정해야 합니다." },
-    { afterHeading: "모집 공고에 반드시 들어갈 7가지", src: "/images/insights/photo-social-content.jpg", alt: "스마트폰 콘텐츠를 확인하며 체험단 모집 조건을 정리하는 담당자", caption: "제공 내역, 일정, 필수 고지와 콘텐츠 기준을 구체적으로 안내합니다." },
-    { afterHeading: "지원자는 팔로워 수만으로 고르지 않습니다", src: "/images/insights/photo-team-laptop.jpg", alt: "마케팅팀이 여러 체험단 지원자의 콘텐츠 품질을 검토하는 모습", caption: "기존 콘텐츠의 주제 적합성, 사진과 설명의 품질, 활동 지속성을 함께 봅니다." },
-    { afterHeading: "선정 후에는 운영표 한 장이 필요합니다", src: "/images/insights/photo-consulting-documents.jpg", alt: "선정된 체험단의 일정과 제출 현황을 문서로 관리하는 모습", caption: "선정, 안내, 방문, 발행, 검수와 활용 동의 상태를 한눈에 관리합니다." },
+    { afterHeading: "체험단 성과는 모집 전에 결정됩니다", src: "/images/blog/experience-marketing-recruitment-checklist/1.webp", alt: "한국 카페 대표와 한국인 마케터가 체험단 캠페인 목표를 논의하는 모습", caption: "모집 인원보다 목표 고객과 남겨야 할 콘텐츠를 먼저 정해야 합니다." },
+    { afterHeading: "모집 공고에 반드시 들어갈 7가지", src: "/images/blog/experience-marketing-recruitment-checklist/2.webp", alt: "한국인 마케터가 국내 체험단 모집 공고와 일정을 작성하는 모습", caption: "제공 내역, 일정, 필수 고지와 콘텐츠 기준을 구체적으로 안내합니다." },
+    { afterHeading: "지원자는 팔로워 수만으로 고르지 않습니다", src: "/images/blog/experience-marketing-recruitment-checklist/3.webp", alt: "한국인 마케팅팀이 체험단 지원자의 콘텐츠를 검토하는 모습", caption: "기존 콘텐츠의 주제 적합성, 사진과 설명의 품질, 활동 지속성을 함께 봅니다." },
+    { afterHeading: "선정 후에는 운영표 한 장이 필요합니다", src: "/images/blog/experience-marketing-recruitment-checklist/4.webp", alt: "한국인 실무자들이 체험단 방문과 발행 일정을 관리하는 모습", caption: "선정, 안내, 방문, 발행, 검수와 활용 동의 상태를 한눈에 관리합니다." },
   ],
   "experience-marketing-review-quality-guide": [
-    { afterHeading: "좋은 후기는 강요가 아니라 경험 설계에서 나옵니다", src: "/images/insights/photo-local-cafe-interior.jpg", alt: "고객이 자연스럽게 사진을 남기기 좋은 실제 매장 공간", caption: "촬영하기 좋은 환경과 분명한 대표 경험이 구체적인 후기의 출발점입니다." },
-    { afterHeading: "체험 가이드는 답안지가 아니어야 합니다", src: "/images/insights/photo-team-office.jpg", alt: "체험단 운영 가이드와 콘텐츠 방향을 함께 검토하는 실무자", caption: "표현을 통제하기보다 확인할 정보와 솔직한 작성 원칙을 분명히 안내합니다." },
-    { afterHeading: "사진은 고객의 다음 행동을 도와야 합니다", src: "/images/insights/photo-ecommerce-devices.jpg", alt: "노트북과 스마트폰에서 사진과 상세 정보를 함께 확인하는 소비자", caption: "대표 장면, 이용 과정과 실제 크기를 이해할 수 있는 사진이 구매 판단을 돕습니다." },
-    { afterHeading: "발행 후에는 2차 활용 권한을 확인합니다", src: "/images/insights/photo-consulting-documents.jpg", alt: "체험단 콘텐츠의 활용 범위와 동의 내용을 문서로 확인하는 담당자", caption: "홈페이지와 SNS 재활용 전에는 저작권, 초상권과 활용 기간을 확인해야 합니다." },
+    { afterHeading: "좋은 후기는 강요가 아니라 경험 설계에서 나옵니다", src: "/images/blog/experience-marketing-review-quality-guide/1.webp", alt: "한국 카페 대표가 한국인 체험단에게 대표 디저트를 설명하는 모습", caption: "촬영하기 좋은 환경과 분명한 대표 경험이 구체적인 후기의 출발점입니다." },
+    { afterHeading: "체험 가이드는 답안지가 아니어야 합니다", src: "/images/blog/experience-marketing-review-quality-guide/2.webp", alt: "한국인 체험단이 국내 카페에서 음료와 디저트를 직접 촬영하는 모습", caption: "표현을 통제하기보다 확인할 정보와 솔직한 작성 원칙을 분명히 안내합니다." },
+    { afterHeading: "사진은 고객의 다음 행동을 도와야 합니다", src: "/images/blog/experience-marketing-review-quality-guide/3.webp", alt: "한국 소상공인과 마케터가 후기의 제품 정보를 검수하는 모습", caption: "대표 장면, 이용 과정과 실제 크기를 이해할 수 있는 사진이 구매 판단을 돕습니다." },
+    { afterHeading: "발행 후에는 2차 활용 권한을 확인합니다", src: "/images/blog/experience-marketing-review-quality-guide/4.webp", alt: "한국인 마케팅팀이 체험단 사진과 후기 자료를 정리하는 모습", caption: "홈페이지와 SNS 재활용 전에는 저작권, 초상권과 활용 기간을 확인해야 합니다." },
   ],
   "experience-marketing-roi-measurement": [
-    { afterHeading: "체험단도 비용 대비 성과를 계산해야 합니다", src: "/images/insights/photo-budget-calculator.jpg", alt: "체험단 캠페인 비용과 성과를 계산하는 마케팅 담당자", caption: "제품 원가, 운영비와 콘텐츠 활용 가치를 함께 계산해야 실제 효율이 보입니다." },
-    { afterHeading: "조회 수보다 고객 행동을 기록합니다", src: "/images/insights/photo-finance-planning.jpg", alt: "마케팅 보고서에서 유입과 문의 및 구매 데이터를 확인하는 회의", caption: "조회 수만 보지 말고 검색, 저장, 문의, 예약과 구매 행동을 구분해 기록합니다." },
-    { afterHeading: "측정 가능한 장치를 캠페인 전에 심습니다", src: "/images/insights/photo-ecommerce-devices.jpg", alt: "스마트폰과 노트북에서 캠페인 링크와 전환 경로를 점검하는 모습", caption: "전용 링크, 쿠폰 코드와 유입 질문을 미리 준비하면 성과를 추적할 수 있습니다." },
-    { afterHeading: "성과가 좋은 콘텐츠는 검색 자산으로 확장합니다", src: "/images/insights/photo-team-office.jpg", alt: "성과가 좋은 체험단 콘텐츠를 후속 마케팅 자산으로 확장하는 팀", caption: "우수 콘텐츠를 홈페이지, 상세페이지, SNS와 광고 소재로 연결해 수명을 늘립니다." },
+    { afterHeading: "체험단도 비용 대비 성과를 계산해야 합니다", src: "/images/blog/experience-marketing-roi-measurement/1.webp", alt: "한국 식당 대표와 한국인 마케터가 체험단 비용을 계산하는 모습", caption: "제품 원가, 운영비와 콘텐츠 활용 가치를 함께 계산해야 실제 효율이 보입니다." },
+    { afterHeading: "조회 수보다 고객 행동을 기록합니다", src: "/images/blog/experience-marketing-roi-measurement/2.webp", alt: "한국인 마케터가 체험단 유입과 예약 성과를 확인하는 모습", caption: "조회 수만 보지 말고 검색, 저장, 문의, 예약과 구매 행동을 구분해 기록합니다." },
+    { afterHeading: "측정 가능한 장치를 캠페인 전에 심습니다", src: "/images/blog/experience-marketing-roi-measurement/3.webp", alt: "한국 카페 대표와 마케터가 QR과 예약 경로를 준비하는 모습", caption: "전용 링크, 쿠폰 코드와 유입 질문을 미리 준비하면 성과를 추적할 수 있습니다." },
+    { afterHeading: "성과가 좋은 콘텐츠는 검색 자산으로 확장합니다", src: "/images/blog/experience-marketing-roi-measurement/4.webp", alt: "한국인 마케팅팀이 체험단 성과 보고서를 발표하는 모습", caption: "우수 콘텐츠를 홈페이지, 상세페이지, SNS와 광고 소재로 연결해 수명을 늘립니다." },
   ],
   "restaurant-review-response-repeat-visit": [
     { afterHeading: "좋은 리뷰는 신규 고객의 불안을 줄입니다", src: "/images/blog/restaurant-review-response-repeat-visit/customer-review.webp", alt: "식당에서 음식 사진과 만족한 경험을 스마트폰으로 기록하는 고객들", caption: "구체적인 메뉴와 이용 상황이 담긴 후기는 처음 방문하는 고객의 판단을 돕습니다." },
@@ -288,9 +288,9 @@ function mapPost(page) {
   const ctaLink = rawCta && (rawCta.startsWith("/") || rawCta.startsWith(SITE_URL)) ? rawCta : "/contact?type=consulting&source=blog";
   const slug = richText(p["Slug"]);
   const editorialCovers = {
-    "experience-marketing-recruitment-checklist": "/images/insights/photo-local-business-owners.jpg",
-    "experience-marketing-review-quality-guide": "/images/insights/photo-social-content.jpg",
-    "experience-marketing-roi-measurement": "/images/insights/photo-budget-review.jpg",
+    "experience-marketing-recruitment-checklist": "/images/blog/experience-marketing-recruitment-checklist/cover.webp",
+    "experience-marketing-review-quality-guide": "/images/blog/experience-marketing-review-quality-guide/cover.webp",
+    "experience-marketing-roi-measurement": "/images/blog/experience-marketing-roi-measurement/cover.webp",
     "dental-marketing-channel-priority": "/images/blog/dental-marketing-channel-priority/cover.webp",
     "hospital-ads-no-new-patients": "/images/blog/hospital-ads-no-new-patients/cover.webp",
     "dental-website-no-consultation": "/images/blog/dental-website-no-consultation/cover.webp",
