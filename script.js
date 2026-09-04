@@ -33,6 +33,43 @@ window.ContactCTA = Object.freeze({
 
 document.addEventListener("DOMContentLoaded", function () {
 
+  /* ---------- 공통 푸터 회사소개서 ---------- */
+  var COMPANY_PROFILE_URL = "https://drive.google.com/file/d/14zJVOlvu8t02lqIUtuMJvcoAgPp3DQZI/view";
+
+  function addCompanyProfileToFooters() {
+    document.querySelectorAll("footer.site-footer").forEach(function (footer) {
+      if (footer.querySelector("[data-company-profile-link]")) return;
+
+      var link = document.createElement("a");
+      link.href = COMPANY_PROFILE_URL;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.className = "footer-company-profile-link";
+      link.setAttribute("data-company-profile-link", "");
+      link.setAttribute("aria-label", "거상마케팅센터 회사소개서 PDF 새 탭에서 보기");
+      link.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg><span>회사소개서</span>';
+
+      var columns = Array.prototype.slice.call(footer.querySelectorAll(".footer-col"));
+      var targetColumn = columns.find(function (column) {
+        var title = column.querySelector(".fc-title");
+        return title && /회사|바로가기/.test(title.textContent.trim());
+      });
+
+      if (targetColumn) {
+        targetColumn.appendChild(link);
+        return;
+      }
+
+      var footerCopy = footer.querySelector(".footer-copy");
+      if (footerCopy) {
+        footerCopy.appendChild(document.createTextNode(" · "));
+        footerCopy.appendChild(link);
+      }
+    });
+  }
+
+  addCompanyProfileToFooters();
+
   /* ---------- 공통 상담 CTA ---------- */
   var legacyCtaServices = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", ads: "ads", enterprise: "enterprise", government: "government-support", "government-support": "government-support", website: "website-production", "website-diagnosis": "website-production", "website-production": "website-production", "marketing-diagnosis": "marketing-diagnosis", "local-store": "local-store", "online-sales": "online-sales", "consulting-contract": "consulting-contract", cases: "cases", consulting: "consulting", services: "services", "content-sns": "content-sns" };
   var pageCtaType = window.location.pathname.indexOf("/services/ads") === 0 ? "ads" : window.location.pathname.indexOf("/services/content-sns") === 0 ? "content-sns" : window.location.pathname.indexOf("/services/aeo-geo") === 0 ? "aeo-geo" : window.location.pathname.indexOf("/services/government-support") === 0 ? "government-support" : window.location.pathname.indexOf("/services/smartplace") === 0 ? "smartplace" : window.location.pathname.indexOf("/services/google-business-profile") === 0 ? "google" : window.location.pathname.indexOf("/services/website-") === 0 ? "website-production" : window.location.pathname.indexOf("/enterprise") === 0 ? "enterprise" : window.location.pathname.indexOf("/services/consulting") === 0 || window.location.pathname.indexOf("/services/marketing-consulting") === 0 ? "consulting" : window.location.pathname === "/services" || window.location.pathname.endsWith("/services/index.html") ? "services" : window.location.pathname.indexOf("/marketing-types/local-store") === 0 ? "local-store" : window.location.pathname.indexOf("/marketing-types/online-sales") === 0 ? "online-sales" : window.location.pathname.indexOf("/marketing-types/consulting-contract") === 0 ? "consulting-contract" : window.location.pathname.indexOf("/marketing-diagnosis") === 0 ? "marketing-diagnosis" : window.location.pathname.indexOf("/cases") === 0 ? "cases" : window.location.pathname.indexOf("/about") === 0 ? "consulting" : "diagnosis";
