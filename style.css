@@ -2270,6 +2270,143 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .kakao-floating .kakao-wordmark { width: 27px; height: 27px; }
 }
 
+/* Shared SNS quick links */
+.social-floating-menu {
+  position: fixed;
+  z-index: 90;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.social-floating-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 11px;
+}
+.social-floating-button,
+.social-floating-toggle {
+  position: relative;
+  display: grid;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .78);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(11, 32, 63, .2);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, opacity .18s ease;
+}
+.social-floating-button:hover,
+.social-floating-button:focus-visible,
+.social-floating-toggle:hover,
+.social-floating-toggle:focus-visible {
+  z-index: 2;
+  transform: scale(1.05);
+  outline: 3px solid rgba(38, 96, 221, .24);
+  outline-offset: 3px;
+  box-shadow: 0 12px 28px rgba(11, 32, 63, .29);
+}
+.social-floating-button svg,
+.social-floating-toggle svg {
+  width: 25px;
+  height: 25px;
+}
+.social-floating--youtube { background: #ff0033; }
+.social-floating--naver-blog { background: #03c75a; }
+.social-floating--instagram { background: radial-gradient(circle at 30% 105%, #ffd600 0 18%, #ff7a00 32%, #ff0169 53%, #d300c5 72%, #7638fa 100%); }
+.social-floating--tiktok { background: #090909; }
+.social-floating--kakao { color: #321f1f; background: #fee500; }
+.social-floating--top {
+  display: none;
+  color: #fff;
+  background: #0b2958;
+}
+.social-floating--top.is-visible {
+  display: grid;
+}
+.social-floating-tooltip {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 11px);
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: #0a244c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(5px, -50%);
+  transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  box-shadow: 0 6px 16px rgba(4, 22, 50, .2);
+}
+.social-floating-button:hover .social-floating-tooltip,
+.social-floating-button:focus-visible .social-floating-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, -50%);
+}
+.social-floating-toggle { display: none; }
+
+@media (max-width: 700px) {
+  .social-floating-menu {
+    right: 14px;
+    top: auto;
+    bottom: 144px;
+    transform: none;
+  }
+  .social-floating-toggle {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1px;
+    border: 0;
+    background: #1958c9;
+    color: #fff;
+  }
+  .social-floating-toggle svg { width: 20px; height: 20px; }
+  .social-floating-toggle span { font-size: 9px; font-weight: 900; line-height: 1; }
+  .social-floating-list {
+    position: absolute;
+    right: 0;
+    bottom: 57px;
+    gap: 9px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+  }
+  .social-floating-menu.is-open .social-floating-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .social-floating-button { width: 46px; height: 46px; }
+  .social-floating-button svg { width: 23px; height: 23px; }
+  .social-floating-tooltip,
+  .social-floating--top { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-floating-button,
+  .social-floating-toggle,
+  .social-floating-list,
+  .social-floating-tooltip { transition: none; }
+}
+
 /* Header logo subtitle: keep the English line within the Korean wordmark width */
 .brand-text {
   display: flex;

@@ -143,6 +143,91 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  /* ---------- 공통 SNS 플로팅 메뉴 ---------- */
+  var socialLinks = [
+    { platform: "youtube", label: "유튜브", url: "https://www.youtube.com/@geosang.bruce" },
+    { platform: "naver-blog", eventPlatform: "naver_blog", label: "네이버 블로그", url: "https://blog.naver.com/geosang.bruce" },
+    { platform: "instagram", label: "인스타그램", url: "https://www.instagram.com/geosang.bruce/" },
+    { platform: "tiktok", label: "틱톡", url: "https://www.tiktok.com/@geosang.bruce" },
+    { platform: "kakao", label: "카카오톡 상담", url: "https://pf.kakao.com/_hxlxaQG" }
+  ];
+  var socialIcons = {
+    youtube: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.9 2.9 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.9 2.9 0 0 0-2 2A30.4 30.4 0 0 0 2 12a30.4 30.4 0 0 0 .4 4.8 2.9 2.9 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.9 2.9 0 0 0 2-2A30.4 30.4 0 0 0 22 12a30.4 30.4 0 0 0-.4-4.8ZM10 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>',
+    "naver-blog": '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.5 4.5h4.2l4.7 7.3V4.5h4.1v15h-4.2l-4.7-7.3v7.3H5.5v-15Z"/></svg>',
+    instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="5.1" fill="none" stroke="currentColor" stroke-width="2.1"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="2.1"/><circle cx="17.5" cy="6.8" r="1.25" fill="currentColor"/></svg>',
+    tiktok: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25f4ee" d="M14.2 3h3c.2 1.7 1.2 3.2 2.8 4v3a8 8 0 0 1-2.8-1v6.4a6 6 0 1 1-5.1-5.9v3.1a3 3 0 1 0 2.1 2.8V3Z" transform="translate(-.7 .4)"/><path fill="#fe2c55" d="M14.2 3h3c.2 1.7 1.2 3.2 2.8 4v3a8 8 0 0 1-2.8-1v6.4a6 6 0 1 1-5.1-5.9v3.1a3 3 0 1 0 2.1 2.8V3Z" transform="translate(.7 -.4)"/><path fill="#fff" d="M14.2 3h3c.2 1.7 1.2 3.2 2.8 4v3a8 8 0 0 1-2.8-1v6.4a6 6 0 1 1-5.1-5.9v3.1a3 3 0 1 0 2.1 2.8V3Z"/></svg>',
+    kakao: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.5 2 10.8c0 2.8 1.9 5.3 4.8 6.6l-1.1 3.9c-.1.4.3.7.6.5l4.7-3.1h1c5.5 0 10-3.5 10-7.9S17.5 3 12 3Z"/></svg>',
+    top: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="m6 10 6-6 6 6M12 4v16"/></svg>',
+    toggle: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="12" r="2" fill="currentColor"/><circle cx="18" cy="6" r="2" fill="currentColor"/><circle cx="18" cy="18" r="2" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="2" d="m7.8 11 8.3-4m-8.3 6 8.3 4"/></svg>'
+  };
+
+  function createSocialFloatingMenu() {
+    if (document.querySelector("[data-social-floating-menu]")) return;
+    var menu = document.createElement("aside");
+    menu.className = "social-floating-menu";
+    menu.setAttribute("data-social-floating-menu", "");
+    menu.setAttribute("aria-label", "거상마케팅센터 SNS 바로가기");
+    var list = document.createElement("div");
+    list.className = "social-floating-list";
+    list.id = "socialFloatingList";
+
+    socialLinks.forEach(function (item) {
+      var link = document.createElement("a");
+      link.className = "social-floating-button social-floating--" + item.platform;
+      link.href = item.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.setAttribute("aria-label", item.label + " 새 탭에서 열기");
+      link.setAttribute("data-social-platform", item.eventPlatform || item.platform);
+      link.innerHTML = socialIcons[item.platform] + '<span class="social-floating-tooltip" aria-hidden="true">' + item.label + '</span>';
+      link.addEventListener("click", function () {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "social_link_click", { platform: item.eventPlatform || item.platform, location: "floating_menu" });
+        }
+      });
+      list.appendChild(link);
+    });
+
+    var topButton = document.createElement("button");
+    topButton.type = "button";
+    topButton.className = "social-floating-button social-floating--top";
+    topButton.setAttribute("aria-label", "맨 위로 이동");
+    topButton.innerHTML = socialIcons.top + '<span class="social-floating-tooltip" aria-hidden="true">맨 위로</span>';
+    topButton.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    list.appendChild(topButton);
+
+    var toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "social-floating-toggle";
+    toggle.setAttribute("aria-label", "SNS 바로가기 메뉴 열기");
+    toggle.setAttribute("aria-controls", list.id);
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.innerHTML = socialIcons.toggle + "<span>SNS</span>";
+
+    function setSocialMenuOpen(open) {
+      menu.classList.toggle("is-open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "SNS 바로가기 메뉴 닫기" : "SNS 바로가기 메뉴 열기");
+    }
+
+    toggle.addEventListener("click", function () { setSocialMenuOpen(!menu.classList.contains("is-open")); });
+    document.addEventListener("click", function (event) {
+      if (menu.classList.contains("is-open") && event.target instanceof Node && !menu.contains(event.target)) setSocialMenuOpen(false);
+    });
+    document.addEventListener("keydown", function (event) { if (event.key === "Escape") setSocialMenuOpen(false); });
+    window.addEventListener("scroll", function () {
+      topButton.classList.toggle("is-visible", window.scrollY >= 400);
+      if (menu.classList.contains("is-open")) setSocialMenuOpen(false);
+    }, { passive: true });
+
+    menu.appendChild(list);
+    menu.appendChild(toggle);
+    document.body.appendChild(menu);
+    topButton.classList.toggle("is-visible", window.scrollY >= 400);
+  }
+
+  createSocialFloatingMenu();
+
   /* ---------- 모바일 메뉴 열기/닫기 ---------- */
   var navToggle = document.getElementById("navToggle");
   var navMobile = document.getElementById("navMobile");
