@@ -129,10 +129,6 @@ document.addEventListener("DOMContentLoaded", function () {
     kakaoMobileNav.appendChild(createKakaoLink("카카오톡 상담", "mobile-menu", "nav-kakao-link"));
   }
 
-  if (!document.querySelector(".kakao-floating")) {
-    document.body.appendChild(createKakaoLink("카톡 상담", "floating", "kakao-floating"));
-  }
-
   document.addEventListener("click", function (event) {
     var target = event.target instanceof Element ? event.target.closest('[data-cta="kakao-chat"]') : null;
     if (!target || typeof window.gtag !== "function") return;

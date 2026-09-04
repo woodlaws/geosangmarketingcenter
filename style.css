@@ -2227,47 +2227,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   color: #3c1e1e !important;
   font-weight: 900 !important;
 }
-.kakao-floating {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  z-index: 8500;
-  display: inline-flex;
-  min-height: 48px;
-  align-items: center;
-  gap: 8px;
-  padding: 0 15px 0 10px;
-  border: 1px solid #e1c600;
-  border-radius: 999px;
-  background: #fee500;
-  color: #302519;
-  font-size: 13px;
-  font-weight: 950;
-  text-decoration: none;
-  box-shadow: 0 12px 30px rgba(44, 37, 12, .22);
-  transition: transform .2s ease, box-shadow .2s ease;
-}
-.kakao-floating:hover,
-.kakao-floating:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 17px 34px rgba(44, 37, 12, .28);
-  outline: 3px solid rgba(254, 229, 0, .35);
-  outline-offset: 3px;
-}
-.kakao-floating .kakao-wordmark {
-  display: grid;
-  width: 30px;
-  height: 30px;
-  place-items: center;
-  border-radius: 50%;
-  background: #3c1e1e;
-  color: #fee500;
-  font-size: 11px;
-}
 @media (max-width: 600px) {
   .btn-kakao { width: 100%; min-height: 50px; }
-  .kakao-floating { right: 14px; bottom: 84px; min-height: 44px; padding-right: 13px; }
-  .kakao-floating .kakao-wordmark { width: 27px; height: 27px; }
 }
 
 /* Shared SNS quick links */
@@ -2360,7 +2321,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .social-floating-menu {
     right: 14px;
     top: auto;
-    bottom: 144px;
+    bottom: 84px;
     transform: none;
   }
   .social-floating-toggle {
@@ -2398,6 +2359,12 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .social-floating-button svg { width: 23px; height: 23px; }
   .social-floating-tooltip,
   .social-floating--top { display: none !important; }
+}
+
+@media (max-width: 375px) {
+  .social-floating-menu { right: 0; }
+  .social-floating-toggle,
+  .social-floating-button { width: 44px; height: 44px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
