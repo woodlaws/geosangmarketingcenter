@@ -288,8 +288,8 @@ function mapPost(page) {
     "restaurant-signature-menu-marketing": "/images/blog/restaurant-signature-menu-marketing/cover-v2.webp",
     "restaurant-review-response-repeat-visit": "/images/blog/restaurant-review-response-repeat-visit/cover.webp",
     "restaurant-naver-place-photo-guide": "/images/insights/photo-local-cafe-interior.jpg",
-    "restaurant-experience-group-roi": "/images/blog/restaurant-review-response-repeat-visit/cover.webp",
-    "restaurant-group-booking-marketing": "/images/blog/restaurant-signature-menu-marketing/cover-v2.webp",
+    "restaurant-experience-group-roi": "/images/blog/restaurant-experience-group-roi/cover.webp",
+    "restaurant-group-booking-marketing": "/images/blog/restaurant-group-booking-marketing/cover.webp",
     ...MIGRATED_INSIGHT_COVERS,
   };
   return {
