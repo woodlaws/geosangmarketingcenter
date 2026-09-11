@@ -31,7 +31,12 @@ global.fetch = async (url) => ({
     ? { data_sources: [{ id: "test-data-source" }] }
     : url.includes("/data_sources/")
       ? { results: [page], has_more: false }
-      : { results: [{ type: "heading_2", heading_2: { rich_text: [{ plain_text: "점검 항목" }] } }, { type: "paragraph", paragraph: { rich_text: [{ plain_text: "본문 문단입니다." }] } }], has_more: false },
+      : url.includes("/blocks/table-1/children")
+        ? { results: [
+          { type: "table_row", table_row: { cells: [[{ plain_text: "채널" }], [{ plain_text: "확인 항목" }]] } },
+          { type: "table_row", table_row: { cells: [[{ plain_text: "블로그" }], [{ plain_text: '<script>alert(1)</script>', href: 'javascript:alert(1)' }]] } },
+        ], has_more: false }
+        : { results: [{ type: "heading_2", heading_2: { rich_text: [{ plain_text: "점검 항목" }] } }, { type: "paragraph", paragraph: { rich_text: [{ plain_text: "본문 문단입니다." }] } }, { id: "table-1", type: "table", has_children: true, table: { has_column_header: true } }], has_more: false },
 });
 
 const handler = require("../api/blog.js");
@@ -62,6 +67,11 @@ test("Notion CMS list, detail and RSS render public posts", async () => {
   assert.match(detail.body, /BlogPosting/);
   assert.match(detail.body, /점검 항목/);
   assert.match(detail.body, /스마트플레이스 상담하기/);
+  assert.match(detail.body, /<th scope="col">채널<\/th>/);
+  assert.match(detail.body, /<td>블로그<\/td>/);
+  assert.match(detail.body, /&lt;script&gt;alert\(1\)&lt;\/script&gt;/);
+  assert.doesNotMatch(detail.body, /href="javascript:/);
+  assert.match(detail.body, /class="blog-table-scroll"/);
   assert.doesNotMatch(detail.body, /RELATED POSTS|같은 주제의 글|blog-related/);
 
   const rss = response();

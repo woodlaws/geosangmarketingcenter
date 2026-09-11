@@ -288,6 +288,9 @@ function mapPost(page) {
   const ctaLink = rawCta && (rawCta.startsWith("/") || rawCta.startsWith(SITE_URL)) ? rawCta : "/contact?type=consulting&source=blog";
   const slug = richText(p["Slug"]);
   const editorialCovers = {
+    "experience-marketing-blog-vs-instagram": "/images/blog/experience-marketing-blog-vs-instagram/cover.webp",
+    "experience-marketing-local-keyword-guide": "/images/blog/experience-marketing-local-keyword-guide/cover.webp",
+    "experience-marketing-content-reuse": "/images/blog/experience-marketing-content-reuse/cover.webp",
     "experience-marketing-recruitment-checklist": "/images/blog/experience-marketing-recruitment-checklist/cover.webp",
     "experience-marketing-review-quality-guide": "/images/blog/experience-marketing-review-quality-guide/cover.webp",
     "experience-marketing-roi-measurement": "/images/blog/experience-marketing-roi-measurement/cover.webp",
@@ -392,6 +395,9 @@ async function fetchBlocks(blockId) {
       blocks.push(...data.results);
       cursor = data.has_more ? data.next_cursor : null;
     } while (cursor);
+    await Promise.all(blocks.filter((block) => block.type === "table" && block.has_children).map(async (block) => {
+      block.children = await fetchBlocks(block.id);
+    }));
     return blocks;
   });
 }
@@ -450,6 +456,21 @@ function renderBlocks(blocks, slug = "") {
     }
     else if (type === "heading_3") output.push(`<h3>${blockText(block)}</h3>`);
     else if (type === "quote") output.push(`<blockquote>${blockText(block)}</blockquote>`);
+    else if (type === "table") {
+      const rows = (block.children || []).filter((row) => row.type === "table_row");
+      const html = rows.map((row, rowIndex) => {
+        const cells = (row.table_row?.cells || []).map((cell, columnIndex) => {
+          const headerRow = rowIndex === 0 && block.table?.has_column_header;
+          const headerColumn = columnIndex === 0 && block.table?.has_row_header;
+          const tag = headerRow || headerColumn ? "th" : "td";
+          const scope = headerRow ? ' scope="col"' : headerColumn ? ' scope="row"' : "";
+          const text = blockText({ type: "paragraph", paragraph: { rich_text: cell } });
+          return `<${tag}${scope}>${text}</${tag}>`;
+        }).join("");
+        return `<tr>${cells}</tr>`;
+      }).join("");
+      if (html) output.push(`<div class="blog-table-scroll" tabindex="0" role="region" aria-label="가로로 스크롤할 수 있는 비교표"><table>${html}</table></div>`);
+    }
     else if (type === "image") {
       const image = block.image?.file?.url || block.image?.external?.url;
       const caption = (block.image?.caption || []).map((item) => item.plain_text).join("");
