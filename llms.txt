@@ -15,7 +15,7 @@
 - 광고 운영: https://geosangmarketing.com/services/ads
 - 콘텐츠·SNS 운영: https://geosangmarketing.com/services/content-sns
 - 정부지원사업 마케팅: https://geosangmarketing.com/services/government-support
-- 홈페이지·랜딩페이지 진단: https://geosangmarketing.com/services/website-diagnosis
+- AI 홈페이지 제작: https://geosangmarketing.com/services/website-production
 - 마케팅 컨설팅: https://geosangmarketing.com/services/consulting
 - 업종별 마케팅 진단: https://geosangmarketing.com/marketing-diagnosis
 - 매장 방문형: https://geosangmarketing.com/marketing-types/local-store
@@ -23,7 +23,6 @@
 - 상담·계약형: https://geosangmarketing.com/marketing-types/consulting-contract
 - 기업·다점포: https://geosangmarketing.com/enterprise
 - 성공사례: https://geosangmarketing.com/cases
-- 인사이트: https://geosangmarketing.com/insights
 - 블로그: https://geosangmarketing.com/blog — 노션 CMS에서 발행하는 스마트플레이스·AEO/GEO·업종별 마케팅 실전 가이드
 - 상담문의: https://geosangmarketing.com/contact
 

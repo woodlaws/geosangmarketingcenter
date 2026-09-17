@@ -12,6 +12,14 @@
 - Output Directory: 비움
 - `vercel.json`의 `cleanUrls`로 `.html` 없는 주소를 사용합니다.
 
+## 메뉴와 사이트맵
+
+상단 메뉴: 센터 소개 · 서비스 · 업종별 진단 · 기업·다점포 · 성공사례 · 블로그 · 상담문의.
+
+AI 홈페이지 제작은 서비스 하위 메뉴에만 둡니다. PC·모바일의 단독 홈페이지 제작 메뉴와 NEW 배지는 사용하지 않습니다.
+
+전체 주소와 이전 주소 연결 규칙은 [사이트맵 정리](docs/sitemap.md)를 참고하세요.
+
 ## 핵심 경로
 
 | 구분 | URL |
@@ -22,7 +30,6 @@
 | 업종별 진단 | `/marketing-diagnosis` |
 | 기업·다점포 | `/enterprise` |
 | 성공사례 | `/cases` |
-| 인사이트 | `/insights` |
 | 노션 CMS 블로그 | `/blog` |
 | 홈페이지 제작 포트폴리오 | `/services/website-production#portfolio` |
 | 상담문의 | `/contact` |
@@ -35,7 +42,7 @@
 - `/services/ads`
 - `/services/content-sns`
 - `/services/government-support`
-- `/services/website-diagnosis`
+- `/services/website-production`
 - `/services/consulting`
 
 ### 업종별 진단
@@ -55,9 +62,12 @@
 Vercel 영구 리디렉션으로 아래 이전 주소를 새 주소에 연결합니다.
 
 - `/services/marketing-consulting` → `/services/consulting`
-- `/services/website-consulting` → `/services/website-diagnosis`
+- `/services/website-consulting` → `/services/website-production`
+- `/services/website-diagnosis` → `/services/website-production`
 - `/marketing-types/consulting` → `/marketing-types/consulting-contract`
 - `/cases/yetgiwa` → `/cases/oldgiwa`
+- `/insights` → `/blog`
+- `/insights/:slug` → `/blog/:slug`
 
 ## 상담 폼
 
