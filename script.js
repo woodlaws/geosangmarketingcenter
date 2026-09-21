@@ -456,7 +456,18 @@ document.addEventListener("DOMContentLoaded", function () {
         message: details.join("\n"),
         privacyAgree: formData.get("privacyAgree") === "true",
         userAgent: navigator.userAgent,
-        pageUrl: window.location.href
+        pageUrl: window.location.href,
+        websiteStatus: String(formData.get("websiteStatus") || ""),
+        websitePlan: String(formData.get("websitePlan") || ""),
+        productionGoal: String(formData.get("productionGoal") || ""),
+        desiredFeatures: String(formData.get("desiredFeatures") || ""),
+        desiredLaunchDate: String(formData.get("desiredLaunchDate") || ""),
+        referenceWebsites: String(formData.get("referenceWebsites") || ""),
+        availableAssets: String(formData.get("availableAssets") || ""),
+        branchCount: String(formData.get("branchCount") || ""),
+        managementChannel: String(formData.get("managementChannel") || ""),
+        region: String(formData.get("region") || ""),
+        industry: selectedIndustry
       };
 
       if (submitButton) {
@@ -466,6 +477,16 @@ document.addEventListener("DOMContentLoaded", function () {
       setContactStatus("문의 내용을 안전하게 접수하고 있습니다.", "sending");
 
       try {
+        var boardConfig = window.GEOSANG_BOARD || {};
+        if (!boardConfig.functionUrl || !boardConfig.publishableKey) throw new Error("관리자 문의함 연결 설정이 없습니다.");
+        var boardResponse = await fetch(boardConfig.functionUrl + "/inquiries", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "apikey": boardConfig.publishableKey },
+          body: JSON.stringify(payload),
+          keepalive: true
+        });
+        var boardResult = await boardResponse.json().catch(function () { return {}; });
+        if (!boardResponse.ok || boardResult.ok === false) throw new Error(boardResult.error || "관리자 문의함 저장에 실패했습니다.");
         await fetch(endpoint, {
           method: "POST",
           mode: "no-cors",

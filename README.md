@@ -33,6 +33,11 @@ AI 홈페이지 제작은 서비스 하위 메뉴에만 둡니다. PC·모바일
 | 노션 CMS 블로그 | `/blog` |
 | 홈페이지 제작 포트폴리오 | `/services/website-production#portfolio` |
 | 상담문의 | `/contact` |
+| 고객지원 | `/support` |
+| 공지사항 | `/support/notices` |
+| 자주 묻는 질문 | `/support/faq` |
+| 무료 자료실 | `/support/resources` |
+| 게시판 관리자 | `/admin/login` |
 
 ### 서비스
 

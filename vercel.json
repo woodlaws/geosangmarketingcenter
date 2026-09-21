@@ -7,15 +7,25 @@
     { "source": "/services/website-diagnosis", "destination": "/services/website-production", "permanent": true },
     { "source": "/marketing-types/consulting", "destination": "/marketing-types/consulting-contract", "permanent": true },
     { "source": "/cases/yetgiwa", "destination": "/cases/oldgiwa", "permanent": true },
+    { "source": "/support/inquiry", "destination": "/contact?type=consulting&source=support-inquiry", "permanent": false },
     { "source": "/insights", "destination": "/blog", "permanent": true },
     { "source": "/insights/:slug", "destination": "/blog/:slug", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/support/notices/:slug", "destination": "/support/notices/detail.html?slug=:slug" },
+    { "source": "/support/resources/:slug", "destination": "/support/resources/detail.html?slug=:slug" },
     { "source": "/blog/rss.xml", "destination": "/api/blog?mode=rss" },
     { "source": "/blog", "destination": "/api/blog?mode=list" },
     { "source": "/blog/:slug", "destination": "/api/blog?mode=detail&slug=:slug" }
   ],
   "headers": [
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
+    },
     {
       "source": "/rss.xml",
       "headers": [
