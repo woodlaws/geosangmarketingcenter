@@ -18,6 +18,89 @@
       root.innerHTML='<div class="support-breadcrumb"><a href="/">홈</a><span>›</span><a href="/support/'+type+'">'+(isResource?'무료 자료실':'공지사항')+'</a></div><article class="support-article"><header class="support-article-head"><span class="support-card-tag">'+esc(item.category)+'</span><h1>'+esc(item.title)+'</h1><p class="support-article-lead">'+esc(item.excerpt)+'</p><time>'+fmtDate(item.published_at||item.updated_at)+'</time></header><div class="support-article-body">'+esc(item.body)+'</div>'+extras+'<div class="support-article-actions">'+(isResource&&item.attachments.length?'<button class="support-button" type="button" id="openLeadForm">무료 자료 받기</button>':'')+(item.related_service_href?'<a class="support-button secondary" href="'+esc(item.related_service_href)+'">'+esc(item.related_service_label||"관련 서비스 보기")+'</a>':'')+'<a class="support-button secondary" href="/contact?type=consulting&source=support-'+(isResource?'resource':'notice')+'">상담문의</a></div></article>';
       if(isResource&&item.attachments.length)setupLead(item);
     }catch(e){state(root,"게시물을 열 수 없습니다",e.message,true);}}
-  function setupLead(item){var dialog=document.getElementById("leadDialog"),form=document.getElementById("leadForm"),status=document.getElementById("leadStatus"),result=document.getElementById("downloadResult");document.getElementById("openLeadForm").addEventListener("click",function(){dialog.showModal();});document.getElementById("closeLeadForm").addEventListener("click",function(){dialog.close();});dialog.addEventListener("click",function(e){if(e.target===dialog)dialog.close();});form.addEventListener("submit",async function(e){e.preventDefault();var fd=new FormData(form),btn=form.querySelector("button[type=submit]"),key=crypto.randomUUID();btn.disabled=true;status.textContent="신청 정보를 저장하고 있습니다.";try{var data=await api("/resources/"+encodeURIComponent(item.slug)+"/request",{method:"POST",headers:{"Content-Type":"application/json",apikey:cfg.publishableKey,"x-idempotency-key":key},body:JSON.stringify({name:fd.get("name"),email:fd.get("email"),company:fd.get("company"),interestedService:fd.get("interestedService"),privacyAgree:fd.get("privacyAgree")==="on",marketingAgree:fd.get("marketingAgree")==="on",website_hidden:fd.get("website_hidden"),source:"resource-detail",idempotencyKey:key,utmSource:new URLSearchParams(location.search).get("utm_source")||"",utmMedium:new URLSearchParams(location.search).get("utm_medium")||"",utmCampaign:new URLSearchParams(location.search).get("utm_campaign")||""})});status.textContent="";result.hidden=false;result.innerHTML='<strong>'+esc(data.message)+'</strong><div id="downloadLinks"></div><p class="lead-form-note">다운로드 링크는 10분 동안 사용할 수 있습니다.</p><a href="/contact?type=consulting&source=resource-download" class="support-button secondary">우리 업체 무료 진단받기</a>';var links=document.getElementById("downloadLinks");item.attachments.forEach(function(file){var b=document.createElement("button");b.type="button";b.className="support-button";b.textContent=file.original_name+" 다운로드";b.addEventListener("click",async function(){b.disabled=true;try{var out=await api("/downloads",{method:"POST",body:JSON.stringify({token:data.token,attachmentId:file.id})});window.location.assign(out.url);}catch(err){status.textContent=err.message;}finally{b.disabled=false;}});links.appendChild(b);});form.hidden=true;}catch(err){status.textContent=err.message;btn.disabled=false;}});}
+  function setupLead(item){
+    var dialog=document.getElementById("leadDialog");
+    var form=document.getElementById("leadForm");
+    var status=document.getElementById("leadStatus");
+    var result=document.getElementById("downloadResult");
+    var honeypot=form.elements.website_hidden;
+    var openButton=document.getElementById("openLeadForm");
+
+    openButton.addEventListener("click",function(){
+      form.hidden=false;
+      result.hidden=true;
+      result.innerHTML="";
+      status.textContent="";
+      if(honeypot)honeypot.value="";
+      dialog.showModal();
+    });
+    document.getElementById("closeLeadForm").addEventListener("click",function(){dialog.close();});
+    dialog.addEventListener("click",function(e){if(e.target===dialog)dialog.close();});
+
+    form.addEventListener("submit",async function(e){
+      e.preventDefault();
+      var fd=new FormData(form);
+      var btn=form.querySelector("button[type=submit]");
+      var key=crypto.randomUUID();
+      btn.disabled=true;
+      status.textContent="신청 정보를 저장하고 있습니다.";
+
+      try{
+        var data=await api("/resources/"+encodeURIComponent(item.slug)+"/request",{
+          method:"POST",
+          headers:{"Content-Type":"application/json",apikey:cfg.publishableKey,"x-idempotency-key":key},
+          body:JSON.stringify({
+            name:fd.get("name"),email:fd.get("email"),company:fd.get("company"),
+            interestedService:fd.get("interestedService"),privacyAgree:fd.get("privacyAgree")==="on",
+            marketingAgree:fd.get("marketingAgree")==="on",website_hidden:fd.get("website_hidden"),
+            source:"resource-detail",idempotencyKey:key,
+            utmSource:new URLSearchParams(location.search).get("utm_source")||"",
+            utmMedium:new URLSearchParams(location.search).get("utm_medium")||"",
+            utmCampaign:new URLSearchParams(location.search).get("utm_campaign")||""
+          })
+        });
+
+        if(!data||data.ok!==true||data.ignored===true||typeof data.token!=="string"||!data.token.trim()){
+          throw new Error("신청이 완료되지 않았습니다. 입력 내용을 확인한 뒤 다시 시도해 주세요.");
+        }
+
+        status.textContent="";
+        result.hidden=false;
+        result.innerHTML='<strong>'+esc(data.message||"신청이 완료되었습니다. 아래 버튼으로 자료를 받아보세요.")+'</strong><div id="downloadLinks"></div><div id="downloadStatus" class="lead-status download-status" role="status" aria-live="polite"></div><p class="lead-form-note">다운로드 링크는 10분 동안 사용할 수 있습니다.</p><a href="/contact?type=consulting&source=resource-download" class="support-button secondary">우리 업체 무료 진단받기</a>';
+        var links=document.getElementById("downloadLinks");
+        var downloadStatus=document.getElementById("downloadStatus");
+
+        item.attachments.forEach(function(file){
+          var b=document.createElement("button");
+          b.type="button";
+          b.className="support-button";
+          b.textContent=file.original_name+" 다운로드";
+          b.addEventListener("click",async function(){
+            b.disabled=true;
+            downloadStatus.classList.remove("error");
+            downloadStatus.textContent="다운로드 링크를 준비하고 있습니다.";
+            try{
+              var out=await api("/downloads",{method:"POST",body:JSON.stringify({token:data.token,attachmentId:file.id})});
+              if(!out||out.ok!==true||typeof out.url!=="string"||!out.url){
+                throw new Error("다운로드 링크를 확인하지 못했습니다. 잠시 후 다시 시도해 주세요.");
+              }
+              downloadStatus.textContent=file.original_name+" 다운로드를 시작합니다.";
+              window.location.assign(out.url);
+            }catch(err){
+              downloadStatus.classList.add("error");
+              downloadStatus.textContent="다운로드 실패: "+(err&&err.message?err.message:"잠시 후 다시 시도해 주세요.");
+            }finally{
+              b.disabled=false;
+            }
+          });
+          links.appendChild(b);
+        });
+        form.hidden=true;
+      }catch(err){
+        status.textContent=err&&err.message?err.message:"신청을 처리하지 못했습니다. 잠시 후 다시 시도해 주세요.";
+        btn.disabled=false;
+      }
+    });
+  }
   if(page==="home")initHome();else if(page==="notices")initList("notices");else if(page==="resources")initList("resources");else if(page==="faq")initFaq();else if(page==="notice-detail")initDetail("notices");else if(page==="resource-detail")initDetail("resources");
 })();
