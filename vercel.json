@@ -12,8 +12,8 @@
     { "source": "/insights/:slug", "destination": "/blog/:slug", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/support/notices/:slug", "destination": "/support/notices/detail.html?slug=:slug" },
-    { "source": "/support/resources/:slug", "destination": "/support/resources/detail.html?slug=:slug" },
+    { "source": "/support/notices/:slug", "destination": "/support/notices/detail?slug=:slug" },
+    { "source": "/support/resources/:slug", "destination": "/support/resources/detail?slug=:slug" },
     { "source": "/blog/rss.xml", "destination": "/api/blog?mode=rss" },
     { "source": "/blog", "destination": "/api/blog?mode=list" },
     { "source": "/blog/:slug", "destination": "/api/blog?mode=detail&slug=:slug" }
