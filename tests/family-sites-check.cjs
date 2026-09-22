@@ -7,6 +7,7 @@ const output = process.env.ARTIFACT_DIR || path.resolve("artifacts", "family-sit
 const expected = [
   { id: "geosang-marketing-center", href: "https://geosangmarketing.com/", target: null },
   { id: "geosang-government-support", href: "https://geosang-support.vercel.app/", target: "_blank" },
+  { id: "geosang-commerce", href: "https://geosang-commerce.vercel.app/", target: "_blank" },
   { id: "geosang-tour", href: "https://geosangtour.vercel.app/", target: "_blank" },
   { id: "geosang-school", href: "https://www.geosangschool.co.kr/", target: "_blank" },
   { id: "ai-marketing-school", href: "https://www.aimarketing.school/", target: "_blank" },
@@ -28,6 +29,9 @@ function watchErrors(page) {
 async function assertLinks(panel) {
   const links = panel.locator(".family-site-link");
   if (await links.count() !== expected.length) throw new Error(`Expected ${expected.length} family links`);
+  const actualOrder = await links.evaluateAll((nodes) => nodes.map((node) => node.dataset.familySiteId));
+  const expectedOrder = expected.map((site) => site.id);
+  if (JSON.stringify(actualOrder) !== JSON.stringify(expectedOrder)) throw new Error(`Family-site order mismatch: ${actualOrder.join(",")}`);
   for (const site of expected) {
     const link = panel.locator(`[data-family-site-id="${site.id}"]`);
     const rawHref = await link.getAttribute("href");

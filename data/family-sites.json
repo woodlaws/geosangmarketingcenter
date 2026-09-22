@@ -18,6 +18,12 @@
           "url": "https://geosang-support.vercel.app/"
         },
         {
+          "id": "geosang-commerce",
+          "name": "거상커머스",
+          "description": "커머스 서비스 안내",
+          "url": "https://geosang-commerce.vercel.app/"
+        },
+        {
           "id": "geosang-tour",
           "name": "거상투어",
           "description": "투어 프로그램 보기",
