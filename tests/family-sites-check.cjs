@@ -12,6 +12,7 @@ const expected = [
   { id: "ai-marketing-school", href: "https://www.aimarketing.school/", target: "_blank" },
   { id: "ai-homepage-school", href: "https://aihomepage-school.vercel.app/", target: "_blank" },
   { id: "ai-book-club", href: "https://aibookclub.vercel.app/", target: "_blank" },
+  { id: "insta-school", href: "https://instaschool-eight.vercel.app/", target: "_blank" },
 ];
 
 function watchErrors(page) {
@@ -94,7 +95,10 @@ async function assertLinks(panel) {
     await mobileTrigger.waitFor({ state: "visible", timeout: 10000 });
     await mobileTrigger.click();
     if (await mobileTrigger.getAttribute("aria-expanded") !== "true") throw new Error(`Mobile accordion failed at ${width}px`);
-    await assertLinks(mobile.locator(".family-sites-mobile-panel"));
+    const mobilePanel = mobile.locator(".family-sites-mobile-panel");
+    await assertLinks(mobilePanel);
+    await mobilePanel.evaluate((element) => { element.scrollTop = element.scrollHeight; });
+    await mobilePanel.locator('[data-family-site-id="insta-school"]').scrollIntoViewIfNeeded();
     if (await mobile.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 1)) throw new Error(`Mobile horizontal overflow at ${width}px`);
     if (width === 390) await mobile.screenshot({ path: path.join(output, "family-sites-mobile-open.png"), fullPage: false });
     await mobile.keyboard.press("Escape");

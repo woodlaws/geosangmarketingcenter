@@ -52,6 +52,12 @@
           "name": "AI독서클럽",
           "description": "함께 읽고 실천하는 모임",
           "url": "https://aibookclub.vercel.app/"
+        },
+        {
+          "id": "insta-school",
+          "name": "인스타스쿨",
+          "description": "SNS 콘텐츠 마케팅",
+          "url": "https://instaschool-eight.vercel.app/"
         }
       ]
     }
