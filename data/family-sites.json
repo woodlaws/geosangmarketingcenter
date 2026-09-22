@@ -1,0 +1,53 @@
+{
+  "currentSiteId": "geosang-marketing-center",
+  "groups": [
+    {
+      "id": "marketing-business",
+      "name": "마케팅·비즈니스",
+      "sites": [
+        {
+          "id": "geosang-marketing-center",
+          "name": "거상마케팅센터",
+          "description": "마케팅 대행·컨설팅",
+          "url": "https://geosangmarketing.com/"
+        },
+        {
+          "id": "geosang-tour",
+          "name": "거상투어",
+          "description": "투어 프로그램 보기",
+          "url": "https://geosangtour.vercel.app/"
+        }
+      ]
+    },
+    {
+      "id": "education-growth",
+      "name": "교육·성장",
+      "sites": [
+        {
+          "id": "geosang-school",
+          "name": "거상스쿨",
+          "description": "교육과정 전체 보기",
+          "url": "https://www.geosangschool.co.kr/"
+        },
+        {
+          "id": "ai-marketing-school",
+          "name": "AI마케팅스쿨",
+          "description": "AI 마케팅 실전 교육",
+          "url": "https://www.aimarketing.school/"
+        },
+        {
+          "id": "ai-homepage-school",
+          "name": "AI홈페이지스쿨",
+          "description": "내 사업 홈페이지 만들기",
+          "url": "https://aihomepage-school.vercel.app/"
+        },
+        {
+          "id": "ai-book-club",
+          "name": "AI독서클럽",
+          "description": "함께 읽고 실천하는 모임",
+          "url": "https://aibookclub.vercel.app/"
+        }
+      ]
+    }
+  ]
+}

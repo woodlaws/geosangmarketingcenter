@@ -70,6 +70,199 @@ document.addEventListener("DOMContentLoaded", function () {
 
   addCompanyProfileToFooters();
 
+  /* ---------- 공통 패밀리 사이트 ---------- */
+  function createFamilySitesPanel(config, panelId, placement) {
+    var panel = document.createElement("div");
+    panel.className = "family-sites-panel family-sites-panel--" + placement;
+    panel.id = panelId;
+    panel.hidden = true;
+
+    config.groups.forEach(function (group) {
+      var section = document.createElement("section");
+      section.className = "family-sites-group";
+      section.setAttribute("aria-labelledby", panelId + "-" + group.id);
+
+      var heading = document.createElement("h3");
+      heading.className = "family-sites-group-title";
+      heading.id = panelId + "-" + group.id;
+      heading.textContent = group.name;
+      section.appendChild(heading);
+
+      var list = document.createElement("div");
+      list.className = "family-sites-list";
+      group.sites.forEach(function (site) {
+        var isCurrent = site.id === config.currentSiteId;
+        var link = document.createElement("a");
+        link.className = "family-site-link" + (isCurrent ? " is-current" : "");
+        link.href = isCurrent ? "/" : site.url;
+        link.setAttribute("data-family-site-id", site.id);
+        if (!isCurrent) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.setAttribute("aria-label", site.name + ", 새 탭에서 열림");
+        }
+
+        var nameRow = document.createElement("span");
+        nameRow.className = "family-site-name";
+        if (isCurrent) {
+          var dot = document.createElement("i");
+          dot.className = "family-current-dot";
+          dot.setAttribute("aria-hidden", "true");
+          nameRow.appendChild(dot);
+        }
+        var name = document.createElement("strong");
+        name.textContent = site.name;
+        nameRow.appendChild(name);
+        if (isCurrent) {
+          var current = document.createElement("em");
+          current.textContent = "현재 사이트";
+          nameRow.appendChild(current);
+        } else {
+          var external = document.createElement("span");
+          external.className = "family-external-icon";
+          external.setAttribute("aria-hidden", "true");
+          external.textContent = "↗";
+          nameRow.appendChild(external);
+          var srText = document.createElement("span");
+          srText.className = "sr-only";
+          srText.textContent = " 새 탭에서 열림";
+          nameRow.appendChild(srText);
+        }
+        link.appendChild(nameRow);
+
+        var description = document.createElement("small");
+        description.textContent = site.description;
+        link.appendChild(description);
+        list.appendChild(link);
+      });
+      section.appendChild(list);
+      panel.appendChild(section);
+    });
+    return panel;
+  }
+
+  function setFamilySitesOpen(root, open, returnFocus) {
+    var button = root.querySelector(".family-sites-trigger");
+    var panel = root.querySelector(".family-sites-panel");
+    if (!button || !panel) return;
+    root.classList.toggle("is-open", open);
+    button.setAttribute("aria-expanded", open ? "true" : "false");
+    panel.hidden = !open;
+    if (!open && returnFocus) button.focus({ preventScroll: true });
+  }
+
+  function closeFamilySites(exceptRoot) {
+    document.querySelectorAll(".family-sites.is-open").forEach(function (root) {
+      if (root !== exceptRoot) setFamilySitesOpen(root, false, false);
+    });
+  }
+
+  function createFamilySitesDropdown(config, placement, index) {
+    var root = document.createElement("div");
+    root.className = "family-sites family-sites--" + placement;
+    var panelId = "family-sites-" + placement + "-panel-" + index;
+    var button = document.createElement("button");
+    button.type = "button";
+    button.className = "family-sites-trigger";
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", panelId);
+    button.setAttribute("aria-haspopup", "true");
+    button.innerHTML = '<span>패밀리 사이트</span><span class="family-sites-caret" aria-hidden="true">' + (placement === "footer" ? "▴" : "▾") + "</span>";
+    var panel = createFamilySitesPanel(config, panelId, placement);
+    root.appendChild(button);
+    root.appendChild(panel);
+    button.addEventListener("click", function () {
+      var shouldOpen = !root.classList.contains("is-open");
+      closeFamilySites(shouldOpen ? root : null);
+      setFamilySitesOpen(root, shouldOpen, false);
+    });
+    panel.addEventListener("click", function (event) {
+      if (event.target.closest("a")) setFamilySitesOpen(root, false, false);
+    });
+    return root;
+  }
+
+  function addFamilySitesToMobile(config) {
+    var mobileNav = document.getElementById("navMobile");
+    if (!mobileNav || mobileNav.querySelector("[data-family-sites-mobile]")) return;
+    var group = document.createElement("div");
+    group.className = "family-sites-mobile nav-mob-group";
+    group.setAttribute("data-family-sites-mobile", "");
+    var button = document.createElement("button");
+    var panelId = "family-sites-mobile-panel";
+    button.type = "button";
+    button.className = "family-sites-mobile-trigger nav-mob-trigger";
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", panelId);
+    button.innerHTML = '<span>패밀리 사이트</span><span class="nav-mob-arrow" aria-hidden="true">▾</span>';
+    var panel = createFamilySitesPanel(config, panelId, "mobile");
+    panel.classList.add("family-sites-mobile-panel");
+    group.appendChild(button);
+    group.appendChild(panel);
+    mobileNav.appendChild(group);
+
+    function setMobileOpen(open, returnFocus) {
+      button.classList.toggle("open", open);
+      button.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.hidden = !open;
+      if (!open && returnFocus) button.focus({ preventScroll: true });
+    }
+    button.addEventListener("click", function () {
+      setMobileOpen(button.getAttribute("aria-expanded") !== "true", false);
+    });
+    panel.addEventListener("click", function (event) {
+      if (event.target.closest("a")) setMobileOpen(false, false);
+    });
+    new MutationObserver(function () {
+      if (!mobileNav.classList.contains("open")) setMobileOpen(false, false);
+    }).observe(mobileNav, { attributes: true, attributeFilter: ["class"] });
+  }
+
+  function installFamilySites(config) {
+    if (!config || !Array.isArray(config.groups)) return;
+    var desktopNav = document.querySelector(".site-header .nav");
+    if (desktopNav && !desktopNav.querySelector(".family-sites--header")) {
+      var headerFamily = createFamilySitesDropdown(config, "header", 1);
+      var consultationCta = desktopNav.querySelector(".btn-nav");
+      desktopNav.insertBefore(headerFamily, consultationCta || null);
+    }
+
+    document.querySelectorAll("footer.site-footer").forEach(function (footer, footerIndex) {
+      if (footer.querySelector(".family-sites--footer")) return;
+      var footerFamily = createFamilySitesDropdown(config, "footer", footerIndex + 1);
+      var footerCopy = footer.querySelector(".footer-copy");
+      if (footerCopy) {
+        footerCopy.classList.add("footer-copy--family-sites");
+        footerCopy.appendChild(footerFamily);
+      } else {
+        var fallback = document.createElement("div");
+        fallback.className = "container family-sites-footer-fallback";
+        fallback.appendChild(footerFamily);
+        footer.appendChild(fallback);
+      }
+    });
+    addFamilySitesToMobile(config);
+  }
+
+  fetch("/data/family-sites.json?v=1", { credentials: "same-origin" })
+    .then(function (response) {
+      if (!response.ok) throw new Error("family-sites-data");
+      return response.json();
+    })
+    .then(installFamilySites)
+    .catch(function () {});
+
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".family-sites")) closeFamilySites(null);
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key !== "Escape") return;
+    var openRoot = document.querySelector(".family-sites.is-open");
+    if (openRoot) setFamilySitesOpen(openRoot, false, true);
+    var mobileButton = document.querySelector('.family-sites-mobile-trigger[aria-expanded="true"]');
+    if (mobileButton) mobileButton.click();
+  });
+
   /* ---------- 공통 상담 CTA ---------- */
   var legacyCtaServices = { "free-diagnosis": "diagnosis", smartplace: "smartplace", "google-business-profile": "google", "aeo-geo": "aeo-geo", ads: "ads", enterprise: "enterprise", government: "government-support", "government-support": "government-support", website: "website-production", "website-diagnosis": "website-production", "website-production": "website-production", "marketing-diagnosis": "marketing-diagnosis", "local-store": "local-store", "online-sales": "online-sales", "consulting-contract": "consulting-contract", cases: "cases", consulting: "consulting", services: "services", "content-sns": "content-sns" };
   var pageCtaType = window.location.pathname.indexOf("/services/ads") === 0 ? "ads" : window.location.pathname.indexOf("/services/content-sns") === 0 ? "content-sns" : window.location.pathname.indexOf("/services/aeo-geo") === 0 ? "aeo-geo" : window.location.pathname.indexOf("/services/government-support") === 0 ? "government-support" : window.location.pathname.indexOf("/services/smartplace") === 0 ? "smartplace" : window.location.pathname.indexOf("/services/google-business-profile") === 0 ? "google" : window.location.pathname.indexOf("/services/website-") === 0 ? "website-production" : window.location.pathname.indexOf("/enterprise") === 0 ? "enterprise" : window.location.pathname.indexOf("/services/consulting") === 0 || window.location.pathname.indexOf("/services/marketing-consulting") === 0 ? "consulting" : window.location.pathname === "/services" || window.location.pathname.endsWith("/services/index.html") ? "services" : window.location.pathname.indexOf("/marketing-types/local-store") === 0 ? "local-store" : window.location.pathname.indexOf("/marketing-types/online-sales") === 0 ? "online-sales" : window.location.pathname.indexOf("/marketing-types/consulting-contract") === 0 ? "consulting-contract" : window.location.pathname.indexOf("/marketing-diagnosis") === 0 ? "marketing-diagnosis" : window.location.pathname.indexOf("/cases") === 0 ? "cases" : window.location.pathname.indexOf("/about") === 0 ? "consulting" : "diagnosis";
