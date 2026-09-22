@@ -2572,3 +2572,5 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:700px){.family-sites--footer{width:100%}.family-sites--footer .family-sites-trigger{min-height:48px}.family-sites-panel--footer{right:0;left:auto;width:min(320px,calc(100vw - 40px))}.family-sites-footer-fallback{justify-content:stretch}.family-sites-mobile .family-sites-panel{padding:8px}.family-site-name em{font-size:8px}}
 
 .footer-copy--family-sites{display:flex;align-items:center;justify-content:space-between;gap:24px}.footer-copy--family-sites .family-sites--footer{width:min(240px,100%);margin-left:auto;flex:0 0 auto}@media(max-width:700px){.footer-copy--family-sites{flex-direction:column;align-items:stretch;gap:0}.footer-copy--family-sites .family-sites--footer{width:100%;margin-top:24px;margin-left:0}}
+
+.family-site-name strong{min-width:0}.family-external-icon{flex:0 0 auto;align-self:flex-start}

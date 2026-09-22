@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
     addFamilySitesToMobile(config);
   }
 
-  fetch("/data/family-sites.json?v=1", { credentials: "same-origin" })
+  fetch("/data/family-sites.json?v=2", { credentials: "same-origin" })
     .then(function (response) {
       if (!response.ok) throw new Error("family-sites-data");
       return response.json();

@@ -6,6 +6,7 @@ const base = process.env.TEST_BASE_URL || "http://127.0.0.1:8788";
 const output = process.env.ARTIFACT_DIR || path.resolve("artifacts", "family-sites");
 const expected = [
   { id: "geosang-marketing-center", href: "https://geosangmarketing.com/", target: null },
+  { id: "geosang-government-support", href: "https://geosang-support.vercel.app/", target: "_blank" },
   { id: "geosang-tour", href: "https://geosangtour.vercel.app/", target: "_blank" },
   { id: "geosang-school", href: "https://www.geosangschool.co.kr/", target: "_blank" },
   { id: "ai-marketing-school", href: "https://www.aimarketing.school/", target: "_blank" },

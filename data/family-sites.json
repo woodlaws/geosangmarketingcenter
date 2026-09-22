@@ -12,6 +12,12 @@
           "url": "https://geosangmarketing.com/"
         },
         {
+          "id": "geosang-government-support",
+          "name": "거상 정부지원사업 마케팅센터",
+          "description": "정부지원사업 마케팅 안내",
+          "url": "https://geosang-support.vercel.app/"
+        },
+        {
           "id": "geosang-tour",
           "name": "거상투어",
           "description": "투어 프로그램 보기",
