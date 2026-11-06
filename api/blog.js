@@ -5,7 +5,7 @@ const memoryCache = new Map();
 const MIGRATED_INSIGHT_COVERS = require("../data/migrated-insight-covers.json");
 
 const CATEGORIES = [
-  "스마트플레이스", "AEO·GEO", "AI 검색 최적화", "블로그 마케팅",
+  "희망리턴패키지", "스마트플레이스", "AEO·GEO", "AI 검색 최적화", "블로그 마케팅",
   "체험단 마케팅", "식당 마케팅", "병원·치과 마케팅", "소상공인 마케팅", "마케팅 사례",
 ];
 
@@ -412,6 +412,7 @@ function blockText(block) {
     if (item.annotations?.bold) value = `<strong>${value}</strong>`;
     if (item.annotations?.italic) value = `<em>${value}</em>`;
     if (item.annotations?.code) value = `<code>${value}</code>`;
+    if (String(item.annotations?.color || "").startsWith("red")) value = `<span class="blog-text-red" style="color:#e60012;font-weight:700">${value}</span>`;
     return value;
   }).join("");
 }
