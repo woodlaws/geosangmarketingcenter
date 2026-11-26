@@ -5,6 +5,7 @@ const memoryCache = new Map();
 const MIGRATED_INSIGHT_COVERS = require("../data/migrated-insight-covers.json");
 
 const CATEGORIES = [
+  "정부지원사업",
   "희망리턴패키지", "스마트플레이스", "AEO·GEO", "AI 검색 최적화", "블로그 마케팅",
   "체험단 마케팅", "식당 마케팅", "병원·치과 마케팅", "소상공인 마케팅", "마케팅 사례",
 ];
